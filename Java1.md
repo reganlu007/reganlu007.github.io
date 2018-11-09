@@ -5,9 +5,7 @@
 ```
 public class B0000000_03 {
 	public static void main(String[] args) {
-		double	h   = 200,
-			w   = 100,
-			bmi = w * 10000 / h / h;
+		double	h = 200, w = 100, bmi = w * 10000 / h / h;
 		System.out.print("我的學號是 B0000000，" +
 			"身高 "+ height +" 公分，" +
 			"體重 "+ weight +" 公斤，" +
@@ -31,8 +29,8 @@ public class B0000000_04 {
 			"男生 "+ m +" 人，" + 
 			"女生 "+ f +" 人，" + 
 			"總人數 "+ (m + f) +" 人。\n" + 
-			"男生比例為 "+ m * 100 / (m + f) +"%，" +
-			"女生比例為 "+ f * 100 / (m + f) +"%。");
+			"男生比例為 "+ m * 100.0 / (m + f) +"%，" +
+			"女生比例為 "+ f * 100.0 / (m + f) +"%。");
 	}
 }
 ```
@@ -43,7 +41,8 @@ public class B0000000_04 {
 import javax.swing.JOptionPane;
 public class B0000000_05 {
 	public static void main(String[] args) {
-		int qty = Integer.valueOf(JOptionPane.showInputDialog("請輸入購買數量")), price = 100;
+		int qty = Integer.valueOf(JOptionPane.showInputDialog("請輸入購買數量")),
+		    price = 100;
 		JOptionPane.showMessageDialog(null,
 			"您購買" + qty + "件商品，"+
 			"原價為" + qty * price + "元，"+
