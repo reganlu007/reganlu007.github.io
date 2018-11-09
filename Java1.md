@@ -36,8 +36,20 @@ public class B0000000_04 {
 5.
 
 ```
+import javax.swing.JOptionPane;
 public class B0000000_05 {
-	public static void main(String[] args) {
+	public static void main(String[] args) {		
+		int	qty = Integer.valueOf(JOptionPane.showInputDialog("請輸入購買數量")),
+			price = 100;
+		JOptionPane.showMessageDialog(null,
+			"您購買" + qty + "件商品，"+
+			"原價為" + qty * price + "元，"+
+			"折扣後價格為" + qty * price *
+			(qty >= 100 ? 0.5 :
+			 qty >=  50 ? 0.6 : 
+			 qty >=  20 ? 0.7 : 
+			 qty >=  10 ? 0.8 : 1) + "元");
+		System.exit(0);
 	}
 }
 ```
