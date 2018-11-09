@@ -2,14 +2,14 @@
 
 |項目|項目|項目|項目
 |-|-|-|-
-|[國家]|[地方]|[城市]|
+|[國家]|[地方]|[據點]|
 |[人物]|[寶物]|[爵位]|[官職]
 |[設施]|[兵種]|[特技]|[科技]
 |[戰法]|[修練]
 
 [國家]: https://reganlu007.github.io/三國志11國家列表
 [地方]: https://reganlu007.github.io/三國志11地方列表
-[城市]: https://reganlu007.github.io/三國志11城市列表
+[據點]: https://reganlu007.github.io/三國志11據點列表
 [人物]: https://reganlu007.github.io/三國志11人物列表
 [寶物]: https://reganlu007.github.io/三國志11寶物列表
 [爵位]: https://reganlu007.github.io/三國志11爵位列表
