@@ -96,7 +96,7 @@ public class B0000000_07 {
 			i + num <= max;
 			sum += i)
 			System.out.printf("%d、", i += num);
-		System.out.printf("\b\總和為 %d。", sum);
+		System.out.printf("\b\b總和為 %d。", sum);
 	}
 }
 ```
