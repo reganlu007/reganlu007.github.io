@@ -14,7 +14,7 @@
 [寶物]: https://reganlu007.github.io/三國志11寶物列表
 [爵位]: https://reganlu007.github.io/三國志11爵位列表
 [官職]: https://reganlu007.github.io/三國志11官職列表
-[設施]: https://reganlu007.github.io/三國志11官職列表
+[設施]: https://reganlu007.github.io/三國志11設施列表
 [兵種]: https://reganlu007.github.io/三國志11兵種列表
 [特技]: https://reganlu007.github.io/三國志11特技列表
 [科技]: https://reganlu007.github.io/三國志11科技列表
