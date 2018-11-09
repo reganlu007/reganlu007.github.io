@@ -23,10 +23,16 @@ import java.util.Scanner;
 public class B0000000_04 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		System.out.print("請輸入男生人數:"); int m = sc.nextInt();
-		System.out.print("請輸入女生人數:"); int f = sc.nextInt();
-		System.out.print("本班有男生 "+ m +" 人，女生 "+ f +" 人，總人數 "+ (m + f) +" 人。\n" + 
-			"男生比例為 "+ m * 100 / (m + f) +"%，女生比例為 "+ f * 100 / (m + f) +"%。");
+		System.out.print("請輸入男生人數:");
+		int m = sc.nextInt();
+		System.out.print("請輸入女生人數:");
+		int f = sc.nextInt();
+		System.out.print("本班有" + 
+			"男生 "+ m +" 人，" + 
+			"女生 "+ f +" 人，" + 
+			"總人數 "+ (m + f) +" 人。\n" + 
+			"男生比例為 "+ m * 100 / (m + f) +"%，" +
+			"女生比例為 "+ f * 100 / (m + f) +"%。");
 	}
 }
 ```
@@ -36,9 +42,8 @@ public class B0000000_04 {
 ```
 import javax.swing.JOptionPane;
 public class B0000000_05 {
-	public static void main(String[] args) {		
-		int	qty = Integer.valueOf(JOptionPane.showInputDialog("請輸入購買數量")),
-			price = 100;
+	public static void main(String[] args) {
+		int qty = Integer.valueOf(JOptionPane.showInputDialog("請輸入購買數量")), price = 100;
 		JOptionPane.showMessageDialog(null,
 			"您購買" + qty + "件商品，"+
 			"原價為" + qty * price + "元，"+
