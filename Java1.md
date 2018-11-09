@@ -78,7 +78,6 @@ public class B0000000_06 {
 		System.out.println("您這個月的網路費用為："+ fee +" 元");
 	}
 }
-
 ```
 
 7.
