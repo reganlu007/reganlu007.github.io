@@ -4,9 +4,9 @@
 
 ```
 public class B0000000_03 {
-    public static void main(String[] args) {
-        double h = 200, w = 100, bmi = w * 10000 / h / h;
-        System.out.print("我的學號是 B0000000，身高 "+ height +" 公分，體重 "+ weight + 公斤，"+"bmi 為 "+ bmi);
+	public static void main(String[] args) {
+		double h = 200, w = 100, bmi = w * 10000 / h / h;
+		System.out.print("我的學號是 B0000000，身高 "+ height +" 公分，體重 "+ weight + 公斤，"+"bmi 為 "+ bmi);
 	}
 }
 ```
@@ -14,24 +14,44 @@ public class B0000000_03 {
 4.
 
 ```
+public class B0000000_04 {
+	public static void main(String[] args) {
+	}
+}
 ```
 
 5.
 
 ```
+public class B0000000_05 {
+	public static void main(String[] args) {
+	}
+}
 ```
 
 6.
 
 ```
+public class B0000000_06 {
+	public static void main(String[] args) {
+	}
+}
 ```
 
 7.
 
 ```
+public class B0000000_07 {
+	public static void main(String[] args) {
+	}
+}
 ```
 
 8.
 
 ```
+public class B0000000_08 {
+	public static void main(String[] args) {
+	}
+}
 ```
