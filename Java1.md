@@ -59,10 +59,28 @@ public class B0000000_05 {
 6.
 
 ```
+import java.util.Scanner;
 public class B0000000_06 {
 	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);System.out.print("請輸入方案：");
+		String plan = sc.next();
+		System.out.print("請輸入使用時數：");
+		double time = sc.nextDouble(), fee = 0;
+		switch(plan) {
+			case "A": case "a":
+				fee =  9.95 + Math.max(0,(time - 10) * 2);
+			break;
+			case "B": case "b":
+				fee = 13.95 + Math.max(0, time - 20);
+			break;
+			case "C": case "c":
+				fee = 19.95;
+			break;
+		}
+		System.out.println("您這個月的網路費用為："+ fee +" 元");
 	}
 }
+
 ```
 
 7.
