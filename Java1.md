@@ -62,7 +62,8 @@ public class B0000000_05 {
 import java.util.Scanner;
 public class B0000000_06 {
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);System.out.print("請輸入方案：");
+		Scanner sc = new Scanner(System.in);
+		System.out.print("請輸入方案：");
 		String plan = sc.next();
 		System.out.print("請輸入使用時數：");
 		double time = sc.nextDouble(), fee = 0;
