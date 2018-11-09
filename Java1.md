@@ -68,8 +68,18 @@ public class B0000000_06 {
 7.
 
 ```
+import java.util.Scanner;
 public class B0000000_07 {
 	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.printf("輸入搜尋範圍：");
+		int min = sc.nextInt(), max = sc.nextInt();
+		System.out.printf("輸入 N：      ");
+		int num = sc.nextInt(), sum = 0;
+		System.out.printf("%d 和 %d 之間，%d 的倍數有：", min, max, num);
+		for(int i = Math.max(min - min % num, num) - num; i + num <= max; sum += i)
+			System.out.printf("%d、", i += num);
+		System.out.printf("\b總和為 %d。", sum);
 	}
 }
 ```
