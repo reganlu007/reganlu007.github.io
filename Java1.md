@@ -119,5 +119,4 @@ public class B0000000_08 {
 		System.out.printf("\n比賽結果統計：電腦獲勝 %d 次，玩家獲勝 %d 次，雙方平手 %d 次。", com, man, tie);
 	}
 }
-
 ```
