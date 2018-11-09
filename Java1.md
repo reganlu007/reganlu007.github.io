@@ -109,11 +109,11 @@ public class B0000000_08 {
 		String s = "";
 		int man = 0, com = 0, tie = 0;
 		for(int i = 0; i < 10;){
-			int d_1 = (int)(Math.random() * 6) + 1,
-			    d_2 = (int)(Math.random() * 6) + 1;
-			if (d_1 >  d_2) {com++; s = "電腦獲勝";}
-			if (d_1 <  d_2) {man++; s = "玩家獲勝";}
-			if (d_1 == d_2) {tie++; s = "平手";}
+			int d_1 = (int)(Math.random() *6) +1,
+			    d_2 = (int)(Math.random() *6) +1;
+			if (d_1 >  d_2){com++; s = "電腦獲勝";}
+			if (d_1 <  d_2){man++; s = "玩家獲勝";}
+			if (d_1 == d_2){tie++; s = "平手";}
 			System.out.printf("第 %2d 次：1 號骰子：%d\t2 號骰子：%d\t%s\n", ++i, d_1, d_2, s);
 		}
 		System.out.printf("\n比賽結果統計：電腦獲勝 %d 次，玩家獲勝 %d 次，雙方平手 %d 次。", com, man, tie);
