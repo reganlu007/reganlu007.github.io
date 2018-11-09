@@ -19,8 +19,16 @@ public class B0000000_03 {
 4.
 
 ```
+import java.util.Scanner;
 public class B0000000_04 {
 	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("請輸入男生人數:");
+		int m = sc.nextInt();
+		System.out.print("請輸入女生人數:");
+		int f = sc.nextInt();
+		System.out.println("本班有男生 "+ m +" 人，女生 "+ f +" 人，總人數 "+ (m + f) +" 人。");
+		System.out.println("男生比例為 "+ m * 100 / (m + f) +"%，女生比例為 "+ f * 100 / (m + f) +"%。");
 	}
 }
 ```
