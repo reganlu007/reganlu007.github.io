@@ -67,3 +67,23 @@ public	class	B0744148_05 {
 	}
 }
 ```
+6.
+```
+package b0744122_06;
+import java.util.Scanner;
+public class b0744122_06 {
+	public static void main(String[] args) {
+		Scanner keyboard = new Scanner(System.in);
+		System.out.print("請選擇方案:");
+		String choice = keyboard.next();
+		System.out.print("請輸入使用時間:");
+		double time = keyboard.nextDouble();
+		switch (choice) {
+			case "A": case "a": time =  9.95 + (time <= 10 ? 0 : (time - 10) * 2); break;
+			case "B": case "b": time = 13.95 + (time <= 20 ? 0 : time - 20); break;
+			case "C": case "c": time = 19.95; break;
+		}
+		System.out.print("您這個月的網路費用為" + time + "元");
+	 }
+}
+```
