@@ -1,7 +1,6 @@
 # 作業解答一覽
 
 3.
-
 ```
 class	B0000000_03 {
 	public	static void main(String[] args) {
@@ -10,9 +9,7 @@ class	B0000000_03 {
 	}
 }
 ```
-
 4.
-
 ```
 import	java.util.Scanner;
 class	B0000000_04 {
@@ -22,18 +19,13 @@ class	B0000000_04 {
 		int m = sc.nextInt();
 		System.out.print("請輸入女生人數:");
 		int f = sc.nextInt();
-		System.out.print("本班有" + 
-			"男生 "+ m +" 人，" + 
-			"女生 "+ f +" 人，" + 
-			"總人數 "+ (m + f) +" 人。\n" + 
+		System.out.print("本班有男生 "+ m +" 人，女生 "+ f +" 人，總人數 "+ (m + f) +" 人。\n" + 
 			"男生比例為 "+ m * 100.0 / (m + f) +"%，" +
 			"女生比例為 "+ f * 100.0 / (m + f) +"%。");
 	}
 }
 ```
-
 5.
-
 ```
 import	javax.swing.JOptionPane;
 class	B0000000_05 {
@@ -44,15 +36,13 @@ class	B0000000_05 {
 	}
 }
 ```
-
 6.
-
 ```
 import	java.util.Scanner;
 class	B0000000_06 {
 	public	static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		System.out.print("請輸入方案：");
+		System.out.print("請輸入方案：　　");
 		String plan = sc.next();
 		System.out.print("請輸入使用時數：");
 		double time = sc.nextDouble(), fee = 0;
@@ -65,9 +55,7 @@ class	B0000000_06 {
 	}
 }
 ```
-
 7.
-
 ```
 import	java.util.Scanner;
 class	B0000000_07 {
@@ -75,7 +63,7 @@ class	B0000000_07 {
 		Scanner sc = new Scanner(System.in);
 		System.out.printf("輸入搜尋範圍：");
 		int min = sc.nextInt(), max = sc.nextInt();
-		System.out.printf("輸入 N：      ");
+		System.out.printf("輸入Ｎ：　　　");
 		int num = sc.nextInt(), sum = 0;
 		System.out.printf("%d 和 %d 之間，%d 的倍數有：", min, max, num);
 		for(int	i = Math.max(min - min % num, num) - num; i + num <= max; sum += i)
@@ -84,9 +72,7 @@ class	B0000000_07 {
 	}
 }
 ```
-
 8.
-
 ```
 class	B0000000_08 {
 	public	static void main(String[] args) {
@@ -96,7 +82,7 @@ class	B0000000_08 {
 			int d_1 = (int)(Math.random() * 6) + 1, d_2 = (int)(Math.random() * 6) + 1;
 			if (d_1 >  d_2){com++; s = "電腦獲勝";}
 			if (d_1 <  d_2){man++; s = "玩家獲勝";}
-			if (d_1 == d_2){tie++; s =     "平手";}
+			if (d_1 == d_2){tie++; s = "平手　　";}
 			System.out.printf("第 %2d 次：1 號骰子：%d\t2 號骰子：%d\t%s\n", ++i, d_1, d_2, s);
 		}
 		System.out.printf("\n比賽結果統計：電腦獲勝 %d 次，玩家獲勝 %d 次，雙方平手 %d 次。", com, man, tie);
