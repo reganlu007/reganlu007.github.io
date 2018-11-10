@@ -4,7 +4,7 @@
 ```
 class	B0000000_03 {
 	public	static void main(String[] args) {
-		doubleh = 200, w = 100, bmi = w * 10000 / h / h;
+		double h = 160, w = 60, bmi = w * 10000 / h / h;
 		System.out.print("我的學號是 B0000000，身高 "+ h +" 公分，體重 "+ w +" 公斤，bmi 為 "+ bmi);
 	}
 }
