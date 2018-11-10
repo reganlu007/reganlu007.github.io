@@ -87,3 +87,29 @@ public class b0744122_06 {
 	 }
 }
 ```
+7.
+```
+import java.util.Scanner;
+public class B0744110_07 {
+	public static void main(String[] args) {
+		int a,b,n,index,output,sum;		
+		Scanner keyboard = new Scanner(System.in);
+		System.out.println("輸入搜尋範圍:");
+		a = keyboard.nextInt();
+		b = keyboard.nextInt();		
+		System.out.print("輸入N:");
+		n = keyboard.nextInt();		
+		index=1;
+		sum=0;		
+		System.out.print(a+"和"+b+"之間，"+n+"的倍數有:");
+		while(n*index<=b)
+		{
+			output=n*index;
+			sum+=output;
+			index++;
+			System.out.printf(output+" ");
+		}		
+		System.out.print("，總和有"+sum+"。");		
+	}
+}
+```
