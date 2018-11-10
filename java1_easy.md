@@ -19,8 +19,8 @@ public	class	B0744104_03 {
 ```
 4.
 ```
-import java.util.Scanner;
-public class B0744132_04 {
+import	java.util.Scanner;
+public	class B0744132_04 {
 	public static void main(String[] args) {
 		int male, female, total;
 		Scanner keyboard = new Scanner(System.in);
@@ -69,9 +69,8 @@ public	class	B0744148_05 {
 ```
 6.
 ```
-package b0744122_06;
-import java.util.Scanner;
-public class b0744122_06 {
+import	java.util.Scanner;
+public	class b0744122_06 {
 	public static void main(String[] args) {
 		Scanner keyboard = new Scanner(System.in);
 		System.out.print("請選擇方案:");
@@ -89,8 +88,8 @@ public class b0744122_06 {
 ```
 7.
 ```
-import java.util.Scanner;
-public class B0744110_07 {
+import	java.util.Scanner;
+public	class B0744110_07 {
 	public static void main(String[] args) {
 		int a,b,n,index,output,sum;		
 		Scanner keyboard = new Scanner(System.in);
@@ -111,5 +110,34 @@ public class B0744110_07 {
 		}		
 		System.out.print("，總和有"+sum+"。");		
 	}
+}
+```
+8.
+```
+import	java.util.Random;
+public	class B0744112_08 {
+	public static void main(String[] args) {
+		int computer,player,time,sumC,sumP,sumB;
+		sumC = 0;
+		sumP = 0;
+		sumB = 0;
+		Random randomnumber = new Random();
+		for ( time = 1 ; time<=10 ; time++) 
+		{
+			computer = randomnumber.nextInt(6)+1;
+			player   = randomnumber.nextInt(6)+1;
+			if (computer>player) {
+				System.out.println("第"+time+"次"+"\t"+"1號骰子:"+computer+"\t"+"2號骰子："+player+"\t"+"電腦獲勝");	
+				sumC++;
+			} else if (computer<player) {
+				System.out.println("第"+time+"次"+"\t"+"1號骰子:"+computer+"\t"+"2號骰子："+player+"\t"+"玩家獲勝");
+				sumP++;
+			} else {
+				System.out.println("第"+time+"次"+"\t"+"1號骰子:"+computer+"\t"+"2號骰子："+player+"\t"+"雙方平手");
+				sumB++;
+			}
+		}
+		System.out.println("比賽結果統計：電腦獲勝"+sumC+"次，玩家獲勝"+sumP+"次，雙方平手"+sumB+"次。");
+    }
 }
 ```
