@@ -31,8 +31,8 @@ import	javax.swing.JOptionPane;
 class	B0000000_05 {
 	public	static void main(String[] args) {
 		int qty = Integer.valueOf(JOptionPane.showInputDialog("請輸入購買數量")), price = 100;
-		JOptionPane.showMessageDialog(null, "您購買" + qty + "件商品，原價為" + qty * price + "元，折扣後價格為" + qty * price *
-			(qty >= 100 ? 0.5 : qty >= 50 ? 0.6 : qty >= 20 ? 0.7 : qty >= 10 ? 0.8 : 1) + "元");
+		JOptionPane.showMessageDialog(null, "您購買" + qty + "件商品，原價為" + qty * price + "元，折扣後價格為" +
+			qty * price * (qty >= 100 ? 0.5 : qty >= 50 ? 0.6 : qty >= 20 ? 0.7 : qty >= 10 ? 0.8 : 1) + "元");
 	}
 }
 ```
@@ -41,16 +41,15 @@ class	B0000000_05 {
 import	java.util.Scanner;
 class	B0000000_06 {
 	public	static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
+		Scanner	sc = new Scanner(System.in);
 		System.out.print("請輸入方案：　　");
-		String plan = sc.next();
+		String	plan = sc.next();
 		System.out.print("請輸入使用時數：");
-		double time = sc.nextDouble(), fee = 0;
-		switch(plan) {
+		double	time = sc.nextDouble(), fee = 0;
+		switch (plan){
 			case "A": case "a": fee =  9.95 + Math.max(0,(time - 10) * 2); break;
 			case "B": case "b": fee = 13.95 + Math.max(0, time - 20);      break;
-			case "C": case "c": fee = 19.95;                               break;
-		}
+			case "C": case "c": fee = 19.95;}
 		System.out.println("您這個月的網路費用為："+ fee +" 元");
 	}
 }
