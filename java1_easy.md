@@ -34,3 +34,36 @@ public class B0744132_04 {
 	}
 }
 ```
+5.
+```
+import	javax.swing.JOptionPane;
+public	class	B0744148_05 {
+	public	static void main(String[] args) {
+		double per;
+		double der;
+		String wee = JOptionPane.showInputDialog("請輸入購買數量");
+		der = Double.parseDouble(wee);
+		if (der<10){
+			per = der*100;
+			JOptionPane.showMessageDialog(null,"您購買"+der+"件商品，原價為"+der*100+"元，折扣後價格為"+der*100+"元");
+		}
+		else if (der<19){
+			per = der*100*0.8;
+			JOptionPane.showMessageDialog(null,"您購買"+der+"件商品，原價為"+der*100+"元，折扣後價格為"+der*100*0.8+"元");
+		}
+		else if (der<49){
+			per = der*100*0.7;
+			JOptionPane.showMessageDialog(null,"您購買"+der+"件商品，原價為"+der*100+"元，折扣後價格為"+der*100*0.7+"元");
+		}
+		else if (der<99){
+			per = der*100*0.6;
+			JOptionPane.showMessageDialog(null,"您購買"+der+"件商品，原價為"+der*100+"元，折扣後價格為"+der*100*0.6+"元");
+		}
+		else if (der>=100){
+			per = der*100*0.5;
+			JOptionPane.showMessageDialog(null,"您購買"+der+"件商品，原價為"+der*100+"元，折扣後價格為"+der*100*0.5+"元");
+		}
+		System.exit(0);
+	}
+}
+```
