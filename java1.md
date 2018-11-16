@@ -106,7 +106,7 @@ class	B0000000__midterm {
 		
 		/* Q2
 		System.out.printf("輸入三個整數："); int a = sc.nextInt(), b = sc.nextInt(), c = sc.nextInt();
-		System.out.printf("%d %s是 %d 和 %d 的公因數"  , c,
+		System.out.printf("%d %s是 %d 和 %d 的公因數 " , c,
 			(a % c == 0 && b % c == 0 ? "" : "不"), a, b);
 		*/
 		
