@@ -88,3 +88,44 @@ class	B0000000_08 {
 	}
 }
 ```
+# 期中上機參考答案
+
+```
+import	java.util.Scanner;
+class	B0000000_midterm {
+	public static void main(String[] args){
+		Scanner sc = new Scanner(System.in);
+		
+		/* Q1
+		System.out.printf("長方形的底："); int w = sc.nextInt();
+		System.out.printf("長方形的高："); int h = sc.nextInt();
+		System.out.printf("長方形面積：%d" , w * h);
+		*/
+		
+		/* Q2
+		Scanner sc = new Scanner(System.in);
+		System.out.printf("輸入三個整數："); int a = sc.nextInt(), b = sc.nextInt(), c = sc.nextInt();
+		System.out.printf("%d %s是 %d 和 %d 的公因數", c ,
+			(a % c == 0 && b % c == 0 ? "" : "不"), a, b);
+		*/
+		
+		/* Q3
+		System.out.printf("輸入秒數："); int i = sc.nextInt();
+		System.out.printf("%d 秒為 %d 天 %d 時 %d 分 %d 秒", i ,
+			i / 86400, i % 86400 / 3600, i % 3600 / 60, i % 60);
+		*/
+		
+		/* Q4
+		System.out.printf("輸入支票張數："); int i = sc.nextInt();
+		System.out.printf("帳戶維持費用：%d 元",
+			i *(i < 20 ? 10 : i < 40 ? 8 : i < 60 ? 6 : 4)+ 100);
+		*/
+		
+		/* Q5
+		for(int i = 1; i <= 15; i++)
+			System.out.printf("%3d 公斤的物品總費用為 %3d 元\n", i,
+				Math.min(i, 5)* 30 + Math.max(i - 5, 0)* 20 + (i <= 10 ? 50 : 0));
+		*/		
+	}
+}
+```
