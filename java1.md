@@ -111,13 +111,13 @@ class	B0000000__midterm {
 		*/
 		
 		/* Q3
-		System.out.printf("輸入秒數："); int i = sc.nextInt();
+		System.out.printf("輸入整數秒數："); int i = sc.nextInt();
 		System.out.printf("%d 秒為 %d 天 %d 時 %d 分 %d 秒", i ,
 			i / 86400, i % 86400 / 3600, i % 3600 / 60, i % 60);
 		*/
 		
 		/* Q4
-		System.out.printf("支票張數："); int i = sc.nextInt();
+		System.out.printf("輸入支票張數："); int i = sc.nextInt();
 		System.out.printf("帳戶維持費用：%d 元",
 			i *(i < 20 ? 10 : i < 40 ? 8 : i < 60 ? 6 : 4)+ 100);
 		*/
