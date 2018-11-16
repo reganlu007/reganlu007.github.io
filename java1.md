@@ -99,9 +99,9 @@ class	B0000000__midterm {
 		Scanner sc = new Scanner (System.in);
 		
 		/* Q1
-		System.out.printf("長方形的底："); int w = sc.nextInt();
-		System.out.printf("長方形的高："); int h = sc.nextInt();
-		System.out.printf("長方形面積：%d" , w * h);
+		System.out.printf("長方形的長　："); int w = sc.nextInt();
+		System.out.printf("長方形的寬　："); int h = sc.nextInt();
+		System.out.printf("長方形的面積：%d" , w * h);
 		*/
 		
 		/* Q2
