@@ -2,7 +2,7 @@
 
 3.
 ```
-class	B0000000_03 {
+class	B0000000__03 {
 	public	static void main(String[] args) {
 		double h = 160, w = 60, bmi = w * 10000 / h / h;
 		System.out.print("我的學號是 B0000000，身高 "+ h +" 公分，體重 "+ w +" 公斤，bmi 為 "+ bmi);
@@ -12,7 +12,7 @@ class	B0000000_03 {
 4.
 ```
 import	java.util.Scanner;
-class	B0000000_04 {
+class	B0000000__04 {
 	public	static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("請輸入男生人數:");
@@ -28,7 +28,7 @@ class	B0000000_04 {
 5.
 ```
 import	javax.swing.JOptionPane;
-class	B0000000_05 {
+class	B0000000__05 {
 	public	static void main(String[] args) {
 		int qty = Integer.valueOf(JOptionPane.showInputDialog("請輸入購買數量")), price = 100;
 		JOptionPane.showMessageDialog(null,
@@ -40,7 +40,7 @@ class	B0000000_05 {
 6.
 ```
 import	java.util.Scanner;
-class	B0000000_06 {
+class	B0000000__06 {
 	public	static void main(String[] args) {
 		Scanner	sc = new Scanner(System.in);
 		System.out.print("請輸入方案：　　");
@@ -58,7 +58,7 @@ class	B0000000_06 {
 7.
 ```
 import	java.util.Scanner;
-class	B0000000_07 {
+class	B0000000__07 {
 	public	static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		System.out.printf("輸入搜尋範圍：");
@@ -74,7 +74,7 @@ class	B0000000_07 {
 ```
 8.
 ```
-class	B0000000_08 {
+class	B0000000__08 {
 	public	static void main(String[] args) {
 		String s = "";
 		int man = 0, com = 0, tie = 0;
@@ -94,8 +94,8 @@ class	B0000000_08 {
 
 ```
 import	java.util.Scanner;
-class	B0000000_midterm {
-	public static void main(String[] args){
+class	B0000000__midterm {
+	public	static void main(String[] args){
 		Scanner sc = new Scanner(System.in);
 		
 		/* Q1
