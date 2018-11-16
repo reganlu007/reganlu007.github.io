@@ -15,9 +15,9 @@ import	java.util.Scanner;
 class	B0000000__04 {
 	public	static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		System.out.print("請輸入男生人數:");
+		System.out.print("請輸入男生人數：");
 		int m = sc.nextInt();
-		System.out.print("請輸入女生人數:");
+		System.out.print("請輸入女生人數：");
 		int f = sc.nextInt();
 		System.out.print("本班有男生 "+ m +" 人，女生 "+ f +" 人，總人數 "+ (m + f) +" 人。\n" + 
 			"男生比例為 "+ m * 100.0 / (m + f) +"%，" +
