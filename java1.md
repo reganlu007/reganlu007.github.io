@@ -96,7 +96,7 @@ class	B0000000__08 {
 import	java.util.Scanner;
 class	B0000000__midterm {
 	public	static void main(String[] args){
-		Scanner sc = new Scanner(System.in);
+		Scanner sc = new Scanner (System.in);
 		
 		/* Q1
 		System.out.printf("長方形的底："); int w = sc.nextInt();
