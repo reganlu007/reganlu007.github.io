@@ -31,8 +31,9 @@ import	javax.swing.JOptionPane;
 class	B0000000_05 {
 	public	static void main(String[] args) {
 		int qty = Integer.valueOf(JOptionPane.showInputDialog("請輸入購買數量")), price = 100;
-		JOptionPane.showMessageDialog(null, "您購買" + qty + "件商品，原價為" + qty * price + "元，折扣後價格為" +
-			qty * price * (qty >= 100 ? 0.5 : qty >= 50 ? 0.6 : qty >= 20 ? 0.7 : qty >= 10 ? 0.8 : 1) + "元");
+		JOptionPane.showMessageDialog(null,
+			"您購買" + qty + "件商品，原價為" + qty * price + "元，折扣後價格為" + qty * price *
+			(qty >= 100 ? 0.5 : qty >= 50 ? 0.6 : qty >= 20 ? 0.7 : qty >= 10 ? 0.8 : 1) + "元");
 	}
 }
 ```
@@ -84,7 +85,8 @@ class	B0000000_08 {
 			if (d_1 == d_2){tie++; s = "平手　　";}
 			System.out.printf("第 %2d 次：1 號骰子：%d\t2 號骰子：%d\t%s\n", ++i, d_1, d_2, s);
 		}
-		System.out.printf("\n比賽結果統計：電腦獲勝 %d 次，玩家獲勝 %d 次，雙方平手 %d 次。", com, man, tie);
+		System.out.printf("\n比賽結果統計：電腦獲勝 %d 次，玩家獲勝 %d 次，雙方平手 %d 次。",
+			com, man, tie);
 	}
 }
 ```
@@ -116,7 +118,7 @@ class	B0000000_midterm {
 		*/
 		
 		/* Q4
-		System.out.printf("輸入支票張數："); int i = sc.nextInt();
+		System.out.printf("支票張數："); int i = sc.nextInt();
 		System.out.printf("帳戶維持費用：%d 元",
 			i *(i < 20 ? 10 : i < 40 ? 8 : i < 60 ? 6 : 4)+ 100);
 		*/
