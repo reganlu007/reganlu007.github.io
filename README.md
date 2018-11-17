@@ -33,4 +33,4 @@
 |1|[異族爭霸]|由烏丸、鮮卑、山越、南蠻，以及漢帝「劉協」所編織出來的世界。<br>消滅其他勢力，成為所有勢力的領導者，那就是異族爭霸！
 
 [原始劇本]: /reganlu007/reganlu007.github.io/raw/master/原始劇本.7z
-[異族爭霸]: /reganlu007/reganlu007.github.io/raw/master/SCEN015-異族爭霸.S11
+[異族爭霸]: /reganlu007/reganlu007.github.io/raw/master/SCEN015-01.S11
