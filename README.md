@@ -20,3 +20,13 @@
 [科技]: https://reganlu007.github.io/三國志11科技列表
 [戰法]: https://reganlu007.github.io/三國志11戰法列表
 [修練]: https://reganlu007.github.io/三國志11修練列表
+
+#  自製劇本下載
+
+請用滑鼠右鍵點選連結，另存連結至 scenario 資料夾，即可下載劇本
+
+|編號|名稱|介紹
+|:-:|-|-
+|1|[異族爭霸]|由烏丸、鮮卑、山越、南蠻，以及漢帝「劉協」所編織出來的世界。<br>消滅其他勢力，成為所有勢力的領導者，那就是異族爭霸！
+
+[異族爭霸]: /reganlu007/reganlu007.github.io/raw/master/SCEN015-異族爭霸.S11
