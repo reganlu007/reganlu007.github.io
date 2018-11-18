@@ -30,7 +30,7 @@
 |編號|名稱|介紹
 |:-:|-|-
 |0|[原始劇本]|還原原始劇本用
-|1|[異族爭霸]|由烏丸、羌族、山越、南蠻，以及獻帝所組成的世界。<br>消滅其他勢力，成為所有勢力的領導者，那就是異族爭霸！
+|1|[異族爭霸]|由烏丸、羌族、山越、南蠻，以及獻帝所組成的世界。<br>消滅其他勢力，成為全勢力的領導者，就是異族爭霸！
 
 [原始劇本]: https://github.com/reganlu007/reganlu007.github.io/raw/master/原始劇本.7z
 [異族爭霸]: https://github.com/reganlu007/reganlu007.github.io/raw/master/SCEN015.S11
