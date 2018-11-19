@@ -1,10 +1,6 @@
-# 無視檔案大小，讀取前六行 (含標頭)
-
-```
 readHead=function(x){
 	pt  =file(x, "r")
 	name=strsplit(readLines(pt, 1), split=',')[[1]]
 	data=read.table(text=readLines(pt, 6), sep=',', col.names=name)
 	data
 }
-```
