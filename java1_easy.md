@@ -91,15 +91,15 @@ public	class b0744122_06 {
 import	java.util.Scanner;
 public	class B0744110_07 {
 	public static void main(String[] args) {
-		int a,b,n,index,output,sum;		
+		int a,b,n,index,output,sum;
 		Scanner keyboard = new Scanner(System.in);
 		System.out.println("輸入搜尋範圍:");
 		a = keyboard.nextInt();
-		b = keyboard.nextInt();		
+		b = keyboard.nextInt();
 		System.out.print("輸入N:");
-		n = keyboard.nextInt();		
+		n = keyboard.nextInt();
 		index=1;
-		sum=0;		
+		sum=0;
 		System.out.print(a+"和"+b+"之間，"+n+"的倍數有:");
 		while(n*index<=b)
 		{
@@ -107,8 +107,8 @@ public	class B0744110_07 {
 			sum+=output;
 			index++;
 			System.out.printf(output+" ");
-		}		
-		System.out.print("，總和有"+sum+"。");		
+		}
+		System.out.print("，總和有"+sum+"。");
 	}
 }
 ```
@@ -127,7 +127,7 @@ public	class B0744112_08 {
 			computer = randomnumber.nextInt(6)+1;
 			player   = randomnumber.nextInt(6)+1;
 			if (computer>player) {
-				System.out.println("第"+time+"次"+"\t"+"1號骰子:"+computer+"\t"+"2號骰子："+player+"\t"+"電腦獲勝");	
+				System.out.println("第"+time+"次"+"\t"+"1號骰子:"+computer+"\t"+"2號骰子："+player+"\t"+"電腦獲勝");
 				sumC++;
 			} else if (computer<player) {
 				System.out.println("第"+time+"次"+"\t"+"1號骰子:"+computer+"\t"+"2號骰子："+player+"\t"+"玩家獲勝");
@@ -138,6 +138,71 @@ public	class B0744112_08 {
 			}
 		}
 		System.out.println("比賽結果統計：電腦獲勝"+sumC+"次，玩家獲勝"+sumP+"次，雙方平手"+sumB+"次。");
-    }
+	}
+}
+```
+# 期中上機參考答案
+```
+import	java.util.Scanner;
+class	B0000000__midterm {
+	public	static void main(String[] args){
+	/* Q1
+		int A,B;
+		Scanner key = new Scanner(System.in);
+		System.out.println("請輸入長方形的底：");
+		A = key.nextInt();
+		System.out.println("請輸入長方形的高：");
+		B = key.nextInt();
+		System.out.printf("長方形的面積為 %d",A*B);
+	*/
+	/* Q2
+		int a, b, c;		
+		Scanner	key = new Scanner(System.in);
+		System.out.println("請輸入三個整數：");
+		a = key.nextInt();
+		b = key.nextInt();
+		c = key.nextInt();			
+		if ((a%c == 0)&&(b%c == 0))
+			System.out.printf("%d  是%d和%d的公因數。",c,a,b);
+		else
+			System.out.printf("%d不是%d和%d的公因數。",c,a,b);
+	*/
+	/* Q3		
+		Scanner keyboard = new Scanner(System.in);
+		int sec;
+		int min;
+		int hr;
+		int day;
+		System.out.println("輸入秒數:");
+		sec = keyboard.nextInt();
+		System.out.print(sec+"秒為"+ sec/86400 +"天"+ sec%86400/3600 +"時"+ sec%86400%3600/60 +"分"+ sec%86400%3600%60 +"秒");
+	*/
+	/* Q4
+		int a;		
+		Scanner key = new Scanner(System.in);		
+		System.out.print("輸入支票張數：");
+		a = key.nextInt();		
+		if(a<20)
+			System.out.printf("帳戶維持費用為%d元",a*10+100);
+		else if(a<40)
+			System.out.printf("帳戶維持費用為%d元",a* 8+100);
+		else if(a<60)
+			System.out.printf("帳戶維持費用為%d元",a* 6+100);
+		else
+			System.out.printf("帳戶維持費用為%d元",a* 4+100);
+	*/		
+	/* Q5
+		int weight;
+		for (weight = 1; weight <= 15; weight++) {
+			if (weight <= 5)
+				System.out.printf("%d公斤的物品總費用為：%d元", weight, weight * 30 + 50);
+			else if (weight <= 10)
+				System.out.printf("%d公斤的物品總費用為：%d元", weight, 5 * 30 + (weight - 5) * 20 + 50);
+			else
+				System.out.printf("%d公斤的物品總費用為：%d元", weight, 5 * 30 + (weight - 5) * 20);
+			System.out.println("");
+		}
+	*/
+	}
 }
 ```
