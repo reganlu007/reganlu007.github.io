@@ -183,13 +183,13 @@ class	B0000000__midterm {
 		System.out.print("輸入支票張數：");
 		a = key.nextInt();		
 		if(a<20)
-			System.out.printf("帳戶維持費用為%d元",a*10+100);
+			System.out.printf("帳戶維持費用為%d元", a*10+100);
 		else if(a<40)
-			System.out.printf("帳戶維持費用為%d元",a* 8+100);
+			System.out.printf("帳戶維持費用為%d元", a* 8+100);
 		else if(a<60)
-			System.out.printf("帳戶維持費用為%d元",a* 6+100);
+			System.out.printf("帳戶維持費用為%d元", a* 6+100);
 		else
-			System.out.printf("帳戶維持費用為%d元",a* 4+100);
+			System.out.printf("帳戶維持費用為%d元", a* 4+100);
 	*/		
 	/* Q5
 		int weight;
