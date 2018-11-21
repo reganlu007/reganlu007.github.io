@@ -126,7 +126,7 @@ class	B0000000__midterm {
 		for(int i = 1; i <= 15; i++)
 			System.out.printf("%3d 公斤的物品總費用為 %3d 元\n", i,
 				Math.min(i, 5)* 30 + Math.max(i - 5, 0)* 20 + (i <= 10 ? 50 : 0));
-		*/		
+		*/
 	}
 }
 ```
