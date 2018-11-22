@@ -175,7 +175,11 @@ class	B0000000__midterm {
 		int day;
 		System.out.println("輸入秒數:");
 		sec = keyboard.nextInt();
-		System.out.print(sec+"秒為"+ sec/86400 +"天"+ sec%86400/3600 +"時"+ sec%86400%3600/60 +"分"+ sec%86400%3600%60 +"秒");
+		System.out.print(sec+"秒為"
+		+ sec / 86400 +"天"
+		+ sec % 86400 / 3600 +"時"
+		+ sec % 86400 % 3600 / 60 +"分"
+		+ sec % 86400 % 3600 % 60 +"秒");
 	*/
 	/* Q4
 		int a;		
