@@ -140,6 +140,43 @@ public	class B0744112_08 {
 	}
 }
 ```
+9.
+```
+import	java.util.Scanner;
+import	java.io.*;
+class	B0000000_09 {
+		static void pt  (PrintWriter pw, String s){pw.print(s); System.out.print(s);}
+	public	static void main(String[]  args) throws IOException{
+		PrintWriter pw = new PrintWriter("B0000000.txt");
+		    Scanner sc = new Scanner(System.in);
+		int  com = 0, ya = 0;
+		for (int i = 1; i <= 5; i++){
+			pt(pw, "第 "+ i +" 次：\r\n請選擇顏色 (1：紅色，2：綠色，3：藍色，4：橘色，5：黃色)：");
+			int man = sc.nextInt();
+			pt(pw, "電腦選擇顏色：");
+			switch (com = (int)(Math.random() * 5) + 1){
+				case 1: pt (pw, "紅色"); break;
+				case 2: pt (pw, "綠色"); break;
+				case 3: pt (pw, "藍色"); break;
+				case 4: pt (pw, "橘色"); break;
+				case 5: pt (pw, "黃色"); break;
+			}
+			pt(pw, "\t玩家選擇顏色：");
+			switch (man){
+				case 1: pt (pw, "紅色"); break;
+				case 2: pt (pw, "綠色"); break;
+				case 3: pt (pw, "藍色"); break;
+				case 4: pt (pw, "橘色"); break;
+				case 5: pt (pw, "黃色"); break;
+			}
+			pt(pw, "\t玩家答" + (com == man ? "對" : "錯") +"\r\n");			
+			if(com == man) ya++;
+		}
+		pt(pw, "\r\n遊戲結束：玩家總共答對 "+ ya +" 次。");
+		pw.close();
+	}
+}
+```
 # 期中上機參考答案 [精簡版](https://reganlu007.github.io/java1#期中上機參考答案)
 ```
 import	java.util.Scanner;
