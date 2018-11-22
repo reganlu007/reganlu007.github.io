@@ -145,7 +145,7 @@ public	class B0744112_08 {
 import	java.util.Scanner;
 class	B0000000__midterm {
 	public	static void main(String[] args){
-	/* Q1
+/*	Q1
 		int A,B;
 		Scanner key = new Scanner(System.in);
 		System.out.println("請輸入長方形的底：");
@@ -153,8 +153,8 @@ class	B0000000__midterm {
 		System.out.println("請輸入長方形的高：");
 		B = key.nextInt();
 		System.out.printf("長方形的面積為 %d",A*B);
-	*/
-	/* Q2
+*/
+/*	Q2
 		int a, b, c;		
 		Scanner	key = new Scanner(System.in);
 		System.out.println("請輸入三個整數：");
@@ -165,8 +165,8 @@ class	B0000000__midterm {
 			System.out.printf("%d  是%d和%d的公因數。",c,a,b);
 		else
 			System.out.printf("%d不是%d和%d的公因數。",c,a,b);
-	*/
-	/* Q3		
+*/
+/*	Q3		
 		Scanner keyboard = new Scanner(System.in);
 		int sec;
 		int min;
@@ -179,8 +179,8 @@ class	B0000000__midterm {
 		+ sec % 86400 / 3600 +"時"
 		+ sec % 86400 % 3600 / 60 +"分"
 		+ sec % 86400 % 3600 % 60 +"秒");
-	*/
-	/* Q4
+*/
+/*	Q4
 		int a;		
 		Scanner key = new Scanner(System.in);		
 		System.out.print("輸入支票張數：");
@@ -193,8 +193,8 @@ class	B0000000__midterm {
 			System.out.printf("帳戶維持費用為%d元", a* 6+100);
 		else
 			System.out.printf("帳戶維持費用為%d元", a* 4+100);
-	*/		
-	/* Q5
+*/		
+/*	Q5
 		int weight;
 		for (weight = 1; weight <= 15; weight++) {
 			if (weight <= 5)
@@ -205,7 +205,7 @@ class	B0000000__midterm {
 				System.out.printf("%d公斤的物品總費用為：%d元", weight, 5 * 30 + (weight - 5) * 20);
 			System.out.println("");
 		}
-	*/
+*/
 	}
 }
 ```
