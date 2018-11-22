@@ -97,31 +97,31 @@ import	java.util.Scanner;
 class	B0000000__midterm {
 	public	static void main(String[] args){
 		Scanner sc = new Scanner (System.in);	
-	/* Q1
+/*	Q1
 		System.out.printf("長方形的長　："); int l = sc.nextInt();
 		System.out.printf("長方形的寬　："); int w = sc.nextInt();
 		System.out.printf("長方形的面積：%d" , l * w);
-	*/		
-	/* Q2
+*/		
+/*	Q2
 		System.out.printf("輸入三個整數："); int a = sc.nextInt(), b = sc.nextInt(), c = sc.nextInt();
 		System.out.printf("%d %s是 %d 和 %d 的公因數 " , c,
 			(a % c == 0 && b % c == 0 ? "" : "不"), a, b);
-	*/
-	/* Q3
+*/
+/*	Q3
 		System.out.printf("輸入整數秒數："); int sec = sc.nextInt();
 		System.out.printf("%d 秒為 %d 天 %d 時 %d 分 %d 秒", sec,
 			sec / 86400, sec % 86400 / 3600, sec % 3600 / 60, sec % 60);
-	*/	
-	/* Q4
+*/	
+/*	Q4
 		System.out.printf("輸入支票張數："); int x = sc.nextInt();
 		System.out.printf("帳戶維持費用：%d 元",
 			x *(x < 20 ? 10 : x < 40 ? 8 : x < 60 ? 6 : 4)+ 100);
-	*/	
-	/* Q5
+*/	
+/*	Q5
 		for(int i = 1; i <= 15; i++)
 			System.out.printf("%3d 公斤的物品總費用為 %3d 元\n", i,
 				Math.min(i, 5)* 30 + Math.max(i - 5, 0)* 20 + (i <= 10 ? 50 : 0));
-	*/
+*/
 	}
 }
 ```
