@@ -1,5 +1,4 @@
-# 同學範例解答
-# [精簡版](https://reganlu007.github.io/java1)
+# 同學範例解答 [精簡版](https://reganlu007.github.io/java1)
 3.
 ```
 public	class	B0744104_03 {
