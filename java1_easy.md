@@ -141,7 +141,7 @@ public	class B0744112_08 {
 	}
 }
 ```
-# 期中上機參考答案
+# 期中上機參考答案 [精簡版](https://reganlu007.github.io/java1#期中上機參考答案)
 ```
 import	java.util.Scanner;
 class	B0000000__midterm {
