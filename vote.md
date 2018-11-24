@@ -10,12 +10,14 @@
 |[金門縣]|[連江縣]
 
 [連江縣]:https://www.cec.gov.tw/pc/zh_TW/TC/sm09007000000000000.html
+[金門縣]:https://www.cec.gov.tw/pc/zh_TW/TC/sm09020000000000000.html
 [新竹縣]:https://www.cec.gov.tw/pc/zh_TW/TC/sm10004000000000000.html
 [苗栗縣]:https://www.cec.gov.tw/pc/zh_TW/TC/sm10005000000000000.html
 [彰化縣]:https://www.cec.gov.tw/pc/zh_TW/TC/sm10007000000000000.html
 [南投縣]:https://www.cec.gov.tw/pc/zh_TW/TC/sm10008000000000000.html
 [雲林縣]:https://www.cec.gov.tw/pc/zh_TW/TC/sm10009000000000000.html
 [嘉義縣]:https://www.cec.gov.tw/pc/zh_TW/TC/sm10010000000000000.html
+[屏東縣]:https://www.cec.gov.tw/pc/zh_TW/TC/sm10013000000000000.html
 [基隆市]:https://www.cec.gov.tw/pc/zh_TW/TC/sm10017000000000000.html
 [新竹市]:https://www.cec.gov.tw/pc/zh_TW/TC/sm10018000000000000.html
 [嘉義市]:https://www.cec.gov.tw/pc/zh_TW/TC/sm10020000000000000.html
