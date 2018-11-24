@@ -25,6 +25,11 @@
 |[新竹市]
 |[嘉義市]
 
+[新竹縣]:https://www.cec.gov.tw/pc/zh_TW/TC/sm10004000000000000.html
+[苗栗縣]:https://www.cec.gov.tw/pc/zh_TW/TC/sm10005000000000000.html
+[彰化縣]:https://www.cec.gov.tw/pc/zh_TW/TC/sm10007000000000000.html
+[南投縣]:https://www.cec.gov.tw/pc/zh_TW/TC/sm10008000000000000.html
+[雲林縣]:https://www.cec.gov.tw/pc/zh_TW/TC/sm10009000000000000.html
 [臺北市]:https://www.cec.gov.tw/pc/zh_TW/TC/sm63000000000000000.html
 [高雄市]:https://www.cec.gov.tw/pc/zh_TW/TC/sm64000000000000000.html
 [新北市]:https://www.cec.gov.tw/pc/zh_TW/TC/sm65000000000000000.html
