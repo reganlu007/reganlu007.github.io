@@ -15,6 +15,7 @@
 [南投縣]:https://www.cec.gov.tw/pc/zh_TW/TC/sm10008000000000000.html
 [雲林縣]:https://www.cec.gov.tw/pc/zh_TW/TC/sm10009000000000000.html
 [嘉義縣]:https://www.cec.gov.tw/pc/zh_TW/TC/sm10010000000000000.html
+[基隆市]:https://www.cec.gov.tw/pc/zh_TW/TC/sm10017000000000000.html
 [新竹市]:https://www.cec.gov.tw/pc/zh_TW/TC/nm10018000000000000.html
 [嘉義市]:https://www.cec.gov.tw/pc/zh_TW/TC/sm10020000000000000.html
 [臺北市]:https://www.cec.gov.tw/pc/zh_TW/TC/sm63000000000000000.html
