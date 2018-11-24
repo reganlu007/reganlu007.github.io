@@ -9,6 +9,7 @@
 |[臺東縣]|[花蓮縣]|[宜蘭縣]|[澎湖縣]
 |[金門縣]|[連江縣]
 
+[連江縣]:https://www.cec.gov.tw/pc/zh_TW/TC/sm09007000000000000.html
 [新竹縣]:https://www.cec.gov.tw/pc/zh_TW/TC/sm10004000000000000.html
 [苗栗縣]:https://www.cec.gov.tw/pc/zh_TW/TC/sm10005000000000000.html
 [彰化縣]:https://www.cec.gov.tw/pc/zh_TW/TC/sm10007000000000000.html
@@ -16,7 +17,7 @@
 [雲林縣]:https://www.cec.gov.tw/pc/zh_TW/TC/sm10009000000000000.html
 [嘉義縣]:https://www.cec.gov.tw/pc/zh_TW/TC/sm10010000000000000.html
 [基隆市]:https://www.cec.gov.tw/pc/zh_TW/TC/sm10017000000000000.html
-[新竹市]:https://www.cec.gov.tw/pc/zh_TW/TC/nm10018000000000000.html
+[新竹市]:https://www.cec.gov.tw/pc/zh_TW/TC/sm10018000000000000.html
 [嘉義市]:https://www.cec.gov.tw/pc/zh_TW/TC/sm10020000000000000.html
 [臺北市]:https://www.cec.gov.tw/pc/zh_TW/TC/sm63000000000000000.html
 [高雄市]:https://www.cec.gov.tw/pc/zh_TW/TC/sm64000000000000000.html
@@ -24,4 +25,3 @@
 [臺中市]:https://www.cec.gov.tw/pc/zh_TW/TC/sm66000000000000000.html
 [臺南市]:https://www.cec.gov.tw/pc/zh_TW/TC/sm67000000000000000.html
 [桃園市]:https://www.cec.gov.tw/pc/zh_TW/TC/sm68000000000000000.html
-
