@@ -143,8 +143,8 @@ class	B0000000__midterm {
 	public	static void main(String[] args){
 		Scanner sc = new Scanner (System.in);	
 /*	Q1
-		System.out.printf("長方形的長　："); int l = sc.nextInt();
-		System.out.printf("長方形的寬　："); int w = sc.nextInt();
+		System.out.printf("長方形的長度："); int l = sc.nextInt();
+		System.out.printf("長方形的寬度："); int w = sc.nextInt();
 		System.out.printf("長方形的面積：%d" , l * w);
 */		
 /*	Q2
