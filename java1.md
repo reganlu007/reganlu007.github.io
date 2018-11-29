@@ -122,8 +122,8 @@ class	B0000000__10 {
 		System.out.print("輸入：");
 		calculate(sc.nextInt(), sc.nextInt(), sc.next());
 	}
-	static	void calculate(double a, int b, String c){
-		System.out.printf("輸出：%.0f %s %d = ", a, c, b);
+	static	void calculate(double a, double b, String c){
+		System.out.printf("輸出：%.0f %s %d.0f = ", a, c, b);
 		switch(c) {
 			case "+": a += b; break;
 			case "-": a -= b; break;
