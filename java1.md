@@ -123,7 +123,7 @@ class	B0000000__10 {
 		calculate(sc.nextInt(), sc.nextInt(), sc.next());
 	}
 	static	void calculate(double a, int b, String c){
-		System.out.printf("輸出：%.0f %s %d = ",  a, c, b);
+		System.out.printf("輸出：%.0f %s %d = ", a, c, b);
 		switch(c) {
 			case "+": a += b; break;
 			case "-": a -= b; break;
