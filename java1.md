@@ -113,6 +113,29 @@ class	B0000000__09 {
 	}
 }
 ```
+10.
+```
+import	java.util.Scanner;
+class	B0000000__10 {
+	public	static void main (String[] args){
+		Scanner sc = new Scanner(System.in);
+		System.out.print("輸入：");
+		calculate(sc.nextInt(), sc.nextInt(), sc.next());
+	}
+	static	void calculate(double a, int b, String c){
+		System.out.printf("輸出：%.0f %s %d = ",  a, c, b);
+		switch(c) {
+			case "+": a += b; break;
+			case "-": a -= b; break;
+			case "*": a *= b; break;
+			case "/": a /= b; break;
+			case "%": a %= b; break;
+			case "^": a  = Math.pow(a, b); break;
+		}
+		System.out.print(a);
+	}
+}
+```
 # 期中上機參考答案
 ```
 import	java.util.Scanner;
