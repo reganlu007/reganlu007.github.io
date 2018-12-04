@@ -1,5 +1,5 @@
-readHead = function(x, n=6){
-    pt   = file(x, "r")
-    name = strsplit  (readLines(pt, 1), split=',')[[1]]
-    data = read.table(text = readLines(pt, n), sep=',', col.names = name);data
+readHead = function(a, n=6){
+    x = file(a, "r")
+    y = strsplit  (readLines(a, 1), split=',')[[1]]
+    z = read.table(text = readLines(a, n), sep=',', col.names = y);z
 }
