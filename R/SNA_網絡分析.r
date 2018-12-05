@@ -1,3 +1,5 @@
+library(data.table);library(magrittr);library(dplyr);library(igraph)
+
 load('termDocMatrix.rdata')
 
 termDocMatrix
