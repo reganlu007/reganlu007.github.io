@@ -4,8 +4,8 @@ a = fread('門0.csv')[,c(-2,-1)]
 b = fread('住0.csv')[,c(-3,-2,-1)]
 
 SNA = function(x){
-  x = data.matrix((x[x>=1] = 1))
-  return(simplify(graph.adjacency(t(x) %*% x, weighted=T, mode = 'undirected')))
+  x = data.matrix((x[x>=1]=1))
+  return(simplify(graph.adjacency((t(x) %*% x), weighted = T, mode = 'undirected')))
 }
 PIC = function(g){
   V(g)$label = V(g)$name
