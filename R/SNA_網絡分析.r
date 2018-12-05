@@ -4,7 +4,7 @@ a = fread('門0.csv')[,c(-2,-1)]
 b = fread('住0.csv')[,c(-3,-2,-1)]
 
 SNA = function(x){
-  x = data.matrix(x[x>=1] = 1)
+  x = data.matrix((x[x>=1] = 1))
   g = simplify(graph.adjacency(t(x) %*% x, weighted=T, mode = 'undirected'))
   V(g)$label = V(g)$name
   V(g)$degree = degree(g)
