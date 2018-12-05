@@ -21,3 +21,8 @@ PIC_2 = function(g = PIC(g)){
   plot(g, layout=layout.fruchterman.reingold)
   return(g)
 }
+
+PIC(SNA(a))
+PIC(SNA(b))
+PIC_2(SNA(a))
+PIC_2(SNA(b))
