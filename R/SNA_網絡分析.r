@@ -1,9 +1,6 @@
 library(igraph)
-
 load('termDocMatrix.rdata')
-
 termDocMatrix
-
 termDocMatrix[termDocMatrix>=1] = 1
 x = termDocMatrix %*% t(termDocMatrix)
 x[5:10,5:10]
