@@ -1,4 +1,4 @@
-library(data.table);library(magrittr);library(dplyr);library(igraph)
+library(igraph)
 
 load('termDocMatrix.rdata')
 
