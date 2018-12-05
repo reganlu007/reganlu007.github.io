@@ -5,7 +5,7 @@ library(data.table);library(magrittr);library(igraph)
 住1 = 住0[grep('E9385CAAB8C5A00B',醫師別)][,c(-3,-2,-1)]
 住2 = 住0[grep('F4262C7C21D08356',醫師別)][,c(-3,-2,-1)]
 住3 = 住0[grep('3941BF4DECDAE0F9',醫師別)][,c(-3,-2,-1)]
-住0[,c(-3,-2,-1)]
+住0 = 住0[,c(-3,-2,-1)]
 
 SNA = function(x){x[x>=1] = 1; graph.adjacency(t(x %<>% data.matrix) %*% x, weighted = T, mode = 'undirected')%>% simplify %>% return}
 PIC = function(g){
