@@ -1,9 +1,9 @@
 library(data.table);library(magrittr);library(igraph)
 
 門0 = fread('門.csv')
-門1 = [grep('D31894D58D22CDECC5A55826F57B8DB1A6EE82CC', 主治醫師代號)][,c(-3,-2,-1)]
-門2 = [grep('3495F5EE004CF696D29F9FB0C0240EC3294EBFB9', 主治醫師代號)][,c(-3,-2,-1)]
-門3 = [grep('F01E3845A2DB53B44940D2E256DB96BC48FF1EFB', 主治醫師代號)][,c(-3,-2,-1)]
+門1 = 門0[grep('D31894D58D22CDECC5A55826F57B8DB1A6EE82CC', 主治醫師代號)][,c(-3,-2,-1)]
+門2 = 門0[grep('3495F5EE004CF696D29F9FB0C0240EC3294EBFB9', 主治醫師代號)][,c(-3,-2,-1)]
+門3 = 門0[grep('F01E3845A2DB53B44940D2E256DB96BC48FF1EFB', 主治醫師代號)][,c(-3,-2,-1)]
 門0 = 門0[,c(-3,-2,-1)]
 
 住0 = fread('住.csv')
