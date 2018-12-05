@@ -1,7 +1,11 @@
 library(data.table);library(magrittr);library(igraph)
 
-a = fread('門0.csv')[,c(-2,-1)]
-b = fread('住0.csv')[,c(-3,-2,-1)]
+門0 = fread('門.csv')[,c(-3,-2,-1)]
+住0 = fread('住.csv')
+住1 = 住0[grep('E9385CAAB8C5A00B',醫師別)][,c(-3,-2,-1)]
+住2 = 住0[grep('F4262C7C21D08356',醫師別)][,c(-3,-2,-1)]
+住3 = 住0[grep('3941BF4DECDAE0F9',醫師別)][,c(-3,-2,-1)]
+住0[,c(-3,-2,-1)]
 
 SNA = function(x){x[x>=1] = 1; graph.adjacency(t(x %<>% data.matrix) %*% x, weighted = T, mode = 'undirected')%>% simplify %>% return}
 PIC = function(g){
@@ -21,8 +25,3 @@ PIC_2 = function(g = PIC(g)){
   plot(g, layout=layout.fruchterman.reingold)
   return(g)
 }
-
-PIC(SNA(a))
-PIC(SNA(b))
-PIC_2(SNA(a))
-PIC_2(SNA(b))
