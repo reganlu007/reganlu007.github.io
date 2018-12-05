@@ -11,8 +11,7 @@ PIC = function(g){
   plot(g, layout=layout.kamada.kawai)
   return(g)
 }
-PIC_2 = function(g){
-  g = PIC(g)
+PIC_2 = function(g = PIC(g)){
   V(g)$label.cex   = 2.2 * V(g)$degree / max(V(g)$degree)+ .2
   V(g)$label.color = rgb(0, 0, .2, .8)
   V(g)$frame.color = NA
