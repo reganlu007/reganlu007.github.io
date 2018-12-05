@@ -11,7 +11,7 @@ SNA = function(x){
   set.seed(1)
   plot(g, layout=layout.fruchterman.reingold)
   plot(g, layout=layout.kamada.kawai)
-  g
+  return(g)
 }
 
 V(g)$label.cex = 2.2 * V(g)$degree / max(V(g)$degree)+ .2
