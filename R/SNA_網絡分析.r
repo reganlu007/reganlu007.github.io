@@ -2,7 +2,8 @@ library(igraph)
 load('termDocMatrix.rdata')
 termDocMatrix
 termDocMatrix[termDocMatrix>=1] = 1
-x = termDocMatrix %*% t(termDocMatrix)
+x = data.matrix(termDocMatrix)
+x = x %*% t(x)
 x[5:10,5:10]
 
 g = simplify(graph.adjacency(x, weighted=T, mode = 'undirected'))
