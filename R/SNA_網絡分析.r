@@ -3,7 +3,7 @@ load('termDocMatrix.rdata')
 termDocMatrix
 termDocMatrix[termDocMatrix>=1] = 1
 x = data.matrix(termDocMatrix)
-x = x %*% t(x)
+x = ifelse(dim(x)[1] < dim(x)[2], x %*% t(x), t(x) %*% x)
 x
 g = simplify(graph.adjacency(x, weighted=T, mode = 'undirected'))
 V(g)$label = V(g)$name
