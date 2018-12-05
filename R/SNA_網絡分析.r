@@ -3,10 +3,8 @@ load('termDocMatrix.rdata')
 termDocMatrix
 termDocMatrix[termDocMatrix>=1] = 1
 x = data.matrix(termDocMatrix)
-x = x %*% t(x)
-x[5:10,5:10]
 
-g = simplify(graph.adjacency(x, weighted=T, mode = 'undirected'))
+g = simplify(graph.adjacency((x %*% t(x)), weighted=T, mode = 'undirected'))
 V(g)$label = V(g)$name
 V(g)$degree = degree(g)
 set.seed(3952)
