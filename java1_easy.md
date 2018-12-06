@@ -177,6 +177,61 @@ class	B0000000_09 {
 	}
 }
 ```
+10.
+```
+import java.util.Scanner;
+public class B0744112_10 {
+	public static void main(String[] args){
+		Scanner ky = new Scanner(System.in);
+		System.out.println("請輸入2個整數數字和1個運算符號");
+		int n1 = ky.nextInt();
+		int n2 = ky.nextInt();
+		String a = ky.next();
+		calculate(n1,n2,a);
+	}
+	static void calculate(double n3, double n4 , String s){ 
+		switch(s){
+			case"+":
+			System.out.println(n3+"+"+n4+"="+(n3+n4));
+			break;
+			case"-":
+			System.out.println(n3+"-"+n4+"="+(n3-n4));
+			break;
+			case"*":
+			System.out.println(n3+"*"+n4+"="+(n3*n4));
+			break;
+			case"/":
+			System.out.println(n3+"/"+n4+"="+(n3/n4));
+			break;
+		}  
+	} 	 	 
+}
+```
+11.
+```
+import java.util.Scanner;
+public class B0744108_11 {
+	public static void main(String[] args) {
+		Scanner x = new Scanner(System.in);
+		System.out.print("輸入");
+		int N=x.nextInt();
+		System.out.print("輸出：2~"+N+"之間包含的質數有：");
+		for(int i=2;i<=N;i++) {
+			if(isPrime(i)) {
+				System.out.print( "  "+i );
+			}
+		}
+
+	}
+	private static boolean isPrime(int sum) {
+		for(int k=2;k<sum;k++) {
+			if(sum%k==0)
+				return false;
+		}
+		return true;
+		}
+	}
+```
 # 期中上機參考答案 [精簡版](https://reganlu007.github.io/java1#期中上機參考答案)
 ```
 import	java.util.Scanner;
