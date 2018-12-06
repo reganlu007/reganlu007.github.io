@@ -229,8 +229,8 @@ public class B0744108_11 {
 				return false;
 		}
 		return true;
-		}
 	}
+}
 ```
 # 期中上機參考答案 [精簡版](https://reganlu007.github.io/java1#期中上機參考答案)
 ```
