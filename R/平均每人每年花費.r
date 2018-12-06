@@ -11,7 +11,7 @@ library(data.table);library(magrittr);library(dplyr)
 
 # 住診用
 
-住診 = fread('子宮肌瘤-呂豪笙\\住診批價明細檔-min.csv')
+住診 = fread('子宮肌瘤-呂豪笙\\住診批價明細檔.csv')[-7]
 住診中藥 = 門診[grep('^7[B-Z]-'               , 收費編號)] # 中藥
 住診西藥 = 門診[grep('^P[A-Z]{2}[0-9]{3}[A-Z]', 收費編號)] # 西藥
 
