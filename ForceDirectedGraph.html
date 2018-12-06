@@ -4,8 +4,7 @@
 		nodes = [{name: "桂林"}, {name: "廣州"}, {name: "廈門"}, {name: "杭州"}, {name: "上海"}, {name: "青島"}, {name: "天津"}]
 		edges = [{source: 0, target: 1}, {source: 0, target: 2}, {source: 0, target: 3}, {source: 1, target: 4}, {source: 1, target: 5}, {source: 1, target: 6}]
 		svg   = d3.select("body").append("svg").attr("width",w = document.body.offsetWidth).attr("height",h = document.body.offsetHeight)
-		force = d3.layout.force().nodes(nodes).links(edges).size([w,h]).linkDistance(Math.min(w,h)/4).charge(-Math.max(w,h)/4)
-		force.start()
+		force = d3.layout.force().nodes(nodes).links(edges).size([w,h]).linkDistance(Math.min(w,h)/4).charge(-Math.max(w,h)/4);force.start()
 		color = d3.scale.category20()
 		svg_edges = svg.selectAll("line"  ).data(edges).enter().append("line"  ).style("stroke","#ccc").style("stroke-width",1)		
 		svg_nodes = svg.selectAll("circle").data(nodes).enter().append("circle").style("fill"  ,(_ , i)=>color(i)).attr("r",20).call(force.drag)
