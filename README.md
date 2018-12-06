@@ -7,19 +7,19 @@
 |[設施]|[兵種]|[特技]|[科技]
 |[戰法]|[修練]
 
-[國家]: https://reganlu007.github.io/三國志11國家列表
-[地方]: https://reganlu007.github.io/三國志11地方列表
-[據點]: https://reganlu007.github.io/三國志11據點列表
-[人物]: https://reganlu007.github.io/三國志11人物列表
-[寶物]: https://reganlu007.github.io/三國志11寶物列表
-[爵位]: https://reganlu007.github.io/三國志11爵位列表
-[官職]: https://reganlu007.github.io/三國志11官職列表
-[設施]: https://reganlu007.github.io/三國志11設施列表
-[兵種]: https://reganlu007.github.io/三國志11兵種列表
-[特技]: https://reganlu007.github.io/三國志11特技列表
-[科技]: https://reganlu007.github.io/三國志11科技列表
-[戰法]: https://reganlu007.github.io/三國志11戰法列表
-[修練]: https://reganlu007.github.io/三國志11修練列表
+[國家]: https://reganlu007.github.io/san11/國家
+[地方]: https://reganlu007.github.io/san11/地方
+[據點]: https://reganlu007.github.io/san11/據點
+[人物]: https://reganlu007.github.io/san11/人物
+[寶物]: https://reganlu007.github.io/san11/寶物
+[爵位]: https://reganlu007.github.io/san11/爵位
+[官職]: https://reganlu007.github.io/san11/官職
+[設施]: https://reganlu007.github.io/san11/設施
+[兵種]: https://reganlu007.github.io/san11/兵種
+[特技]: https://reganlu007.github.io/san11/特技
+[科技]: https://reganlu007.github.io/san11/科技
+[戰法]: https://reganlu007.github.io/san11/戰法
+[修練]: https://reganlu007.github.io/san11/修練
 
 #  自製劇本下載
 
