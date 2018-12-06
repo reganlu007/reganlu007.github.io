@@ -27,6 +27,6 @@ PIC_2 = function(g = PIC(g)){
   egam = (log(E(g)$weight)+.4) / max(log(E(g)$weight)+.4)
   E(g)$color = rgb(.5, .5, 0, egam)
   E(g)$width = egam
-  plot(g, layout=layout.fruchterman.reingold)
+  plot(g, layout=layout.kamada.kawai)
   return(g)
 }
