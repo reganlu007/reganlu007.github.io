@@ -145,9 +145,9 @@ class	B0000000__11 {
 		System.out.print("輸出：2 ~ " + x + " 間 包含的質數有：2");
 		for(int i = 3; i <= x; i += 2) if(isPrime(i)) System.out.print("、"+ i);
 	}
-	static	boolean isPrime(int in){
-		for(int i = 3; i <= Math.sqrt(in); i += 2)
-			if(in % i == 0) return false;
+	static	boolean isPrime(int x){
+		for(int i = 3; i <= Math.sqrt(x); i += 2)
+			if(x % i == 0) return false;
 		return true;
 	}
 }
