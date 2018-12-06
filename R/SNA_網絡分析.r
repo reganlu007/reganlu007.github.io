@@ -13,7 +13,7 @@ library(data.table);library(magrittr);library(igraph)
 住0 = 住0[,c(-3,-2,-1)]
 
 SNA = function(x){x[x>=1] = 1; graph.adjacency(t(x %<>% data.matrix) %*% x, weighted = T, mode = 'undirected')%>% simplify %>% return}
-PIC = function(g){
+PIC = function(g = SNA(g)){
   V(g)$label  = V(g)$name
   V(g)$degree = degree(g)
   set.seed(1)
