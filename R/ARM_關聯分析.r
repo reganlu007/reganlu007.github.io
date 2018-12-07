@@ -6,7 +6,7 @@ ARM  = function(x, s, z, n=30) inspect(head(sort(apriori(as.matrix(x), parameter
 # 單變量記數
 SORT = function(x) data.table(table(x))[N>0][order(-N)]
 
-# 樞紐分析表
+# 樞紐分析
 # 檢視 support = 0.01, confidence = 0.8 的關聯分析結果
 ARM((tmp = dcast(merge(unique(門診批價基本檔[,c(5,7)]),子宮肌瘤門診中藥), 門診號+批價日期+主治醫師代號~收費編號))[,c(-3,-2,-1)], .01, .8)
 ARM( tmp[grep(門診醫師計數[1,1],主治醫師代號)][,c(-3,-2,-1)], .01, .8)
