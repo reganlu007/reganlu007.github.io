@@ -12,7 +12,7 @@ library(data.table);library(magrittr);library(igraph)
 住3 = 住0[grep('3941BF4DECDAE0F9', 醫師別)][,c(-3,-2,-1)]
 住0 = 住0[,c(-3,-2,-1)]
 
-SNA = function(x){x[x>=1] = 1; graph.adjacency(t(x %<>% data.matrix) %*% x, weighted = T, mode = 'undirected')%>% simplify %>% return}
+SNA = function(x){x[x>=1] = 1; return(simplify(graph.adjacency(t(x %<>% data.matrix) %*% x, weighted = T, mode = 'undirected')))}
 PIC = function(g = SNA(g)){
   V(g)$label  = V(g)$name
   V(g)$degree = degree(g)
