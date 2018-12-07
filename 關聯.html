@@ -1,0 +1,39 @@
+<meta charset="utf-8"><title>義兄弟、夫妻、親愛、血緣、厭惡</title><link rel ="shortcut icon" href="san11.ico"><body></body><script src="d3.v3.min.js"></script>
+<script> // code ref: http://www.ourd3js.com/demo/rm/R-9.2/force.html?fbclid=IwAR0vkUa2cIfMUvoqAC6qgH55eX9ZJW2hFPV9zWeg1m3RtUeUy__TD7vJRA8
+	node_親愛 = [
+	{name:"阿會喃"},{name:"金環三結"},{name:"董荼那"},{name:"韋昭"},{name:"華覈"},{name:"伊籍"},{name:"劉備"},{name:"馬謖"},{name:"馬良"},{name:"尹賞"},
+	{name:"姜維"},{name:"梁緒"},{name:"尹大目"},{name:"文欽"},{name:"閻宇"},{name:"黃皓"},{name:"袁尚"},{name:"袁紹"},{name:"劉氏"},{name:"王經"},
+	{name:"崔林"},{name:"王粲"},{name:"曹植"},{name:"陳琳"},{name:"王祥"},{name:"呂虔"},{name:"王昶"},{name:"王凌"},{name:"郭奕"},{name:"王甫"},
+	{name:"關羽"},{name:"趙累"},{name:"賈逵"},{name:"司馬朗"},{name:"溫恢"},{name:"蔣濟"},{name:"何晏"},{name:"曹爽"},{name:"賈詡"},{name:"張繡"},
+	{name:"郭嘉"},{name:"曹操"},{name:"荀彧"},{name:"程昱"},{name:"劉曄"},{name:"霍峻"},{name:"孟達"},{name:"樂進"},{name:"張遼"},{name:"李典"},
+	{name:"樂綝"},{name:"張虎"},{name:"郭淮"},{name:"夏侯淵"},{name:"曹真"},{name:"夏侯惇"},{name:"曹洪"},{name:"曹仁"},{name:"夏侯玄"},{name:"諸葛誕"},
+	{name:"張緝"},{name:"李豐(魏)"},{name:"夏侯尚"},{name:"桓階"},{name:"曹丕"},{name:"田疇"},{name:"夏侯霸"},{name:"夏侯楙"},{name:"賈充"},{name:"司馬炎"},
+	{name:"司馬昭"},{name:"裴秀"},{name:"花鬘"},{name:"關索"},{name:"鮑三娘"},{name:"周倉"},{name:"徐晃"},{name:"毌丘儉"},{name:"曹叡"},{name:"關興"},
+	{name:"張苞"},{name:""},{name:""},{name:""},{name:""},{name:""},{name:""},{name:""},{name:""},{name:""},
+	{name:""},{name:""},{name:""},{name:""},{name:""},{name:""},{name:""},{name:""},{name:"顏良"},{name:"文醜"}]
+	
+	edge_親愛 = [{source: 0, target: 1},{source: 0, target: 2},{source: 1, target: 2},{source: 3, target: 4},{source: 5, target: 6},{source: 5, target: 7},{source: 5, target: 8},{source: 6, target: 30},{source: 9, target: 10},{source: 9, target: 11},{source: 10, target: 11},{source: 10, target: 66},{source: 12, target: 13},{source: 14, target: 15},{source: 16, target: 17},{source: 16, target: 18},{source: 17, target: 18},{source: 19, target: 20},{source: 21, target: 22},{source: 21, target: 23},{source: 24, target: 25},{source: 25, target: 44},{source: 26, target: 27},{source: 26, target: 28},{source: 27, target: 32},{source: 27, target: 33},{source: 28, target: 40},{source: 29, target: 30},{source: 29, target: 31},{source: 30, target: 31},{source: 30, target: 48},{source: 30, target: 73},{source: 30, target: 75},{source: 30, target: 76},{source: 30, target: 79},{source: 32, target: 33},{source: 34, target: 35},{source: 36, target: 37},{source: 37, target: 58},{source: 37, target: 66},{source: 37, target: 77},{source: 38, target: 39},{source: 40, target: 41},{source: 40, target: 42},{source: 41, target: 42},{source: 41, target: 53},{source: 42, target: 43},{source: 40, target: 43},{source: 40, target: 44},{source: 41, target: 55},{source: 45, target: 46},{source: 46, target: 62},{source: 46, target: 63},{source: 47, target: 48},{source: 47, target: 49},{source: 48, target: 49},{source: 48, target: 51},{source: 50, target: 51},{source: 52, target: 53},{source: 52, target: 54},{source: 53, target: 55},{source: 53, target: 56},{source: 53, target: 57},{source: 55, target: 56},{source: 55, target: 57},{source: 55, target: 65},{source: 55, target: 67},{source: 58, target: 59},{source: 59, target: 77},{source: 58, target: 60},{source: 58, target: 61},{source: 58, target: 77},{source: 62, target: 63},{source: 62, target: 64},{source: 64, target: 67},{source: 64, target: 78},{source: 68, target: 69},{source: 68, target: 70},{source: 68, target: 71},{source: 72, target: 73},{source: 72, target: 74},{source: 73, target: 74},{source: 77, target: 78},{source: 79, target: 80},{source: 98, target: 99}]
+	
+	svg_親愛   = d3.select("body").append("svg").attr("width",w = document.body.offsetWidth/2).attr("height",h = document.body.offsetHeight)
+	force_親愛 = d3.layout.force().nodes(node_親愛).links(edge_親愛).size([w,h]).linkDistance(Math.min(w,h)/20).charge(-Math.max(w,h)/5);force_親愛.start()
+	svg_親愛_edges = svg_親愛.selectAll("line"  ).data(edge_親愛).enter().append("line"  ).style("stroke","#f00").style("stroke-width",1)
+	svg_親愛_nodes = svg_親愛.selectAll("circle").data(node_親愛).enter().append("circle").style("fill"  ,"#aaa").attr("r",9).call(force_親愛.drag)
+	svg_親愛_texts = svg_親愛.selectAll("text"  ).data(node_親愛).enter().append("text"  ).style("fill"  ,"#000").attr("dx", 15).attr("dy", 10).text((_)=>_.name)
+	force_親愛.on("tick",()=>{svg_親愛_edges.attr("x1",(_)=>_.source.x).attr("y1",(_)=>_.source.y).attr("x2",(_)=>_.target.x).attr("y2",(_)=>_.target.y);svg_親愛_nodes.attr("cx",(_)=>_.x).attr("cy",(_)=>_.y);svg_親愛_texts.attr( "x",(_)=>_.x).attr( "y",(_)=>_.y)})
+	
+	node_厭惡 = [
+	{name:"于禁"},{name:"龐德"},{name:"衛瓘"},{name:"鄧艾"},{name:"閻宇"},{name:"姜維"},{name:"袁術"},{name:"袁紹"},{name:"曹操"},{name:"袁尚"},
+	{name:"袁譚"},{name:"董卓"},{name:"王異"},{name:"馬超"},{name:"王惇"},{name:"孫綝"},{name:"王平"},{name:"徐晃"},{name:"王累"},{name:"劉備"},
+	{name:"郭圖"},{name:"高覽"},{name:"張郃"},{name:"審配"},{name:"關彝"},{name:"龐會"},{name:"關羽"},{name:"糜芳"},{name:"傅士仁"},{name:"呂布"},
+	{name:"韓浩"},{name:"黃忠"},{name:""},{name:""},{name:""},{name:""},{name:""},{name:""},{name:""},{name:""},
+	{name:""},{name:""},{name:""},{name:""},{name:""},{name:""},{name:""},{name:""},{name:""},{name:""}]
+
+	edge_厭惡 = [{source: 0, target: 1},{source: 2, target: 3},{source: 4, target: 5},{source: 6, target: 7},{source: 6, target: 8},{source: 9, target: 8},{source: 9, target: 10},{source: 7, target: 11},{source: 11, target: 26},{source: 12, target: 13},{source: 14, target: 15},{source: 16, target: 17},{source: 18, target: 19},{source: 20, target: 21},{source: 20, target: 22},{source: 20, target: 23},{source: 24, target: 25},{source: 25, target: 26},{source: 26, target: 27},{source: 26, target: 28},{source: 26, target: 29},{source: 30, target: 31}]
+	
+	svg_厭惡   = d3.select("body").append("svg").attr("width",w = document.body.offsetWidth/2).attr("height",h = document.body.offsetHeight)
+	force_厭惡 = d3.layout.force().nodes(node_厭惡).links(edge_厭惡).size([w,h]).linkDistance(Math.min(w,h)/20).charge(-Math.max(w,h)/5);force_厭惡.start()
+	svg_厭惡_edges = svg_厭惡.selectAll("line"  ).data(edge_厭惡).enter().append("line"  ).style("stroke","#000").style("stroke-width",1)
+	svg_厭惡_nodes = svg_厭惡.selectAll("circle").data(node_厭惡).enter().append("circle").style("fill"  ,"#aaa").attr("r",9).call(force_厭惡.drag)
+	svg_厭惡_texts = svg_厭惡.selectAll("text"  ).data(node_厭惡).enter().append("text"  ).style("fill"  ,"#000").attr("dx", 15).attr("dy", 10).text((_)=>_.name)
+	force_厭惡.on("tick",()=>{svg_厭惡_edges.attr("x1",(_)=>_.source.x).attr("y1",(_)=>_.source.y).attr("x2",(_)=>_.target.x).attr("y2",(_)=>_.target.y);svg_厭惡_nodes.attr("cx",(_)=>_.x).attr("cy",(_)=>_.y);svg_厭惡_texts.attr( "x",(_)=>_.x).attr( "y",(_)=>_.y)})
+</script>
