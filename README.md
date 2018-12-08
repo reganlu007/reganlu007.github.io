@@ -32,7 +32,9 @@
 |0|[原始劇本]|還原原始劇本用
 |1|[異族爭霸]|由烏丸、羌族、山越、南蠻，以及獻帝所組成的世界。<br>消滅其他勢力，成為全勢力的領導者，就是異族爭霸！
 |2|[三顧茅廬。改]|因奇人‧RLU 的亂入，造成各地的局勢變得更加詭譎：<br>劉備取得了宛與梓潼，孫權取得了江夏，曹操也取得了建業。<br>各家角力逐漸進入白熱化的狀態...
+|3|[區星之亂]|張角所夢寐以求的黃天之世，難道是人與人相互爭鬥的亂世嗎？以黃巾之亂為開端的混沌世局，也喚醒了像是區星一般的兇惡之徒。中平４年（１８７），人稱猛虎的父子，與其後成為其忠臣的豪傑，終於起身討伐區星。其炙熱鬥志，即將燎原...
 
 [原始劇本]: https://github.com/reganlu007/reganlu007.github.io/raw/master/原始劇本.7z
 [異族爭霸]: https://github.com/reganlu007/reganlu007.github.io/raw/master/SCEN015.S11
 [三顧茅廬。改]: https://github.com/reganlu007/reganlu007.github.io/raw/master/SCEN004.S11
+[區星之亂]: https://github.com/reganlu007/reganlu007.github.io/raw/master/SCEN016.S11
