@@ -30,3 +30,9 @@ PIC_2 = function(g = PIC(g)){
   plot(g, layout=layout.kamada.kawai)
   return(g)
 }
+
+# 範例
+library(sna)
+g=rgraph(n,tp=(v=runif(n=30))%o%v)
+kcores(g)
+gplot(g,vertex.col=kcores(g))
