@@ -32,7 +32,4 @@ PIC_2 = function(g = PIC(g)){
 }
 
 # 範例
-library(sna)
-g=rgraph(n=30,tp=(v=runif(n))%o%v)
-kcores(g)
-gplot(g,vertex.col=kcores(g))
+library(sna);n=30;g=rgraph(n,tp=(v=runif(n))%o%v);View (kcores(g));gplot(g,vertex.col=kcores(g))
