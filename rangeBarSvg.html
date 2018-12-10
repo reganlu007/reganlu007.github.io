@@ -5,8 +5,8 @@
   <circle  id="a" cx="150" cy="150" r="30"></circle>
 </svg>
 </div>
-<input id="bar1" type="range" min="0" max="300" oninput="a.setAttribute('cx', this.value)">
-<input id="bar2" type="range" min="0" max="300" oninput="a.setAttribute('cy', this.value)">
+<input id="bar1" type="range" min="0" max="300" oninput="a.setAttribute('cx', this.value)" onchange="txt1.value=this.value">
+<input id="bar2" type="range" min="0" max="300" oninput="a.setAttribute('cy', this.value)" onchange="txt2.value=this.value">
 <br>
-<input value="bar1.value">
-<input value="bar2.value">
+<input id="txt1" value="150" oninput="a.setAttribute('cx', this.value)">
+<input id="txt2" value="150" oninput="a.setAttribute('cy', this.value)">
