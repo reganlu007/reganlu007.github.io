@@ -35,4 +35,4 @@
 [原始劇本]: https://github.com/reganlu007/reganlu007.github.io/raw/master/原始劇本.7z
 [異族爭霸]: https://github.com/reganlu007/reganlu007.github.io/raw/master/SCEN015.S11
 [三顧茅廬。改]: https://github.com/reganlu007/reganlu007.github.io/raw/master/SCEN004.S11
-[區星之亂]: https://github.com/reganlu007/reganlu007.github.io/raw/master/SCEN016.S11
+[區星之亂]: https://github.com/reganlu007/reganlu007.github.io/raw/master/Scen016.S11
