@@ -1,0 +1,9 @@
+<center>
+<div style="width:400;height:400">
+<svg viewBox="0 0 300 300">
+  <rect width="300" height="300" fill="#eee"></rect>
+  <circle  id="a" cx="150" cy="150" r="30"></circle>
+</svg>
+</div>
+<input type="range" min="0" max="300" oninput="a.setAttribute('cx', this.value)">
+<input type="range" min="0" max="300" oninput="a.setAttribute('cy', this.value)">
