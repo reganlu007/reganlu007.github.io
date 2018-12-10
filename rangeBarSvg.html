@@ -5,7 +5,7 @@
   <circle  id="a" cx="150" cy="150" r="30"></circle>
 </svg>
 </div>
-<input id="bar1" type="range"  min="0" max="300" oninput="a.setAttribute('cx', this.value)" onchange="txt1.value=this.value">
-<input id="bar2" type="range"  min="0" max="300" oninput="a.setAttribute('cy', this.value)" onchange="txt2.value=this.value"><br>
-<input id="txt1" type="number" min="0" max="300" oninput="a.setAttribute('cx', this.value)" value="150">
-<input id="txt2" type="number" min="0" max="300" oninput="a.setAttribute('cy', this.value)" value="150">
+<input id="bar1" type="range"  min="0" max="300" oninput="a.setAttribute('cx', this.value);txt1.value=this.value">
+<input id="bar2" type="range"  min="0" max="300" oninput="a.setAttribute('cy', this.value);txt2.value=this.value"><br>
+<input id="txt1" type="number" min="0" max="300" oninput="a.setAttribute('cx', this.value);bar1.value=this.value" value="150">
+<input id="txt2" type="number" min="0" max="300" oninput="a.setAttribute('cy', this.value);bar2.value=this.value" value="150">
