@@ -13,21 +13,7 @@ library(data.table);library(magrittr);library(igraph)
 住0 = 住[,c(-3,-2,-1)]
 
 SNA = function(x){x[x>=1] = 1; return(simplify(graph.adjacency(t(x %<>% data.matrix) %*% x, weighted = T, mode = 'undirected')))}
-PIC = function(g = SNA(g)){
-  V(g)$label  = V(g)$name
-  V(g)$degree = degree(g)
-  set.seed(1)
-  plot(g, layout=layout.kamada.kawai)
-  return(g)
-}
-PIC_2 = function(g = PIC(g)){
-  V(g)$label.cex   = 2.2 * V(g)$degree / max(V(g)$degree)+ .2
-  V(g)$label.color = rgb(0, 0, .2, .8)
-  V(g)$frame.color = NA
-  egam = (log(E(g)$weight)+.4) / max(log(E(g)$weight)+.4)
-  E(g)$color = rgb(.5, .5, 0, egam)
-  E(g)$width = egam
-  plot(g, layout=layout.kamada.kawai)
-  return(g)
-}
 FG = function(x)plot(cluster_fast_greedy(x),x)
+plot(cluster_fast_greedy(net), net)
+plot(induced_subgraph(net, V(net)[cluster_fast_greedy(net)$membership == 1]), layout = layout_in_circle)
+plot(induced_subgraph(net, V(net)[cluster_fast_greedy(net)$membership == 1]), layout = layout.kamada.kawai)
