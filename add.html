@@ -1,3 +1,6 @@
-<input id="txt0" value="0" type="number" oninput="txt2.value = this.value*1 + txt1.value*1">
-<input id="txt1" value="0" type="number" oninput="txt2.value = this.value*1 + txt0.value*1">
-<input id="txt2" value="0" type="number" readonly>
+<style>.c{width:100%;font-size:20vmin}</style>
+<script>f =()=> txt2.value = txt0.value- -txt1.value</script>
+<center>
+<input id="txt0" value="0" type="number" class="c" oninput="f()"><br>
+<input id="txt1" value="0" type="number" class="c" oninput="f()"><br>
+<input id="txt2" value="0" type="number" class="c" readonly>
