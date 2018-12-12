@@ -12,6 +12,6 @@ library(data.table);library(magrittr);library(igraph)
 住3 = F_住('3941BF4DECDAE0F9')
 住0 = 住[,c(-3,-2,-1)]
 
-SNA = function(x){x[x>=1] = 1; return(simplify(graph.adjacency(t(x %<>% data.matrix) %*% x, weighted = T, mode = 'undirected')))}
+SNA = function(x){x[x>=1]=1; return(simplify(graph.adjacency(t(x%<>%data.matrix)%*%x, weighted=T, mode='undirected')))}
 FG  = function(x) plot(cluster_fast_greedy(x),x)
-SUB = function(x,y=1) plot(induced_subgraph(x, V(x)[cluster_fast_greedy(x)$membership == y]), layout = layout.kamada.kawai)
+SUB = function(x,y=1) plot(induced_subgraph(x, V(x)[cluster_fast_greedy(x)$membership==y]), layout=layout.kamada.kawai)
