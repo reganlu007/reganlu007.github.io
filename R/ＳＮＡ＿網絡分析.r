@@ -22,4 +22,4 @@ tmp2=SNA(門2)
 
 clique_num(g)
 cliques(g, min=6)
-largest_cliques(g)
+largest_cliques(g)[[1]]
