@@ -17,6 +17,5 @@ CFG = function(x)    plot(cluster_fast_greedy(x),x)
 SUB = function(x,y=1)plot(induced_subgraph(x, V(x)[cluster_fast_greedy(x)$membership==y]), layout=layout.kamada.kawai)
 CIR = function(x,y=1)plot(induced_subgraph(x, V(x)[cluster_fast_greedy(x)$membership==y]), layout=layout_in_circle)
 
-tmp0=SNA(門0)
 tmp1=SNA(門1)
 tmp2=SNA(門2)
