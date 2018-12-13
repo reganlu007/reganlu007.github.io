@@ -152,6 +152,26 @@ class	B0000000__11 {
 	}
 }
 ```
+12.
+```
+import	java.util.*;
+class	B0000000__12 {
+	public	static void main(String[] args){
+		Scanner s = new Scanner (System.in);
+		Random  r = new Random();
+		int com[] = new int[5], man[]= new int[com.length], correct = 0;
+		System.out.print("輸入 "+ com.length +" 個範圍 1 ~ 4 的整數：");
+		for(int i = 0; i < com.length; i++){
+			com[i] = r.nextInt(4)+ 1;
+			man[i] = s.nextInt( );
+			if (com[i] == man[i]) correct++;
+		}
+		System.out.print("\n電腦產生的數字："); for(int i : com) System.out.print(i +" ");
+		System.out.print("\n玩家輸入的數字："); for(int i : man) System.out.print(i +" ");
+		System.out.print("\n玩家答對的題數：" + correct);
+	}
+}
+```
 # 期中上機參考答案
 ```
 import	java.util.Scanner;
