@@ -20,3 +20,6 @@ CIR = function(x,y=1)plot(induced_subgraph(x, V(x)[cluster_fast_greedy(x)$member
 tmp1=SNA(門1)
 tmp2=SNA(門2)
 
+clique_num(g)
+cliques(g, min=6)
+largest_cliques(g)
