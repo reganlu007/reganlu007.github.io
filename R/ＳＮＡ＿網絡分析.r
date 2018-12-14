@@ -16,6 +16,8 @@ SNA = function(x){x[x>=1]=1; simplify(graph.adjacency(t(x%<>%data.matrix)%*%x, w
 CFG = function(x)    plot(cluster_fast_greedy(x),x)
 SUB = function(x,y=1)plot(induced_subgraph(x, V(x)[cluster_fast_greedy(x)$membership==y]), layout=layout.kamada.kawai)
 CIR = function(x,y=1)plot(induced_subgraph(x, V(x)[cluster_fast_greedy(x)$membership==y]), layout=layout_in_circle)
+CEN = function(x)cbind(centr_degree(x)$res,centr_clo(x)$res,centr_betw(x)$res,centr_eigen(x)$vector)
+
 
 clique_num(g)
 cliques(g, min=6)
