@@ -26,3 +26,4 @@ CEN = function(x)    data.table(rbind(
         centr_eigen (x)$vector)))
 
 largest_cliques(g)[[1]]
+E(g)$weight
