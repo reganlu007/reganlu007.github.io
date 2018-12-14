@@ -15,7 +15,7 @@ library(data.table);library(magrittr);library(igraph)
 SNA = function(x){x[x>=1]=1; simplify(graph.adjacency(t(x%<>%data.matrix)%*%x, weighted=T, mode='undirected'))}
 CFG = function(x)    plot(cluster_fast_greedy(x),x)
 SUB = function(x,y=1,z=layout.kamada.kawai)plot(induced_subgraph(x, V(x)[cluster_fast_greedy(x)$membership==y]), layout=z) # layout.kamada.kawai || layout_in_circle
-CEN = function(x)    data.table(rbind(cbind(centr_degree(x)$centralization,centr_clo(x)$centralization,centr_betw(x)$centralization,centr_eigen(x)$centralization),'-',  cbind(centr_degree(x)$res,centr_clo(x)$res,centr_betw(x)$res,centr_eigen(x)$vector)))
+CEN = function(x)    data.table(rbind(cbind(centr_degree(x)$centralization,centr_clo(x)$centralization,centr_betw(x)$centralization,centr_eigen(x)$centralization),cbind(centr_degree(x)$res,centr_clo(x)$res,centr_betw(x)$res,centr_eigen(x)$vector)))
 
 clique_num(g)
 cliques(g, min=6)
