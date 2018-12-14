@@ -26,8 +26,5 @@ CEN = function(x)    data.table(rbind(
         centr_clo   (x)$res,
         centr_betw  (x)$res,
         centr_eigen (x)$vector)))
-
-
-
 largest_cliques(g)[[1]]
 E(g)$weight
