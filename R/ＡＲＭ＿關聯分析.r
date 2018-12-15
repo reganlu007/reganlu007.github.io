@@ -11,7 +11,7 @@ library(data.table);library(magrittr);library(arulesViz)
 住2 = F_住('F4262C7C21D08356')
 住3 = F_住('3941BF4DECDAE0F9')
 住0 = 住[,c(-3,-2,-1)]
-ARM  = function(x, s=.1, z=.8, n=30) inspect(head(sort(apriori(as.matrix(x), parameter=list(supp=s, conf=z)), by='support'), n))
+ARM  = function(x, s=.1, z=.8, n=30) inspect(head(sort(apriori(data.matrix(x), parameter=list(supp=s, conf=z)), by='support'), n))
 SORT = function(x) data.table(table(x))[N>0][order(-N)]
 
 # 樞紐分析
