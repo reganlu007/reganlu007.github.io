@@ -1,7 +1,7 @@
 library(data.table);library(magrittr);library(dplyr);library(arulesViz)
 
 # 製作關聯分析方法，依 support 大至小排序
-ARM  = function(x, s, z, n=30) inspect(head(sort(apriori(as.matrix(x), parameter=list(supp=s, conf=z)), by='support'), n))
+ARM  = function(x, s=.1, z=.8, n=30) inspect(head(sort(apriori(as.matrix(x), parameter=list(supp=s, conf=z)), by='support'), n))
 
 # 單變量記數
 SORT = function(x) data.table(table(x))[N>0][order(-N)]
@@ -15,6 +15,6 @@ ARM( tmp[grep(門診醫師計數[3,1],主治醫師代號)][,c(-3,-2,-1)], .01, .
 
 # 檢視 support = 0.1 , confidence = 0.8 的關聯分析結果
 ARM((tmp = dcast(merge(unique(住診批價基本檔[,c(4,7)]),子宮肌瘤住診中藥), 住院號+日期+醫師別~收費編號))[,c(-3,-2,-1)], .1 , .8)
-ARM( tmp[grep(住院醫師計數[1,1],醫師別)][,c(-3,-2,-1)], .1 , .8)
-ARM( tmp[grep(住院醫師計數[2,1],醫師別)][,c(-3,-2,-1)], .1 , .8)
-ARM( tmp[grep(住院醫師計數[3,1],醫師別)][,c(-3,-2,-1)], .1 , .8)
+ARM( tmp[grep(住院醫師計數[1,1],醫師別)][,c(-3,-2,-1)])
+ARM( tmp[grep(住院醫師計數[2,1],醫師別)][,c(-3,-2,-1)])
+ARM( tmp[grep(住院醫師計數[3,1],醫師別)][,c(-3,-2,-1)])
