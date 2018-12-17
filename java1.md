@@ -138,10 +138,9 @@ class	B0000000__10 {
 ```
 11.
 ```
-import	java.util.Scanner;
 class	B0000000__11 {
 	public	static void main(String[] args){
-		System.out.print("輸入："); int x = new Scanner(System.in).nextInt();
+		System.out.print("輸入："); int x = new java.util.Scanner(System.in).nextInt();
 		System.out.print("輸出：2 ~ " + x + " 間 包含的質數有：2");
 		for(int i = 3; i <= x; i += 2) if(isPrime(i)) System.out.print("、"+ i);
 	}
