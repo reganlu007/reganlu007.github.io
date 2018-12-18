@@ -15,7 +15,6 @@ library(data.table);library(magrittr);library(igraph)
 SNA = function(x,w=T,m='undirected'){x[x>=1]=1;simplify(graph.adjacency(t(x%<>%data.matrix)%*%x, weighted=w, mode=m))}
 CFG = function(x)    plot(cluster_fast_greedy(x),x)
 PIC = function(x,y=1,z=layout.kamada.kawai)plot(induced_subgraph(x, V(x)[cluster_fast_greedy(x)$membership==y]), layout=z) # layout.kamada.kawai || layout_in_circle
-SUB = function(x)    data.table(cbind(x$當歸,x$陳皮,x$茯苓,x$甘草,x$川芎,x$黃耆,x$熟地黃,x$黨蔘,x$麥門冬,x$白朮,x$紅棗,x$黃芩,x$麻子仁丸,x$銀翹散))
 
 CEN = function(x)    data.table(rbind(
   cbind(centr_degree(x)$centralization ,
