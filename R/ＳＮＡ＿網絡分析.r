@@ -14,8 +14,6 @@ library(data.table);library(magrittr);library(igraph)
 
 SNA = function(x,w=T,m='undirected'){x[x>=1]=1;simplify(graph.adjacency(t(x%<>%data.matrix)%*%x, weighted=w, mode=m))}
 CFG = function(x)    plot(cluster_fast_greedy(x),x)
-PIC = function(x,y=1,z=layout.kamada.kawai)plot(induced_subgraph(x, V(x)[cluster_fast_greedy(x)$membership==y]), layout=z) # layout.kamada.kawai || layout_in_circle
-
 CEN = function(x)    data.table(rbind(
   cbind(centr_degree(x)$centralization ,
         centr_clo   (x)$centralization ,
