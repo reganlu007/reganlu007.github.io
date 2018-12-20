@@ -13,7 +13,7 @@ library(data.table);library(magrittr);library(igraph)
 住0 = 住[,c(-3,-2,-1)]
 
 SNA = function(x,w=T,m='undirected'){x[x>=1]=1;simplify(graph.adjacency(t(x%<>%data.matrix)%*%x, weighted=w, mode=m))}
-CFG = function(g) plot(cluster_fast_greedy(g),g,vertex.size=V(g)$vertex_degree,edge.width= 10*E(g)$weight/max(E(g)$weight))
+CFG = function(g) plot(cluster_fast_greedy(g),g,vertex.size=degree(g)/max(degree(g))*5,edge.width=E(g)$weight/max(E(g)$weight)*5)
 CEN = function(x) data.table(rbind(
   cbind(centr_degree(x)$centralization ,
         centr_clo   (x)$centralization ,
