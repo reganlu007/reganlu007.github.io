@@ -15,10 +15,8 @@ import	java.util.Scanner;
 class	B0000000__04 {
 	public	static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		System.out.print("請輸入男生人數：");
-		int m = sc.nextInt();
-		System.out.print("請輸入女生人數：");
-		int f = sc.nextInt();
+		System.out.print("請輸入男生人數："); int m = sc.nextInt();
+		System.out.print("請輸入女生人數："); int f = sc.nextInt();
 		System.out.print("本班有男生 "+ m +" 人，女生 "+ f +" 人，總人數 "+ (m + f) +" 人。\n" + 
 			"男生比例為 "+ m * 100.0 / (m + f) +"%，" +
 			"女生比例為 "+ f * 100.0 / (m + f) +"%。");
@@ -179,10 +177,10 @@ class	B0000000__13 {
 			    "頭",  "二",  "三",  "四",  "五",   "六",
 			"二十萬","四萬","一萬","四千","一千","兩百"};
 		int i = a[0].length();
-		System.out.printf("電腦產生的發票號碼: %s\n使用者輸入發票號碼: ",a[0]);
+		System.out.printf("電腦產生的發票號碼: %s\n使用者輸入發票號碼: ", a[0]);
 		a[0] += new java.util.Scanner(System.in).next();
-		while (i-- > 0 && a[0].charAt(i) == a[0].charAt(i + 8));
-		System.out.print(++i < 6 ? "恭喜您中了"+ a[++i] +"獎，獲得獎金"+ a[i + 6] +"元" : "很遺憾，這次沒有中獎");
+		while (i-- > 0 && a[0].charAt(i) == a[0].charAt(i+8));
+		System.out.print(++i < 6 ? "恭喜您中了"+ a[++i] +"獎，獲得獎金"+ a[i+6] +"元" : "很遺憾，這次沒有中獎");
 	}
 }
 ```
