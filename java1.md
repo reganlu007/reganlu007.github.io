@@ -171,6 +171,21 @@ class	B0000000__12 {
 	}
 }
 ```
+13.
+```
+class	B0000000__13 {
+	public	static void main(String[] args){	
+		String a[] = {(""+ Math.random()).substring(2, 10),
+			    "頭",  "二",  "三",  "四",  "五",   "六",
+			"二十萬","四萬","一萬","四千","一千","兩百"};
+		int i = a[0].length();
+		System.out.printf("電腦產生的發票號碼: %s\n使用者輸入發票號碼: ",a[0]);
+		a[0] += new java.util.Scanner(System.in).next();
+		while (i-- > 0 && a[0].charAt(i) == a[0].charAt(i + 8));
+		System.out.print(++i < 6 ? "恭喜您中了"+ a[++i] +"獎，獲得獎金"+ a[i + 6] +"元" : "很遺憾，這次沒有中獎");
+	}
+}
+```
 # 期中上機參考答案
 ```
 import	java.util.Scanner;
