@@ -1,6 +1,6 @@
 # 作業解答一覽
 
-3.
+## 3
 ```
 class	B0000000__03 {
 	public	static void main(String[] args) {
@@ -9,7 +9,7 @@ class	B0000000__03 {
 	}
 }
 ```
-4.
+## 4
 ```
 import	java.util.Scanner;
 class	B0000000__04 {
@@ -23,7 +23,7 @@ class	B0000000__04 {
 	}
 }
 ```
-5.
+## 5
 ```
 import	javax.swing.JOptionPane;
 class	B0000000__05 {
@@ -35,7 +35,7 @@ class	B0000000__05 {
 	}
 }
 ```
-6.
+## 6
 ```
 import	java.util.Scanner;
 class	B0000000__06 {
@@ -53,7 +53,7 @@ class	B0000000__06 {
 	}
 }
 ```
-7.
+## 7
 ```
 import	java.util.Scanner;
 class	B0000000__07 {
@@ -70,7 +70,7 @@ class	B0000000__07 {
 	}
 }
 ```
-8.
+## 8
 ```
 class	B0000000__08 {
 	public	static void main(String[] args) {
@@ -88,7 +88,7 @@ class	B0000000__08 {
 	}
 }
 ```
-9.
+## 9
 ```
 import	java.util.Scanner;
 import	java.io.*;
@@ -111,7 +111,7 @@ class	B0000000__09 {
 	}
 }
 ```
-10.
+## 10
 ```
 import	java.util.Scanner;
 class	B0000000__10 {
@@ -134,7 +134,7 @@ class	B0000000__10 {
 	}
 }
 ```
-11.
+## 11
 ```
 class	B0000000__11 {
 	public	static void main(String[] args){
@@ -149,7 +149,7 @@ class	B0000000__11 {
 	}
 }
 ```
-12.
+## 12
 ```
 import	java.util.*;
 class	B0000000__12 {
@@ -169,7 +169,7 @@ class	B0000000__12 {
 	}
 }
 ```
-13.
+## 13
 ```
 class	B0000000__13 {
 	public	static void main(String[] args){	
