@@ -12,7 +12,7 @@ library(data.table);library(magrittr);library(igraph)
 住3 = F_住('3941BF4DECDAE0F9')
 住0 = 住[,c(-3,-2,-1)]
 
-SNA = function(x,w=T,m='undirected'){
+SNA = function(x, w=T, m='undirected'){
   x[x>=1]=1; simplify(graph.adjacency(t(x %<>% data.matrix) %*% x, weighted=w, mode=m))}
 CFG = function(g, v=degree(g)/max(degree(g))*25, e=E(g)$weight/max(E(g)$weight)*5,l=layout.circle)
   plot(cluster_fast_greedy(g), g, vertex.size=v, edge.width=e, layout=l)
