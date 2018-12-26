@@ -14,10 +14,8 @@ SET_門 = function(x)x[,c(28,30,32,48,54,59,63,120,125,131,132,134,151,206,272,3
 住0 = 住[,c(-3,-2,-1)]
 SET_住 = function(x)x[,c(24,26,28,42,47,52,56,87,91,96,97,98,112,149,174,212,213,218,224,225,226,227,229,230,236,237,241,255,267,270,271,272,374,391,393,415,468)]
 
-SNA = function(x, w=T, m='undirected'){
-  x[x>=1]=1; simplify(graph.adjacency(t(x %<>% data.matrix) %*% x, weighted=w, mode=m))}
-CFG = function(g, v=degree(g)/max(degree(g))*30, e=E(g)$weight/max(E(g)$weight)*10,l=layout_nicely)
-  plot(cluster_fast_greedy(g), g, vertex.size=v, edge.width=e, layout=l)
+SNA = function(x, w=T, m='undirected'){x[x>=1]=1; simplify(graph.adjacency(t(x %<>% data.matrix) %*% x, weighted=w, mode=m))}
+CFG = function(g, v=10*degree(g)^.5, e=10*E(g)$weight^.25,l=layout_nicely) plot(cluster_fast_greedy(g), g, vertex.size=v, edge.width=e, layout=l)
 CEN = function(x) data.table(rbind(
   cbind(centr_degree(x)$centralization ,
         centr_clo   (x)$centralization ,
