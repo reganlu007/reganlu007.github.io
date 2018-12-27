@@ -25,3 +25,11 @@ CEN = function(x) data.table(rbind(
         centr_clo   (x)$res,
         centr_betw  (x)$res,
         centr_eigen (x)$vector)))
+CC = function(g){	
+	g %>% edge.betweenness.community
+	g %>% walktrap.community
+	g %>% leading.eigenvector.community
+	g %>% fastgreedy.community
+	g %>% multilevel.community
+	g %>% label.propagation.community
+}
