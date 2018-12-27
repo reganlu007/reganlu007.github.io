@@ -188,8 +188,8 @@ class	B0000000__13 {
 ```
 class	B0000000__14 {
 	public	static void main(String[] args){
-		System.out.print("學生\t國文\t英文\t數學\t自然\t社會\t平均");
 		int row = 6, col = 5, score[][] = new int[row][col];
+		System.out.print("學生\t國文\t英文\t數學\t自然\t社會\t平均");
 		for(int i = 0; i < row; i++){
 			System.out.printf("\n%d 號", i + 1);
 			int sum = 0;
