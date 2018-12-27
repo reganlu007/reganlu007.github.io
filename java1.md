@@ -184,6 +184,31 @@ class	B0000000__13 {
 	}
 }
 ```
+## 14
+```
+class	B0000000__14 {
+	public	static void main(String[] args){
+		System.out.print("學生\t國文\t英文\t數學\t自然\t社會\t平均");
+		int row = 6, col = 5, score[][] = new int[row][col];
+		for(int i = 0; i < row; i++){
+			System.out.printf("\n%d 號", i + 1);
+			int sum = 0;
+			for(int j = 0; j < col; j++){
+				System.out.printf("\t%3d", score[i][j] = (int)(Math.random()*101));
+				sum += score[i][j];
+			}
+			System.out.printf("\t%.1f", 1. * sum / col);
+		}
+		System.out.print("\n最高");
+		for(int j = 0; j < col; j++){
+			int max = 0;
+			for(int i = 0; i < row; i++)
+				max = score[i][j] > score[max][j] ? i : max;
+			System.out.printf("\t%d 號",++max);
+		}
+	}
+}
+```
 # 期中上機參考答案
 ```
 import	java.util.Scanner;
