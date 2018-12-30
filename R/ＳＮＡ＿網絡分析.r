@@ -26,16 +26,10 @@ CEN = function(x) data.table(rbind(
         centr_betw  (x)$res,
         centr_eigen (x)$vector)))
 CC = function(g)c(
-	'modularity of  edge.betweenness',
-	 modularity(g%>%edge.betweenness.community),
-	'modularity of  walktrap',
-	 modularity(g%>%walktrap.community),
-	'modularity of  leading.eigenvector',
-	 modularity(g%>%leading.eigenvector.community),
-	'modularity of  fastgreedy',
-	 modularity(g%>%fastgreedy.community),
-	'modularity of  multilevel',
-	 modularity(g%>%multilevel.community),
-	'modularity of  label.propagation',
-	 modularity(g%>%label.propagation.community)
+	cluster_edge_betweenness(g)$algorithm,	modularity(cluster_edge_betweenness(g)),
+	cluster_fast_greedy(g)$algorithm,	modularity(cluster_fast_greedy(g)),
+	cluster_label_prop(g)$algorithm,	modularity(cluster_label_prop(g)),
+	cluster_leading_eigen(g)$algorithm,	modularity(cluster_leading_eigen(g)),
+	cluster_louvain(g)$algorithm,		modularity(cluster_louvain(g)),
+	cluster_walktrap(g)$algorithm,		modularity(cluster_walktrap(g))
 )
