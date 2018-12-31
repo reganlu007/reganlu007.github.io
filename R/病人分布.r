@@ -11,9 +11,9 @@ x = 門診
 x = 住診
 x = 急診
 
-(x %>% group_by(歸戶代號, 院區) %>% summarise(min(資料年月               ))) %>% fwrite('_.csv')
-(x %>% group_by(歸戶代號      ) %>% summarise(min(資料年月), max(資料年月))) %>% fwrite('_.csv')
-(x %>% group_by(歸戶代號      ) %>% summarise(min(生日年                 ))) %>% fwrite('_.csv')
+(x %>% group_by(歸戶代號, 院區) %>% summarise(min(資料年月))) %>% fwrite('_.csv')
+(x %>% group_by(歸戶代號) %>% summarise(min(資料年月), max(資料年月))) %>% fwrite('_.csv')
+(x %>% group_by(歸戶代號) %>% summarise(min(生日年))) %>% fwrite('_.csv')
 fwrite(data.table(table(x$歸戶代號))[N>0][order(.)], '_.csv')
 
 # 以整理好的歸戶 ID 篩選
