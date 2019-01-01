@@ -1,4 +1,4 @@
-library(data.table);library(magrittr)
+library(data.table);library(magrittr);library(dplyr)
 
 tmp1 = fread('子宮肌瘤-呂豪笙\\住診批價明細檔.csv')
 tmp2 = fread('子宮肌瘤-呂豪笙\\住診批價基本檔.csv')
@@ -14,6 +14,8 @@ fw(c(850, 892), tmp4,'_4.csv')
 a1 = fread('子宮肌瘤-呂豪笙\\門診批價明細檔_1.csv')[,-4]
 a2 = fread('子宮肌瘤-呂豪笙\\門診批價明細檔_2.csv')[,-4]
 a3 = fread('子宮肌瘤-呂豪笙\\門診批價明細檔_3.csv')[,-4]
+tmp2 = dcast(tmp, 門診號+主治醫師代號+批價日期~收費編號)
+
 tmp6 = fread('子宮肌瘤-呂豪笙\\門診批價基本檔.csv')
 tmp7 = fread('子宮肌瘤-呂豪笙\\門診醫囑檔.csv')[,c(-32,-19)]        
 tmp8 = fread('子宮肌瘤-呂豪笙\\門診藥囑檔.csv')[,c(-48,-44,-39,-28)]
