@@ -221,7 +221,7 @@ class	B0000000__15 {
 		System.out.printf("前：%s\n後：%s\n",Arrays.toString(x), al);
 	}
 	public	static int  func(int i, int x, ArrayList al){
-		for (int  j = 0; j < i; j++) if (x <(int)al.get(j)) return j; return i;
+		for (int  j = 0; j < i; j++) if(x < (int)al.get(j)) return j; return i;
 	}
 }
 ```
