@@ -17,28 +17,34 @@ SET_住 = function(x)x[,c(24,26,28,42,47,52,56,87,91,96,97,98,112,149,174,212,21
 SNA = function(x, w=T, m='undirected'){x[x>=1]=1; simplify(graph.adjacency(t(x %<>% data.matrix) %*% x, weighted=w, mode=m))}
 CFG = function(g, m=cluster_optimal(g),v=degree(g),e=E(g)$weight,l=layout.circle) plot(m, g, vertex.size=v, edge.width=e, layout=l)
 
-(g=(門0%>%SET_門)[,c(1:4,6,9,14,21,22,24,25,
-		   5,7,10,15:20,23,26,28,29,
-		   8,11:13,27,30:37)]%>%SNA)
-	%>%CFG(v=20,e=E(g)$weight^.05)
+(g=(門0%>%SET_門)[,c(
+	1:4,6,9,14,21,22,24,25,
+	5,7,10,15:20,23,26,28,29,
+	8,11:13,27,30:37)]
+	%>%SNA)%>%CFG(v=20,e=E(g)$weight^.05)
+(g=(門3%>%SET_門)[,c(
+	1:6,8:12,14:17,21,23:25,27,29,33,37,
+	13,20,22,30:32,
+	18,19,26,28)]
+	%>%SNA)%>%CFG(v=degree(g)^.3*9,e=E(g)$weight^.3)
 
-
-(g=(住0%>%SET_住)[,c(1,7:9,11,14,16,17,21,23,25,27,29,31,
-		   2:6,10,12,15,18:20,22,24,26,28,30,32,
-		   13,33:37)]%>%SNA)
-	%>%CFG(v=degree(g)^.3*9,e=E(g)$weight^.5)
-(g=(住0%>%SET_住)[,c(1,7:9,11,14,16,17,21,23,25,27,29,31)]%>%SNA)
-	%>%plot(vertex.size=degree(g)^.5*10,edge.width=E(g)$weight^.2*2,layout=layout.circle)
-(g=(住0%>%SET_住)[,c(2:6,10,12,15,18:20,22,24,26,28,30,32)]%>%SNA)
-	%>%plot(vertex.size=degree(g)^.5*10,edge.width=E(g)$weight^.4*2,layout=layout.circle)
-(g=(住0%>%SET_住)[,c(13,33:37)]%>%SNA)
-	%>%plot(vertex.size=degree(g)*10,edge.width=E(g)$weight^.5,layout=layout.circle)
-(g=(住1%>%SET_住)[,c(35,8,9,11,14,16,17,21,6,20,22,23,25,26,29,5,33,34)]%>%SNA)
-	%>%CFG(v=degree(g)^.4*15,e=E(g)$weight^.4)
-(g=(住2%>%SET_住)[,c(4,6,14,24,33:37)]%>%SNA)
-	%>%CFG(v=degree(g)*15,e=E(g)$weight^.5)
-(g=(住3%>%SET_住)[,c(16,17,23,25,29,33,35,36,37,3,14)]%>%SNA)
-	%>%CFG(v=degree(g)^.6*25,e=E(g)$weight^.5*2)
+(g=(住0%>%SET_住)[,c(
+	1,7:9,11,14,16,17,21,23,25,27,29,31,
+	2:6,10,12,15,18:20,22,24,26,28,30,32,
+	13,33:37)]
+	%>%SNA)%>%CFG(v=degree(g)^.3*9,e=E(g)$weight^.5)
+(g=(住0%>%SET_住)[,c(1,7:9,11,14,16,17,21,23,25,27,29,31)]
+	%>%SNA)%>%plot(vertex.size=degree(g)^.5*10,edge.width=E(g)$weight^.2*2,layout=layout.circle)
+(g=(住0%>%SET_住)[,c(2:6,10,12,15,18:20,22,24,26,28,30,32)]
+	%>%SNA)%>%plot(vertex.size=degree(g)^.5*10,edge.width=E(g)$weight^.4*2,layout=layout.circle)
+(g=(住0%>%SET_住)[,c(13,33:37)]
+	%>%SNA)%>%plot(vertex.size=degree(g)*10,edge.width=E(g)$weight^.5,layout=layout.circle)
+(g=(住1%>%SET_住)[,c(35,8,9,11,14,16,17,21,6,20,22,23,25,26,29,5,33,34)]
+	%>%SNA)%>%CFG(v=degree(g)^.4*15,e=E(g)$weight^.4)
+(g=(住2%>%SET_住)[,c(4,6,14,24,33:37)]
+	%>%SNA)%>%CFG(v=degree(g)*15,e=E(g)$weight^.5)
+(g=(住3%>%SET_住)[,c(16,17,23,25,29,33,35,36,37,3,14)]
+	%>%SNA)%>%CFG(v=degree(g)^.6*25,e=E(g)$weight^.5*2)
 
 CEN = function(x) data.table(rbind(
   cbind(centr_degree(x)$centralization ,
