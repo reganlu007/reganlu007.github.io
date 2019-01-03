@@ -225,6 +225,33 @@ class	B0000000__15 {
 	}
 }
 ```
+## 1/3 練習
+```
+import	java.util.*;
+class	j {
+	public	static void main(String[] args){
+// Q1
+		System.out.print("In : ");
+		String s = new Scanner(System.in).next();
+		int sum  = 0;
+		for(int i= 0; i < s.length(); i++)
+			sum += Math.pow(s.charAt(i) - '0', 2);
+		System.out.println("Out: "+ sum);
+		
+// Q2
+		int x[][] = new int[5][5], sum1 = 0, sum2 = 0;
+		for(int i = 0; i < 5; i++){
+			for(int j = 0; j < 5; j++){
+				System.out.print("\t"+ (x[i][j] = new Random().nextInt(10)));
+				if(i == j) sum1 += x[i][j];
+				if(i+j==4) sum2 += x[i][j];
+			}
+			System.out.println();
+		}
+		System.out.println("主："+ sum1+"、次："+ sum2);
+	}
+}
+```
 # 期中上機參考答案
 ```
 import	java.util.Scanner;
