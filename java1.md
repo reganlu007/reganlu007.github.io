@@ -215,13 +215,13 @@ import	java.util.*;
 class	B0000000__15 {
 	public	static void main(String[] args){
 		int x[] = new int[10];
-		ArrayList a = new ArrayList();
-		for (int  i = 0; i < x.length; i++)
-			a.add( func(i, x[i]=new Random().nextInt(100)+1, a), x[i]);
-		System.out.printf("前：%s\n後：%s\n", Arrays.toString(x), a);
+		ArrayList al = new ArrayList();
+		for (int i = 0; i < x.length; i++)
+			al.add(func(i, x[i]=new Random().nextInt(100)+1, al), x[i]);
+		System.out.printf("前：%s\n後：%s\n",Arrays.toString(x), al);
 	}
-	public	static int  func(int i, int x, ArrayList a){
-		for (int  j = 0; j < i; j++) if (x <(int)a.get(j)) return j; return i;
+	public	static int  func(int i, int x, ArrayList al){
+		for (int  j = 0; j < i; j++) if (x <(int)al.get(j)) return j; return i;
 	}
 }
 ```
