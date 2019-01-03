@@ -25,9 +25,10 @@ CFG = function(g, m=cluster_optimal(g),v=degree(g),e=E(g)$weight,l=layout.circle
 	%>%CFG(v=degree(g)^.3*9,e=E(g)$weight^.5)
 (g=(住0%>%SET_住)[,c(1,7:9,11,14,16,17,21,23,25,27,29,31)]%>%SNA)
 	%>%plot(vertex.size=degree(g)^.5*10,edge.width=E(g)$weight^.2*2,layout=layout.circle)
+(g=(住0%>%SET_住)[,c(2:6,10,12,15,18:20,22,24,26,28,30,32)]%>%SNA)
+	%>%plot(vertex.size=degree(g)^.5*10,edge.width=E(g)$weight^.4*2,layout=layout.circle)
 (g=(住0%>%SET_住)[,c(13,33:37)]%>%SNA)
 	%>%plot(vertex.size=degree(g)*10,edge.width=E(g)$weight^.5,layout=layout.circle)
-
 (g=(住1%>%SET_住)[,c(35,8,9,11,14,16,17,21,6,20,22,23,25,26,29,5,33,34)]%>%SNA)
 	%>%CFG(v=degree(g)^.4*15,e=E(g)$weight^.4)
 (g=(住2%>%SET_住)[,c(4,6,14,24,33:37)]%>%SNA)
