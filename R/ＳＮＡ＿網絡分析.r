@@ -17,6 +17,10 @@ SET_住 = function(x)x[,c(24,26,28,42,47,52,56,87,91,96,97,98,112,149,174,212,21
 SNA = function(x, w=T, m='undirected'){x[x>=1]=1; simplify(graph.adjacency(t(x %<>% data.matrix) %*% x, weighted=w, mode=m))}
 CFG = function(g, m=cluster_optimal(g),v=degree(g),e=E(g)$weight,l=layout.circle) plot(m, g, vertex.size=v, edge.width=e, layout=l)
 
+(g=(門0%>%SET_門)[,c(1:4,6,9,14,21,22,24,25,
+		   5,7,10,15:20,23,26,28,29,
+		   8,11:13,27,30:37)]%>%SNA)
+	%>%CFG(v=20,e=E(g)$weight^.05)
 
 
 (g=(住0%>%SET_住)[,c(1,7:9,11,14,16,17,21,23,25,27,29,31,
