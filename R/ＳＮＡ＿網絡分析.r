@@ -15,11 +15,14 @@ SET_門 = function(x)x[,c(28,30,32,48,54,59,63,120,125,131,132,134,151,206,272,3
 SET_住 = function(x)x[,c(24,26,28,42,47,52,56,87,91,96,97,98,112,149,174,212,213,218,224,225,226,227,229,230,236,237,241,255,267,270,271,272,374,391,393,415,468)]
 
 SNA = function(x, w=T, m='undirected'){x[x>=1]=1; simplify(graph.adjacency(t(x %<>% data.matrix) %*% x, weighted=w, mode=m))}
-CFG = function(g, m=cluster_optimal(g),v=V(g),e=E(g)$weight,l=layout.circle) plot(m, g, vertex.size=v, edge.width=e, layout=l)
+CFG = function(g, m=cluster_optimal(g),v=degree(g),e=E(g)$weight,l=layout.circle) plot(m, g, vertex.size=v, edge.width=e, layout=l)
 
-(g=(住1%>%SET_住)[,c(35,8,9,11,14,16,17,21,20,22,23,25,26,29,5,6,33,34)]%>%SNA)%>%CFG(v=degree(g)^.5*10,e=E(g)$weight^.4)
-(g=(住2%>%SET_住)[,c(4,6,14,24,33:37)]%>%SNA)%>%CFG(v=degree(g)^2*2,e=E(g)$weight^.5)
-(g=(住3%>%SET_住)[,c(16,17,23,25,29,33,35,36,37,3,14)]%>%SNA)%>%CFG(v=degree(g)*5,e=E(g)$weight^.5*2)
+
+
+(g=(住0%>%SET_住)[,c(1,7:9,11,14,16,17,21,23,25,27,29,31, 2:6,10,12,15,18:20,22,24,26,28,30,32, 13,33:37)]%>%SNA)%>%CFG(m=cluster_optimal(g),v=degree(g)^.3*9,e=E(g)$weight^.5)
+(g=(住1%>%SET_住)[,c(35,8,9,11,14,16,17,21,6,20,22,23,25,26,29,5,33,34)]%>%SNA)%>%CFG(m=cluster_optimal(g),v=degree(g)^.4*15,e=E(g)$weight^.4)
+(g=(住2%>%SET_住)[,c(4,6,14,24,33:37)]%>%SNA)%>%CFG(m=cluster_optimal(g),v=degree(g)*15,e=E(g)$weight^.5)
+(g=(住3%>%SET_住)[,c(16,17,23,25,29,33,35,36,37,3,14)]%>%SNA)%>%CFG(v=degree(g)^.6*25,e=E(g)$weight^.5*2)
 
 CEN = function(x) data.table(rbind(
   cbind(centr_degree(x)$centralization ,
