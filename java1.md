@@ -220,7 +220,7 @@ class	B0000000__15 {
 			al.add(func(i, x[i]=new Random().nextInt(100)+1, al), x[i]);
 		System.out.printf("前：%s\n後：%s\n",Arrays.toString(x), al);
 	}
-	public	static int  func(int i, int x, ArrayList al){
+	static	int  func(int i, int x, ArrayList al){
 		for (int  j = 0; j < i; j++) if(x < (int)al.get(j)) return j; return i;
 	}
 }
@@ -228,7 +228,7 @@ class	B0000000__15 {
 ## 1/3 練習
 ```
 import	java.util.*;
-class	j {
+class	final_practice {
 	public	static void main(String[] args){
 // Q1
 		System.out.print("In : ");
