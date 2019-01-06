@@ -23,5 +23,5 @@ tmp2[資料年月<200500][,3]%>%unique
 
 # 之後使用 excel 處理確診ID
 
-merge(fread('門診處方歷史檔_確診ID.csv'),fread('門診處方歷史檔_icd_selected.csv'))%>%fwrite('門診處方歷史檔_icd_selected_05_14')
-merge(fread('住院申報費用清單_確診ID.csv'),fread('住院申報費用清單_icd_selected.csv'))%>%fwrite('住院申報費用清單_icd_selected_05_14')
+merge(fread('門診處方歷史檔_確診ID.csv'),fread('門診處方歷史檔_icd_selected.csv'))     %>% fwrite('門診處方歷史檔_icd_selected_05_14')
+merge(fread('住院申報費用清單_確診ID.csv'),fread('住院申報費用清單_icd_selected.csv')) %>% fwrite('住院申報費用清單_icd_selected_05_14')
