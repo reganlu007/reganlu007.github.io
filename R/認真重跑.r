@@ -22,7 +22,7 @@ tmp1[資料年月<200500][,3]%>%unique
 tmp2[,3]%>%unique
 tmp2[資料年月<200500][,3]%>%unique
 
-# 之後使用 excel 處理確診ID
+# 之後使用 excel 處理 確診ID
 
 merge(fread('門診處方歷史檔_確診ID.csv'),fread('門診處方歷史檔_icd_selected.csv'))     %>% fwrite('門診處方歷史檔_icd_selected_05_14')
 merge(fread('住院申報費用清單_確診ID.csv'),fread('住院申報費用清單_icd_selected.csv')) %>% fwrite('住院申報費用清單_icd_selected_05_14')
@@ -35,6 +35,8 @@ tmp2 =	rbind(
 view = function(x)data.table(table(x[grep('^7[B-Z]-',收費編號)]))[order(-N)]
 view(tmp1[,7])
 view(tmp2[,5])
+
+# 之後使用 excel 處理 中藥收費ID
 
 library(dplyr)
 tmp1.1 = dcast(tmp1[grep('^7[B-Z]-',收費編號)], 住院號 + 批價日期 ~ 收費編號)
