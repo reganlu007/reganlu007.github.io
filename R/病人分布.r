@@ -36,4 +36,8 @@ view = function(x)data.table(table(x[grep('^7[B-Z]-',收費編號)]))[order(-N)]
 view(tmp1[,7])
 view(tmp2[,5])
 
-library(dplyr);library(arulesViz);library(igraph)
+library(dplyr)
+tmp1.1 = dcast(tmp1[grep('^7[B-Z]-',收費編號)], 住院號 + 批價日期 ~ 收費編號)
+tmp2.1 = dcast(tmp2[grep('^7[B-Z]-',收費編號)], 門診號 + 批價日期 ~ 收費編號)
+
+library(arulesViz);library(igraph)
