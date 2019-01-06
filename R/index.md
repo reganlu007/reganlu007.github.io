@@ -49,13 +49,14 @@ dcast(tmp2[grep('^7[B-Z]-',收費編號)], 門診號 + 批價日期 ~ 收費編�
 
 library(arulesViz);library(igraph)
 arm = function(x,s=.1,z=.8,b='support')sort(apriori(data.matrix(x),parameter=list(supp=s,conf=z)),by=b)
-arm(fread('住.csv')[,c(-2,-1)]) %>% head(30) %>% inspect
 arm(fread('門.csv')[,c(-2,-1)], s=.01) %>% head(30) %>% inspect
+arm(fread('住.csv')[,c(-2,-1)]) %>% head(30) %>% inspect
 ```
 ## 網絡分析
 ```
 library(igraph)
 sna = function(x,w=T,m='undirected'){x[x>=1]=1;simplify(graph.adjacency(t(x%<>%data.matrix)%*%x,weighted=w,mode=m))}
 cop = function(g,m=cluster_optimal(g),v=degree(g),e=E(g)$weight,l=layout.circle)plot(m,g,vertex.size=v,edge.width=e,layout=l)
-
+sna(fread('門.csv')[,c(-2,-1)])
+sna(fread('住.csv')[,c(-2,-1)])
 ```
