@@ -33,3 +33,5 @@ tmp2 =	rbind(
 	merge(unique(fread('門診處方歷史檔_icd_selected_05_14.csv')[,5]), fread('子宮肌瘤-呂豪笙\\門診批價明細檔_2.csv')),
 	merge(unique(fread('門診處方歷史檔_icd_selected_05_14.csv')[,5]), fread('子宮肌瘤-呂豪笙\\門診批價明細檔_3.csv')))
 view = function(x)data.table(table(x[grep('^7[B-Z]-',收費編號)]))[order(-N)]
+view(tmp1[,7])
+view(tmp2[,5])
