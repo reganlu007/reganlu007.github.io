@@ -14,5 +14,14 @@ rbind(	門診歷史[grep(icd_9,疾病代號一)],
 	門診歷史[grep(icd_9,疾病代號四)],
 	門診歷史[grep(icd_9,疾病代號五)],
 	門診歷史[grep(icd_9,疾病代號六)]) %>% unique %>% fwrite('門診處方歷史檔_icd_selected.csv')
+	
+tmp1[,3]%>%unique
+tmp1[資料年月<200500][,3]%>%unique
+
+tmp2[,3]%>%unique
+tmp2[資料年月<200500][,3]%>%unique
+
+# 使用 excel 處理確診ID
+
 tmp1.1 = merge(fread('門診處方歷史檔_確診ID.csv'),fread('門診處方歷史檔_icd_selected.csv'))
 tmp2.1 = merge(fread('住院申報費用清單_確診ID.csv'),fread('住院申報費用清單_icd_selected.csv'))
