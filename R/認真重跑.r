@@ -43,7 +43,6 @@ dcast(tmp1[grep('^7[B-Z]-',收費編號)], 住院號 + 批價日期 ~ 收費編�
 dcast(tmp2[grep('^7[B-Z]-',收費編號)], 門診號 + 批價日期 ~ 收費編號) %>% fwrite('門.csv')
 
 library(arulesViz);library(igraph)
-ARM  = function(x, s=.1, z=.8, b='support') inspect(sort(apriori(data.matrix(x), parameter=list(supp=s, conf=z)), by=b))
-ARM  = function(x, s=.1, z=.8, n=30) inspect(head(sort(apriori(data.matrix(x), parameter=list(supp=s, conf=z)), by='support'), n))
-ARM(fread('住.csv')[,c(-2,-1)])
-ARM(fread('門.csv')[,c(-2,-1)], s=.01)
+ARM  = function(x, s=.1, z=.8, b='support') sort(apriori(data.matrix(x), parameter=list(supp=s, conf=z)), by=b)
+ARM(fread('住.csv')[,c(-2,-1)]) %>% head(30) %>% inspect
+ARM(fread('門.csv')[,c(-2,-1)], s=.01) %>% head(30) %>% inspect
