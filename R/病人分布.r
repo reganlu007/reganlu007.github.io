@@ -1,4 +1,4 @@
-library(data.table);library(magrittr);library(dplyr)
+library(data.table);library(magrittr)
 
 icd_9 = '^218|^617|^6253|^6254|^626|^628'
 住院申報 = fread('子宮肌瘤-呂豪笙\\住院申報費用清單.csv')
@@ -35,3 +35,5 @@ tmp2 =	rbind(
 view = function(x)data.table(table(x[grep('^7[B-Z]-',收費編號)]))[order(-N)]
 view(tmp1[,7])
 view(tmp2[,5])
+
+library(dplyr);library(arulesViz);library(igraph)
