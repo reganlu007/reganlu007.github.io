@@ -57,7 +57,7 @@ dcast(tmp2[grep('^7[B-Z]-',收費編號)], 門診號 + 批價日期 ~ 收費編�
 
 arm = function(x,s=.01,z=.3,b='support')sort(apriori(data.matrix(x),parameter=list(supp=s,conf=z)),by=b)
 inspect(arm(fread('門.csv')[,c(-2,-1)])[1:30])
-inspect(arm(fread('住.csv')[,c(-2,-1)],z=.8)[1:30])
+inspect(arm(fread('住.csv')[,c(-2,-1)])[1:30])
 ```
 ## 網絡分析
 ```
