@@ -29,8 +29,8 @@ no_04 = function(x){
 	}
 	merge(f(x),x)
 }
-no_04(fread('門診處方歷史檔_icd_selected.csv'))   %>% fwrite('門診處方歷史檔_icd_selected_05_14')
-no_04(fread('住院申報費用清單_icd_selected.csv')) %>% fwrite('住院申報費用清單_icd_selected_05_14')
+no_04(fread('門診處方歷史檔_icd_selected.csv')) %>% fwrite('門診處方歷史檔_icd_selected_05_14.csv')
+no_04(fread('住院申報費用清單_icd_selected.csv')) %>% fwrite('住院申報費用清單_icd_selected_05_14.csv')
 
 tmp1 =	merge(unique(fread('住院申報費用清單_icd_selected_05_14.csv')[,5]),fread('子宮肌瘤-呂豪笙\\住診批價明細檔.csv'))
 tmp2 =	rbind(
