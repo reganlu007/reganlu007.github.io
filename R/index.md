@@ -29,14 +29,18 @@ no_04 = function(x){
 	}
 	merge(f(x),x)
 }
-no_04(fread('門診處方歷史檔_icd_selected.csv')) %>% fwrite('門診處方歷史檔_icd_selected_05_14.csv')
+no_04(fread(　'門診處方歷史檔_icd_selected.csv')) %>% fwrite(　'門診處方歷史檔_icd_selected_05_14.csv')
 no_04(fread('住院申報費用清單_icd_selected.csv')) %>% fwrite('住院申報費用清單_icd_selected_05_14.csv')
 
 tmp1 =	merge(unique(fread('住院申報費用清單_icd_selected_05_14.csv')[,5]),fread('子宮肌瘤-呂豪笙\\住診批價明細檔.csv'))
+tmp2 =	merge(unique(fread(　'門診處方歷史檔_icd_selected_05_14.csv')[,5]),fread('子宮肌瘤-呂豪笙\\門診批價明細檔.csv'))
+
+# 拆分
 tmp2 =	rbind(
 	merge(unique(fread('門診處方歷史檔_icd_selected_05_14.csv')[,5]), fread('子宮肌瘤-呂豪笙\\門診批價明細檔_1.csv')),
 	merge(unique(fread('門診處方歷史檔_icd_selected_05_14.csv')[,5]), fread('子宮肌瘤-呂豪笙\\門診批價明細檔_2.csv')),
 	merge(unique(fread('門診處方歷史檔_icd_selected_05_14.csv')[,5]), fread('子宮肌瘤-呂豪笙\\門診批價明細檔_3.csv')))
+
 view = function(x)data.table(table(x[grep('^7[B-Z]-',收費編號)]))[order(-N)]
 view(tmp1[,7])
 view(tmp2[,5])
