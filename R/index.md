@@ -19,16 +19,18 @@ rbind(	門診歷史[grep(icd_9,疾病代號一)],
 	門診歷史[grep(icd_9,疾病代號六)]) %>% unique %>% fwrite('門診處方歷史檔_icd_selected.csv')
 rm(住院申報,門診歷史);gc()
 
-tmp1[,3]%>%unique
-tmp1[資料年月<200500][,3]%>%unique
-
-tmp2[,3]%>%unique
-tmp2[資料年月<200500][,3]%>%unique
-
-### 之後使用 excel 處理 確診ID
-
-merge(fread('門診處方歷史檔_確診ID.csv'),fread('門診處方歷史檔_icd_selected.csv'))     %>% fwrite('門診處方歷史檔_icd_selected_05_14')
-merge(fread('住院申報費用清單_確診ID.csv'),fread('住院申報費用清單_icd_selected.csv')) %>% fwrite('住院申報費用清單_icd_selected_05_14')
+no_04 = function(x){
+	f = function(x){
+		y = unique(x[資料年月<200500][,3][[1]])
+		x = unique(x[,3][[1]])
+		x = data.table(x[!x %in% y])
+		names(x)='歸戶代號'
+		x
+	}
+	merge(f(x),x)
+}
+no_04(fread('門診處方歷史檔_icd_selected.csv'))   %>% fwrite('門診處方歷史檔_icd_selected_05_14')
+no_04(fread('住院申報費用清單_icd_selected.csv')) %>% fwrite('住院申報費用清單_icd_selected_05_14')
 
 tmp1 =	merge(unique(fread('住院申報費用清單_icd_selected_05_14.csv')[,5]),fread('子宮肌瘤-呂豪笙\\住診批價明細檔.csv'))
 tmp2 =	rbind(
