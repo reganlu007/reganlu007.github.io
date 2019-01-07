@@ -1,6 +1,8 @@
 #  子宮肌瘤
 ## 匯入函數
-	library(data.table);library(magrittr);library(dplyr);library(arulesViz);library(igraph)
+```
+library(data.table);library(magrittr);library(dplyr);library(arulesViz);library(igraph)
+```
 ## 基本資料
 ```
 icd_9 = '^218|^617|^6253|^6254|^626|^628'
