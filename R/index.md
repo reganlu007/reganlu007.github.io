@@ -44,7 +44,7 @@ tmp2 =	rbind(
 	merge(x, fread('子宮肌瘤-呂豪笙\\門診批價明細檔_2.csv')),
 	merge(x, fread('子宮肌瘤-呂豪笙\\門診批價明細檔_3.csv')))
 
-view = function(x)data.table(table(x[grep('^7[B-Z]-',收費編號)]))[order(-N)]
+view = function(x)fwrite(data.table(table(x[grep('^7[B-Z]-',收費編號)]))[order(-N)],'_.csv')
 view(tmp1[,7])
 view(tmp2[,5])
 
