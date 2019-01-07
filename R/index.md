@@ -63,8 +63,8 @@ inspect(arm(fread('住.csv')[,c(-2,-1)])[1:30])
 ```
 sna = function(x,w=T,m='undirected'){x[x>=1]=1;simplify(graph.adjacency(t(x%<>%data.matrix)%*%x,weighted=w,mode=m))}
 cop = function(g,m=cluster_optimal(g),v=degree(g),e=E(g)$weight,l=layout.circle)plot(m,g,vertex.size=v,edge.width=e,layout=l)
-g = sna(fread('門.csv')[,c(-2,-1)])
-cop(g[,c(143,152,555,396,552,550,650,129,54,58,353,127,116)], e=E(g)$weight^.1,v=degree(g)*3.5)
-g = sna(fread('住.csv')[,c(-2,-1)])
-cop(g[,c(25,5,45,82,102,104,112,185,135)], e=E(g)$weight^.1,v=degree(g)*4)
+g = fread('門.csv')[,c(-2,-1)]
+cop(sna(g[,c(143,152,555,396,552,550,650,129,54,58,353,127,116))], e=E(g)$weight^.1,v=degree(g)*3.5)
+g = fread('住.csv')[,c(-2,-1)]
+cop(sna(g[,c(25,5,45,82,102,104,112,185,135)]), e=E(g)$weight^.1,v=degree(g)*4)
 ```
