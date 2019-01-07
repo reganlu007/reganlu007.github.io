@@ -1,8 +1,8 @@
 #  子宮肌瘤
+##
+	library(data.table);library(magrittr);library(dplyr);library(arulesViz);library(igraph)
 ## 基本資料
 ```
-library(data.table);library(magrittr)
-
 icd_9 = '^218|^617|^6253|^6254|^626|^628'
 住院申報 = fread('子宮肌瘤-呂豪笙\\住院申報費用清單.csv')
 rbind(	住院申報[grep(icd_9,主疾病代號)],
@@ -50,18 +50,15 @@ view(tmp2[,5])
 ```
 ## 關聯分析
 ```
-library(dplyr)
 dcast(tmp1[grep('^7[B-Z]-',收費編號)], 住院號 + 批價日期 ~ 收費編號) %>% fwrite('住.csv')
 dcast(tmp2[grep('^7[B-Z]-',收費編號)], 門診號 + 批價日期 ~ 收費編號) %>% fwrite('門.csv')
 
-library(arulesViz)
 arm = function(x,s=.1,z=.8,b='support')sort(apriori(data.matrix(x),parameter=list(supp=s,conf=z)),by=b)
 arm(fread('門.csv')[,c(-2,-1)], s=.01) %>% head(30) %>% inspect
 arm(fread('住.csv')[,c(-2,-1)]) %>% head(30) %>% inspect
 ```
 ## 網絡分析
 ```
-library(igraph)
 sna = function(x,w=T,m='undirected'){x[x>=1]=1;simplify(graph.adjacency(t(x%<>%data.matrix)%*%x,weighted=w,mode=m))}
 cop = function(g,m=cluster_optimal(g),v=degree(g),e=E(g)$weight,l=layout.circle)plot(m,g,vertex.size=v,edge.width=e,layout=l)
 sna(fread('門.csv')[,c(-2,-1)])
