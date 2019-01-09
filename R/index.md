@@ -71,8 +71,10 @@ f('7C-E312     1GM') # 左歸丸
 ```
 ## 關聯分析
 ```
-dcast(fread('子宮肌瘤住院明細.csv')[grep('^7[B-Z]-',收費編號)], 歸戶代號+住院號+批價日期~收費編號) %>% fwrite('住.csv')
-dcast(fread('子宮肌瘤門診明細.csv')[grep('^7[B-Z]-',收費編號)], 歸戶代號+門診號+批價日期~收費編號) %>% fwrite('門.csv')
+x = dcast(fread('子宮肌瘤門診明細.csv')[grep('^7[B-Z]-',收費編號)],
+	歸戶代號+門診號+批價日期~收費編號);x[,c(-3,-2,-1)][x>0]=1; fwrite(x,'門.csv')
+x = dcast(fread('子宮肌瘤住院明細.csv')[grep('^7[B-Z]-',收費編號)],
+	歸戶代號+住院號+批價日期~收費編號);x[,c(-3,-2,-1)][x>0]=1; fwrite(x,'住.csv')
 
 arm = function(x, s=.1, z=.3, b='support') sort(apriori(data.matrix(x), parameter=list(supp=s,conf=z)), by=b)
 rul = function(x) x[!is.redundant(x)]
@@ -82,7 +84,7 @@ fread('住.csv')[,c(-3,-2,-1)] %>% arm        %>% rul %T>% inspect %>% out %>% f
 ```
 ## 網絡分析
 ```
-sna = function(x,w=T,m='undirected'){x[x>=1]=1;simplify(graph.adjacency(t(x%<>%data.matrix)%*%x,weighted=w,mode=m))}
+sna = function(x,w=T,m='undirected') simplify(graph.adjacency(t(x%<>%data.matrix)%*%x,weighted=w,mode=m))
 cop = function(g,m=cluster_optimal(g),v=degree(g),e=E(g)$weight,l=layout.circle) plot(m,g,vertex.size=v,edge.width=e,layout=l)
 g = sna(fread('門.csv')[,c(-2,-1)][,c(143,152,555,396,552,550,650,129,54,58,353,127,116)])
 cop(g, e=E(g)$weight^.1,v=degree(g)*3.5)
