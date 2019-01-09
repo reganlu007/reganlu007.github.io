@@ -45,8 +45,16 @@ rbind(
 view = function(x)fwrite(data.table(table(x[grep('^7[B-Z]-',收費編號)]))[order(-N)],'_.csv')
 view(fread('子宮肌瘤住院明細.csv')[,7]) # 住院
 view(fread('子宮肌瘤門診明細.csv')[,5]) # 門診
+```
+## 處方箋數、歸戶號數、門診號數、住院號數
+```
+unique(fread('門.csv')[,1:2])	# 處方箋數
+unique(fread('門.csv')[,1])	# 歸戶號數
+unique(fread('門.csv')[,2])	# 門診號數
 
-### 之後使用 excel 處理 中藥收費ID
+unique(fread('住.csv')[,1:2])	# 處方箋數
+unique(fread('住.csv')[,1])	# 歸戶號數
+unique(fread('住.csv')[,2])	# 住院號數
 ```
 ## 頻率劑量
 ```
