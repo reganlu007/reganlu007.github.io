@@ -71,13 +71,13 @@ dcast(tmp2[grep('^7[B-Z]-',收費編號)], 門診號 + 批價日期 ~ 收費編�
 
 arm = function(x,s=.01,z=.3,b='support')sort(apriori(data.matrix(x),parameter=list(supp=s,conf=z)),by=b)
 
-rules = arm(fread('門.csv')[,c(-2,-1)])[1:100];inspect(rules)
-rules = rules[!is.redundant(rules)][1:30];inspect(rules)
-data.table(lhs = labels(lhs(rules)), rhs = labels(rhs(rules)), rules@quality) %>% fwrite('門_arm.csv')
+rule1 = arm(fread('門.csv')[,c(-2,-1)])[1:100];inspect(rule1)
+rule1 = rule1[!is.redundant(rule1)][1:30];inspect(rule1)
+data.table(lhs = labels(lhs(rule1)), rhs = labels(rhs(rule1)), rule1@quality) %>% fwrite('門_arm.csv')
 
-rules = arm(fread('住.csv')[,c(-2,-1)])[1:100];inspect(rules)
-rules = rules[!is.redundant(rules)][1:30];inspect(rules)
-data.table(lhs = labels(lhs(rules)), rhs = labels(rhs(rules)), rules@quality) %>% fwrite('住_arm.csv')
+rule2 = arm(fread('住.csv')[,c(-2,-1)], .6)[1:100];inspect(rule2)
+rule2 = rule2[!is.redundant(rule2)][1:30];inspect(rule2)
+data.table(lhs = labels(lhs(rule2)), rhs = labels(rhs(rule2)), rule2@quality) %>% fwrite('住_arm.csv')
 ```
 ## 網絡分析
 ```
