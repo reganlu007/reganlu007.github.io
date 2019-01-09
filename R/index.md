@@ -21,14 +21,12 @@ rbind(	門診歷史[grep(icd_9,疾病代號一)],
 	門診歷史[grep(icd_9,疾病代號六)]) %>% unique %>% fwrite('門診處方歷史檔_icd_selected.csv')
 rm(住院申報,門診歷史);gc()
 
-no04 = function(x){
-	f = function(x){
-		y = unique(x[資料年月<200500][,3][[1]])
-		z = unique(x[,3][[1]])
-		w = data.table(z[!z %in% y])
-		names(w)='歸戶代號';w
-	}
-	merge(f(x),x)
+no04 =	function(x){
+	z = unique(x[,3][[1]])
+	w = data.table(z[!z %in% unique(x[資料年月<200500][,3][[1]])])
+	w = data.table(z[!unique(x[資料年月<200500][,3][[1]])])
+	names(w)='歸戶代號'
+	merge(w,x)
 }
 no04(fread(　'門診處方歷史檔_icd_selected.csv')) %>% fwrite(　'門診處方歷史檔_icd_selected_05_14.csv')
 no04(fread('住院申報費用清單_icd_selected.csv')) %>% fwrite('住院申報費用清單_icd_selected_05_14.csv')
