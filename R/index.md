@@ -24,7 +24,6 @@ rm(住院申報,門診歷史);gc()
 no04 =	function(x){
 	z = unique(x[,3][[1]])
 	w = data.table(z[!z %in% unique(x[資料年月<200500][,3][[1]])])
-	w = data.table(z[!unique(x[資料年月<200500][,3][[1]])])
 	names(w)='歸戶代號'
 	merge(w,x)
 }
