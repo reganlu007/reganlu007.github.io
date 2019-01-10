@@ -48,7 +48,7 @@ fread('子宮肌瘤門診明細.csv')[,5] %>% SORT %>% View # 門診
 ## 處方箋數、歸戶號數、門診住院號數
 ```
 m = function(x){
-	x[,-(1:3)]->m;m[m>0]=1;fwrite(m,'_.csv')
+	x[,-(1:3)]->m;m[m>1]=1;fwrite(m,'_.csv')
 	data.table(
 		c('中藥種類','處方箋數','歸戶號數','門住號數','總中藥量/處方'),
 		c(ncol(x)-3, nrow(x), nrow(unique(x[,1])), nrow(unique(x[,2])), sum(m)/nrow(m))
@@ -88,4 +88,7 @@ g = sna(fread('門.csv')[,-(1:3)][,c(143,152,555,396,552,550,650,129,54,58,353,1
 cop(g, e=E(g)$weight^.1,v=degree(g)*3.5)
 g = sna(fread('住.csv')[,-(1:3)][,c(25,5,45,82,102,104,112,185,135)])
 cop(g, e=E(g)$weight^.1,v=degree(g)*4)
+```
+## 經濟分析
+```
 ```
