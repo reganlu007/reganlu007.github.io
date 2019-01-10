@@ -47,10 +47,12 @@ fread('子宮肌瘤門診明細.csv')[,5] %>% SORT %>% View # 門診
 ```
 ## 處方箋數、歸戶號數、門診住院號數
 ```
-m = function(x){print(data.table(
-	c('中藥種類','處方箋數','歸戶號數','門住號數'),
-	c(ncol(x)-3,nrow(x),nrow(unique(x[,1])),nrow(unique(x[,2])))))
-	x=x[,-(1:3)];x[x>0]=1;c('總中藥量/處方',sum(x)/nrow(x))
+m = function(x){
+	x[,-(1:3)]->m;m[m>0]=1;fwrite(m,'_.csv')
+	data.table(
+		c('中藥種類','處方箋數','歸戶號數','門住號數','總中藥量/處方'),
+		c(ncol(x)-3, nrow(x), nrow(unique(x[,1])), nrow(unique(x[,2])), sum(m)/nrow(m))
+	)
 }
 m(fread('門.csv'));m(fread('住.csv'))
 ```
