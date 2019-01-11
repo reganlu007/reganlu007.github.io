@@ -32,8 +32,9 @@ no04 =	function(x){
 no04(fread(　'門診處方歷史檔_icd_selected.csv')) %>% fwrite(　'門診處方歷史檔_icd_selected_05_14.csv')
 no04(fread('住院申報費用清單_icd_selected.csv')) %>% fwrite('住院申報費用清單_icd_selected_05_14.csv')
 
-merge(unique(fread('住院申報費用清單_icd_selected_05_14.csv')[,5]),fread('子宮肌瘤-呂豪笙\\住診批價明細檔.csv')) %>% fwrite('子宮肌瘤住院明細.csv')
-merge(unique(fread(　'門診處方歷史檔_icd_selected_05_14.csv')[,5]),fread('子宮肌瘤-呂豪笙\\門診批價明細檔.csv')) %>% fwrite('子宮肌瘤門診明細.csv')
+m = function(x) merge(unique(fread(x)[,5]),fread(y))
+m('住院申報費用清單_icd_selected_05_14.csv','子宮肌瘤-呂豪笙\\住診批價明細檔.csv') %>% fwrite('子宮肌瘤住院明細.csv')
+m(　'門診處方歷史檔_icd_selected_05_14.csv','子宮肌瘤-呂豪笙\\門診批價明細檔.csv') %>% fwrite('子宮肌瘤門診明細.csv')
 
 # 拆分
 x = unique(fread('門診處方歷史檔_icd_selected_05_14.csv')[,5])
@@ -84,11 +85,13 @@ fread('住.csv')[,-(1:3)] %>% arm        %>% rul %T>% inspect %>% out %>% fwrite
 ## 網絡分析
 ```
 sna = function(x, w=T, m='undirected') {x[x>0]=1;simplify(graph.adjacency(t(x%<>%data.matrix)%*%x,weighted=w,mode=m))}
-cop = function(g, m=cluster_optimal(g), v=degree(g), e=E(g)$weight, l=layout.circle) plot(m,g,vertex.size=v,edge.width=e,layout=l)
-g = sna(fread('門.csv')[,-(1:3)][,c(143,152,555,396,552,550,650,129,54,58,353,127,116)])
-cop(g, e=E(g)$weight^.1,v=degree(g)*3.5)
-g = sna(fread('住.csv')[,-(1:3)][,c(25,5,45,82,102,104,112,185,135)])
-cop(g, e=E(g)$weight^.1,v=degree(g)*4)
+cop = function(g, m=cluster_optimal(g), v=degree(g), e=E(g)$weight, f=1, l=layout_nicely)
+	plot(m,g,vertex.size=v,vertex.label.font=f,edge.width=e,layout=l)
+g = sna(fread('門.csv')[,-(1:3)][,c(395,323,401,97,397,130,143,152,129,396,555,552,550,650,207,48,59,54,58,353,127,116)])
+E(g)$weight
+cop(g, e=ifelse(E(g)$weight<10000,0,E(g)$weight^.2),v=degree(g),f=2)
+g = sna(fread('住.csv')[,-(1:3)][,c(147,133,156,132,25,5,45,82,102,104,112,185,135)])
+cop(g, e=E(g)$weight/5,v=degree(g)^2.1,f=2,l=layout.circle)
 ```
 ## 經濟分析
 ```
@@ -98,10 +101,7 @@ cnt = function(x) nrow(unique(x))
 cnt(x[, 1]) # 歸戶代號
 cnt(x[, 5]) # 門住代號
 
-money = function(x,y) merge(unique.data.frame(fread(x)[,1]),fread(y))
+money = function(x,y) merge(unique(fread(x)[,1]),fread(y))
 sum(money('門.csv',　'門診處方歷史檔_icd_selected_05_14.csv')[,37]/1) # 中藥門診>0 之醫療費用合計金額
 sum(money('住.csv','住院申報費用清單_icd_selected_05_14.csv')[,53]/1) # 中藥住院>0 之醫療費用合計金額
-
-summaryBy(醫療費用合計金額~歸戶代號, x, FUN=sum)
-summaryBy(醫療費用合計金額~　門診號, x, FUN=sum)
 ```
