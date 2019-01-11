@@ -23,9 +23,8 @@ rbind(	門診歷史[grep(icd_9,疾病代號一)],
 rm(住院申報,門診歷史);gc()
 
 no04 =	function(x){
-	y = unique(x[資料年月<200500][,3][[1]])
 	z = unique(x[,3][[1]])
-	w = data.table(z[!z %in% y])
+	w = data.table(z[!unique(x[資料年月<200500][,3][[1]]) %in% z])
 	names(w)='歸戶代號'
 	merge(w,x)
 }
