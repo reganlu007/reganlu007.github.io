@@ -76,10 +76,10 @@ f('7C-E312     1GM') # 左歸丸
 dcast(fread('子宮肌瘤門診明細.csv')[grep('^7[B-Z]-',收費編號)],歸戶代號+門診號+批價日期~收費編號) %>% fwrite('門.csv')
 dcast(fread('子宮肌瘤住院明細.csv')[grep('^7[B-Z]-',收費編號)],歸戶代號+住院號+批價日期~收費編號) %>% fwrite('住.csv')
 
-arm = function(x, s=.1, z=.3, b='support', mi=2, ma=10) sort(apriori(data.matrix(x), parameter=list(supp=s,conf=z)), by=b, minlen = mi, maxlen = ma)
+arm = function(x, s=.1, z=.3, b='support', mi=0, ma=10) sort(apriori(data.matrix(x), parameter=list(supp=s,conf=z,minlen=mi,maxlen=ma)), by=b)
 rul = function(x) x[!is.redundant(x)]
 out = function(x) data.table(lhs = labels(lhs(x)), rhs = labels(rhs(x)), x@quality)
-fread('門.csv')[,-(1:3)] %>% arm(s=.01) %>% rul %T>% inspect %>% out %>% fwrite('門_arm.csv')
+fread('門.csv')[,-(1:3)] %>% arm(s=.01,ma=1) %>% rul %T>% inspect %>% out %>% fwrite('門_arm.csv')
 fread('住.csv')[,-(1:3)] %>% arm        %>% rul %T>% inspect %>% out %>% fwrite('住_arm.csv')
 ```
 ## 網絡分析
