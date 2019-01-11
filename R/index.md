@@ -97,8 +97,11 @@ nrow(unique(x[,5])) # 門診號
 sum (x[,37]) # 醫療費用合計金額
 
 y = fread('門.csv')
-unique(y[,1])
-unique(y[,2])
+unique(y[,1])[[1]]
+unique(y[,2])[[1]]
+
+unique(x[,1])[[1]]
+unique(x[,5])[[1]]
 
 summaryBy(醫療費用合計金額~歸戶代號, x, FUN=sum)
 summaryBy(醫療費用合計金額~　門診號, x, FUN=sum)
