@@ -92,12 +92,14 @@ cop(g, e=E(g)$weight^.1,v=degree(g)*4)
 ```
 ## 經濟分析
 ```
-x = fread('門診處方歷史檔_icd_selected_05_14.csv')
-nrow(unique(x[,1])) # 歸戶代號
-nrow(unique(x[,5])) # 門診號
-sum (x[,37]) # 醫療費用合計金額
+x = fread('　門診處方歷史檔_icd_selected_05_14.csv')
+x = fread('住院申報費用清單_icd_selected_05_14.csv')
+cnt = function(x) nrow(unique(x))
+cnt(x[, 1]) # 歸戶代號
+cnt(x[, 5]) # 門住代號
 
-sum(merge(fread('門.csv')[,1],x)[,37]) # 中藥門診>0 之醫療費用合計金額
+sum(merge(fread('門.csv')[,1],x)[,37]/1) # 中藥門診>0 之醫療費用合計金額
+sum(merge(fread('住.csv')[,1],x)[,53]/1) # 中藥住院>0 之醫療費用合計金額
 
 unique(y[,2])[[1]]
 unique(x[,5])[[1]]
