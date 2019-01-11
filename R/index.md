@@ -1,7 +1,7 @@
 #  子宮肌瘤
 ## 匯入函數
 ```
-sapply(c('data.table','magrittr','visNetwork','dplyr','arulesViz','igraph','doBy'), function(x) do.call('require', list(x)))
+sapply(c('data.table','magrittr','visNetwork','dplyr','arulesViz','igraph','doBy'),function(x) do.call('require',list(x)))
 ```
 有 FALSE 代表本機尚未安裝該套件，請用 install.packages 安裝
 ## 基本資料
@@ -73,8 +73,9 @@ f('7C-E312     1GM') # 左歸丸
 ```
 ## 關聯分析
 ```
-dcast(fread('子宮肌瘤門診明細.csv')[grep('^7[B-Z]-',收費編號)],歸戶代號+門診號+批價日期~收費編號) %>% fwrite('門.csv')
-dcast(fread('子宮肌瘤住院明細.csv')[grep('^7[B-Z]-',收費編號)],歸戶代號+住院號+批價日期~收費編號) %>% fwrite('住.csv')
+to_1 = function(x){z=x[,-(1:3)];z[z>0]=1;data.table(x[,1:3],z)}
+dcast(fread('子宮肌瘤門診明細.csv')[grep('^7[B-Z]-',收費編號)],歸戶代號+門診號+批價日期~收費編號) %>% to_1 %>% fwrite('門.csv')
+dcast(fread('子宮肌瘤住院明細.csv')[grep('^7[B-Z]-',收費編號)],歸戶代號+住院號+批價日期~收費編號) %>% to_1 %>% fwrite('住2.csv')
 
 arm = function(x, s=.1, z=.3, b='support') sort(apriori(data.matrix(x), parameter=list(supp=s,conf=z)), by=b)
 rul = function(x) x[!is.redundant(x)]
@@ -87,7 +88,7 @@ fread('住.csv')[,-(1:3)] %>% arm        %>% rul %T>% inspect %>% out %T>% View 
 sna = function(x, w=T, m='undirected') {x[x>0]=1;simplify(graph.adjacency(t(x%<>%data.matrix)%*%x,weighted=w,mode=m))}
 g = fread('門.csv')[,-(1:3)][,c(395,323,401,97,397,130,143,152,129,396,555,552,550,650,207,48,59,54,58,353,127,116)] %>%
 	sna %>% toVisNetworkData
-visNetwork(g$nodes, data.table(g$edges)[order(-weight)][1:30], width='100%', height='100vh')
+visNetwork(g$nodes, data.table(g$edges)[order(-weight)][1:30], width='100%', height='100vh')%>% visLayout(randomSeed=1)
 
 cop = function(g, m=cluster_optimal(g), v=degree(g), e=E(g)$weight, f=1, l=layout_nicely)
 	plot(m,g,vertex.size=v,vertex.label.font=f,edge.width=e,layout=l)
