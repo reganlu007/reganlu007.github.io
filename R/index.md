@@ -76,7 +76,7 @@ f('7C-E312     1GM') # 左歸丸
 dcast(fread('子宮肌瘤門診明細.csv')[grep('^7[B-Z]-',收費編號)],歸戶代號+門診號+批價日期~收費編號) %>% fwrite('門.csv')
 dcast(fread('子宮肌瘤住院明細.csv')[grep('^7[B-Z]-',收費編號)],歸戶代號+住院號+批價日期~收費編號) %>% fwrite('住.csv')
 
-arm = function(x, s=.1, z=.3, b='support') sort(apriori(data.matrix(x), parameter=list(supp=s,conf=z)), by=b)
+arm = function(x, s=.1, z=.3, b='support', mi=2, ma=10) sort(apriori(data.matrix(x), parameter=list(supp=s,conf=z)), by=b, minlen = mi, maxlen = ma)
 rul = function(x) x[!is.redundant(x)]
 out = function(x) data.table(lhs = labels(lhs(x)), rhs = labels(rhs(x)), x@quality)
 fread('門.csv')[,-(1:3)] %>% arm(s=.01) %>% rul %T>% inspect %>% out %>% fwrite('門_arm.csv')
@@ -107,11 +107,7 @@ sum(money('住.csv','住院申報費用清單_icd_selected_05_14.csv')[,53]/1) #
 ```
 # 視覺化
 ```
-nodes = data.frame(id = 1:30)
-edges = data.frame(
-from = c(1,3),
-to   = c(2,1))
-visNetwork(data.frame(id = 1:3), data.frame(
-from = c(1,3),
-to   = c(2,1)), width = '100%')
+visNetwork(width = '100%', height = '768px', data.frame(id = 1:30), data.frame(
+from = c(2, 8, 11, 12, 13, 5, 7, 7, 13, 8, 14, 15, 15, 16, 15, 14, 17, 3, 18, 6, 19, 20, 21, 12, 22),
+to   = c(1, 2, 2, 3, 2, 4, 4, 5, 1, 1, 2, 4, 5, 6, 7, 8, 2, 1, 8, 8, 9, 10, 9, 1, 2)))
 ```
