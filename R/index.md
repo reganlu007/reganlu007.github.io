@@ -1,9 +1,9 @@
 #  子宮肌瘤
 ## 匯入函數
-#### 有 FALSE 代表本機尚未安裝該套件，請用 install.packages 安裝
 ```
 sapply(c('data.table','magrittr','dplyr','arulesViz','igraph','doBy'), function(x) do.call('require', list(x)))
 ```
+有 FALSE 代表本機尚未安裝該套件，請用 install.packages 安裝
 ## 基本資料
 ```
 icd_9 = '^218|^617|^6253|^6254|^626|^628'
