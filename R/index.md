@@ -1,7 +1,8 @@
 #  子宮肌瘤
 ## 匯入函數
 ```
-library(data.table);library(magrittr);library(dplyr);library(arulesViz);library(igraph)
+sapply(c('data.table','magrittr','dplyr','arulesViz','igraph','doBy'), function(x) do.call('require', list(x)))
+# 有 FALSE 代表本機尚未安裝該套件，請用 install.packages 安裝
 ```
 ## 基本資料
 ```
