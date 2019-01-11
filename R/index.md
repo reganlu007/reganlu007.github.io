@@ -91,6 +91,7 @@ cop(g, e=E(g)$weight^.1,v=degree(g)*4)
 ```
 ## 經濟分析
 ```
-x = fread('門診處方歷史檔_icd_selected_05_14.csv')
-y = x %>% group_by(x[,1]) %>% summarise(sum(x[,37]))
+x = fread('門診處方歷史檔_icd_selected_05_14.csv')[,c(1:5,37)]
+y = x[,c(1,5,9,15,45,37)]
+z = y %>% group_by(y[,1]) %>% summarise(sum(y[,ncol(y)]))
 ```
