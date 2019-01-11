@@ -75,7 +75,7 @@ f('7C-E312     1GM') # 左歸丸
 ```
 to_1 = function(x){z=x[,-(1:3)];z[z>0]=1;data.table(x[,1:3],z)}
 dcast(fread('子宮肌瘤門診明細.csv')[grep('^7[B-Z]-',收費編號)],歸戶代號+門診號+批價日期~收費編號) %>% to_1 %>% fwrite('門.csv')
-dcast(fread('子宮肌瘤住院明細.csv')[grep('^7[B-Z]-',收費編號)],歸戶代號+住院號+批價日期~收費編號) %>% to_1 %>% fwrite('住2.csv')
+dcast(fread('子宮肌瘤住院明細.csv')[grep('^7[B-Z]-',收費編號)],歸戶代號+住院號+批價日期~收費編號) %>% to_1 %>% fwrite('住.csv')
 
 arm = function(x, s=.1, z=.3, b='support') sort(apriori(data.matrix(x), parameter=list(supp=s,conf=z)), by=b)
 rul = function(x) x[!is.redundant(x)]
@@ -85,7 +85,7 @@ fread('住.csv')[,-(1:3)] %>% arm        %>% rul %T>% inspect %>% out %T>% View 
 ```
 ## 網絡分析
 ```
-sna = function(x, w=T, m='undirected') {x[x>0]=1;simplify(graph.adjacency(t(x%<>%data.matrix)%*%x,weighted=w,mode=m))}
+sna = function(x, w=T, m='undirected') graph.adjacency(t(x%<>%data.matrix)%*%x,weighted=w,mode=m)%>% simplify
 g = fread('門.csv')[,-(1:3)][,c(395,323,401,97,397,130,143,152,129,396,555,552,550,650,207,48,59,54,58,353,127,116)] %>%
 	sna %>% toVisNetworkData
 visNetwork(g$nodes, data.table(g$edges)[order(-weight)][1:30], width='100%', height='100vh')%>% visLayout(randomSeed=1)
