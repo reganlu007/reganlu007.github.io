@@ -85,9 +85,12 @@ fread('住.csv')[,-(1:3)] %>% arm        %>% rul %T>% inspect %>% out %T>% View 
 ## 網絡分析
 ```
 sna = function(x, w=T, m='undirected') {x[x>0]=1;simplify(graph.adjacency(t(x%<>%data.matrix)%*%x,weighted=w,mode=m))}
+g = fread('門.csv')[,-(1:3)][,c(395,323,401,97,397,130,143,152,129,396,555,552,550,650,207,48,59,54,58,353,127,116)] %>%
+	sna %>% toVisNetworkData
+visNetwork(g$nodes, data.table(g$edges)[order(-weight)][1:30], width='100%', height='100vh')
+
 cop = function(g, m=cluster_optimal(g), v=degree(g), e=E(g)$weight, f=1, l=layout_nicely)
 	plot(m,g,vertex.size=v,vertex.label.font=f,edge.width=e,layout=l)
-g = sna(fread('門.csv')[,-(1:3)][,c(395,323,401,97,397,130,143,152,129,396,555,552,550,650,207,48,59,54,58,353,127,116)])
 E(g)$weight
 cop(g, e=ifelse(E(g)$weight<10000,0,E(g)$weight^.2),v=degree(g),f=2)
 g = sna(fread('住.csv')[,-(1:3)][,c(147,133,156,132,25,5,45,82,102,104,112,185,135)])
@@ -104,13 +107,4 @@ cnt(x[, 5]) # 門住代號
 money = function(x,y) merge(unique(fread(x)[,1]),fread(y))
 sum(money('門.csv',　'門診處方歷史檔_icd_selected_05_14.csv')[,37]/1) # 中藥門診>0 之醫療費用合計金額
 sum(money('住.csv','住院申報費用清單_icd_selected_05_14.csv')[,53]/1) # 中藥住院>0 之醫療費用合計金額
-```
-# 視覺化
-```
-nodes = data.frame(id=1:28)
-edges = data.frame(
-	from=c(2, 3, 2, 5, 8, 8, 7, 7, 11, 12, 6, 13, 12, 13, 14, 16, 15, 17, 15, 20, 14, 15, 16, 21, 8, 22, 23, 18, 25, 26, 19, 27, 27, 20, 21, 28, 24
-	),to=c(1, 1, 6, 4, 1, 2, 4, 5, 2, 1, 8, 1, 3, 2, 2, 2, 4, 2, 5, 1, 8, 7, 6, 2, 16, 2, 1, 8, 2, 1, 9, 1, 2, 10, 9, 2, 11
-))
-visNetwork(nodes, edges, width = '100%', height = '768px')
 ```
