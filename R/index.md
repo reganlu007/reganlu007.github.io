@@ -48,13 +48,9 @@ fread('子宮肌瘤門診明細.csv')[,5] %>% SORT %>% View # 門診
 ```
 ## 處方箋數、歸戶號數、門診住院號數
 ```
-m = function(x){
-	x[,-(1:3)]->m;m[m>1]=1;fwrite(m,'_.csv')
-	data.table(
-		c('中藥種類','處方箋數','歸戶號數','門住號數','總中藥量/處方'),
-		c(ncol(x)-3, nrow(x), nrow(unique(x[,1])), nrow(unique(x[,2])), sum(m)/nrow(m))
-	)
-}
+m = function(x){x[,-(1:3)]->m;m[m>1]=1;data.table(
+	c('中藥種類','處方箋數','歸戶號數','門住號數','總中藥量/處方'),
+	c(ncol(x)-3, nrow(x), nrow(unique(x[,1])), nrow(unique(x[,2])), sum(m)/nrow(m)))}
 m(fread('門.csv'));m(fread('住.csv'))
 ```
 ## 頻率劑量
@@ -67,7 +63,11 @@ tmp[頻率 %in% 'QID']$頻率 = 4
 tmp[頻率 %in%  'HS']$頻率 = 1
 tmp$頻率 %<>% as.numeric
 tmp$劑量 %<>% as.numeric
-f = function(x) data.table(c('收費名稱','每日劑量','服藥週期'),c(tmp[收費編號 %in% x][1,35],mean(tmp[收費編號 %in% x]$劑量 * tmp[收費編號 %in% x]$頻率),mean(tmp[收費編號 %in% x]$天數)))
+f = function(x) data.table(
+	c('收費名稱','每日劑量','服藥週期'),c(
+	 tmp[收費編號 %in% x][1,35],
+	mean(tmp[收費編號 %in% x]$劑量 * tmp[收費編號 %in% x]$頻率),
+	mean(tmp[收費編號 %in% x]$天數)))
 f('7C-E312     1GM') # 左歸丸
 ```
 ## 關聯分析
@@ -92,7 +92,15 @@ cop(g, e=E(g)$weight^.1,v=degree(g)*4)
 ```
 ## 經濟分析
 ```
-x = fread('門診處方歷史檔_icd_selected_05_14.csv')[,c(1:5,37)]
-y = x[,c(1,5,9,15,45,37)]
-z = y %>% group_by(y[,1]) %>% summarise(sum(y[,ncol(y)]))
+x = fread('門診處方歷史檔_icd_selected_05_14.csv')
+nrow(unique(x[,1])) # 歸戶代號
+nrow(unique(x[,5])) # 門診號
+sum (x[,37]) # 醫療費用合計金額
+
+y = fread('門.csv')
+unique(y[,1])
+unique(y[,2])
+
+summaryBy(醫療費用合計金額~歸戶代號, x, FUN=sum)
+summaryBy(醫療費用合計金額~　門診號, x, FUN=sum)
 ```
