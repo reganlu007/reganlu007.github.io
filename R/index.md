@@ -105,3 +105,13 @@ money = function(x,y) merge(unique(fread(x)[,1]),fread(y))
 sum(money('門.csv',　'門診處方歷史檔_icd_selected_05_14.csv')[,37]/1) # 中藥門診>0 之醫療費用合計金額
 sum(money('住.csv','住院申報費用清單_icd_selected_05_14.csv')[,53]/1) # 中藥住院>0 之醫療費用合計金額
 ```
+# 視覺化
+```
+nodes = data.frame(id = 1:30)
+edges = data.frame(
+from = c(1,3),
+to   = c(2,1))
+visNetwork(data.frame(id = 1:3), data.frame(
+from = c(1,3),
+to   = c(2,1)), width = '100%')
+```
