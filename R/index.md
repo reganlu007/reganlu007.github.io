@@ -100,12 +100,12 @@ VIS_1 = visNetwork(width='100vw', height='100vh',
 		width = x$weight/1000))
 VIS_1 %>% visLayout(randomSeed = 12)
 
-g2 = fread('住.csv')[,-(1:3)][,c(147,133,156,132,25,5,45,82,102,104,112,185,135)] %>%
+g2 = fread('住.csv')[,-(1:3)][,c(135,185,112,104,102,82,45,5,25,132,156,133,147)] %>%
 	sna %>% toVisNetworkData
-x = data.table(g2$edges)[order(-weight)][1:30]
+x = data.table(g2$edges)[order(-weight)][1:40]
 VIS_2 = visNetwork(width='100vw', height='100vh',
-	nodes = data.frame(id = g2$nodes$id, label = g2$nodes$label, value = c(4,4,2,2,2,2,2,2,2,3,3,3,2)),
-	edges = data.frame(from = x$from, to = x$to, width = x$weight/9))
+	nodes = data.frame(id = g2$nodes$id, label = g2$nodes$label, value = c(1.6,1.6,1,1,1,1,1,1,1,1.3,1.35,1,1)),
+	edges = data.frame(from = x$from, to = x$to, width = x$weight/5))
 VIS_2 %>% visLayout(randomSeed = 12)
 ```
 ## 經濟分析
@@ -117,15 +117,9 @@ unique(x[,5]) # 門住代號
 sum(merge(unique(fread('門.csv')[,1]),fread(　'門診處方歷史檔_icd_selected_05_14.csv'))$醫療費用合計金額) # 中藥門診 > 0 之醫療費用合計金額
 sum(merge(unique(fread('住.csv')[,1]),fread('住院申報費用清單_icd_selected_05_14.csv'))$醫療費用合計)　　 # 中藥住院 > 0 之醫療費用合計金額
 
-merge(	unique(merge(
-		unique(fread('門.csv')[,2]),
-		fread('子宮肌瘤門診明細.csv'))[grep('^P[1-9A-Z][A-Z][1-9]{3}[A-Z]',收費編號)][,1]),
-	fread(　'門診處方歷史檔_icd_selected_05_14.csv')) %>% fwrite('門診中西合用.csv')
-merge(	unique(merge(
-		unique(fread('住.csv')[,2]),
-		fread('子宮肌瘤住院明細.csv'))[grep('^P[1-9A-Z][A-Z][1-9]{3}[A-Z]',收費編號)][,1]),
-	fread('住院申報費用清單_icd_selected_05_14.csv')) %>% fwrite('住院中西合用.csv')
-
+m = function(x,y,z) merge(unique(merge(unique(fread(x)[,2]),fread(y))[grep('^P[1-9A-Z][A-Z][1-9]{3}[A-Z]',收費編號)][,1]),fread(z))
+m('門.csv','子宮肌瘤門診明細.csv',　'門診處方歷史檔_icd_selected_05_14.csv') %>% fwrite('門診中西合用.csv')
+m('住.csv','子宮肌瘤住院明細.csv','住院申報費用清單_icd_selected_05_14.csv') %>% fwrite('住院中西合用.csv')
 sum(fread('門診中西合用.csv')[,37]) # 門診中西合用 > 0 之醫療費用合計金額
 sum(fread('住院中西合用.csv')[,53]) # 住院中西合用 > 0 之醫療費用合計金額
 ```
