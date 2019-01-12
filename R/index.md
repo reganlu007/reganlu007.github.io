@@ -86,14 +86,14 @@ fread('住.csv')[,-(1:3)] %>% arm        %>% rul %T>% inspect %>% out %T>% View 
 ## 網絡分析
 ```
 sna = function(x, w=T, m='undirected') graph.adjacency(t(x%<>%data.matrix)%*%x,weighted=w,mode=m)%>% simplify
-g = fread('門.csv')[,-(1:3)][,c(323,322,53,30,401,207,97,59,143,397,54,130,152,555,396,552,650,129,58,353,127,116)] %>%
+g = fread('門.csv')[,-(1:3)][,c(395,48,550,323,322,53,30,401,207,97,59,143,397,54,130,152,555,396,552,650,129,58,353,127,116)] %>%
 	sna %>% toVisNetworkData
 x = data.table(g$edges)[order(-weight)][1:30]
 VIS_1 = visNetwork(width='100vw', height='100vh',
 	nodes = data.frame(
 		id    = g$nodes$id,
 		label = g$nodes$label,
-		value = c(6,4,4,2,4,2,2,4,2,2,2,3,3,2,3,2,2,2,3,2,2,8)),
+		value = c(6,4,4,2,4,2,2,4,2,2,2,3,3,2,3,2,2,2,3,2,2,8,2,3,4)),
 	edges = data.frame(
 		from  = x$from,
 		to    = x$to,
