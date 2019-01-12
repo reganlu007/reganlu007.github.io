@@ -121,6 +121,9 @@ x0 = merge(unique(fread('門.csv')[,2]),fread('子宮肌瘤門診明細.csv'))[g
 x0 = merge(unique(fread('住.csv')[,2]),fread('子宮肌瘤住院明細.csv'))[grep('^P[1-9A-Z][A-Z][1-9]{3}[A-Z]',收費編號)]
 unique(x0[,1]) # 門住代號
 unique(x0[,4]) # 歸戶代號
-sum(merge(unique(x0[,4]),fread(　'門診處方歷史檔_icd_selected_05_14.csv'))[,37]) # 中西合用住院 > 0 之醫療費用合計金額
-sum(merge(unique(x0[,4]),fread('住院申報費用清單_icd_selected_05_14.csv'))[,53]) # 中西合用住院 > 0 之醫療費用合計金額
+
+merge(unique(x0[,4]),fread(　'門診處方歷史檔_icd_selected_05_14.csv')) %>% fwrite('門診中西合用.csv')
+sum(fread('門診中西合用.csv')[,37]) # 門診中西合用 > 0 之醫療費用合計金額
+merge(unique(x0[,4]),fread('住院申報費用清單_icd_selected_05_14.csv')) %>% fwrite('住院中西合用.csv')
+sum(fread('住院中西合用.csv')[,53]) # 住院中西合用 > 0 之醫療費用合計金額
 ```
