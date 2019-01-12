@@ -119,7 +119,7 @@ m = function(x,y) merge(unique(fread(x)[,1]),fread(y))
 m('門.csv',　'門診處方歷史檔_icd_selected_05_14.csv') %>% fwrite('門診中.csv')
 m('住.csv','住院申報費用清單_icd_selected_05_14.csv') %>% fwrite('住院中.csv')
 
-n = function(x,y,z) merge(unique(merge(unique(fread(x)[,2]),fread(y))[grep('^P[1-9A-Z][A-Z][1-9]{3}[A-Z]',收費編號)][,1]),fread(z))
+n = function(x,y,z) merge(unique(merge(unique(fread(x)[,1]),fread(y))[grep('^P[1-9A-Z][A-Z][1-9]{3}[A-Z]',收費編號)][,1]),fread(z))
 n('門.csv','子宮肌瘤門診明細.csv',　'門診處方歷史檔_icd_selected_05_14.csv') %>% fwrite('門診中西合用.csv')
 n('住.csv','子宮肌瘤住院明細.csv','住院申報費用清單_icd_selected_05_14.csv') %>% fwrite('住院中西合用.csv')
 ```
