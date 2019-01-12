@@ -88,7 +88,7 @@ fread('住.csv')[,-(1:3)] %>% arm        %>% rul %T>% inspect %>% out %T>% View 
 sna = function(x, w=T, m='undirected') graph.adjacency(t(x%<>%data.matrix)%*%x,weighted=w,mode=m)%>% simplify
 g = fread('門.csv')[,-(1:3)][,c(116,127,353,58,129,650,552,396,555,152,130,54,397,143,59,97,207,401,30,53,322,323,550,48,395)] %>%
 	sna %>% toVisNetworkData
-x = data.table(g$edges)[order(-weight)][1:30]
+x = data.table(g$edges)[order(-weight)][1:40]
 VIS_1 = visNetwork(width='100vw', height='100vh',
 	nodes = data.frame(
 		id    = g$nodes$id,
