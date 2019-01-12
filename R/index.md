@@ -85,21 +85,28 @@ fread('住.csv')[,-(1:3)] %>% arm        %>% rul %T>% inspect %>% out %T>% View 
 ```
 ## 網絡分析
 ```
-fread('門.csv')[,c(395,323,401,97,397,130,143,152,129,396,555,552,550,650,207,48,59,54,58,353,127,116)]
-[,c(147,133,156,132,25,5,45,82,102,104,112,185,135)]
 sna = function(x, w=T, m='undirected') graph.adjacency(t(x%<>%data.matrix)%*%x,weighted=w,mode=m)%>% simplify
-g = fread('門.csv')[,-(1:3)][,c(323,322,53,30,401,207,97,59,143,397,54,130,152,555,396,552,650,129,58,353,127,116)] %>% sna %>% toVisNetworkData
+g = fread('門.csv')[,-(1:3)][,c(323,322,53,30,401,207,97,59,143,397,54,130,152,555,396,552,650,129,58,353,127,116)] %>%
+	sna %>% toVisNetworkData
 x = data.table(g$edges)[order(-weight)][1:30]
-visNetwork(width='100%', height='100vh',
+VIS_1 = visNetwork(width='100vw', height='100vh',
 	nodes = data.frame(
 		id    = g$nodes$id,
-		label = g$nodes$label),
+		label = g$nodes$label,
+		value = c(6,4,4,2,4,2,2,4,2,2,2,3,3,2,3,2,2,2,3,2,2,8)),
 	edges = data.frame(
 		from  = x$from,
 		to    = x$to,
-		width = x$weight/1000)) %>% visLayout(randomSeed = 1)
+		width = x$weight/1000))
+VIS_1 %>% visLayout(randomSeed = 12)
 
-g = fread('住.csv')[,-(1:3)] %>% sna %>% toVisNetworkData
+g2 = fread('住.csv')[,-(1:3)][,c(147,133,156,132,25,5,45,82,102,104,112,185,135)] %>%
+	sna %>% toVisNetworkData
+x = data.table(g2$edges)[order(-weight)][1:30]
+VIS_2 = visNetwork(width='100vw', height='100vh',
+	nodes = data.frame(id = g2$nodes$id, label = g2$nodes$label, value = c(4,4,2,2,2,2,2,2,2,3,3,3,2)),
+	edges = data.frame(from = x$from, to = x$to, width = x$weight/9))
+VIS_2 %>% visLayout(randomSeed = 12)
 ```
 ## 經濟分析
 ```
