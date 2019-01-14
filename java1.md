@@ -285,6 +285,13 @@ class	B0000000__midterm {
 ```
 import	java.util.*;
 class	B0000000__final {
+	static	double	calBMI(double h, double w){return w * 10000 / h / h;}
+	static	boolean	isRAT (double d[]){Arrays.sort(d); return d[0] + d[1] == d[2];}
+	static	int calItemProfit(int d[][], Scanner s){
+		for(int i = 0; i < 3; i++){
+			for(int j = 0; j < 3; j++) d[i][j] = s.nextInt();
+			d[i][3] = d[i][0] *(d[i][2] - d[i][1]);}
+		return	d[0][3] + d[1][3] + d[2][3];}
 	public	static void main(String[] args){
 		Scanner s = new Scanner(System.in);
 //	Q1
@@ -293,20 +300,15 @@ class	B0000000__final {
 		System.out.println("體重"+(bmi < 18.5? "過輕": bmi < 24? "適當": "過重"));
 //	Q2
 		System.out.print("Q2: 輸入九個數字：");
-		int n = 3, Q2[][]= new int[n][n];
-		for(int i = 0; i < n; i++)
-			for(int j = 0; j < n; j++)
-				Q2[i][j] = s.nextInt();
+		int n = 3 , Q2[][]= new int[n][n];
+		for(int i = 0; i < n; i++) for(int j = 0; j < n; j++) Q2[i][j] = s.nextInt();
 		boolean b = true;
-		for(int i = 0; i < n && b; i++)
-			for(int j = 0; j < n && b; j++)
-				b = Q2[i][j] == Q2[n-1-i][n-1-j];
+		for(int i = 0; i < n && b; i++) for(int j = 0; j < n && b; j++) b = Q2[i][j] == Q2[n-1-i][n-1-j];
 		System.out.println((b? "":"不")+"是對稱矩陣");
 //	Q3
 		System.out.print("Q3: 輸入三個數字：");
-		double Q3[] =  new double[3];
-		for(int i = 0; i < Q3.length; i++)
-			Q3[i] = Math.pow(s.nextDouble(),2);
+		double  Q3[] =  new double[3];
+		for(int i = 0; i < Q3.length; i++) Q3[i] = Math.pow(s.nextDouble(),2);
 		System.out.println((isRAT(Q3)? "":"不")+"是直角三角形");
 //	Q4
 		System.out.print("Q4: 輸入三位數字：");
@@ -315,34 +317,17 @@ class	B0000000__final {
 			System.out.print("不是三位數，請重新輸入：");			
 			Q4 = s.nextInt();
 		}
-		for(int i = Q4; i > 0; i/=10)
-			Q4 -= Math.pow(i % 10, 3);
+		for(int i = Q4; i > 0; i/=10) Q4 -= Math.pow(i % 10, 3);
 		System.out.println((Q4 == 0? "":"Not ")+"Armstrong Number");
 //	Q5
 		System.out.print("Q5: 輸入九個數字：");
 		int Q5[][] = new int[3][4], Q = calItemProfit(Q5, s);
 		System.out.print("\t\t數量\t買價\t賣價\t損益");
-		for(int  i = 0; i < 3; i++){
+		for(int i = 0; i < 3; i++){
 			System.out.printf("\n第 %d 種商品：", i + 1);
-			for(int j = 0; j < 4; j++)
-				System.out.print("\t"+ Q5[i][j]);
+			for(int j = 0; j < 4; j++) System.out.print("\t"+ Q5[i][j]);
 		}
 		System.out.println("\n總損益："+ Q);
-	}
-	static double calBMI(double h, double w){
-		return  w * 10000 / h / h;
-	}
-	static boolean isRAT(double d[]){
-		Arrays.sort(d);
-		return d[0] + d[1] == d[2];
-	}
-	static  int calItemProfit(int d[][], Scanner s){
-		for(int i = 0; i < 3; i++){
-			for(int j = 0; j < 3; j++)
-				d[i][j] = s.nextInt();
-			d[i][3] = d[i][0] * (d[i][2] - d[i][1]);			
-		}
-		return d[0][3] + d[1][3] + d[2][3];
 	}
 }
 ```
