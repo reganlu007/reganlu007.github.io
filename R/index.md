@@ -126,7 +126,7 @@ n('住.csv','子宮肌瘤住院明細.csv','住院申報費用清單_icd_selecte
 ## 中藥前三名醫師
 ```
 SORT(fread('門診中.csv')[,45]) # 前三名醫師編號
-dcast(merge(fread('門診中.csv')[SORT(fread('門診中.csv')[,45])[1,1] %in% 醫師代號][,5], fread('子宮肌瘤門診明細.csv')),歸戶代號+門診號+批價日期~收費編號) %>% to_1 %>% fwrite('門1.csv')
-dcast(merge(fread('門診中.csv')[SORT(fread('門診中.csv')[,45])[2,1] %in% 醫師代號][,5], fread('子宮肌瘤門診明細.csv')),歸戶代號+門診號+批價日期~收費編號) %>% to_1 %>% fwrite('門2.csv')
-dcast(merge(fread('門診中.csv')[SORT(fread('門診中.csv')[,45])[3,1] %in% 醫師代號][,5], fread('子宮肌瘤門診明細.csv')),歸戶代號+門診號+批價日期~收費編號) %>% to_1 %>% fwrite('門3.csv')
+
+x = fread('子宮肌瘤門診明細.csv')[grep('^7[B-Z]-',收費編號)]
+dcast(x[fread('門診中.csv')[SORT(fread('門診中.csv')[,45])[1,1] %in% 醫師代號]$門診號 %in% 門診號],歸戶代號+門診號+批價日期~收費編號) %>% to_1 %>% fwrite('門1.csv')
 ```
