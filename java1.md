@@ -296,7 +296,7 @@ class	B0000000__final {
 		Scanner s = new Scanner(System.in);
 //	Q1
 		System.out.print("Q1: 輸入身高體重：");
-		double bmi = calBMI(s.nextDouble(),s.nextDouble());
+		double bmi = calBMI(s.nextDouble(), s.nextDouble());
 		System.out.println("體重"+(bmi < 18.5? "過輕": bmi < 24? "適當": "過重"));
 //	Q2
 		System.out.print("Q2: 輸入九個數字：");
