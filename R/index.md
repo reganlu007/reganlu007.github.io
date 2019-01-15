@@ -94,6 +94,7 @@ VIS_1 = visNetwork(width='100vw', height='100vh',
 		id    = g$nodes$id,
 		label = g$nodes$label,
 		value = c(7,5,5,2,4,2,2,4,1,1,2,3,3,2,3,2,2,2,2,2,2,9,2,3,4)),
+		color.background = 'green'
 	edges = data.frame(
 		from  = x$from,
 		to    = x$to,
@@ -104,7 +105,7 @@ g2 = fread('住.csv')[,-(1:3)][,c(135,185,112,104,102,82,45,5,25,132,156,133,147
 	sna %>% toVisNetworkData
 x = data.table(g2$edges)[order(-weight)][1:40]
 VIS_2 = visNetwork(width='100vw', height='100vh',
-	nodes = data.frame(id = g2$nodes$id, label = g2$nodes$label, value = c(1.6,1.6,1,1,1,1,1,1,1,1.3,1.35,1,1)),
+	nodes = data.frame(id = g2$nodes$id, label = g2$nodes$label, value = c(1.6,1.6,1,1,1,1,1,1,1,1.3,1.35,1,1), color.background = 'green'),
 	edges = data.frame(from = x$from, to = x$to, width = x$weight/5))
 VIS_2 %>% visLayout(randomSeed = 12)
 ```
