@@ -4,6 +4,9 @@
 sapply(c('data.table','magrittr','visNetwork','dplyr','arulesViz','igraph'),function(x) do.call('require',list(x)))
 SORT = function(x) data.table(table(x))[order(-N)]
 to_1 = function(x){z=x[,-(1:3)];z[z>0]=1;data.table(x[,1:3],z)}
+arm = function(x, s=.1, z=.3, b='support') sort(apriori(data.matrix(x), parameter=list(supp=s,conf=z)), by=b)
+rul = function(x) x[!is.redundant(x)]
+out = function(x) data.table(lhs = labels(lhs(x)), rhs = labels(rhs(x)), x@quality)
 ```
 有 FALSE 代表本機尚未安裝該套件，請用 install.packages 安裝
 ## 基本資料
@@ -76,9 +79,6 @@ f('7C-E312     1GM') # 左歸丸
 dcast(fread('子宮肌瘤門診明細.csv')[grep('^7[B-Z]-',收費編號)],歸戶代號+門診號+批價日期~收費編號) %>% to_1 %>% fwrite('門.csv')
 dcast(fread('子宮肌瘤住院明細.csv')[grep('^7[B-Z]-',收費編號)],歸戶代號+住院號+批價日期~收費編號) %>% to_1 %>% fwrite('住.csv')
 
-arm = function(x, s=.1, z=.3, b='support') sort(apriori(data.matrix(x), parameter=list(supp=s,conf=z)), by=b)
-rul = function(x) x[!is.redundant(x)]
-out = function(x) data.table(lhs = labels(lhs(x)), rhs = labels(rhs(x)), x@quality)
 fread('門.csv')[,-(1:3)] %>% arm(s=.01) %>% rul %T>% inspect %>% out %T>% View %>% fwrite('門_arm.csv')
 fread('住.csv')[,-(1:3)] %>% arm        %>% rul %T>% inspect %>% out %T>% View %>% fwrite('住_arm.csv')
 ```
@@ -126,7 +126,13 @@ n('住.csv','子宮肌瘤住院明細.csv','住院申報費用清單_icd_selecte
 ## 中藥前三名醫師
 ```
 SORT(fread('門診中.csv')[,45]) # 前三名醫師編號
-
+f = function(x) SORT(fread('門診中.csv')[,45])[x,1][[1]]
 x = fread('子宮肌瘤門診明細.csv')[grep('^7[B-Z]-',收費編號)]
-dcast(x[fread('門診中.csv')[SORT(fread('門診中.csv')[,45])[1,1] %in% 醫師代號]$門診號 %in% 門診號],歸戶代號+門診號+批價日期~收費編號) %>% to_1 %>% fwrite('門1.csv')
+dcast(x[門診號 %in% fread('門診中.csv')[醫師代號 %in% f(1)]$門診號],歸戶代號+門診號+批價日期~收費編號) %>% to_1 %>% fwrite('門1.csv')
+dcast(x[門診號 %in% fread('門診中.csv')[醫師代號 %in% f(2)]$門診號],歸戶代號+門診號+批價日期~收費編號) %>% to_1 %>% fwrite('門2.csv')
+dcast(x[門診號 %in% fread('門診中.csv')[醫師代號 %in% f(3)]$門診號],歸戶代號+門診號+批價日期~收費編號) %>% to_1 %>% fwrite('門3.csv')
+
+fread('門1.csv')[,-(1:3)] %>% arm(s=.01) %>% rul %T>% inspect %>% out %T>% View %>% fwrite('門1_arm.csv')
+fread('門2.csv')[,-(1:3)] %>% arm(s=.01) %>% rul %T>% inspect %>% out %T>% View %>% fwrite('門2_arm.csv')
+fread('門3.csv')[,-(1:3)] %>% arm(s=.01) %>% rul %T>% inspect %>% out %T>% View %>% fwrite('門3_arm.csv')
 ```
