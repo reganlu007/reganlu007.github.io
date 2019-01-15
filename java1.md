@@ -314,7 +314,7 @@ class	B0000000__final {
 		System.out.print("Q4: 輸入三位數字：");
 		int Q4 = s.nextInt();
 		while(("" +Q4).length() != 3){
-			System.out.print("不是三位數，請重新輸入：");			
+			System.out.print("不是三位數，請重新輸入：");
 			Q4 = s.nextInt();
 		}
 		for(int i = Q4; i > 0; i/=10) Q4 -= Math.pow(i % 10, 3);
