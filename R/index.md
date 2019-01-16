@@ -136,7 +136,7 @@ VIS_1 = visNetwork(width='100vw', height='100vh',
 	nodes = data.frame(
 		id    = g1$nodes$id,
 		label = g1$nodes$label,
-	#	value = c(1.6,1.6,1,1,1,1,1,1,1,1.3,1.35,1,1),
+		value = c(5,4,4,2,3,3,2,2,2,2,1,1,1,1,2,1,1,7,6,1),
 		color.background = 'green'),
 	edges = data.frame(
 		from  = x1$from,
@@ -146,7 +146,7 @@ VIS_2 = visNetwork(width='100vw', height='100vh',
 	nodes = data.frame(
 		id    = g2$nodes$id,
 		label = g2$nodes$label,
-	#	value = c(1.6,1.6,1,1,1,1,1,1,1,1.3,1.35,1,1),
+		value = c(2,2,2,3,2,1,2,1,1,1,2,1,2,2,2,2,1,4,2,3,2),
 		color.background = 'green'),
 	edges = data.frame(
 		from  = x2$from,
@@ -156,7 +156,7 @@ VIS_3 = visNetwork(width='100vw', height='100vh',
 	nodes = data.frame(
 		id    = g3$nodes$id,
 		label = g3$nodes$label,
-	#	value = c(1.6,1.6,1,1,1,1,1,1,1,1.3,1.35,1,1),
+		value = c(6,5,5,5,3,3,3,3,3,2,3,2,2,2,2,2,2,1,1,1,1,12,2,1),
 		color.background = 'green'),
 	edges = data.frame(
 		from  = x3$from,
