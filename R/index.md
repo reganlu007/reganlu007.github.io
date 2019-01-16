@@ -7,6 +7,7 @@ to_1 = function(x){z=x[,-(1:3)];z[z>0]=1;data.table(x[,1:3],z)}
 arm = function(x, s=.1, z=.3, b='support') sort(apriori(data.matrix(x), parameter=list(supp=s,conf=z)), by=b)
 rul = function(x) x[!is.redundant(x)]
 out = function(x) data.table(lhs = labels(lhs(x)), rhs = labels(rhs(x)), x@quality)
+sna = function(x, w=T, m='undirected') simplify(graph.adjacency(t(x%<>%data.matrix)%*%x,weighted=w,mode=m))
 ```
 有 FALSE 代表本機尚未安裝該套件，請用 install.packages 安裝
 ## 基本資料
@@ -84,29 +85,24 @@ fread('住.csv')[,-(1:3)] %>% arm        %>% rul %T>% inspect %>% out %T>% View 
 ```
 ## 網絡分析
 ```
-sna = function(x, w=T, m='undirected') graph.adjacency(t(x%<>%data.matrix)%*%x,weighted=w,mode=m)%>% simplify
 g = fread('門.csv')[,-(1:3)][,c(116,127,353,58,129,650,552,396,555,152,130,54,397,143,59,97,207,401,30,53,322,323,550,48,395)] %>%
 	sna %>% toVisNetworkData
+g = fread('住.csv')[,-(1:3)][,c(135,185,112,104,102,82,45,5,25,132,156,133,147)] %>%
+	sna %>% toVisNetworkData
 x = data.table(g$edges)[order(-weight)][1:40]
-VIS_1 = visNetwork(width='100vw', height='100vh',
+VIS = visNetwork(width='100vw', height='100vh',
 	nodes = data.frame(
 		id    = g$nodes$id,
 		label = g$nodes$label,
 		value = c(7,5,5,2,4,2,2,4,1,1,2,3,3,2,3,2,2,2,2,2,2,9,2,3,4)),
-		color.background = 'green'
+	#	value = c(1.6,1.6,1,1,1,1,1,1,1,1.3,1.35,1,1),
+		color.background = 'green'),
 	edges = data.frame(
 		from  = x$from,
 		to    = x$to,
-		width = x$weight/1000))
-VIS_1 %>% visLayout(randomSeed = 12)
-
-g2 = fread('住.csv')[,-(1:3)][,c(135,185,112,104,102,82,45,5,25,132,156,133,147)] %>%
-	sna %>% toVisNetworkData
-x = data.table(g2$edges)[order(-weight)][1:40]
-VIS_2 = visNetwork(width='100vw', height='100vh',
-	nodes = data.frame(id = g2$nodes$id, label = g2$nodes$label, value = c(1.6,1.6,1,1,1,1,1,1,1,1.3,1.35,1,1), color.background = 'green'),
-	edges = data.frame(from = x$from, to = x$to, width = x$weight/5))
-VIS_2 %>% visLayout(randomSeed = 12)
+		width = x$weight/1000
+	#	width = x$weight/5
+	)) %>% visLayout(randomSeed = 12)
 ```
 ## 經濟分析
 ```
@@ -126,13 +122,29 @@ n('住.csv','子宮肌瘤住院明細.csv','住院申報費用清單_icd_selecte
 ## 中藥前三名醫師
 ```
 SORT(fread('門診中.csv')[,45]) # 前三名醫師編號
-f = function(x) SORT(fread('門診中.csv')[,45])[x,1][[1]]
-x = fread('子宮肌瘤門診明細.csv')[grep('^7[B-Z]-',收費編號)]
-dcast(x[門診號 %in% fread('門診中.csv')[醫師代號 %in% f(1)]$門診號],歸戶代號+門診號+批價日期~收費編號) %>% to_1 %>% fwrite('門1.csv')
-dcast(x[門診號 %in% fread('門診中.csv')[醫師代號 %in% f(2)]$門診號],歸戶代號+門診號+批價日期~收費編號) %>% to_1 %>% fwrite('門2.csv')
-dcast(x[門診號 %in% fread('門診中.csv')[醫師代號 %in% f(3)]$門診號],歸戶代號+門診號+批價日期~收費編號) %>% to_1 %>% fwrite('門3.csv')
+f0 = fread('子宮肌瘤門診明細.csv')[grep('^7[B-Z]-',收費編號)]
+f1 = function(x) dcast(f0[門診號 %in% (y=fread('門診中.csv'))[醫師代號 %in% SORT(y[,45])[x,1][[1]]]$門診號],歸戶代號+門診號+批價日期~收費編號)
+f1(1) %>% to_1 %>% fwrite('門1.csv')
+f1(2) %>% to_1 %>% fwrite('門2.csv')
+f1(3) %>% to_1 %>% fwrite('門3.csv')
 
 fread('門1.csv')[,-(1:3)] %>% arm(s=.01) %>% rul %T>% inspect %>% out %T>% View %>% fwrite('門1_arm.csv')
 fread('門2.csv')[,-(1:3)] %>% arm(s=.01) %>% rul %T>% inspect %>% out %T>% View %>% fwrite('門2_arm.csv')
 fread('門3.csv')[,-(1:3)] %>% arm(s=.01) %>% rul %T>% inspect %>% out %T>% View %>% fwrite('門3_arm.csv')
+g1 = fread('門1.csv')[,-(1:3)][,c(281,26,124,315,314,107,81,108,211,105,119,493,426,340,212,132,429,94,254,424)] %>% sna %>% toVisNetworkData
+g2 = fread('門2.csv')[,-(1:3)][,c(94,97,247,96,44,43,199,251,152,114,93,108,200,246,212,196,201,84,48,225,117)] %>% sna %>% toVisNetworkData
+g3 = fread('門3.csv')[,-(1:3)][,c(306,247,167,248,43,78,101,38,263,103,274,48,162,47,119,207,32,122,290,31,34,90,52,115)] %>% sna %>% toVisNetworkData
+x1 = data.table(g1$edges)[order(-weight)][1:40]
+x2 = data.table(g2$edges)[order(-weight)][1:40]
+x3 = data.table(g3$edges)[order(-weight)][1:40]
+VIS_1 = visNetwork(width='100vw', height='100vh',
+	nodes = data.frame(
+		id    = g1$nodes$id,
+		label = g1$nodes$label,
+	#	value = c(1.6,1.6,1,1,1,1,1,1,1,1.3,1.35,1,1),
+		color.background = 'green'),
+	edges = data.frame(
+		from  = x1$from,
+		to    = x1$to,
+		width = x1$weight/1000)) %>% visLayout(randomSeed = 12)
 ```
