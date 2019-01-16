@@ -99,9 +99,7 @@ VIS = visNetwork(width='100vw', height='100vh',
 	edges = data.frame(
 		from  = x$from,
 		to    = x$to,
-		width = x$weight/1000
-	#	width = x$weight/5
-	)) %>% visLayout(randomSeed = 12)
+		width = x$weight*2/max(x$weight))) %>% visLayout(randomSeed = 12)
 ```
 ## 經濟分析
 ```
@@ -145,7 +143,7 @@ VIS_1 = visNetwork(width='100vw', height='100vh',
 	edges = data.frame(
 		from  = x1$from,
 		to    = x1$to,
-		width = x1$weight/500)) %>% visLayout(randomSeed = 12);VIS_1
+		width = x1$weight*5/max(x1$weight))) %>% visLayout(randomSeed = 1);VIS_1
 VIS_2 = visNetwork(width='100vw', height='100vh',
 	nodes = data.frame(
 		id    = g2$nodes$id,
@@ -155,7 +153,7 @@ VIS_2 = visNetwork(width='100vw', height='100vh',
 	edges = data.frame(
 		from  = x2$from,
 		to    = x2$to,
-		width = x2$weight/500)) %>% visLayout(randomSeed = 12);VIS_2
+		width = x2$weight*5/max(x2$weight))) %>% visLayout(randomSeed = 1);VIS_2
 VIS_3 = visNetwork(width='100vw', height='100vh',
 	nodes = data.frame(
 		id    = g3$nodes$id,
@@ -165,5 +163,5 @@ VIS_3 = visNetwork(width='100vw', height='100vh',
 	edges = data.frame(
 		from  = x3$from,
 		to    = x3$to,
-		width = x3$weight/500)) %>% visLayout(randomSeed = 12);VIS_3
+		width = x3$weight*5/max(x3$weight))) %>% visLayout(randomSeed = 1);VIS_3
 ```
