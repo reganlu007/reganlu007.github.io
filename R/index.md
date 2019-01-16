@@ -129,8 +129,6 @@ fread('門1.csv')[,-(1:3)] %>% arm(s=.01) %>% rul %T>% inspect %>% out %T>% View
 fread('門2.csv')[,-(1:3)] %>% arm(s=.01) %>% rul %T>% inspect %>% out %T>% View %>% fwrite('門2_arm.csv')
 fread('門3.csv')[,-(1:3)] %>% arm(s=.01) %>% rul %T>% inspect %>% out %T>% View %>% fwrite('門3_arm.csv')
 
-
-
 x1 = data.table((g1 = fread('門1.csv')[,-(1:3)][,c(281,26,124,315,314,107,81,108,211,105,119,493,426,340,212,132,429,94,254,424)] %>% sna %>% toVisNetworkData)$edges)[order(-weight)][1:40]
 x2 = data.table((g2 = fread('門2.csv')[,-(1:3)][,c(94,97,247,96,44,43,199,251,152,114,93,108,200,246,212,196,201,84,48,225,117)] %>% sna %>% toVisNetworkData)$edges)[order(-weight)][1:40]
 x3 = data.table((g3 = fread('門3.csv')[,-(1:3)][,c(306,247,167,248,43,78,101,38,263,103,274,48,162,47,119,207,32,122,290,31,34,90,52,115)] %>% sna %>% toVisNetworkData)$edges)[order(-weight)][1:40]
