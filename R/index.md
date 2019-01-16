@@ -85,11 +85,10 @@ fread('住.csv')[,-(1:3)] %>% arm        %>% rul %T>% inspect %>% out %T>% View 
 ```
 ## 網絡分析
 ```
-g = fread('門.csv')[,-(1:3)][,c(116,127,353,58,129,650,552,396,555,152,130,54,397,143,59,97,207,401,30,53,322,323,550,48,395)] %>%
-	sna %>% toVisNetworkData
-g = fread('住.csv')[,-(1:3)][,c(135,185,112,104,102,82,45,5,25,132,156,133,147)] %>%
-	sna %>% toVisNetworkData
-x = data.table(g$edges)[order(-weight)][1:40]
+x = data.table((g = fread('門.csv')[,-(1:3)][,c(116,127,353,58,129,650,552,396,555,152,130,54,397,143,59,97,207,401,30,53,322,323,550,48,395)] %>%
+	sna %>% toVisNetworkData)$edges)[order(-weight)][1:40]
+x = data.table((fread('住.csv')[,-(1:3)][,c(135,185,112,104,102,82,45,5,25,132,156,133,147)] %>%
+	sna %>% toVisNetworkData)$edges)[order(-weight)][1:40]
 VIS = visNetwork(width='100vw', height='100vh',
 	nodes = data.frame(
 		id    = g$nodes$id,
@@ -131,12 +130,12 @@ f1(3) %>% to_1 %>% fwrite('門3.csv')
 fread('門1.csv')[,-(1:3)] %>% arm(s=.01) %>% rul %T>% inspect %>% out %T>% View %>% fwrite('門1_arm.csv')
 fread('門2.csv')[,-(1:3)] %>% arm(s=.01) %>% rul %T>% inspect %>% out %T>% View %>% fwrite('門2_arm.csv')
 fread('門3.csv')[,-(1:3)] %>% arm(s=.01) %>% rul %T>% inspect %>% out %T>% View %>% fwrite('門3_arm.csv')
-g1 = fread('門1.csv')[,-(1:3)][,c(281,26,124,315,314,107,81,108,211,105,119,493,426,340,212,132,429,94,254,424)] %>% sna %>% toVisNetworkData
-g2 = fread('門2.csv')[,-(1:3)][,c(94,97,247,96,44,43,199,251,152,114,93,108,200,246,212,196,201,84,48,225,117)] %>% sna %>% toVisNetworkData
-g3 = fread('門3.csv')[,-(1:3)][,c(306,247,167,248,43,78,101,38,263,103,274,48,162,47,119,207,32,122,290,31,34,90,52,115)] %>% sna %>% toVisNetworkData
-x1 = data.table(g1$edges)[order(-weight)][1:40]
-x2 = data.table(g2$edges)[order(-weight)][1:40]
-x3 = data.table(g3$edges)[order(-weight)][1:40]
+
+
+
+x1 = data.table((g1 = fread('門1.csv')[,-(1:3)][,c(281,26,124,315,314,107,81,108,211,105,119,493,426,340,212,132,429,94,254,424)] %>% sna %>% toVisNetworkData)$edges)[order(-weight)][1:40]
+x2 = data.table((g2 = fread('門2.csv')[,-(1:3)][,c(94,97,247,96,44,43,199,251,152,114,93,108,200,246,212,196,201,84,48,225,117)] %>% sna %>% toVisNetworkData)$edges)[order(-weight)][1:40]
+x3 = data.table((g3 = fread('門3.csv')[,-(1:3)][,c(306,247,167,248,43,78,101,38,263,103,274,48,162,47,119,207,32,122,290,31,34,90,52,115)] %>% sna %>% toVisNetworkData)$edges)[order(-weight)][1:40]
 VIS_1 = visNetwork(width='100vw', height='100vh',
 	nodes = data.frame(
 		id    = g1$nodes$id,
@@ -146,5 +145,25 @@ VIS_1 = visNetwork(width='100vw', height='100vh',
 	edges = data.frame(
 		from  = x1$from,
 		to    = x1$to,
-		width = x1$weight/1000)) %>% visLayout(randomSeed = 12)
+		width = x1$weight/500)) %>% visLayout(randomSeed = 12);VIS_1
+VIS_2 = visNetwork(width='100vw', height='100vh',
+	nodes = data.frame(
+		id    = g2$nodes$id,
+		label = g2$nodes$label,
+	#	value = c(1.6,1.6,1,1,1,1,1,1,1,1.3,1.35,1,1),
+		color.background = 'green'),
+	edges = data.frame(
+		from  = x2$from,
+		to    = x2$to,
+		width = x2$weight/500)) %>% visLayout(randomSeed = 12);VIS_2
+VIS_3 = visNetwork(width='100vw', height='100vh',
+	nodes = data.frame(
+		id    = g3$nodes$id,
+		label = g3$nodes$label,
+	#	value = c(1.6,1.6,1,1,1,1,1,1,1,1.3,1.35,1,1),
+		color.background = 'green'),
+	edges = data.frame(
+		from  = x3$from,
+		to    = x3$to,
+		width = x3$weight/500)) %>% visLayout(randomSeed = 12);VIS_3
 ```
