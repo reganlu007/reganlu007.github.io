@@ -163,3 +163,8 @@ VIS_3 = visNetwork(width='100vw', height='100vh',
 		to    = x3$to,
 		width = x3$weight*5/max(x3$weight))) %>% visLayout(randomSeed = 1);VIS_3
 ```
+## 左歸丸
+```
+fread(　'門診處方歷史檔_icd_selected_05_14.csv')[門診號 %in% unique(fread('子宮肌瘤門診明細.csv')[收費編號 %in% '7C-E312     1GM']$門診號)] %>% fwrite('門診左歸丸.csv')
+fread('住院申報費用清單_icd_selected_05_14.csv')[住院號 %in% unique(fread('子宮肌瘤住院明細.csv')[收費編號 %in% '7C-E312     1GM']$住院號)] %>% fwrite('住院左歸丸.csv')
+```
