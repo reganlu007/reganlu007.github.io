@@ -76,10 +76,11 @@ fread('住.csv')[,-(1:3)] %>% arm        %>% rul %T>% inspect %>% out %T>% View 
 ```
 ## 處方箋數、歸戶號數、門診住院號數
 ```
-m = function(x){x[,-(1:3)]->m;m[m>1]=1;data.table(
+m = function(x) data.table(
 	c('中藥種類','處方箋數','歸戶號數','門住號數','總中藥量/處方'),
-	c(ncol(x)-3, nrow(x), nrow(unique(x[,1])), nrow(unique(x[,2])), sum(m)/nrow(m)))}
-m(fread('門.csv'));m(fread('住.csv'))
+	c(ncol(x)-3, nrow(x), nrow(unique(x[,1])), nrow(unique(x[,2])), sum(m)/nrow(m)))
+m(to_1(fread('門.csv')))
+m(to_1(fread('住.csv')))
 ```
 ## 網絡分析
 ```
