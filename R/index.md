@@ -84,10 +84,9 @@ m(to_1(fread('住.csv')))
 ```
 ## 網絡分析
 ```
-x = data.table((g = fread('門.csv')[,-(1:3)][,c(116,127,353,58,129,650,552,396,555,152,130,54,397,143,59,97,207,401,30,53,322,323,550,48,395)] %>%
-	sna %>% toVisNetworkData)$edges)[order(-weight)][1:40]
-x = data.table((fread('住.csv')[,-(1:3)][,c(135,185,112,104,102,82,45,5,25,132,156,133,147)] %>%
-	sna %>% toVisNetworkData)$edges)[order(-weight)][1:40]
+g = fread('門.csv')[,-(1:3)][,c(116,127,353,58,129,650,552,396,555,152,130,54,397,143,59,97,207,401,30,53,322,323,550,48,395)]
+g = fread('住.csv')[,-(1:3)][,c(135,185,112,104,102,82,45,5,25,132,156,133,147)]
+x = data.table(toVisNetworkData(sna(g))$edges)[order(-weight)][1:40]
 VIS = visNetwork(width='100vw', height='100vh',
 	nodes = data.frame(
 		id    = g$nodes$id,
