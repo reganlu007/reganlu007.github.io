@@ -97,7 +97,7 @@ VIS = visNetwork(width='100vw', height='100vh',
 	edges = data.frame(
 		from  = x$from,
 		to    = x$to,
-		width = x$weight*2/max(x$weight))) %>% visLayout(randomSeed = 12)
+		width = x$weight*2/max(x$weight))) %>% visLayout(randomSeed = 12);VIS
 ```
 ## 中藥前三名醫師
 ```
