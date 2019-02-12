@@ -114,7 +114,7 @@ fread('門3.csv')[,-(1:3)] %>% arm(s=.01) %>% rul %T>% inspect %>% out %T>% View
 ```
 節點大小：見 nodes 中的 value，值 = (單一統計量 / 平均單一統計量) * 自訂大小參數
 
-連結粗細：見 edges 中的 width，值 = (weight 屬性/ weight 最大值) * 自訂大小參數
+連結粗細：見 edges 中的 width，值 = (weight 屬性 / weight 最大值) * 自訂大小參數
 ```
 x1 = data.table((g1 = fread('門1.csv')[,-(1:3)][,c(281,26,124,315,314,107,81,108,211,105,119,493,426,340,212,132,429,94,254,424)] %>% sna %>% toVisNetworkData)$edges)[order(-weight)][1:40]
 VIS_1 = visNetwork(width='100vw', height='100vh',
