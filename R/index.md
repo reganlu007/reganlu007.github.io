@@ -111,10 +111,11 @@ f1(3) %>% to_1 %>% fwrite('門3.csv')
 fread('門1.csv')[,-(1:3)] %>% arm(s=.01) %>% rul %T>% inspect %>% out %T>% View %>% fwrite('門1_arm.csv')
 fread('門2.csv')[,-(1:3)] %>% arm(s=.01) %>% rul %T>% inspect %>% out %T>% View %>% fwrite('門2_arm.csv')
 fread('門3.csv')[,-(1:3)] %>% arm(s=.01) %>% rul %T>% inspect %>% out %T>% View %>% fwrite('門3_arm.csv')
-
+```
+節點大小：見 nodes 中的 value，值 = (單一統計量 / 平均單一統計量) * 自訂大小參數
+連結粗細：見 edges 中的 width，值 = (weight 屬性/ weight 最大值) * 自訂大小參數
+```
 x1 = data.table((g1 = fread('門1.csv')[,-(1:3)][,c(281,26,124,315,314,107,81,108,211,105,119,493,426,340,212,132,429,94,254,424)] %>% sna %>% toVisNetworkData)$edges)[order(-weight)][1:40]
-x2 = data.table((g2 = fread('門2.csv')[,-(1:3)][,c(94,97,247,96,44,43,199,251,152,114,93,108,200,246,212,196,201,84,48,225,117)] %>% sna %>% toVisNetworkData)$edges)[order(-weight)][1:40]
-x3 = data.table((g3 = fread('門3.csv')[,-(1:3)][,c(306,247,167,248,43,78,101,38,263,103,274,48,162,47,119,207,32,122,290,31,34,90,52,115)] %>% sna %>% toVisNetworkData)$edges)[order(-weight)][1:40]
 VIS_1 = visNetwork(width='100vw', height='100vh',
 	nodes = data.frame(
 		id    = g1$nodes$id,
@@ -125,6 +126,8 @@ VIS_1 = visNetwork(width='100vw', height='100vh',
 		from  = x1$from,
 		to    = x1$to,
 		width = x1$weight*5/max(x1$weight))) %>% visLayout(randomSeed = 1);VIS_1
+		
+x2 = data.table((g2 = fread('門2.csv')[,-(1:3)][,c(94,97,247,96,44,43,199,251,152,114,93,108,200,246,212,196,201,84,48,225,117)] %>% sna %>% toVisNetworkData)$edges)[order(-weight)][1:40]
 VIS_2 = visNetwork(width='100vw', height='100vh',
 	nodes = data.frame(
 		id    = g2$nodes$id,
@@ -135,6 +138,8 @@ VIS_2 = visNetwork(width='100vw', height='100vh',
 		from  = x2$from,
 		to    = x2$to,
 		width = x2$weight*5/max(x2$weight))) %>% visLayout(randomSeed = 1);VIS_2
+		
+x3 = data.table((g3 = fread('門3.csv')[,-(1:3)][,c(306,247,167,248,43,78,101,38,263,103,274,48,162,47,119,207,32,122,290,31,34,90,52,115)] %>% sna %>% toVisNetworkData)$edges)[order(-weight)][1:40]
 VIS_3 = visNetwork(width='100vw', height='100vh',
 	nodes = data.frame(
 		id    = g3$nodes$id,
