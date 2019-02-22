@@ -51,8 +51,8 @@ rbind(
 	merge(x, fread('門診批價明細檔_1.csv')),
 	merge(x, fread('門診批價明細檔_2.csv')),
 	merge(x, fread('門診批價明細檔_3.csv'))) %>% fwrite('子宮肌瘤門診明細.csv')
-fread('子宮肌瘤住院明細.csv')[,7][grep('^7[B-Z]-',收費編號)] %>% SORT %>% View # 住院
-fread('子宮肌瘤門診明細.csv')[,5][grep('^7[B-Z]-',收費編號)] %>% SORT %>% View # 門診
+fread('子宮肌瘤門診明細.csv')[,5][grep('^7[B-Z]-',收費編號)] %>% SORT %>% View
+fread('子宮肌瘤住院明細.csv')[,7][grep('^7[B-Z]-',收費編號)] %>% SORT %>% View
 ```
 ## 頻率劑量
 ```
@@ -176,4 +176,9 @@ n('住.csv','子宮肌瘤住院明細.csv','住院申報費用清單_icd_selecte
 ```
 fread(　'門診處方歷史檔_icd_selected_05_14.csv')[門診號 %in% unique(fread('子宮肌瘤門診明細.csv')[收費編號 %in% '7C-E312     1GM']$門診號)] %>% fwrite('門診左歸丸.csv')
 fread('住院申報費用清單_icd_selected_05_14.csv')[住院號 %in% unique(fread('子宮肌瘤住院明細.csv')[收費編號 %in% '7C-E312     1GM']$住院號)] %>% fwrite('住院左歸丸.csv')
+```
+## 鐵劑
+```
+fread('子宮肌瘤門診明細.csv')[,5][grep('PLB001M|PLB008M|PLB010M|PLB012M|P3B198M',收費編號)] %>% SORT %>% View
+fread('子宮肌瘤住院明細.csv')[,7][grep('PLB001M|PLB008M|PLB010M|PLB012M|P3B198M',收費編號)] %>% SORT %>% View
 ```
