@@ -4,14 +4,6 @@
 ```
 pkg = c('data.table','magrittr','visNetwork','dplyr','arulesViz','igraph')
 sapply(pkg, function(x) do.call('require',list(x)))
-```
-有 FALSE 代表本機尚未安裝該套件，請用 install.packages 安裝
-```
-sapply(pkg, function(x) do.call('install.packages',list(x)))
-```
-再次匯入以下套件
-```
-sapply(pkg, function(x) do.call('require',list(x)))
 SORT = function(x) data.table(table(x))[order(-N)]
 to_1 = function(x){z=x[,-(1:3)];z[z>0]=1;data.table(x[,1:3],z)}
 arm = function(x, s=.1, z=.3, b='support') sort(apriori(data.matrix(x), parameter=list(supp=s,conf=z)), by=b)
@@ -19,6 +11,10 @@ rul = function(x) x[!is.redundant(x)]
 out = function(x) data.table(lhs = labels(lhs(x)), rhs = labels(rhs(x)), x@quality)
 sna = function(x, w=T, m='undirected') simplify(graph.adjacency(t(x%<>%data.matrix)%*%x,weighted=w,mode=m))
 setwd('C:\\Users\\user\\Documents\\子宮肌瘤-呂豪笙\\data')
+```
+有 FALSE 代表本機尚未安裝該套件，請用 install.packages 安裝
+```
+sapply(pkg, function(x) do.call('install.packages',list(x)))
 ```
 ## 基本資料
 ```
