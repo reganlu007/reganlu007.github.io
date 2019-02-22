@@ -2,7 +2,7 @@
 ## 匯入函數
 匯入以下套件
 ```
-pkg = c('data.table','magrittr','visNetwork','dplyr','arulesViz','igraph')
+pkg = c('data.table','magrittr','visNetwork','dplyr','arulesViz','igraph','bit64')
 sapply(pkg, function(x) do.call('require',list(x)))
 SORT = function(x) data.table(table(x))[order(-N)]
 to_1 = function(x){z=x[,-(1:3)];z[z>0]=1;data.table(x[,1:3],z)}
