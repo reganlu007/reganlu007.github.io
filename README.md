@@ -22,9 +22,6 @@
 [修練]: https://reganlu007.github.io/san11/修練
 
 ## 自製劇本下載
-### 請用滑鼠右鍵點選連結，另存連結至 scenario 資料夾，即可下載劇本。
-### 將檔名改成 Scen0XX.S11 (XX = 00 ~ 15) 後，即可於主程式中遊玩。
-
 |編號|名稱|介紹
 |:-:|-|-
 |0|[原始劇本]|還原原始劇本用
@@ -34,9 +31,9 @@
 |4|[反董聯軍。改]|因奇人‧RLU 的亂入，造成各地的局勢變得更加詭譎：<br>曹操取得了小沛與虎牢關，天下無雙的驍勇之將‧呂布，<br>也加入了曹操陣營，曹操的威望有如日中之天，即將超越董卓...
 |5|[出師表]|@@
 
-[原始劇本]: https://github.com/reganlu007/reganlu007.github.io/raw/master/原始劇本.7z
-[反董聯軍。改]: https://github.com/reganlu007/reganlu007.github.io/raw/master/SCEN001.S11
-[三顧茅廬。改]: https://github.com/reganlu007/reganlu007.github.io/raw/master/SCEN004.S11
-[出師表]: https://github.com/reganlu007/reganlu007.github.io/raw/master/SCEN007.S11
-[異族爭霸]: https://github.com/reganlu007/reganlu007.github.io/raw/master/SCEN015.S11
-[區星之亂]: https://github.com/reganlu007/reganlu007.github.io/raw/master/Scen016.s11
+[原始劇本]: https://reganlu007.github.io/原始劇本.7z
+[反董聯軍。改]: https://reganlu007.github.io/SCEN001.S11
+[三顧茅廬。改]: https://reganlu007.github.io/SCEN004.S11
+[出師表]: https://reganlu007.github.io/SCEN007.S11
+[異族爭霸]: https://reganlu007.github.io/SCEN015.S11
+[區星之亂]: https://reganlu007.github.io/Scen016.s11
