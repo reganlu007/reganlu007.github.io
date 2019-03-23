@@ -7,7 +7,7 @@
 |[設施]|[兵種]|[特技]|[科技]
 |[戰法]|[修練]
 
-[國家]: https://reganlu007.github.io/san11/國號
+[國號]: https://reganlu007.github.io/san11/國號
 [地方]: https://reganlu007.github.io/san11/地方
 [據點]: https://reganlu007.github.io/san11/據點
 [人物]: https://reganlu007.github.io/san11/人物
