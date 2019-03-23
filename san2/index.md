@@ -1,5 +1,5 @@
 # 三國志2
-
+## [人物](https://reganlu007.github.io/san2/%E4%BA%BA%E7%89%A9)
 ## 劇本 (以劇本 1 為例)
 
 項目|hex|實際值|備註
