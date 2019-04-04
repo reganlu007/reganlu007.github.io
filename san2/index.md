@@ -24,7 +24,7 @@
 勢力色 15|0d|土黃|劉繇、劉度
 勢力色 16|07|水藍|新諸侯
 
-## [人物](https://reganlu007.github.io/san2/%E4%BA%BA%E7%89%A9)
+## [人物](https://reganlu007.github.io/san2/man)
 ### 以劉備為例
 
 項目|hex|實際值|備註
