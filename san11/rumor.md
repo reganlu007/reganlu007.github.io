@@ -8,7 +8,7 @@
 ![](https://reganlu007.github.io/san11/190DongZhuoGetChenLiuHanZhong.jpg)
 
 ## 190 年 劉虞開局
-### 登庸方悅，速滅張楊
+### 登庸方悅，速取晉陽
 ![](https://reganlu007.github.io/san11/190LiuYuGetJinYang.jpg)
 
 ## 207 年 劉備活躍
