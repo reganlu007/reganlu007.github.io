@@ -16,5 +16,5 @@
 ![](https://reganlu007.github.io/san11/207LiuBeiGetZiTongWan.jpg)
 
 ## 225 年 劉禪開局
-### 登庸雍闓、姜維、孟達，速滅建寧、天水、上庸
+### 登庸雍闓、姜維、孟達，速取建寧、天水、上庸
 ![](https://reganlu007.github.io/san11/225LiuChanGetJianNingTianShuiShangYung.jpg)
