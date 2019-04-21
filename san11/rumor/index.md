@@ -11,6 +11,10 @@
 ### 登庸方悅，速取晉陽
 ![](https://reganlu007.github.io/san11/rumor/190劉虞.jpg)
 
+## 194年 飛將亂舞
+### 登庸張勳，速取汝南
+![](https://reganlu007.github.io/san11/rumor/194呂布.jpg)
+
 ## 194年 霸王出征
 ### 登庸張勳，速取汝南
 ![](https://reganlu007.github.io/san11/rumor/194孫策.jpg)
