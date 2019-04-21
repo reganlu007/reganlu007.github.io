@@ -23,6 +23,10 @@
 ### 登庸田楷，速取薊城
 ![](https://reganlu007.github.io/san11/rumor/194袁紹.jpg)
 
+## 194年 劉表開局
+### 登庸嚴顏，速取江州
+![](https://reganlu007.github.io/san11/rumor/194劉表.jpg)
+
 ## 207年 劉備活躍
 ### 登庸呂曠、雷銅，速取宛城、梓潼
 ![](https://reganlu007.github.io/san11/rumor/207劉備.jpg)
