@@ -7,6 +7,7 @@
 ## 北平
 ![](https://reganlu007.github.io/san11/rebel/%E5%8C%97%E5%B9%B31.jpg)
 ![](https://reganlu007.github.io/san11/rebel/%E5%8C%97%E5%B9%B32.jpg)
+![](https://reganlu007.github.io/san11/rebel/%E5%8C%97%E5%B9%B33.jpg)
 
 ## 薊
 ![](https://reganlu007.github.io/san11/rebel/%E8%96%8A1.jpg)
