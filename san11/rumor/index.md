@@ -7,13 +7,13 @@
 ### 登庸李典、楊任，速取陳留、漢中
 ![](https://reganlu007.github.io/san11/rumor/190董卓.jpg)
 
-## 194年 霸王出征
-### 登庸張勳，速取汝南
-![](https://reganlu007.github.io/san11/rumor/194孫策.jpg)
-
 ## 190年 劉虞開局
 ### 登庸方悅，速取晉陽
 ![](https://reganlu007.github.io/san11/rumor/190劉虞.jpg)
+
+## 194年 霸王出征
+### 登庸張勳，速取汝南
+![](https://reganlu007.github.io/san11/rumor/194孫策.jpg)
 
 ## 194年 袁紹開局
 ### 登庸田楷，速取薊城
