@@ -27,6 +27,10 @@
 ### 登庸呂曠、雷銅，速取宛城、梓潼
 ![](https://reganlu007.github.io/san11/rumor/207劉備.jpg)
 
+## 217年 劉備開局
+### 登庸夏侯尚、徐晃，速取漢中、長安
+![](https://reganlu007.github.io/san11/rumor/217劉備.jpg)
+
 ## 225年 劉禪開局
 ### 登庸雍闓、姜維、孟達，速取建寧、天水、上庸
 ![](https://reganlu007.github.io/san11/rumor/225劉禪.jpg)
