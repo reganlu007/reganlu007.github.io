@@ -31,6 +31,12 @@
 ### 登庸呂曠、雷銅，速取宛城、梓潼
 ![](https://reganlu007.github.io/san11/rumor/207劉備.jpg)
 
+## 207年 曹操開局
+### 登庸太史慈、蔣欽，速取建業、廬江
+![](https://reganlu007.github.io/san11/rumor/207曹操1.jpg)
+![](https://reganlu007.github.io/san11/rumor/207曹操2.jpg)
+![](https://reganlu007.github.io/san11/rumor/207曹操3.jpg)
+
 ## 217年 劉備開局
 ### 登庸夏侯尚、徐晃，速取漢中、長安
 ![](https://reganlu007.github.io/san11/rumor/217劉備.jpg)
