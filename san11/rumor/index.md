@@ -1,10 +1,12 @@
 # 三國志11 流言奪城
 ## 190年 曹操舉兵
-### 登庸臧霸、呂布，速取小沛、虎牢
+### 登庸臧霸，速取小沛
+### 登庸呂布，速取虎牢
 ![](https://reganlu007.github.io/san11/rumor/190曹操.jpg)
 
 ## 190年 魔王降臨
-### 登庸李典、楊任，速取陳留、漢中
+### 登庸李典，速取陳留
+### 登庸楊任，速取漢中
 ![](https://reganlu007.github.io/san11/rumor/190董卓.jpg)
 
 ## 190年 劉虞開局
@@ -21,6 +23,7 @@
 
 ## 194年 曹操開局
 ### 登庸張郃，速取平原
+### 策反張勳，阻撓袁術
 ![](https://reganlu007.github.io/san11/rumor/194曹操.jpg)
 
 ## 194年 袁紹開局
@@ -32,25 +35,31 @@
 ![](https://reganlu007.github.io/san11/rumor/194劉表.jpg)
 
 ## 207年 劉備活躍
-### 登庸呂曠、雷銅，速取宛城、梓潼
+### 登庸呂曠，速取宛城
+### 登庸雷銅，速取梓潼
 ![](https://reganlu007.github.io/san11/rumor/207劉備.jpg)
 
 ## 207年 孫權開局
-### 登庸蘇飛、劉磐，速取江夏、江陵
+### 登庸蘇飛，速取江夏
+### 登庸劉磐，速取江陵
 ![](https://reganlu007.github.io/san11/rumor/207孫權1.jpg)
 ![](https://reganlu007.github.io/san11/rumor/207孫權2.jpg)
 ![](https://reganlu007.github.io/san11/rumor/207孫權3.jpg)
 
 ## 207年 曹操開局
-### 登庸太史慈、蔣欽，速取建業、廬江
+### 登庸太史慈，速取建業
+### 登庸　蔣欽，速取廬江
 ![](https://reganlu007.github.io/san11/rumor/207曹操1.jpg)
 ![](https://reganlu007.github.io/san11/rumor/207曹操2.jpg)
 ![](https://reganlu007.github.io/san11/rumor/207曹操3.jpg)
 
 ## 217年 劉備開局
-### 登庸夏侯尚、徐晃，速取漢中、長安
+### 登庸夏侯尚，速取漢中
+### 登庸　徐晃，速取長安
 ![](https://reganlu007.github.io/san11/rumor/217劉備.jpg)
 
 ## 225年 劉禪開局
-### 登庸雍闓、姜維、孟達，速取建寧、天水、上庸
+### 登庸雍闓，速取建寧
+### 登庸姜維，速取天水
+### 登庸孟達，速取上庸
 ![](https://reganlu007.github.io/san11/rumor/225劉禪.jpg)
