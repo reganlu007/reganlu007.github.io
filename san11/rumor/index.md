@@ -19,6 +19,10 @@
 ### 登庸張勳，速取汝南
 ![](https://reganlu007.github.io/san11/rumor/194孫策.jpg)
 
+## 194年 曹操開局
+### 登庸張郃，速取平原
+![](https://reganlu007.github.io/san11/rumor/194曹操.jpg)
+
 ## 194年 袁紹開局
 ### 登庸田楷，速取薊城
 ![](https://reganlu007.github.io/san11/rumor/194袁紹.jpg)
