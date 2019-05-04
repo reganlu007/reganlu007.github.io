@@ -21,11 +21,6 @@
 ### 登庸張勳，速取汝南
 ![](https://reganlu007.github.io/san11/rumor/194孫策.jpg)
 
-## 194年 曹操開局
-### 登庸張郃，速取平原
-### 策反張勳，阻撓袁術
-![](https://reganlu007.github.io/san11/rumor/194曹操.jpg)
-
 ## 194年 袁紹開局
 ### 登庸田楷，速取薊城
 ![](https://reganlu007.github.io/san11/rumor/194袁紹.jpg)
@@ -33,6 +28,15 @@
 ## 194年 劉表開局
 ### 登庸嚴顏，速取江州
 ![](https://reganlu007.github.io/san11/rumor/194劉表.jpg)
+
+## 194年 曹操開局
+### 登庸張郃，速取平原
+### 策反張勳，阻撓袁術
+![](https://reganlu007.github.io/san11/rumor/194曹操.jpg)
+
+## 200年 官渡之戰
+### 登庸崔琰，速取南皮
+![](https://reganlu007.github.io/san11/rumor/200曹操.jpg)
 
 ## 207年 劉備活躍
 ### 登庸呂曠，速取宛城
