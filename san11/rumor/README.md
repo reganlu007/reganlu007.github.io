@@ -72,7 +72,7 @@
 ### 登庸陳應，速取桂陽
 ### 登庸黃忠，速取長沙
 ### 登庸鞏志，速取武陵
-![](https://reganlu007.github.io/san11/rumor/荊南平定1.jpg)
-![](https://reganlu007.github.io/san11/rumor/荊南平定2.jpg)
-![](https://reganlu007.github.io/san11/rumor/荊南平定3.jpg)
-![](https://reganlu007.github.io/san11/rumor/荊南平定4.jpg)
+![](https://reganlu007.github.io/san11/rumor/荊南1.jpg)
+![](https://reganlu007.github.io/san11/rumor/荊南2.jpg)
+![](https://reganlu007.github.io/san11/rumor/荊南3.jpg)
+![](https://reganlu007.github.io/san11/rumor/荊南4.jpg)
