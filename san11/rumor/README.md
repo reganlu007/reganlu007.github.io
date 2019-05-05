@@ -74,3 +74,5 @@
 ### 登庸鞏志，速取武陵
 ![](https://reganlu007.github.io/san11/rumor/荊南平定1.jpg)
 ![](https://reganlu007.github.io/san11/rumor/荊南平定2.jpg)
+![](https://reganlu007.github.io/san11/rumor/荊南平定3.jpg)
+![](https://reganlu007.github.io/san11/rumor/荊南平定4.jpg)
