@@ -68,6 +68,10 @@
 ### 登庸孟達，速取上庸
 ![](https://reganlu007.github.io/san11/rumor/225劉禪.jpg)
 
+## 225年 孫權開局
+### 登庸呂虔，速取濮陽
+![](https://reganlu007.github.io/san11/rumor/225孫權.jpg)
+
 ## 決戰稱霸 荊南平定
 ### 登庸陳應，速取桂陽
 ### 登庸黃忠，速取長沙
