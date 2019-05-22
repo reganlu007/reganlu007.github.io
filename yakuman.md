@@ -1,5 +1,10 @@
 # 役満の究極形
 ## 大三元　字一色　四槓子	３倍役満　３９翻
+![](http://gurenjigoku.ojaru.jp/_fuseb.gif)![](http://gurenjigoku.ojaru.jp/_hakub.gif)![](http://gurenjigoku.ojaru.jp/_hakub.gif)![](http://gurenjigoku.ojaru.jp/_fuseb.gif)
+![](http://gurenjigoku.ojaru.jp/_fuseb.gif)![](http://gurenjigoku.ojaru.jp/_hatub.gif)![](http://gurenjigoku.ojaru.jp/_hatub.gif)![](http://gurenjigoku.ojaru.jp/_fuseb.gif)
+![](http://gurenjigoku.ojaru.jp/_fuseb.gif)![](http://gurenjigoku.ojaru.jp/_chunb.gif)![](http://gurenjigoku.ojaru.jp/_chunb.gif)![](http://gurenjigoku.ojaru.jp/_fuseb.gif)
+![](http://gurenjigoku.ojaru.jp/_fuseb.gif)![](http://gurenjigoku.ojaru.jp/_tonb.gif)![](http://gurenjigoku.ojaru.jp/_tonb.gif)![](http://gurenjigoku.ojaru.jp/_fuseb.gif)
+![](http://gurenjigoku.ojaru.jp/_nan.gif)![](http://gurenjigoku.ojaru.jp/_nan.gif)
 
 親なら１４４０００点　子なら９６０００点にもなります。
 
@@ -16,16 +21,17 @@
 親なら２４００００点　子なら１６００００点にもなります。
 
 ## 四槓子　大四喜　字一色　四暗刻単騎待ち	６倍役満　７８翻
+
 親なら２８８０００点　子なら１９２０００点にもなります。
 
 親と子両方で出来る数倍役満の最高です。
 
 ## 地和　大四喜　字一色　四暗刻単騎待ち	６倍役満　７８翻
-![](https://reganlu007.github.io/東.gif)![](https://reganlu007.github.io/東.gif)![](https://reganlu007.github.io/東.gif)
-![](https://reganlu007.github.io/南.gif)![](https://reganlu007.github.io/南.gif)![](https://reganlu007.github.io/南.gif)
-![](https://reganlu007.github.io/西.gif)![](https://reganlu007.github.io/西.gif)![](https://reganlu007.github.io/西.gif)
-![](https://reganlu007.github.io/北.gif)![](https://reganlu007.github.io/北.gif)![](https://reganlu007.github.io/北.gif)
-![](https://reganlu007.github.io/白.gif)![](https://reganlu007.github.io/白.gif)
+![](https://reganlu007.github.io/_ton.gif)![](https://reganlu007.github.io/_ton.gif)![](https://reganlu007.github.io/_ton.gif)
+![](https://reganlu007.github.io/_nan.gif)![](https://reganlu007.github.io/_nan.gif)![](https://reganlu007.github.io/_nan.gif)
+![](https://reganlu007.github.io/_sha.gif)![](https://reganlu007.github.io/_sha.gif)![](https://reganlu007.github.io/_sha.gif)
+![](https://reganlu007.github.io/_pei.gif)![](https://reganlu007.github.io/_pei.gif)![](https://reganlu007.github.io/_pei.gif)
+![](https://reganlu007.github.io/_haku.gif)![](https://reganlu007.github.io/_haku.gif)
 
 子の第一ツモでこれを完成させる。
 
@@ -36,11 +42,11 @@
 ※この役満は自分で思いついたので、適応されるかどうかわかりません。※
 
 ## 天和　八連荘　大四喜　字一色　四暗刻単騎待ち	７倍役満　９１翻
-![](https://reganlu007.github.io/東.gif)![](https://reganlu007.github.io/東.gif)![](https://reganlu007.github.io/東.gif)
-![](https://reganlu007.github.io/南.gif)![](https://reganlu007.github.io/南.gif)![](https://reganlu007.github.io/南.gif)
-![](https://reganlu007.github.io/西.gif)![](https://reganlu007.github.io/西.gif)![](https://reganlu007.github.io/西.gif)
-![](https://reganlu007.github.io/北.gif)![](https://reganlu007.github.io/北.gif)![](https://reganlu007.github.io/北.gif)
-![](https://reganlu007.github.io/白.gif)![](https://reganlu007.github.io/白.gif)
+![](https://reganlu007.github.io/_ton.gif)![](https://reganlu007.github.io/_ton.gif)![](https://reganlu007.github.io/_ton.gif)
+![](https://reganlu007.github.io/_nan.gif)![](https://reganlu007.github.io/_nan.gif)![](https://reganlu007.github.io/_nan.gif)
+![](https://reganlu007.github.io/_sha.gif)![](https://reganlu007.github.io/_sha.gif)![](https://reganlu007.github.io/_sha.gif)
+![](https://reganlu007.github.io/_pei.gif)![](https://reganlu007.github.io/_pei.gif)![](https://reganlu007.github.io/_pei.gif)
+![](https://reganlu007.github.io/_haku.gif)![](https://reganlu007.github.io/_haku.gif)
 
 親が８回連荘し、なおかつ配牌時にこれが完成していないといけない。
 
