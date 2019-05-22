@@ -30,7 +30,7 @@
 ![](https://gurenjigoku.ojaru.jp/_ton.gif)![](https://gurenjigoku.ojaru.jp/_ton.gif)![](https://gurenjigoku.ojaru.jp/_ton.gif)
 ![](https://gurenjigoku.ojaru.jp/_nan.gif)![](https://gurenjigoku.ojaru.jp/_nan.gif)
 
-親なら 192000 点　子なら 128000 点にもなります。
+親なら 192000 点、子なら 128000 点にもなります。
 
 ここまでぐらいは知っている人も多いと思います。
 
@@ -47,7 +47,7 @@
 ![](https://gurenjigoku.ojaru.jp/_pei.gif)![](https://gurenjigoku.ojaru.jp/_pei.gif)![](https://gurenjigoku.ojaru.jp/_pei.gif)
 ![](https://gurenjigoku.ojaru.jp/_haku.gif)![](https://gurenjigoku.ojaru.jp/_haku.gif)
 
-親なら 240000 点　子なら 160000 点にもなります。
+親なら 240000 点、子なら 160000 点にもなります。
 
 ## 大四喜 字一色 四暗刻単騎待ち 四槓子
 ### 6 倍役満 78 翻
@@ -58,26 +58,9 @@
 ![](http://gurenjigoku.ojaru.jp/_fuseb.gif)![](http://gurenjigoku.ojaru.jp/_peib.gif)![](http://gurenjigoku.ojaru.jp/_peib.gif)![](http://gurenjigoku.ojaru.jp/_fuseb.gif)
 ![](https://gurenjigoku.ojaru.jp/_haku.gif)![](https://gurenjigoku.ojaru.jp/_haku.gif)
 
-親なら 288000 点　子なら 192000 点にもなります。
+親なら 288000 点、子なら 192000 点にもなります。
 
 親と子両方で出来る数倍役満の最高です。
-
-## 大四喜 字一色 四暗刻単騎待ち 地和
-### 6 倍役満 78 翻
-
-![](https://gurenjigoku.ojaru.jp/_ton.gif)![](https://gurenjigoku.ojaru.jp/_ton.gif)![](https://gurenjigoku.ojaru.jp/_ton.gif)
-![](https://gurenjigoku.ojaru.jp/_nan.gif)![](https://gurenjigoku.ojaru.jp/_nan.gif)![](https://gurenjigoku.ojaru.jp/_nan.gif)
-![](https://gurenjigoku.ojaru.jp/_sha.gif)![](https://gurenjigoku.ojaru.jp/_sha.gif)![](https://gurenjigoku.ojaru.jp/_sha.gif)
-![](https://gurenjigoku.ojaru.jp/_pei.gif)![](https://gurenjigoku.ojaru.jp/_pei.gif)![](https://gurenjigoku.ojaru.jp/_pei.gif)
-![](https://gurenjigoku.ojaru.jp/_haku.gif)![](https://gurenjigoku.ojaru.jp/_haku.gif)
-
-子の第一ツモでこれを完成させる。
-
-子のみで 192000 点にもなります。ちなみに子の限界点数です。
-
-26 翻も違うのに親の 4 倍役満と同じ点数なのは納得いかないですね（笑）
-
-※この役満は自分で思いついたので、適応されるかどうかわかりません。※
 
 ## 大四喜 字一色 四暗刻単騎待ち 天和 八連荘
 ### 7 倍役満 91 翻
