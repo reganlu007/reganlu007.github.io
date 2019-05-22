@@ -1,6 +1,6 @@
 # 役満の究極形
 ## 大三元　字一色　四槓子	３倍役満　３９翻
-    
+
 親なら１４４０００点　子なら９６０００点にもなります。
 
 ## 大三元　字一色　四暗刻単騎待ち	４倍役満　５２翻
@@ -21,8 +21,14 @@
 親と子両方で出来る数倍役満の最高です。
 
 ## 地和　大四喜　字一色　四暗刻単騎待ち	６倍役満　７８翻
+![](https://reganlu007.github.io/東.gif)![](https://reganlu007.github.io/東.gif)![](https://reganlu007.github.io/東.gif)
+![](https://reganlu007.github.io/南.gif)![](https://reganlu007.github.io/南.gif)![](https://reganlu007.github.io/南.gif)
+![](https://reganlu007.github.io/西.gif)![](https://reganlu007.github.io/西.gif)![](https://reganlu007.github.io/西.gif)
+![](https://reganlu007.github.io/北.gif)![](https://reganlu007.github.io/北.gif)![](https://reganlu007.github.io/北.gif)
+![](https://reganlu007.github.io/白.gif)![](https://reganlu007.github.io/白.gif)
+
 子の第一ツモでこれを完成させる。
-    　
+
 子のみで１９２０００点にもなります。ちなみに子の限界点数です。
 
 ２６翻も違うのに親の4倍役満と同じ点数なのは納得いかないですね（笑）
@@ -30,11 +36,14 @@
 ※この役満は自分で思いついたので、適応されるかどうかわかりません。※
 
 ## 天和　八連荘　大四喜　字一色　四暗刻単騎待ち	７倍役満　９１翻
-
-[](https://reganlu007.github.io/東.gif)[](https://reganlu007.github.io/東.gif)[](https://reganlu007.github.io/東.gif)
+![](https://reganlu007.github.io/東.gif)![](https://reganlu007.github.io/東.gif)![](https://reganlu007.github.io/東.gif)
+![](https://reganlu007.github.io/南.gif)![](https://reganlu007.github.io/南.gif)![](https://reganlu007.github.io/南.gif)
+![](https://reganlu007.github.io/西.gif)![](https://reganlu007.github.io/西.gif)![](https://reganlu007.github.io/西.gif)
+![](https://reganlu007.github.io/北.gif)![](https://reganlu007.github.io/北.gif)![](https://reganlu007.github.io/北.gif)
+![](https://reganlu007.github.io/白.gif)![](https://reganlu007.github.io/白.gif)
 
 親が８回連荘し、なおかつ配牌時にこれが完成していないといけない。
-    　
+
 8回連荘した上で、なおかつ開始時にこれを完成かせておく必要有り。
 
 天和と八連荘絡みなので親のみで３３６０００点　（子の役満の 10.5 倍）
