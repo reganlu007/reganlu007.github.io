@@ -65,11 +65,11 @@
 ## 大四喜 字一色 四暗刻単騎待ち 天和 八連荘
 ### 7 倍役満 91 翻
 
-![](https://gurenjigoku.ojaru.jp/_ton.gif)![](https://gurenjigoku.ojaru.jp/_ton.gif)![](https://gurenjigoku.ojaru.jp/_ton.gif)
-![](https://gurenjigoku.ojaru.jp/_nan.gif)![](https://gurenjigoku.ojaru.jp/_nan.gif)![](https://gurenjigoku.ojaru.jp/_nan.gif)
-![](https://gurenjigoku.ojaru.jp/_sha.gif)![](https://gurenjigoku.ojaru.jp/_sha.gif)![](https://gurenjigoku.ojaru.jp/_sha.gif)
-![](https://gurenjigoku.ojaru.jp/_pei.gif)![](https://gurenjigoku.ojaru.jp/_pei.gif)![](https://gurenjigoku.ojaru.jp/_pei.gif)
-![](https://gurenjigoku.ojaru.jp/_haku.gif)![](https://gurenjigoku.ojaru.jp/_haku.gif)
+![](https://gurenjigoku.ojaru.jp/_tonb.gif)![](https://gurenjigoku.ojaru.jp/_tonb.gif)![](https://gurenjigoku.ojaru.jp/_tonb.gif)
+![](https://gurenjigoku.ojaru.jp/_nanb.gif)![](https://gurenjigoku.ojaru.jp/_nanb.gif)![](https://gurenjigoku.ojaru.jp/_nanb.gif)
+![](https://gurenjigoku.ojaru.jp/_shab.gif)![](https://gurenjigoku.ojaru.jp/_shab.gif)![](https://gurenjigoku.ojaru.jp/_shab.gif)
+![](https://gurenjigoku.ojaru.jp/_peib.gif)![](https://gurenjigoku.ojaru.jp/_peib.gif)![](https://gurenjigoku.ojaru.jp/_peib.gif)
+![](https://gurenjigoku.ojaru.jp/_hakub.gif)![](https://gurenjigoku.ojaru.jp/_hakub.gif)
 
 親が 8 回連荘し、なおかつ配牌時にこれが完成していないといけない。
 
