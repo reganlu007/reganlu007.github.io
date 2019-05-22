@@ -1,4 +1,15 @@
 #  役満の究極形
+
+麻雀の最高得点っていったい何点だろ～？？
+
+といった疑問を持ったことはありませんか？
+
+その疑問を解決してくれるのが、このページです。
+
+まぁ、こんなのがあるよ～ぐらいに見てください。
+
+まず、お目にかかれません。中には 99.9999...% 不可能なものまであります。（笑）
+
 ## 大三元、字一色、四槓子：3 倍役満，39 翻
 ![](http://gurenjigoku.ojaru.jp/_fuseb.gif)![](http://gurenjigoku.ojaru.jp/_hakub.gif)![](http://gurenjigoku.ojaru.jp/_hakub.gif)![](http://gurenjigoku.ojaru.jp/_fuseb.gif)
 ![](http://gurenjigoku.ojaru.jp/_fuseb.gif)![](http://gurenjigoku.ojaru.jp/_hatub.gif)![](http://gurenjigoku.ojaru.jp/_hatub.gif)![](http://gurenjigoku.ojaru.jp/_fuseb.gif)
