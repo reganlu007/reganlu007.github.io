@@ -11,6 +11,7 @@
 まず、お目にかかれません。中には 99.9999...% 不可能なものまであります。（笑）
 
 ## 大三元、字一色、四槓子：3 倍役満，39 翻
+
 ![](http://gurenjigoku.ojaru.jp/_fuseb.gif)![](http://gurenjigoku.ojaru.jp/_hakub.gif)![](http://gurenjigoku.ojaru.jp/_hakub.gif)![](http://gurenjigoku.ojaru.jp/_fuseb.gif)
 ![](http://gurenjigoku.ojaru.jp/_fuseb.gif)![](http://gurenjigoku.ojaru.jp/_hatub.gif)![](http://gurenjigoku.ojaru.jp/_hatub.gif)![](http://gurenjigoku.ojaru.jp/_fuseb.gif)
 ![](http://gurenjigoku.ojaru.jp/_fuseb.gif)![](http://gurenjigoku.ojaru.jp/_chunb.gif)![](http://gurenjigoku.ojaru.jp/_chunb.gif)![](http://gurenjigoku.ojaru.jp/_fuseb.gif)
@@ -20,6 +21,7 @@
 親なら 144000 点　子なら 96000 点にもなります。
 
 ## 大三元、字一色、四暗刻単騎待ち：4 倍役満，52 翻
+
 ![](https://gurenjigoku.ojaru.jp/_haku.gif)![](https://gurenjigoku.ojaru.jp/_haku.gif)![](https://gurenjigoku.ojaru.jp/_haku.gif)
 ![](https://gurenjigoku.ojaru.jp/_hatu.gif)![](https://gurenjigoku.ojaru.jp/_hatu.gif)![](https://gurenjigoku.ojaru.jp/_hatu.gif)
 ![](https://gurenjigoku.ojaru.jp/_chun.gif)![](https://gurenjigoku.ojaru.jp/_chun.gif)![](https://gurenjigoku.ojaru.jp/_chun.gif)
@@ -35,6 +37,7 @@
 それでは、順に御覧ください。
 
 ## 大四喜、字一色、四暗刻単騎待ち：5 倍役満，65 翻
+
 ![](https://gurenjigoku.ojaru.jp/_ton.gif)![](https://gurenjigoku.ojaru.jp/_ton.gif)![](https://gurenjigoku.ojaru.jp/_ton.gif)
 ![](https://gurenjigoku.ojaru.jp/_nan.gif)![](https://gurenjigoku.ojaru.jp/_nan.gif)![](https://gurenjigoku.ojaru.jp/_nan.gif)
 ![](https://gurenjigoku.ojaru.jp/_sha.gif)![](https://gurenjigoku.ojaru.jp/_sha.gif)![](https://gurenjigoku.ojaru.jp/_sha.gif)
@@ -44,6 +47,7 @@
 親なら 240000 点　子なら 160000 点にもなります。
 
 ## 四槓子、大四喜、字一色、四暗刻単騎待ち：6 倍役満，78 翻
+
 ![](http://gurenjigoku.ojaru.jp/_fuseb.gif)![](http://gurenjigoku.ojaru.jp/_tonb.gif)![](http://gurenjigoku.ojaru.jp/_tonb.gif)![](http://gurenjigoku.ojaru.jp/_fuseb.gif)
 ![](http://gurenjigoku.ojaru.jp/_fuseb.gif)![](http://gurenjigoku.ojaru.jp/_nanb.gif)![](http://gurenjigoku.ojaru.jp/_nanb.gif)![](http://gurenjigoku.ojaru.jp/_fuseb.gif)
 ![](http://gurenjigoku.ojaru.jp/_fuseb.gif)![](http://gurenjigoku.ojaru.jp/_shab.gif)![](http://gurenjigoku.ojaru.jp/_shab.gif)![](http://gurenjigoku.ojaru.jp/_fuseb.gif)
@@ -70,6 +74,7 @@
 ※この役満は自分で思いついたので、適応されるかどうかわかりません。※
 
 ## 天和、八連荘、大四喜、字一色、四暗刻単騎待ち：7 倍役満，91 翻
+
 ![](https://gurenjigoku.ojaru.jp/_ton.gif)![](https://gurenjigoku.ojaru.jp/_ton.gif)![](https://gurenjigoku.ojaru.jp/_ton.gif)
 ![](https://gurenjigoku.ojaru.jp/_nan.gif)![](https://gurenjigoku.ojaru.jp/_nan.gif)![](https://gurenjigoku.ojaru.jp/_nan.gif)
 ![](https://gurenjigoku.ojaru.jp/_sha.gif)![](https://gurenjigoku.ojaru.jp/_sha.gif)![](https://gurenjigoku.ojaru.jp/_sha.gif)
