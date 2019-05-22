@@ -1,7 +1,5 @@
 #  役満の究極形
 
-![](https://gurenjigoku.ojaru.jp/_hatu.gif)
-
 ![](https://gurenjigoku.ojaru.jp/_chun.gif)
 
 ![](https://gurenjigoku.ojaru.jp/_ton.gif)
