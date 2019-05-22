@@ -22,6 +22,16 @@
 
 ## 大三元、字一色、四暗刻単騎待ち：4 倍役満，52 翻
 
+![](https://gurenjigoku.ojaru.jp/_haku.gif)
+
+![](https://gurenjigoku.ojaru.jp/_hatu.gif)
+
+![](https://gurenjigoku.ojaru.jp/_chun.gif)
+
+![](https://gurenjigoku.ojaru.jp/_ton.gif)
+
+![](https://gurenjigoku.ojaru.jp/_nan.gif)
+
 ![](https://gurenjigoku.ojaru.jp/_haku.gif)![](https://gurenjigoku.ojaru.jp/_haku.gif)![](https://gurenjigoku.ojaru.jp/_haku.gif)
 ![](https://gurenjigoku.ojaru.jp/_hatu.gif)![](https://gurenjigoku.ojaru.jp/_hatu.gif)![](https://gurenjigoku.ojaru.jp/_hatu.gif)
 ![](https://gurenjigoku.ojaru.jp/_chun.gif)![](https://gurenjigoku.ojaru.jp/_chun.gif)![](https://gurenjigoku.ojaru.jp/_chun.gif)
@@ -59,6 +69,7 @@
 親と子両方で出来る数倍役満の最高です。
 
 ## 地和、大四喜、字一色、四暗刻単騎待ち：6 倍役満，78 翻
+
 ![](https://gurenjigoku.ojaru.jp/_ton.gif)![](https://gurenjigoku.ojaru.jp/_ton.gif)![](https://gurenjigoku.ojaru.jp/_ton.gif)
 ![](https://gurenjigoku.ojaru.jp/_nan.gif)![](https://gurenjigoku.ojaru.jp/_nan.gif)![](https://gurenjigoku.ojaru.jp/_nan.gif)
 ![](https://gurenjigoku.ojaru.jp/_sha.gif)![](https://gurenjigoku.ojaru.jp/_sha.gif)![](https://gurenjigoku.ojaru.jp/_sha.gif)
