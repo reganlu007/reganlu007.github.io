@@ -1,5 +1,13 @@
 #  役満の究極形
 
+![](https://gurenjigoku.ojaru.jp/_hatu.gif)
+
+![](https://gurenjigoku.ojaru.jp/_chun.gif)
+
+![](https://gurenjigoku.ojaru.jp/_ton.gif)
+
+![](https://gurenjigoku.ojaru.jp/_nan.gif)
+
 麻雀の最高得点っていったい何点だろ～？？
 
 といった疑問を持ったことはありませんか？
@@ -21,16 +29,6 @@
 親なら 144000 点　子なら 96000 点にもなります。
 
 ## 大三元、字一色、四暗刻単騎待ち：4 倍役満，52 翻
-
-![](https://gurenjigoku.ojaru.jp/_haku.gif)
-
-![](https://gurenjigoku.ojaru.jp/_hatu.gif)
-
-![](https://gurenjigoku.ojaru.jp/_chun.gif)
-
-![](https://gurenjigoku.ojaru.jp/_ton.gif)
-
-![](https://gurenjigoku.ojaru.jp/_nan.gif)
 
 ![](https://gurenjigoku.ojaru.jp/_haku.gif)![](https://gurenjigoku.ojaru.jp/_haku.gif)![](https://gurenjigoku.ojaru.jp/_haku.gif)
 ![](https://gurenjigoku.ojaru.jp/_hatu.gif)![](https://gurenjigoku.ojaru.jp/_hatu.gif)![](https://gurenjigoku.ojaru.jp/_hatu.gif)
