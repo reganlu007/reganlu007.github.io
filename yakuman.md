@@ -9,6 +9,7 @@
 親なら１４４０００点　子なら９６０００点にもなります。
 
 ## 大三元　字一色　四暗刻単騎待ち	４倍役満　５２翻
+
 親なら１９２０００点　子なら１２８０００点にもなります。
 
 ここまでぐらいは知っている人も多いと思います。
@@ -18,11 +19,11 @@
 それでは、順に御覧ください。
 
 ## 大四喜　字一色　四暗刻単騎待ち	５倍役満　６５翻
-![](https://reganlu007.github.io/_ton.gif)![](https://reganlu007.github.io/_ton.gif)![](https://reganlu007.github.io/_ton.gif)
-![](https://reganlu007.github.io/_nan.gif)![](https://reganlu007.github.io/_nan.gif)![](https://reganlu007.github.io/_nan.gif)
-![](https://reganlu007.github.io/_sha.gif)![](https://reganlu007.github.io/_sha.gif)![](https://reganlu007.github.io/_sha.gif)
-![](https://reganlu007.github.io/_pei.gif)![](https://reganlu007.github.io/_pei.gif)![](https://reganlu007.github.io/_pei.gif)
-![](https://reganlu007.github.io/_haku.gif)![](https://reganlu007.github.io/_haku.gif)
+![](https://gurenjigoku.ojaru.jp/_ton.gif)![](https://gurenjigoku.ojaru.jp/_ton.gif)![](https://gurenjigoku.ojaru.jp/_ton.gif)
+![](https://gurenjigoku.ojaru.jp/_nan.gif)![](https://gurenjigoku.ojaru.jp/_nan.gif)![](https://gurenjigoku.ojaru.jp/_nan.gif)
+![](https://gurenjigoku.ojaru.jp/_sha.gif)![](https://gurenjigoku.ojaru.jp/_sha.gif)![](https://gurenjigoku.ojaru.jp/_sha.gif)
+![](https://gurenjigoku.ojaru.jp/_pei.gif)![](https://gurenjigoku.ojaru.jp/_pei.gif)![](https://gurenjigoku.ojaru.jp/_pei.gif)
+![](https://gurenjigoku.ojaru.jp/_haku.gif)![](https://gurenjigoku.ojaru.jp/_haku.gif)
 
 親なら２４００００点　子なら１６００００点にもなります。
 
@@ -33,11 +34,11 @@
 親と子両方で出来る数倍役満の最高です。
 
 ## 地和　大四喜　字一色　四暗刻単騎待ち	６倍役満　７８翻
-![](https://reganlu007.github.io/_ton.gif)![](https://reganlu007.github.io/_ton.gif)![](https://reganlu007.github.io/_ton.gif)
-![](https://reganlu007.github.io/_nan.gif)![](https://reganlu007.github.io/_nan.gif)![](https://reganlu007.github.io/_nan.gif)
-![](https://reganlu007.github.io/_sha.gif)![](https://reganlu007.github.io/_sha.gif)![](https://reganlu007.github.io/_sha.gif)
-![](https://reganlu007.github.io/_pei.gif)![](https://reganlu007.github.io/_pei.gif)![](https://reganlu007.github.io/_pei.gif)
-![](https://reganlu007.github.io/_haku.gif)![](https://reganlu007.github.io/_haku.gif)
+![](https://gurenjigoku.ojaru.jp/_ton.gif)![](https://gurenjigoku.ojaru.jp/_ton.gif)![](https://gurenjigoku.ojaru.jp/_ton.gif)
+![](https://gurenjigoku.ojaru.jp/_nan.gif)![](https://gurenjigoku.ojaru.jp/_nan.gif)![](https://gurenjigoku.ojaru.jp/_nan.gif)
+![](https://gurenjigoku.ojaru.jp/_sha.gif)![](https://gurenjigoku.ojaru.jp/_sha.gif)![](https://gurenjigoku.ojaru.jp/_sha.gif)
+![](https://gurenjigoku.ojaru.jp/_pei.gif)![](https://gurenjigoku.ojaru.jp/_pei.gif)![](https://gurenjigoku.ojaru.jp/_pei.gif)
+![](https://gurenjigoku.ojaru.jp/_haku.gif)![](https://gurenjigoku.ojaru.jp/_haku.gif)
 
 子の第一ツモでこれを完成させる。
 
@@ -48,11 +49,11 @@
 ※この役満は自分で思いついたので、適応されるかどうかわかりません。※
 
 ## 天和　八連荘　大四喜　字一色　四暗刻単騎待ち	７倍役満　９１翻
-![](https://reganlu007.github.io/_ton.gif)![](https://reganlu007.github.io/_ton.gif)![](https://reganlu007.github.io/_ton.gif)
-![](https://reganlu007.github.io/_nan.gif)![](https://reganlu007.github.io/_nan.gif)![](https://reganlu007.github.io/_nan.gif)
-![](https://reganlu007.github.io/_sha.gif)![](https://reganlu007.github.io/_sha.gif)![](https://reganlu007.github.io/_sha.gif)
-![](https://reganlu007.github.io/_pei.gif)![](https://reganlu007.github.io/_pei.gif)![](https://reganlu007.github.io/_pei.gif)
-![](https://reganlu007.github.io/_haku.gif)![](https://reganlu007.github.io/_haku.gif)
+![](https://gurenjigoku.ojaru.jp/_ton.gif)![](https://gurenjigoku.ojaru.jp/_ton.gif)![](https://gurenjigoku.ojaru.jp/_ton.gif)
+![](https://gurenjigoku.ojaru.jp/_nan.gif)![](https://gurenjigoku.ojaru.jp/_nan.gif)![](https://gurenjigoku.ojaru.jp/_nan.gif)
+![](https://gurenjigoku.ojaru.jp/_sha.gif)![](https://gurenjigoku.ojaru.jp/_sha.gif)![](https://gurenjigoku.ojaru.jp/_sha.gif)
+![](https://gurenjigoku.ojaru.jp/_pei.gif)![](https://gurenjigoku.ojaru.jp/_pei.gif)![](https://gurenjigoku.ojaru.jp/_pei.gif)
+![](https://gurenjigoku.ojaru.jp/_haku.gif)![](https://gurenjigoku.ojaru.jp/_haku.gif)
 
 親が８回連荘し、なおかつ配牌時にこれが完成していないといけない。
 
