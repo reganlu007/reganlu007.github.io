@@ -1,15 +1,5 @@
 #  役満の究極形
 
-![](https://gurenjigoku.ojaru.jp/_chun.gif)
-
-![](https://gurenjigoku.ojaru.jp/_ton.gif)
-
-![](https://gurenjigoku.ojaru.jp/_nan.gif)
-
-![](https://gurenjigoku.ojaru.jp/_sha.gif)
-
-![](https://gurenjigoku.ojaru.jp/_pei.gif)
-
 麻雀の最高得点っていったい何点だろ～？？
 
 といった疑問を持ったことはありませんか？
