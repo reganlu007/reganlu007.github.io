@@ -18,6 +18,12 @@
 それでは、順に御覧ください。
 
 ## 大四喜　字一色　四暗刻単騎待ち	５倍役満　６５翻
+![](https://reganlu007.github.io/_ton.gif)![](https://reganlu007.github.io/_ton.gif)![](https://reganlu007.github.io/_ton.gif)
+![](https://reganlu007.github.io/_nan.gif)![](https://reganlu007.github.io/_nan.gif)![](https://reganlu007.github.io/_nan.gif)
+![](https://reganlu007.github.io/_sha.gif)![](https://reganlu007.github.io/_sha.gif)![](https://reganlu007.github.io/_sha.gif)
+![](https://reganlu007.github.io/_pei.gif)![](https://reganlu007.github.io/_pei.gif)![](https://reganlu007.github.io/_pei.gif)
+![](https://reganlu007.github.io/_haku.gif)![](https://reganlu007.github.io/_haku.gif)
+
 親なら２４００００点　子なら１６００００点にもなります。
 
 ## 四槓子　大四喜　字一色　四暗刻単騎待ち	６倍役満　７８翻
