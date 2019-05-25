@@ -43,6 +43,10 @@
 ### 登庸雷銅，速取梓潼
 ![](https://reganlu007.github.io/san11/rumor/207劉備.jpg)
 
+## 207年 韓玄開局
+### 登庸陳應，速取桂陽
+![](https://reganlu007.github.io/san11/rumor/207韓玄.jpg)
+
 ## 207年 孫權開局
 ### 登庸蘇飛，速取江夏
 ### 登庸劉磐，速取江陵
