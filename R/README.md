@@ -3,15 +3,15 @@
 匯入以下套件
 ```
 pkg = c('data.table','magrittr','visNetwork','dplyr','arulesViz','igraph','bit64')
-sapply(pkg, function(x) do.call('install.packages',list(x)))
-sapply(pkg, function(x) do.call('require',list(x)))
+# sapply(pkg, function(x) do.call('install.packages',list(x)))
+  sapply(pkg, function(x) do.call('require',list(x)))
 SORT = function(x) data.table(table(x))[order(-N)]
 to_1 = function(x){z=x[,-(1:3)];z[z>0]=1;data.table(x[,1:3],z)}
 arm  = function(x, s=.1, z=.3, b='support') sort(apriori(data.matrix(x), parameter=list(supp=s,conf=z)), by=b)
 rul  = function(x) x[!is.redundant(x)]
 out  = function(x) data.table(lhs = labels(lhs(x)), rhs = labels(rhs(x)), x@quality)
 sna  = function(x, w=T, m='undirected') simplify(graph.adjacency(t(x%<>%data.matrix)%*%x,weighted=w,mode=m))
-setwd (choose.dir())
+setwd (choose.dir());getwd()
 ```
 ## 基本資料
 ```
