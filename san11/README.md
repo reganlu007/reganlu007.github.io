@@ -1,5 +1,5 @@
 # 三國志 11
-## 國號 [人物](https://reganlu007.github.io/san11/man) [地圖](https://reganlu007.github.io/san11/rebel/sites.giㄑ) [賊兵](https://reganlu007.github.io/san11/rebel) [流言](https://reganlu007.github.io/san11/rumor)
+## 國號 [人物](https://reganlu007.github.io/san11/man) [地圖](https://reganlu007.github.io/san11/rebel/sites.gif) [賊兵](https://reganlu007.github.io/san11/rebel) [流言](https://reganlu007.github.io/san11/rumor)
 
 名稱|說明|lp58|可選擇
 -|-|:-:|:-:
