@@ -4,7 +4,7 @@
 ### 登庸波才，速取許昌
 ### 登庸韓暹，速取平原
 ![](https://reganlu007.github.io/san11/rumor/184何進1.jpg)
-![](https://reganlu007.github.io/san11/rumor/184何進.jpg)
+![](https://reganlu007.github.io/san11/rumor/184何進2.jpg)
 
 ## 190年 曹操舉兵
 ### 登庸臧霸，速取小沛
