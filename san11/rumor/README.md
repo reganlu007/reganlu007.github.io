@@ -20,7 +20,7 @@
 漢中爭奪：劉備開局<br>登夏侯尚，速取漢中<br>登庸徐晃，速取長安|![](https://reganlu007.github.io/san11/rumor/217劉備.jpg)
 南蠻征伐：劉禪開局<br>登庸雍闓，速取建寧<br>登庸姜維，速取天水<br>登庸潘濬，速取長沙<br>登庸孟達，速取上庸|![](https://reganlu007.github.io/san11/rumor/225劉禪.jpg)
 南蠻征伐：孫權開局<br>登庸呂虔，速取濮陽|![](https://reganlu007.github.io/san11/rumor/225孫權.jpg)
-決戰稱霸：荊南平定<br>登庸陳應，速取桂陽<br登庸黃忠，速取長沙<br登庸鞏志，速取武陵|![](https://reganlu007.github.io/san11/rumor/荊南1.jpg)![](https://reganlu007.github.io/san11/rumor/荊南2.jpg)
+決戰稱霸：荊南平定<br>登庸陳應，速取桂陽<br>登庸黃忠，速取長沙<br>登庸鞏志，速取武陵|![](https://reganlu007.github.io/san11/rumor/荊南1.jpg)![](https://reganlu007.github.io/san11/rumor/荊南2.jpg)
 
 ![](https://reganlu007.github.io/san11/rumor/207孫權3.jpg)
 ![](https://reganlu007.github.io/san11/rumor/207曹操3.jpg)
