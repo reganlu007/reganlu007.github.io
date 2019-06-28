@@ -1,53 +1,18 @@
 # 三國志11 流言奪城
-## 184年 何進開局
-### 登庸趙弘，速取宛城
-### 登庸波才，速取許昌
-### 登庸韓暹，速取平原
-![](https://reganlu007.github.io/san11/rumor/184何進1.jpg)
 
-### 策反張燕　，南皮獨立
-### 策反張曼成，宛城獨立
-### 策反管亥　，小沛獨立
-![](https://reganlu007.github.io/san11/rumor/184何進驅虎.jpg)
 
-## 190年 曹操舉兵
-### 登庸臧霸，速取小沛
-### 登庸呂布，速取虎牢
-![](https://reganlu007.github.io/san11/rumor/190曹操.jpg)
-
-## 190年 魔王降臨
-### 登庸李典，速取陳留
-### 登庸楊任，速取漢中
-![](https://reganlu007.github.io/san11/rumor/190董卓.jpg)
-
-## 190年 劉虞開局
-### 登庸方悅，速取晉陽
-![](https://reganlu007.github.io/san11/rumor/190劉虞.jpg)
-
-## 194年 飛將亂舞
-### 登庸張勳，速取汝南
-![](https://reganlu007.github.io/san11/rumor/194呂布.jpg)
-
-## 194年 霸王出征
-### 登庸張勳，速取汝南
-![](https://reganlu007.github.io/san11/rumor/194孫策.jpg)
-
-## 194年 袁紹開局
-### 登庸田楷，速取薊城
-![](https://reganlu007.github.io/san11/rumor/194袁紹.jpg)
-
-## 194年 劉表開局
-### 登庸嚴顏，速取江州
-![](https://reganlu007.github.io/san11/rumor/194劉表.jpg)
-
-## 194年 曹操開局
-### 登庸張郃，速取平原
-### 策反張勳，汝南獨立
-![](https://reganlu007.github.io/san11/rumor/194曹操.jpg)
-
-a|b|c
--|-|-
-a|b|c
+劇本君主方針|流言過程圖鑑
+:-:|:-:
+黃巾之亂：何進開局<br>登庸趙弘，速取宛城<br>登庸波才，速取許昌<br>登庸韓暹，速取平原|![](https://reganlu007.github.io/san11/rumor/184何進1.jpg)
+黃巾之亂：何進開局<br>策反張燕，南皮獨立<br>策反曼成，宛城獨立<br>策反管亥，小沛獨立|![](https://reganlu007.github.io/san11/rumor/184何進驅虎.jpg)
+曹操舉兵：曹操開局<br>登庸臧霸，速取小沛<br>登庸呂布，速取虎牢|![](https://reganlu007.github.io/san11/rumor/190曹操.jpg)
+魔王降臨：董卓開局<br>登庸李典，速取陳留<br>登庸楊任，速取漢中|![](https://reganlu007.github.io/san11/rumor/190董卓.jpg)
+反董聯軍：劉虞開局<br>登庸方悅，速取晉陽|![](https://reganlu007.github.io/san11/rumor/190劉虞.jpg)
+飛將亂舞：呂布開局<br>登庸張勳，速取汝南|![](https://reganlu007.github.io/san11/rumor/194呂布.jpg)
+霸王出征：孫策開局<br>登庸張勳，速取汝南|![](https://reganlu007.github.io/san11/rumor/194孫策.jpg)
+群雄割據：袁紹開局<br>登庸田楷，速取薊城|![](https://reganlu007.github.io/san11/rumor/194袁紹.jpg)
+群雄割據：劉表開局<br>登庸嚴顏，速取江州|![](https://reganlu007.github.io/san11/rumor/194劉表.jpg)
+群雄割據：曹操開局<br>登庸張郃，速取平原<br>策反張勳，汝南獨立|![](https://reganlu007.github.io/san11/rumor/194曹操.jpg)
 
 ## 200年 官渡之戰
 ### 登庸崔琰，速取南皮
