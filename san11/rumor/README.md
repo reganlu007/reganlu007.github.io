@@ -1,6 +1,6 @@
 <h1 align="center">三國志 11 流言奪城</h1>
 
-|劇本名稱：君主方針<br>流言奪城：圖鑑一覽
+|劇本名稱：君主選擇<br>流言奪城：結果一覽
 |:-:
 |黃巾之亂：何進開局<br><br>登庸趙弘，速取宛城<br>登庸波才，速取許昌<br>登庸韓暹，速取平原<br>![](https://reganlu007.github.io/san11/rumor/184何進1.jpg)
 |黃巾之亂：何進開局<br><br>策反張燕，南皮獨立<br>策反曼成，宛城獨立<br>策反管亥，小沛獨立<br>![](https://reganlu007.github.io/san11/rumor/184何進驅虎.jpg)
