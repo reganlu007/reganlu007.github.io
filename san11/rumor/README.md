@@ -12,6 +12,7 @@
 |群雄割據：曹操開局<br><br>登庸張郃，速取平原<br>策反張勳，汝南獨立<br>![](https://reganlu007.github.io/san11/rumor/194曹操.jpg)
 |群雄割據：袁紹開局<br><br>登庸田楷，速取薊城<br>![](https://reganlu007.github.io/san11/rumor/194袁紹.jpg)
 |群雄割據：劉表開局<br><br>登庸嚴顏，速取江州<br>![](https://reganlu007.github.io/san11/rumor/194劉表.jpg)
+|呂布討伐：呂布開局<br><br>登庸劉勳，速取廬江<br>![](https://reganlu007.github.io/san11/rumor/198呂布.jpg)
 |官渡之戰：曹操開局<br><br>登庸崔琰，速取南皮<br>![](https://reganlu007.github.io/san11/rumor/200曹操.jpg)
 |劉備活躍：劉備開局<br><br>登庸呂曠，速取宛城<br>登庸雷銅，速取梓潼<br>![](https://reganlu007.github.io/san11/rumor/207劉備.jpg)
 |三顧茅廬：韓玄開局<br><br>登庸陳應，速取桂陽<br>![](https://reganlu007.github.io/san11/rumor/207韓玄.jpg)
