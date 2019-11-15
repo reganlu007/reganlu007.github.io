@@ -1,4 +1,4 @@
-# 三國志11 賊兵心得
+# 三國志11 卡賊方略
 ## 襄平
 ![](https://reganlu007.github.io/san11/rebel/%E8%A5%84%E5%B9%B31.jpg)
 ![](https://reganlu007.github.io/san11/rebel/%E8%A5%84%E5%B9%B32.jpg)
