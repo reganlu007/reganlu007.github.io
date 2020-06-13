@@ -4,7 +4,7 @@
 |:-:
 |黃巾之亂：何進開局<br><br>登庸趙弘，速取宛城<br>登庸波才，速取許昌<br>登庸韓暹，速取平原<br>![](https://raw.githubusercontent.com/reganlu007/reganlu007.github.io/master/san11/rumor/184何進1.jpg)
 |黃巾之亂：何進開局<br><br>策反張燕，南皮獨立<br>策反曼成，宛城獨立<br>策反管亥，小沛獨立<br>![](https://raw.githubusercontent.com/reganlu007/reganlu007.github.io/master/san11/rumor/184何進驅虎.jpg)
-|曹操舉兵：曹操開局<br><br>登庸臧霸，速取小沛<br>登庸呂布，速取虎牢<br>![](https://raw.githubusercontent.com/reganlu007/reganlu007.github.io/master/san11/rumor/190曹操.jpg)
+|曹操舉兵：曹操開局<br><br>登庸呂布，速取虎牢<br>![](https://raw.githubusercontent.com/reganlu007/reganlu007.github.io/master/san11/rumor/190曹操.jpg)
 |魔王降臨：董卓開局<br><br>登庸李典，速取陳留<br>登庸楊任，速取漢中<br>![](https://raw.githubusercontent.com/reganlu007/reganlu007.github.io/master/san11/rumor/190董卓.jpg)
 |反董聯軍：劉虞開局<br><br>登庸方悅，速取晉陽<br>![](https://raw.githubusercontent.com/reganlu007/reganlu007.github.io/master/san11/rumor/190劉虞.jpg)
 |飛將亂舞：呂布開局<br><br>登庸張勳，速取汝南<br>![](https://raw.githubusercontent.com/reganlu007/reganlu007.github.io/master/san11/rumor/194呂布.jpg)
@@ -13,7 +13,7 @@
 |群雄割據：袁紹開局<br><br>登庸田楷，速取薊城<br>![](https://raw.githubusercontent.com/reganlu007/reganlu007.github.io/master/san11/rumor/194袁紹.jpg)
 |群雄割據：劉表開局<br><br>登庸嚴顏，速取江州<br>![](https://raw.githubusercontent.com/reganlu007/reganlu007.github.io/master/san11/rumor/194劉表.jpg)
 |呂布討伐：呂布開局<br><br>登庸劉勳，速取廬江<br>![](https://raw.githubusercontent.com/reganlu007/reganlu007.github.io/master/san11/rumor/198呂布.jpg)
-|呂布討伐：孫策開局<br><br>登庸劉勳，速取廬江<br>![](https://raw.githubusercontent.com/reganlu007/reganlu007.github.io/master/san11/rumor/198孫策.jpg)
+|呂布討伐：孫策開局<br><br>登庸楊弘，弱化袁術<br>登庸劉勳，速取廬江<br>![](https://raw.githubusercontent.com/reganlu007/reganlu007.github.io/master/san11/rumor/198孫策.jpg)
 |呂布討伐：袁紹開局<br><br>登庸侯成，速取下邳<br>登庸劉勳，速取廬江<br>登庸田楷，速取薊城<br>登庸單經，速取北平<br>![](https://raw.githubusercontent.com/reganlu007/reganlu007.github.io/master/san11/rumor/198袁紹1.jpg)![](https://raw.githubusercontent.com/reganlu007/reganlu007.github.io/master/san11/rumor/198袁紹2.jpg)
 |官渡之戰：曹操開局<br><br>登庸崔琰，速取南皮<br>![](https://raw.githubusercontent.com/reganlu007/reganlu007.github.io/master/san11/rumor/200曹操.jpg)
 |袁家之戰：袁譚開局<br><br>登庸呂曠，速取南皮<br>![](https://raw.githubusercontent.com/reganlu007/reganlu007.github.io/master/san11/rumor/203袁譚.jpg)
