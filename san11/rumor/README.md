@@ -10,14 +10,17 @@
 
 ##  反董聯軍
 
+### 劉虞開局
+![](https://reganlu007.github.io/san11/rumor/190劉虞.jpg)
+
+### 劉備開局
+![](https://reganlu007.github.io/san11/rumor/190劉備.jpg)
+
 ### 曹操開局
 ![](https://reganlu007.github.io/san11/rumor/190曹操.jpg)
 
 ### 董卓開局
 ![](https://reganlu007.github.io/san11/rumor/190董卓.jpg)
-
-### 劉虞開局
-![](https://reganlu007.github.io/san11/rumor/190劉虞.jpg)
 
 ##  群雄割據
 
@@ -30,11 +33,11 @@
 ### 曹操開局
 ![](https://reganlu007.github.io/san11/rumor/194曹操.jpg)
 
-### 袁紹開局
-![](https://reganlu007.github.io/san11/rumor/194袁紹.jpg)
-
 ### 劉表開局
 ![](https://reganlu007.github.io/san11/rumor/194劉表.jpg)
+
+### 袁紹開局
+![](https://reganlu007.github.io/san11/rumor/194袁紹.jpg)
 
 ##  呂布討伐
 
