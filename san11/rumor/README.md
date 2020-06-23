@@ -22,6 +22,11 @@
 ### 董卓開局
 ![](https://reganlu007.github.io/san11/rumor/190董卓.jpg)
 
+##  局勢掌控
+
+### 袁紹開局
+![](https://reganlu007.github.io/san11/rumor/191袁紹.jpg)
+
 ##  群雄割據
 
 ### 呂布開局
