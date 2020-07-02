@@ -6,6 +6,9 @@
 # 187 陳珪
 ![](https://reganlu007.github.io/san11/rumor/187陳珪.jpg)
 
+# 187 劉備
+![](https://reganlu007.github.io/san11/rumor/187劉備.jpg)
+
 # 187 孫堅
 ![](https://reganlu007.github.io/san11/rumor/187孫堅.jpg)
 
