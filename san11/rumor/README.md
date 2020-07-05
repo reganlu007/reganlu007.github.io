@@ -37,7 +37,7 @@
 ![](https://reganlu007.github.io/san11/rumor/194呂布.jpg)
 
 # 194 孫策
-![](https://reganlu007.github.io/san11/rumor/194孫策.jpg)
+![](https://reganlu007.github.io/san11/rumor/194孫策.jpg)![](https://reganlu007.github.io/san11/rumor/194孫策1.jpg)
 
 # 194 曹操
 ![](https://reganlu007.github.io/san11/rumor/194曹操.jpg)
