@@ -46,8 +46,7 @@
 ![](https://reganlu007.github.io/san11/rumor/194劉璋.jpg)
 
 # 194 劉表
-![](https://reganlu007.github.io/san11/rumor/194劉表.jpg)
-![](https://reganlu007.github.io/san11/rumor/194劉表2.jpg)
+![](https://reganlu007.github.io/san11/rumor/194劉表1.jpg)![](https://reganlu007.github.io/san11/rumor/194劉表2.jpg)
 
 # 194 袁紹
 ![](https://reganlu007.github.io/san11/rumor/194袁紹.jpg)
