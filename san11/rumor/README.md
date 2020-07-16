@@ -9,6 +9,9 @@
 # 187 劉備
 ![](https://reganlu007.github.io/san11/rumor/187劉備.jpg)
 
+# 187 孔融
+![](https://reganlu007.github.io/san11/rumor/187孔融.jpg)
+
 # 187 荀彧
 ![](https://reganlu007.github.io/san11/rumor/187荀彧.jpg)
 
