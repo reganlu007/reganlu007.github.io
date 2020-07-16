@@ -90,7 +90,7 @@
 # 207 曹操
 ![](https://reganlu007.github.io/san11/rumor/207曹操1.jpg)![](https://reganlu007.github.io/san11/rumor/207曹操2.jpg)![](https://reganlu007.github.io/san11/rumor/207曹操3.jpg)
 
-# 219 劉備
+# 217 劉備
 ![](https://reganlu007.github.io/san11/rumor/217劉備.jpg)
 
 # 225 劉禪
