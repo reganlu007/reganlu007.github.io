@@ -1,7 +1,7 @@
 # 三國志 11 流言奪城
 
 # 184 何進
-![](https://reganlu007.github.io/san11/rumor/184何進1.jpg)![](https://reganlu007.github.io/san11/rumor/184何進2.jpg)![](https://reganlu007.github.io/san11/rumor/184何進驅虎.jpg)
+![](https://reganlu007.github.io/san11/rumor/184何進.jpg)
 
 # 187 陳珪
 ![](https://reganlu007.github.io/san11/rumor/187陳珪.jpg)
