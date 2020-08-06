@@ -96,6 +96,9 @@
 # 211 劉備
 ![](https://reganlu007.github.io/san11/rumor/211劉備.jpg)
 
+# 211 曹操
+![](https://reganlu007.github.io/san11/rumor/211曹操.jpg)
+
 # 217 劉備
 ![](https://reganlu007.github.io/san11/rumor/217劉備.jpg)
 
