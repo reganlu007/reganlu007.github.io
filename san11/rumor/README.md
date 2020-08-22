@@ -93,6 +93,9 @@
 # 211 劉璋
 ![](https://reganlu007.github.io/san11/rumor/211劉璋.jpg)
 
+# 211 孫權
+![](https://reganlu007.github.io/san11/rumor/211孫權.jpg)
+
 # 211 劉備
 ![](https://reganlu007.github.io/san11/rumor/211劉備.jpg)
 
