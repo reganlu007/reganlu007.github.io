@@ -60,14 +60,17 @@
 # 194 劉表
 ![](https://reganlu007.github.io/san11/rumor/194劉表1.jpg)![](https://reganlu007.github.io/san11/rumor/194劉表2.jpg)
 
-# 194 袁紹
-![](https://reganlu007.github.io/san11/rumor/194袁紹.jpg)
+# 198 公孫瓚
+![](https://reganlu007.github.io/san11/rumor/198公孫瓚.jpg)
 
 # 198 呂布
 ![](https://reganlu007.github.io/san11/rumor/198呂布.jpg)
 
 # 198 孫策
 ![](https://reganlu007.github.io/san11/rumor/198孫策.jpg)
+
+# 194 袁紹
+![](https://reganlu007.github.io/san11/rumor/194袁紹.jpg)
 
 # 198 袁紹
 ![](https://reganlu007.github.io/san11/rumor/198袁紹1.jpg)![](https://reganlu007.github.io/san11/rumor/198袁紹2.jpg)
