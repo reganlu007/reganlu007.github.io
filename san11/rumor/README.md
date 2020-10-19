@@ -39,6 +39,9 @@
 # 191 袁紹
 ![](https://reganlu007.github.io/san11/rumor/191袁紹.jpg)
 
+# 194 劉備
+![](https://reganlu007.github.io/san11/rumor/194劉備.jpg)
+
 # 194 陶謙
 ![](https://reganlu007.github.io/san11/rumor/194陶謙.jpg)
 
