@@ -54,6 +54,9 @@
 # 194 曹操
 ![](https://reganlu007.github.io/san11/rumor/194曹操.jpg)
 
+# 194 李傕
+![](https://reganlu007.github.io/san11/rumor/194李傕.jpg)
+
 # 194 馬騰
 ![](https://reganlu007.github.io/san11/rumor/194馬騰.jpg)
 
