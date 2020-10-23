@@ -81,6 +81,9 @@
 # 198 袁紹
 ![](https://reganlu007.github.io/san11/rumor/198袁紹1.jpg)![](https://reganlu007.github.io/san11/rumor/198袁紹2.jpg)
 
+# 200 孫策
+![](https://reganlu007.github.io/san11/rumor/200孫策.jpg)
+
 # 200 曹操
 ![](https://reganlu007.github.io/san11/rumor/200曹操.jpg)
 
