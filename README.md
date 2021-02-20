@@ -1,3 +1,4 @@
-# 歡迎光臨 RLU 的三國天地！
-## [三國志 2 ](https://reganlu007.github.io/san2 )
-## [三國志 11](https://reganlu007.github.io/san11)
+# 歡迎光臨 RLU 的 三國/信長 天地！
+## [三國志 2 ](san2 )
+## [三國志 11](san11)
+## [天翔記   ](nobu6)
