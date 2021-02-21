@@ -324,3 +324,8 @@
 ![](kill4.jpg)
 ![](kill5.jpg)
 ![](kill6.jpg)
+![](kill7.jpg)
+![](kill8.jpg)
+![](kill9.jpg)
+![](kill10.jpg)
+![](kill11.jpg)
