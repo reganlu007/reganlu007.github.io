@@ -1,8 +1,4 @@
-# BIN
-
-[參考資料](https://jbbs.shitaraba.net/bbs/read.cgi/game/53883/1323666818/)
-
-DOS|(登隨在)凶狀內行知武魅義德野從忠仕潛(未)相(人ID)兵武訓(未)生(顏ID)名|-|-
+# [參考資料](https://jbbs.shitaraba.net/bbs/read.cgi/game/53883/1323666818/)
 
 遊戲平台|結構說明|資料位址|１０進位|１６進位
 :-:|:-:|:-:|:-:|:-:
