@@ -71,11 +71,11 @@
  <optgroup label=　伏羲><option value=c0>　　　大劍</option><option value=c1>　　碎硬劍</option><option value=c2>　四聖大劍</option><option value=c3>　伏羲大劍</option></optgroup>
  <optgroup label=　女媧><option value=c4>　　　細劍</option><option value=c5>　　尖麗劍</option><option value=c6>　四聖細劍</option><option value=c7>　女媧細劍</option></optgroup>
 </select>
- <button onclick="output.value += '\tpatch=1,ee,' + (parseInt(0x104db8f0, 10) * 1 + man.value * 88 + orders.value * 16).toString(16) + ',extended,0000' + '00' + weapon.value + '\n'">加入</button>
+ <button onclick="output.value += '\tpatch=1,EE,' + (parseInt(0x104db8f0, 10) * 1 + man.value * 88 + orders.value * 16).toString(16) + ',extended,0000' + '00' + weapon.value + '\n'">加入</button>
 </p><p>武器重量：<select id=weight><option value=00>輕</option><option value=01>中</option><option value=02>重</option></select>
- <button onclick="output.value += '\tpatch=1,ee,' + (parseInt(0x104db8f2, 10) * 1 + man.value * 88 + orders.value * 16).toString(16) + ',extended,0000' + '00' + weight.value + '\n'">加入</button>
+ <button onclick="output.value += '\tpatch=1,EE,' + (parseInt(0x104db8f2, 10) * 1 + man.value * 88 + orders.value * 16).toString(16) + ',extended,0000' + '00' + weight.value + '\n'">加入</button>
 </p><p>普攻九下：<select id=evohit><option value=01>可</option><option value=00>否</option></select>
- <button onclick="output.value += '\tpatch=1,ee,' + (parseInt(0x104db8f3, 10) * 1 + man.value * 88 + orders.value * 16).toString(16) + ',extended,0000' + '00' + evohit.value + '\n'">加入</button>
+ <button onclick="output.value += '\tpatch=1,EE,' + (parseInt(0x104db8f3, 10) * 1 + man.value * 88 + orders.value * 16).toString(16) + ',extended,0000' + '00' + evohit.value + '\n'">加入</button>
 </p><p>武器能力：<select id=effect><optgroup label=　裝備　　>
  <option value=00>　朱雀翼　</option><option value=01>　青龍膽　</option><option value=02>　白虎牙　</option><option value=03>　玄武甲　</option><option value=04>　神速符　</option>
  <option value=05>　黃忠弓　</option><option value=06>　羌族角　</option><option value=07>　七星帶　</option><option value=08>　活丹　　</option><option value=09>　仙丹　　</option></optgroup><optgroup label=　　玉　　>
@@ -87,11 +87,11 @@
  <option value=22>亂舞極書　</option><option value=23>冰結凍矢　</option><option value=24>吸氣甲　　</option><option value=25>饅頭袋　　</option><option value=26>神獸蹄　　</option></select>
  <select id=addons><option value=00>第１個能力</option><option value=02>第２個能力</option><option value=04>第３個能力</option><option value=06>第４個能力</option><option value=08>第５個能力</option></select>
  <select id=levels><optgroup label=等級>
- <option value=13>Ｌｖ　２０</option><option value=12>Ｌｖ　１９</option><option value=11>Ｌｖ　１８</option><option value=10>Ｌｖ　１７</option><option value=0f>Ｌｖ　１６</option>
- <option value=0e>Ｌｖ　１５</option><option value=0d>Ｌｖ　１４</option><option value=0c>Ｌｖ　１３</option><option value=0b>Ｌｖ　１２</option><option value=0a>Ｌｖ　１１</option>
- <option value=09>Ｌｖ　１０</option><option value=08>Ｌｖ　０９</option><option value=07>Ｌｖ　０８</option><option value=06>Ｌｖ　０７</option><option value=05>Ｌｖ　０６</option>
- <option value=04>Ｌｖ　０５</option><option value=03>Ｌｖ　０４</option><option value=02>Ｌｖ　０３</option><option value=01>Ｌｖ　０２</option><option value=00>Ｌｖ　０１</option></optgroup></select>
- <button onclick="output.value += '\tpatch=1,ee,' + (parseInt(0x104db8f4, 10) * 1 + addons.value * 1 + man.value * 88 + orders.value * 16).toString(16) + ',extended,0000' + levels.value + effect.value + '\n'">加入</button>
+ <option value=13>Ｌｖ。２０</option><option value=12>Ｌｖ。１９</option><option value=11>Ｌｖ。１８</option><option value=10>Ｌｖ。１７</option><option value=0f>Ｌｖ。１６</option>
+ <option value=0e>Ｌｖ。１５</option><option value=0d>Ｌｖ。１４</option><option value=0c>Ｌｖ。１３</option><option value=0b>Ｌｖ。１２</option><option value=0a>Ｌｖ。１１</option>
+ <option value=09>Ｌｖ。１０</option><option value=08>Ｌｖ。０９</option><option value=07>Ｌｖ。０８</option><option value=06>Ｌｖ。０７</option><option value=05>Ｌｖ。０６</option>
+ <option value=04>Ｌｖ。０５</option><option value=03>Ｌｖ。０４</option><option value=02>Ｌｖ。０３</option><option value=01>Ｌｖ。０２</option><option value=00>Ｌｖ。０１</option></optgroup></select>
+ <button onclick="output.value += '\tpatch=1,EE,' + (parseInt(0x104db8f4, 10) * 1 + addons.value * 1 + man.value * 88 + orders.value * 16).toString(16) + ',extended,0000' + levels.value + effect.value + '\n'">加入</button>
 </p><textarea id=output style="width:100%;height:300px">
 //	91CA46D6.pnach
 	gametitle=shin sangokumusou 4 xtreme legends
