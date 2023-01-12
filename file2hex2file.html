@@ -1,0 +1,201 @@
+<div id="main">
+	<title>	File => Hex => File Converter	</title>
+	<h1>	File => Hex => File Converter	</h1>
+	<p>Client-side (javascript, no data is sent to server) file to hexadecimal code conversion. Be careful with files &gt; 1 MB (possible high resource consumption, e.g. Chromium 46 has serious problems when loading few MB of text into textarea, offline tools might be better for large files).</p>
+	<form name="frmConvert" action="">
+		<p>Options:</p>
+		<p> <input type="checkbox" name="chbSeparator" value="sep" checked="yes">Use 0x and comma as separator (C-like)
+		<br><input type="checkbox" name="chbNewline" value="newline" checked="yes">Insert newlines after each 16B</p>
+		<p>File: <input type="file" id="fileinput" onchange='openFile(event)'/></p>
+		<!--
+		or
+        <span id="drop_zone" ondrop="drop_handler(event);" ondragover="dragover_handler(event);" ondragend="dragend_handler(event);" style="border: 15px solid darkgray; text-align:center; vertical-align:middle;">
+          <strong>drop file here</strong>
+        </span>
+		-->
+		</p>        		  
+				<p>Output:</p>
+			    <p>
+				<textarea name="hex" rows="10" style="width: 720px;"></textarea>				
+                <br>
+                <br>
+                <button type="button" name="btnCopyOutputToClipboard" onclick="copyOutputToClipboard()">Copy output to clipboard</button>
+				</p>
+        <p>Note: all characters outside hex set will be ignored, thus "12AB34" = "12 AB 34" = "12, AB, 34", etc.
+        Input is case-insensitive.</p>
+        <p>Options:</p>
+          <p><input type="checkbox" name="chbSeparator2" value="sep" checked="checked">remove "0x" groups from input</p>
+				<p>Cleaned input:</p>
+			    <p><input type="text" name="cleaned_hex" readonly="readonly" value="" style="width: 550px;"></p>				      
+      
+				<p>Name of file to create:</p>
+			    <p>
+				<input type="text" name="file_name" value="myfile.dat" style="width: 550px;">
+				</p>
+			  <p>
+			    <button type=button name="btnConvert" onclick="Convert()">Convert</button>
+			  </p>
+			</form>
+      <p>See also:</p>
+      <p><a target="_blank" href="https://tomeko.net/online_tools/file_to_hex.php">https://tomeko.net/online_tools/file_to_hex.php</a></p>
+      <p><a target="_blank" href="https://tomeko.net/online_tools/hex_to_file.php">https://tomeko.net/online_tools/hex_to_file.php</a></p>
+  </div>
+<script type="text/javascript">
+    var hD='0123456789ABCDEF';
+    function dec2hex(d) {
+        var h = hD.substr(d&15,1);
+        while (d>15) {
+            d>>=4;
+            h=hD.substr(d&15,1)+h;
+        }
+        return h;
+    }    
+    
+	var uint8View;
+	
+    function Convert1() {	
+		var hexText = "";
+		var separator1 = "", separator2 = "";
+		var newline = document.frmConvert.chbNewline.checked;
+		if (document.frmConvert.chbSeparator.checked)
+		{
+		  separator1 = "0x";
+		  separator2 = ", "
+		}			
+		for (i=0; i<uint8View.length; i++) {
+			var charVal = uint8View[i];
+			hexText = hexText + separator1 + (charVal<16?"0":"") + dec2hex(charVal);
+			if (i < uint8View.length - 1) {
+				hexText += separator2;
+			}
+		//	if (newline) {
+		//		if ((i%16) == 15) {
+		//			hexText += "\n";
+		//		}
+		//	}
+		}
+		document.frmConvert.hex.value = hexText;		  	
+    }
+
+    function copyOutputToClipboard() {
+        var target = document.frmConvert.hex;
+        // https://stackoverflow.com/questions/51158061/copy-data-to-clipboard-without-selecting-any-text
+        // - restoring original selection doesn't seem to work        
+        var origSelectionStart, origSelectionEnd;
+        origSelectionStart = target.selectionStart;
+        origSelectionEnd = target.selectionEnd;
+        // select the content
+        var currentFocus = document.activeElement;
+        target.focus();
+        target.setSelectionRange(0, target.value.length);
+        var succeed;
+        try {
+            succeed = document.execCommand("copy");
+        } catch(e) {
+            succeed = false;
+        }
+        // restore original focus
+        if (currentFocus && typeof currentFocus.focus === "function") {
+            currentFocus.focus();
+        }
+        // restore prior selection
+        target.setSelectionRange(origSelectionStart, origSelectionEnd);                        
+    }
+
+	function readFileAsArray(file) {
+        var reader = new FileReader();
+        reader.onload = function(){
+			var arr = reader.result;
+			uint8View = new Uint8Array(arr);	  
+			Convert1();          	  
+		};
+		reader.readAsArrayBuffer(file);
+		document.frmConvert.file_name.value = file.name;
+		document.frmConvert.fileinput.value = file.name;
+	}    
+
+    var openFile = function(event) {
+        readFileAsArray(event.target.files[0]);
+    };
+      
+    function drop_handler(ev) {
+        ev.preventDefault();
+        // If dropped items aren't files, reject them
+        var dt = ev.dataTransfer;
+        if (dt.items) {
+            // Use DataTransferItemList interface to access the file(s)
+            for (var i = 0; i < dt.items.length; i++) {
+                if (dt.items[i].kind == "file") {
+                    readFileAsArray(dt.items[i].getAsFile());
+                    break;
+                }
+            }
+        } else {
+            // Use DataTransfer interface to access the file(s)
+            for (var i = 0; i < dt.files.length; i++) {
+                readFileAsArray(dt.files[i]);
+                break;
+            }
+        }
+    }
+
+    function dragover_handler(ev) {
+        // Prevent default select and drag behavior
+        ev.preventDefault();
+    }
+
+    function dragend_handler(ev) {
+        // Remove all of the drag data
+        var dt = ev.dataTransfer;
+        if (dt.items) {
+            // Use DataTransferItemList interface to remove the drag data
+            for (var i = 0; i < dt.items.length; i++) {
+                dt.items.remove(i);
+            }
+        } else {
+            // Use DataTransfer interface to remove the drag data
+            ev.dataTransfer.clearData();
+        }
+    }
+    function clean_hex(input, remove_0x) {
+        input = input.toUpperCase();
+        
+        if (remove_0x) {
+          input = input.replace(/0x/gi, "");        
+        }
+        
+        var orig_input = input;
+        input = input.replace(/[^A-Fa-f0-9]/g, "");
+//		if (orig_input != input)
+//			alert ("Warning! Non-hex characters (including newlines) in input string ignored.");
+        return input;    
+    } 
+    
+    function Convert() {
+      var cleaned_hex = clean_hex(document.frmConvert.hex.value, document.frmConvert.chbSeparator2.checked);
+      document.frmConvert.cleaned_hex.value = cleaned_hex;
+      if (cleaned_hex.length % 2) {
+        alert ("Error: cleaned hex string length is odd.");     
+        return;
+      }
+
+      var binary = new Array();
+      for (var i=0; i<cleaned_hex.length/2; i++) {
+        var h = cleaned_hex.substr(i*2, 2);
+        binary[i] = parseInt(h,16);        
+      }
+
+		var byteArray = new Uint8Array(binary);
+		var a = window.document.createElement('a');
+
+		a.href = window.URL.createObjectURL(new Blob([byteArray], { type: 'application/octet-stream' }));
+		a.download = document.frmConvert.file_name.value;
+
+		// Append anchor to body.
+		document.body.appendChild(a)
+		a.click();
+
+		// Remove anchor from body
+		document.body.removeChild(a)        
+    } 
+</script>
