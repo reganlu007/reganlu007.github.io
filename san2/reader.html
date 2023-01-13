@@ -1,0 +1,181 @@
+<center>
+	<title>	光榮三國志 II 存檔讀取器 DOS 版 (BETA)	</title>
+	<h1>	光榮三國志 II 存檔讀取器 DOS 版 (BETA)	</h1>
+	<input	type=file	id=fileinput	style="padding-left: 184px"	onchange="openFile(event)"/>
+	<form	name=frmConvert action="">
+<!--
+		<p>Options:</p>
+		<p>	<input	type=checkbox	id=chbSeparator1	value	="sep"		checked>Use 0x and comma as separator (C-like)</p>
+		<p>	<input	type=checkbox	id=chbNewline		value	="newline"	checked>Insert newlines after each 16B</p>
+		  or
+		<span	id		=    "drop_zone"
+			ondrop		="    drop_handler(event);"
+			ondragover	="dragover_handler(event);"
+			ondragend	=" dragend_handler(event);"
+			style		="  border: 15px solid darkgray; text-align:center; vertical-align:middle;">
+			<strong>drop file here</strong>
+		</span>
+-->
+		<p> 資料（16 進位）<button	type=button name="btnCopyOutputToClipboard" onclick="copyOutputToClipboard('hex')"> 複製 </button> </p>
+		<textarea			name=hex	id=hex	rows=10		cols=80		style="resize:none; overflow-x:hidden;"></textarea>
+		<p> 資料（10 進位）<button	type=button name="btnCopyOutputToClipboard" onclick="copyOutputToClipboard('dec')"> 複製 </button> </p>
+		<input	type=text	name=dec	id=dec	value="">
+		<p> 年份 <input type=number id=yer value=0> 月份 <input type=number id=mon value=0></p>
+		<p> 人物 <input type=number id=num value=-1 onchange="oid_onchange()" min=0> </p>
+		<p> 姓名 <input type=text   id=nam value="" readonly> ＣＧ <input type=number id=pic value="" readonly> 從屬 <input type=number id=bos value="" readonly> 埋伏 <input type=number id=amb value="" readonly></p>
+		<p> 血緣 <input type=number id=bld value="" readonly> 生年 <input type=number id=bir value="" readonly> 忠誠 <input type=number id=hnr value="" readonly> 相性 <input type=number id=com value="" readonly></p>
+		<p> 武裝 <input type=number id=rte value="" readonly> 武器 <input type=number id=arm value="" readonly> 才智 <input type=number id=int value="" readonly> 義理 <input type=number id=dty value="" readonly></p>
+		<p> 訓練 <input type=number id=trn value="" readonly> 仕官 <input type=number id=ofi value="" readonly> 戰鬥 <input type=number id=str value="" readonly> 野望 <input type=number id=aim value="" readonly></p>
+		<p> 士兵 <input type=number id=man value="" readonly> 年齡 <input type=number id=age value="" readonly> 號召 <input type=number id=chr value="" readonly> 人德 <input type=number id=mor value="" readonly></p>
+		<p> 同盟 <input type=number id=aly value="" readonly> ？？ <input type=number id=u01 value="" readonly> ？？ <input type=number id=u02 value="" readonly> ？？ <input type=number id=u03 value="" readonly></p>
+<!--
+		<p>Options:</p>
+		<p>	<input	type=checkbox	name="chbSeparator2"	value="sep"	checked					>remove "0x" groups from input</p>
+-->
+		<p> 檔名 <input	type=text	name=file_name	value="download.txt"> <button	type=button	name=btnConvert	onclick="Convert()"> 下載 </button></p>
+	</form>
+</center>
+<script type="text/javascript">
+	function	oid_onchange(){
+		var array = dec.value.split(",");
+		var point = 36 + 43 * num.value;
+		var tmp00 = 0, tmp01 = 0;
+		int.value = array[point++ * 1];
+		str.value = array[point++ * 1];
+		chr.value = array[point++ * 1];
+		dty.value = array[point++ * 1];
+		mor.value = array[point++ * 1];
+		aim.value = array[point++ * 1];
+		bos.value = array[point++ * 1];
+		hnr.value = array[point++ * 1];
+		ofi.value = array[point++ * 1];
+		amb.value = array[point++ * 1];
+		u01.value = array[point++ * 1];
+		com.value = array[point++ * 1];
+		bld.value = array[point++ * 1];
+		aly.value = array[point++ * 1];
+			tmp00 = array[point++ * 1]; tmp01 = array[point++ * 1]; tmp00 = tmp00 * 1 + tmp01 * 256;
+		man.value = tmp00;
+			tmp00 = array[point++ * 1]; tmp01 = array[point++ * 1]; tmp00 = tmp00 * 1 + tmp01 * 256;
+		arm.value = tmp00;
+		rte.value = arm.value / man.value * 100;
+		trn.value = array[point++ * 1];
+		u02.value = array[point++ * 1];
+		u03.value = array[point++ * 1];
+		bir.value = array[point++ * 1];
+		age.value = yer.value - bir.value + 1 * 1;
+			tmp00 = array[point++ * 1]; tmp01 = array[point++ * 1]; tmp00 = tmp00 * 1 + tmp01 * 256;
+		pic.value = tmp00;
+		nam.value = "";
+		nam.value+= array[point++ * 1] + ",";
+		nam.value+= array[point++ * 1] + ",";
+		nam.value+= array[point++ * 1] + ",";
+		nam.value+= array[point++ * 1] + ",";
+		nam.value+= array[point++ * 1] + ",";
+		nam.value+= array[point++ * 1];
+	}
+	var hD	=	"0123456789ABCDEF";
+	function	dec2hex(d){
+		var	h  = hD.substr(d&15,1);
+		while(	d> 15){
+			d>>=4;
+			h  = hD.substr(d&15,1)+h;
+		}
+		return	h;
+	}
+	var		uint8View;
+	function	Convert1(){
+		var	hexText = "", separator1 = "", separator2 = "";
+	//	var	newline = document.frmConvert.chbNewline.checked;
+	//	if(	document.frmConvert.chbSeparator1.checked){
+			separator1 = "0x";
+			separator2 = ",";
+	//	}
+		for(i=0; i<uint8View.length; i++){
+			var	charVal = uint8View[i];
+				hexText += separator1 + (charVal<16?"0":"") + dec2hex(charVal);
+			if(	i < uint8View.length - 1)
+				hexText += separator2;
+		//	if (newline) if ((i%16) == 15) hexText += "\n";
+		}
+		hex.value = hexText;
+		dec.value = hexText.split(",").map(x => Number(x));
+		yer.value = dec.value.split(",")[12];
+		mon.value = dec.value.split(",")[14] * 1 + 1;
+	}
+	function	copyOutputToClipboard(id){
+		var	currentFocus		= document.activeElement;
+		var	target				= document.getElementById(id);
+		var	origSelectionStart	= target.selectionStart;
+		var	origSelectionEnd	= target.selectionEnd;
+			target.focus();
+			target.setSelectionRange(0, target.value.length);
+		var		succeed;
+		try	{	succeed = document.execCommand("copy");	}
+		catch(e){	succeed = false;			}
+		if(	currentFocus && typeof currentFocus.focus === "function")
+			currentFocus.focus();
+			target.setSelectionRange(origSelectionStart, origSelectionEnd);
+	}
+	function	readFileAsArray(file){
+			document.frmConvert.file_name.value = file.name;
+		var	reader		= new FileReader();
+			reader.onload	= function(){ var arr = reader.result; uint8View = new Uint8Array(arr); Convert1(); };
+			reader.readAsArrayBuffer(file);
+	}
+	var		openFile = function(event){ readFileAsArray(event.target.files[0]); };
+	function	drop_handler(ev){
+			ev.preventDefault();
+		var	dt = ev.dataTransfer;
+		if(	dt.items){
+		for(var i = 0; i < dt.items.length; i++){
+			if(	dt.items[i].kind === "file"){
+				readFileAsArray(dt.items[i].getAsFile());
+				break;
+			}
+		}}	else	{
+			for(var i = 0; i < dt.files.length; i++){
+				readFileAsArray(dt.files[i]);
+				break;
+			}
+		}
+	}
+	function	 dragover_handler(ev){ ev.preventDefault(); }
+	function	  dragend_handler(ev){
+		var	dt = ev.dataTransfer;
+		if(	dt.items)
+		for(var	i = 0; i < dt.items.length; i++)
+			dt.items.remove(i);
+        	else	ev.dataTransfer.clearData();
+	}
+	function	clean_hex(input, remove_0x){
+		input	= input.toUpperCase();
+		if(	remove_0x)
+		input = input.replace(/0x/gi, "");
+		var	orig_ = input;
+		input = input.replace(/[^A-Fa-f0-9]/g, "");
+//		if(	orig_!= input)
+//		alert(	"Warning! Non-hex characters (including newlines) in input string ignored.");
+		return	input;
+	}
+	function	Convert(){
+		var	dec	= clean_hex(document.frmConvert.hex.value, true);
+	//	var	dec	= clean_hex(document.frmConvert.hex.value, document.frmConvert.chbSeparator2.checked);
+		document.frmConvert.dec.value = dec;
+		if(	dec.length % 2) {
+			alert(	"Error: cleaned hex string length is odd.");
+			return;
+		}
+		var	binary		=	new	Array();
+		for(var	i = 0; i<dec.length/2; i++) {
+		var	h = dec.substr(i*2, 2);
+			binary[i]	=	parseInt(h,16);
+		}
+		var	byteArray	=	new	Uint8Array(binary);
+		var	a			=	window.document.createElement("a");
+			a.href		=	window.URL.createObjectURL(new Blob([byteArray], { type: 'application/octet-stream' }));
+			a.download	=	document.frmConvert.file_name.value;
+							document.body.appendChild(a);
+			a.click();		document.body.removeChild(a);
+	}
+</script>
