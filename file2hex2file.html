@@ -93,7 +93,6 @@
 	}
 	function readFileAsArray(file){
 		document.frmConvert.file_name.value = file.name;
-		document.frmConvert.fileinput.value = file.name;
 		var reader = new FileReader();
 			reader.onload = function(){
 				var arr = reader.result;
@@ -152,9 +151,9 @@
 			binary[i] = parseInt(h,16);
 		}
 		var byteArray = new Uint8Array(binary);
-		var a = window.document.createElement('a');
-			a.href = window.URL.createObjectURL(new Blob([byteArray], { type: 'application/octet-stream' }));
-			a.download = document.frmConvert.file_name.value;
+		var a			= window.document.createElement('a');
+			a.href		= window.URL.createObjectURL(new Blob([byteArray], { type: 'application/octet-stream' }));
+			a.download	= document.frmConvert.file_name.value;
 			document.body.appendChild(a);
 			a.click();
 			document.body.removeChild(a);
