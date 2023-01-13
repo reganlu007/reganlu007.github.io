@@ -4,7 +4,7 @@
 	<p>Client-side (javascript, no data is sent to server) file to hexadecimal code conversion. Be careful with files &gt; 1 MB (possible high resource consumption, e.g. Chromium 46 has serious problems when loading few MB of text into textarea, offline tools might be better for large files).</p>
 	<form	name="frmConvert" action="">
 		<p>Options:</p>
-		<p>	<input	type="checkbox"	id="chbSeparator"	value	="sep"		checked>Use 0x and comma as separator (C-like)</p>
+		<p>	<input	type="checkbox"	id="chbSeparator1"	value	="sep"		checked>Use 0x and comma as separator (C-like)</p>
 		<p>	<input	type="checkbox"	id="chbNewline"		value	="newline"	checked>Insert newlines after each 16B</p>
 		<p>File:<input	type="file"	id="fileinput"		onchange="openFile(event)"/></p>
 <!--
@@ -18,7 +18,7 @@
 		</span>
 -->
 		<p>Output:</p>
-		<p><textarea name="hex" rows="10" style="width: 720px;"></textarea></p>
+		<p><textarea id="hex" name="hex" rows="10" style="width: 720px;"></textarea></p>
 		<p><button type="button" name="btnCopyOutputToClipboard" onclick="copyOutputToClipboard()">Copy output to clipboard</button></p>
 		<p>Note: all characters outside hex set will be ignored, thus "12AB34" = "12 AB 34" = "12, AB, 34", etc. Input is case-insensitive.</p>
 		<p>Options:</p>
@@ -46,7 +46,7 @@
 	var		uint8View;
 	function	Convert1(){
 		var	hexText = "", separator1 = "", separator2 = "", newline = document.frmConvert.chbNewline.checked;
-		if(	document.frmConvert.chbSeparator.checked){
+		if(	document.frmConvert.chbSeparator1.checked){
 			separator1 = "0x";
 			separator2 = ", ";
 		}
