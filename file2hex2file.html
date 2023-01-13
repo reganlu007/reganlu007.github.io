@@ -7,7 +7,7 @@
 		<p>
 			<input type="checkbox"	id="chbSeparator"	value="sep"		checked>Use 0x and comma as separator (C-like)
 			<br>
-			<input type="checkbox"	id="chbNewline"		value="newline"	checked>Insert newlines after each 16B
+			<input type="checkbox"	id="chbNewline"		value="newline"		checked>Insert newlines after each 16B
 		</p>
 		<p>File:
 			<input type="file"	id="fileinput" onchange='openFile(event)'/>
@@ -33,7 +33,7 @@
 		<p>Options:</p>
 		<p>	<input type="checkbox"	name="chbSeparator2"	value="sep"	checked>remove "0x" groups from input</p>
 		<p>Cleaned input:</p>
-		<p>	<input type="text"		name="cleaned_hex"		value=""			style="width: 550px;"	readonly></p>				      
+		<p>	<input type="text"		name="cleaned_hex"		value=""		style="width: 550px;"	readonly></p>				      
 		<p>Name of file to create:</p>
 		<p>
 			<input	type="text"		name="file_name"		value="myfile.dat"	style="width: 550px;">
@@ -75,13 +75,13 @@
 		document.frmConvert.hex.value = hexText;
 	}
 	function copyOutputToClipboard(){
-        var currentFocus		= document.activeElement;
-		var target				= document.frmConvert.hex;
-        var origSelectionStart	= target.selectionStart;
-		var origSelectionEnd	= target.selectionEnd;
+        	var	currentFocus		= document.activeElement;
+		var	target			= document.frmConvert.hex;
+        	var	origSelectionStart	= target.selectionStart;
+		var	origSelectionEnd	= target.selectionEnd;
 			target.focus();
 			target.setSelectionRange(0, target.value.length);
-		var succeed;
+		var	succeed;
 		try {
 			succeed = document.execCommand("copy");
 		} catch(e) {
@@ -89,11 +89,11 @@
 		}
 		if(	currentFocus && typeof currentFocus.focus === "function")
 			currentFocus.focus();
-		target.setSelectionRange(origSelectionStart, origSelectionEnd);
+			target.setSelectionRange(origSelectionStart, origSelectionEnd);
 	}
-	function readFileAsArray(file){
-		document.frmConvert.file_name.value = file.name;
-		var reader = new FileReader();
+	function	readFileAsArray(file){
+			document.frmConvert.file_name.value = file.name;
+		var	reader = new FileReader();
 			reader.onload = function(){
 				var arr = reader.result;
 				uint8View = new Uint8Array(arr);
@@ -101,10 +101,10 @@
 			};
 			reader.readAsArrayBuffer(file);
 	}
-	var openFile = function(event){ readFileAsArray(event.target.files[0]); };
-	function drop_handler(ev){
-		ev.preventDefault();
-		var dt = ev.dataTransfer;
+	var		openFile = function(event){ readFileAsArray(event.target.files[0]); };
+	function	drop_handler(ev){
+			ev.preventDefault();
+		var	dt = ev.dataTransfer;
 		if(	dt.items){
 			for(var i = 0; i < dt.items.length; i++){
 				if(	dt.items[i].kind === "file"){
@@ -119,15 +119,15 @@
 			}
 		}
 	}
-    function dragover_handler(ev){ ev.preventDefault(); }
-    function  dragend_handler(ev){
+	function	 dragover_handler(ev){ ev.preventDefault(); }
+	function	  dragend_handler(ev){
 		var dt = ev.dataTransfer;
 		if(	dt.items)
             for (var i = 0; i < dt.items.length; i++)
                 dt.items.remove(i);
         else
             ev.dataTransfer.clearData();
-    }
+	}
 	function clean_hex(input, remove_0x){
 		input = input.toUpperCase();
 		if(	remove_0x)
