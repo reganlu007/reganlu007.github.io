@@ -134,6 +134,34 @@ ff ff|全血緣|ff ff|同盟全國勢力
 7|  |35|34|41|39|  |  |
 8|  |  |36|  |  |  |  |
 
+```
+Province
+Jan 189 AD (Spring)
+                                      | 09. Yong
+                                      | Ruler: Cao Cao
+  15                  04 - 03 - 02    | Trust: 50
+    \                /  \ /  \ /  \   | Governor: Cao Cao
+    14              05 - 07 - 06   01 | Advisor: Chen Gong
+      \            /  \ / \  / \      |---------------------------------------
+       13 - 12 - 11 - 10 - 09 - 08    | Pop   350000  Gold    1000  Loy    60
+      / \  /  \  / \  / \ /  \ /      | Men    20000  Food   40000  Land   60
+    30 - 29 - 20 - 19 - 17 - 16       | Generals   9  Rate      46  Flood  30
+    /  \ / \ /  \ /  \ / \  /  \      | FreeGens   0  Horses    20  Forts   2
+  33 - 32 - 31 - 21 - 28 - 18 - 24    |---------------------------------------
+  / \ /  \  / \ /  \  / \  / \ /      | Cao Cao, your orders for
+35 - 34 - 40 - 23 - 22 - 27 - 25      | Province 9 (0-19)?
+  \  / \ /  \ / \  /  \ / \  /        |
+   36 - 41 - 39  38 - 37 - 26         |
+
+
+General
+Guan Yu
+
+(Liu Bei's cohort)  Loy 100
+Arm    10  Rnk Act  Int  83
+Trn    10  Ser   1  War  99
+Men  1000  Age  28  Chr  91
+```
 ## 勢力
 
 ### 以劇本 2 呂布為例
