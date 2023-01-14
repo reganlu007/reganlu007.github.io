@@ -1,80 +1,208 @@
-<center>
-	<title>	å…‰æ¦®ä¸‰åœ‹å¿— II å­˜æª”è®€å–å™¨ DOS ç‰ˆ (BETA)	</title>
-	<h1>	å…‰æ¦®ä¸‰åœ‹å¿— II å­˜æª”è®€å–å™¨ DOS ç‰ˆ (BETA)	</h1>
-	<input	type=file	id=fileinput	style="padding-left: 184px"	onchange="openFile(event)"/>
+<!--
+
+		°Ú...
+		
+		³Q§Ú²q¤¤§A¦b°½¬İ­ì©l½X...
+		
+		¦n¦â³á...
+		
+		>///<
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-->
+<center	id="drop_zone"
+		ondrop    ="drop_____handler(event)"
+		ondragover="dragover_handler(event)"
+		ondragend ="dragend__handler(event)">
+	<title>	KOEI ¤T°ê§Ó 2 DOS ª© ¦sÀÉ­×§ï¾¹ (BETA)	</title>
+	<h1>	KOEI ¤T°ê§Ó 2 DOS ª© ¦sÀÉ­×§ï¾¹ (BETA)	</h1>
+	<p> ¿ï¾Ü or ©ì¦²¦sÀÉ¡A¶i¦æÀËµø or ­×§ï¡A³Ì«á¤U¸ü¿é¥X¡AÂĞ»\ÂÂ¦³ÀÉ®×¡A§Y¥i§¹¦¨­×§ï¡C </p>
 	<form	name=frmConvert action="">
+	<p>
+	<input	type=file	id=fileinput	style="padding-left: 184px"	onchange="openFile(event)"/>
+	</p><p>
+	<input	type=button onclick="copy('hex')" value="½Æ»s¢°¢µ¶i¦ì¸ê®Æ">
+	<input	type=text	name=dec	id=dec						value="">
+	<input	type=button onclick="copy('dec')" value="½Æ»s¢°¢¯¶i¦ì¸ê®Æ">
+	</p><p>
+	<textarea			name=hex	id=hex	rows=10	cols=80		style="resize:none; overflow-x:hidden;"></textarea>
+	</p><p>
+	¹CÀ¸¦~¥÷	<input	type=number	id=G_Y	min=0	max=65535	value=""	onchange="b02_onchange(this.id, 12, 1)">
+	¹CÀ¸¤ë¥÷	<input	type=number	id=G_M	min=1	max=12		value=""	onchange="b01_onchange(this.id, 14, 1)">
+	</p><p>
+	¤Hª«©m¦W	<input	type=text	id=Nam	min=0				value=""	onchange="">
+	</p><p>
+	¤Hª«½s¸¹	<input	type=number	id=oid	min=0	max=65535	value=""	onchange="oid_onchange()" min=0>
+	¤Hª«¥DºŞ	<input	type=number	id=Rnk	min=0	max=65535	value=""	onchange="b01_onchange(this.id,- 8, 0)">
+	¤Hª«ÀY¹³	<input	type=number	id=Pic	min=0	max=65535	value=""	onchange="">
+	¤Hª«®I¥ñ	<input	type=number	id=Amb	min=0	max=255		value=""	onchange="b01_onchange(this.id,-11, 0)">
+	¤Hª««Ã¿Ë	<input	type=number	id=Law	min=0	max=15		value=""	onchange="">
+	</p><p>
+	ªZ¸Ë¤ñ¨Ò	<input	type=number	id=Arm	min=0	max=255		value=""	readonly   >
+	¥X¥Í¦~¥÷	<input	type=number	id=Bdy	min=0	max=255		value=""	onchange="b01_onchange(this.id,-xx, 0)">
+	¤Hª«©¾¸Û	<input	type=number	id=Loy	min=0	max=255		value=""	onchange="b01_onchange(this.id,- 9, 0)">
+	¤Hª«¬Û©Ê	<input	type=number	id=Com	min=0	max=255		value=""	onchange="b01_onchange(this.id,-13, 0)">
+	¤Hª«¤¿¥ü	<input	type=number	id=Bad	min=0	max=15		value=""	onchange="">
+	</p><p>
+	¤Hª«°V½m	<input	type=number	id=Trn	min=0	max=255		value=""	onchange="b01_onchange(this.id,-xx, 0)">
+	¤Hª«¦å½t	<input	type=number	id=bld	min=0	max=255		value=""	onchange="b01_onchange(this.id,-14, 0)">
+	¤Hª«´¼¤O	<input	type=number	id=Int	min=0	max=255		value=""	onchange="b01_onchange(this.id,- 2, 0)">
+	¤Hª«¸q²z	<input	type=number	id=Dty	min=0	max=255		value=""	onchange="b01_onchange(this.id,- 5, 0)">
+	¤Hª«ª¬ºA	<input	type=number	id=Sta	min=0	max=15		value=""	onchange="">
+	</p><p>
+	¤Hª«§L¤O	<input	type=number	id=Men	min=0	max=65535	value=""	onchange="">
+	¤Hª«¥K©x	<input	type=number	id=Ser	min=0	max=255		value=""	onchange="b01_onchange(this.id,-10, 0)">
+	¤Hª«ªZ¤O	<input	type=number	id=War	min=0	max=255		value=""	onchange="b01_onchange(this.id,- 3, 0)">
+	¤Hª«³¥±æ	<input	type=number	id=Abt	min=0	max=255		value=""	onchange="b01_onchange(this.id,- 6, 0)">
+	¤Hª«¤ºÀ³	<input	type=number	id=Bty	min=0	max=15		value=""	onchange="">
+	</p><p>
+	¤Hª«ªZ¾¹	<input	type=number	id=Wpn	min=0	max=65535	value=""	onchange="">
+	¤Hª«¦~ÄÖ	<input	type=number	id=Age	min=0	max=65535	value=""	readonly   >
+	¤Hª«¾y¤O	<input	type=number	id=Chr	min=0	max=255		value=""	onchange="b01_onchange(this.id,- 4, 0)">
+	¤Hª«¤H¼w	<input	type=number	id=mor	min=0	max=255		value=""	onchange="b01_onchange(this.id,- 7, 0)">
+	¤Hª«¯d¦u	<input	type=number	id=Sbt	min=0	max=15		value=""	onchange="">
+	</p><p>
+	¥¼ª¾¢¯¢°	<input	type=number	id=U01	min=0	max=255		value=""	onchange="b01_onchange(this.id,-12, 0)">
+	¥¼ª¾¢¯¢±	<input	type=number	id=U02	min=0	max=255		value=""	onchange="b01_onchange(this.id,-xx, 0)">
+	¥¼ª¾¢¯¢²	<input	type=number	id=U03	min=0	max=255		value=""	onchange="b01_onchange(this.id,-xx, 0)">
+	</p><p>
+	¶×¥XÀÉ¦W
+	<input	type=text	name=file_name	value="download.txt"	>
+	</p>
+	<input	type=button	name=btnConvert	value="ÀÉ®×¤U¸ü"					onclick="Convert()"	>
 <!--
-		<p>Options:</p>
-		<p>	<input	type=checkbox	id=chbSeparator1	value	="sep"		checked>Use 0x and comma as separator (C-like)</p>
-		<p>	<input	type=checkbox	id=chbNewline		value	="newline"	checked>Insert newlines after each 16B</p>
-		  or
-		<span	id		=    "drop_zone"
-			ondrop		="    drop_handler(event);"
-			ondragover	="dragover_handler(event);"
-			ondragend	=" dragend_handler(event);"
-			style		="  border: 15px solid darkgray; text-align:center; vertical-align:middle;">
-			<strong>drop file here</strong>
-		</span>
+	<p>Options:</p>
+	<p>	<input	type=checkbox	name="chbSeparator2"	value="sep"	checked					>remove "0x" groups from input</p>
 -->
-		<p> è³‡æ–™ï¼ˆ16 é€²ä½ï¼‰<button	type=button name="btnCopyOutputToClipboard" onclick="copyOutputToClipboard('hex')"> è¤‡è£½ </button> </p>
-		<textarea			name=hex	id=hex	rows=10		cols=80		style="resize:none; overflow-x:hidden;"></textarea>
-		<p> è³‡æ–™ï¼ˆ10 é€²ä½ï¼‰<button	type=button name="btnCopyOutputToClipboard" onclick="copyOutputToClipboard('dec')"> è¤‡è£½ </button> </p>
-		<input	type=text	name=dec	id=dec	value="">
-		<p> å¹´ä»½ <input type=number id=yer value=0> æœˆä»½ <input type=number id=mon value=0></p>
-		<p> äººç‰© <input type=number id=num value=-1 onchange="oid_onchange()" min=0> </p>
-		<p> å§“å <input type=text   id=nam value="" readonly> ï¼£ï¼§ <input type=number id=pic value="" readonly> å¾å±¬ <input type=number id=bos value="" readonly> åŸ‹ä¼ <input type=number id=amb value="" readonly></p>
-		<p> è¡€ç·£ <input type=number id=bld value="" readonly> ç”Ÿå¹´ <input type=number id=bir value="" readonly> å¿ èª  <input type=number id=hnr value="" readonly> ç›¸æ€§ <input type=number id=com value="" readonly></p>
-		<p> æ­¦è£ <input type=number id=rte value="" readonly> æ­¦å™¨ <input type=number id=arm value="" readonly> æ‰æ™º <input type=number id=int value="" readonly> ç¾©ç† <input type=number id=dty value="" readonly></p>
-		<p> è¨“ç·´ <input type=number id=trn value="" readonly> ä»•å®˜ <input type=number id=ofi value="" readonly> æˆ°é¬¥ <input type=number id=str value="" readonly> é‡æœ› <input type=number id=aim value="" readonly></p>
-		<p> å£«å…µ <input type=number id=man value="" readonly> å¹´é½¡ <input type=number id=age value="" readonly> è™Ÿå¬ <input type=number id=chr value="" readonly> äººå¾· <input type=number id=mor value="" readonly></p>
-		<p> åŒç›Ÿ <input type=number id=aly value="" readonly> ï¼Ÿï¼Ÿ <input type=number id=u01 value="" readonly> ï¼Ÿï¼Ÿ <input type=number id=u02 value="" readonly> ï¼Ÿï¼Ÿ <input type=number id=u03 value="" readonly></p>
-<!--
-		<p>Options:</p>
-		<p>	<input	type=checkbox	name="chbSeparator2"	value="sep"	checked					>remove "0x" groups from input</p>
--->
-		<p> æª”å <input	type=text	name=file_name	value="download.txt"> <button	type=button	name=btnConvert	onclick="Convert()"> ä¸‹è¼‰ </button></p>
 	</form>
 </center>
 <script type="text/javascript">
-	function	oid_onchange(){
-		var array = dec.value.split(",");
-		var point = 36 + 43 * num.value;
-		var tmp00 = 0, tmp01 = 0;
-		int.value = array[point++ * 1];
-		str.value = array[point++ * 1];
-		chr.value = array[point++ * 1];
-		dty.value = array[point++ * 1];
-		mor.value = array[point++ * 1];
-		aim.value = array[point++ * 1];
-		bos.value = array[point++ * 1];
-		hnr.value = array[point++ * 1];
-		ofi.value = array[point++ * 1];
-		amb.value = array[point++ * 1];
-		u01.value = array[point++ * 1];
-		com.value = array[point++ * 1];
-		bld.value = array[point++ * 1];
-		aly.value = array[point++ * 1];
-			tmp00 = array[point++ * 1]; tmp01 = array[point++ * 1]; tmp00 = tmp00 * 1 + tmp01 * 256;
-		man.value = tmp00;
-			tmp00 = array[point++ * 1]; tmp01 = array[point++ * 1]; tmp00 = tmp00 * 1 + tmp01 * 256;
-		arm.value = tmp00;
-		rte.value = arm.value / man.value * 100;
-		trn.value = array[point++ * 1];
-		u02.value = array[point++ * 1];
-		u03.value = array[point++ * 1];
-		bir.value = array[point++ * 1];
-		age.value = yer.value - bir.value + 1 * 1;
-			tmp00 = array[point++ * 1]; tmp01 = array[point++ * 1]; tmp00 = tmp00 * 1 + tmp01 * 256;
-		pic.value = tmp00;
-		nam.value = "";
-		nam.value+= array[point++ * 1] + ",";
-		nam.value+= array[point++ * 1] + ",";
-		nam.value+= array[point++ * 1] + ",";
-		nam.value+= array[point++ * 1] + ",";
-		nam.value+= array[point++ * 1] + ",";
-		nam.value+= array[point++ * 1];
+	var array;
+	var point;
+	function	$(x) { return document.getElementById(x); }
+	function	b01_onchange(id, n1, n2){
+		n1	      = n1 < 0 ? point - n1 : n1;
+	var num       = $(id).value - n2;
+		array     = dec.value.split(",");
+		array[n1] = num;
+		dec.value = array;
+		array     = hex.value.split(",");
+		array[n1] = '0x' + ('0' + (num).toString(16)).slice(-2);
+		hex.value = array;
 	}
-	var hD	=	"0123456789ABCDEF";
+	function	b02_onchange(id, n1, n2){
+		n1	      = n1 < 0 ? point - n1 : n1;
+	var num       = $(id).value;
+	var val       = [(num % 256), Math.floor(num / 256)];
+		array     = dec.value.split(",");
+		[0,1].forEach(i => array[n1 + i] = val[i]);
+		dec.value = array;
+		array     = hex.value.split(",");
+		[0,1].forEach(i => array[n1 + i] = '0x' + ('0' + (val[i]).toString(16)).slice(-2));
+		hex.value = array;
+		Age.value = G_Y.value - Bdy.value + 1 * 1;
+		Age.value = Age.value < 0 ? 65535 + 1 * Age.value : Age.value;
+	}
+	function	oid_onchange(){
+	var tmp00 = 0, tmp01 = 0;
+		array = dec.value.split(",");
+		point = 34 + 43 * oid.value;
+	Sta.value = array[point++ * 1];
+	Bad.value =             Sta.value % 16 ;				/* ¤Hª«¤¿¥ü */
+	Sta.value =  Math.floor(Sta.value / 16);				/* ¤Hª«ª¬ºA */
+	Sbt.value = array[point++ * 1];
+	Bty.value =             Sbt.value % 16 ;				/* ¤Hª«¤ºÀ³ */
+	Sbt.value =  Math.floor(Sbt.value / 16);				/* ¤Hª«¯d¦u */
+	Int.value = array[point++ * 1];							/* ¤Hª«´¼¤O */
+	War.value = array[point++ * 1];							/* ¤Hª«ªZ¤O */
+	Chr.value = array[point++ * 1];							/* ¤Hª«¾y¤O */
+	Dty.value = array[point++ * 1];							/* ¤Hª«¸q²z */
+	mor.value = array[point++ * 1];							/* ¤Hª«¤H¼w */
+	Abt.value = array[point++ * 1];							/* ¤Hª«³¥±æ */
+	Rnk.value = array[point++ * 1];							/* ¤Hª«¥DºŞ */
+	Loy.value = array[point++ * 1];							/* ¤Hª«©¾¸Û */
+	Ser.value = array[point++ * 1];							/* ¤Hª«¥K©x */
+	Amb.value = array[point++ * 1];							/* ¤Hª«®I¥ñ */
+	U01.value = array[point++ * 1];							/* ¥¼ª¾¢¯¢° */
+	Com.value = array[point++ * 1];							/* ¤Hª«¬Û©Ê */
+	bld.value = array[point++ * 1];							/* ¤Hª«¦å½t */
+	Law.value = array[point++ * 1];							/* ¤Hª««Ã¿Ë */
+		tmp00 = array[point++ * 1]; tmp01 = array[point++ * 1]; tmp00 = tmp00 * 1 + tmp01 * 256;
+	Men.value = tmp00;										/* ¤Hª«§L¤O */
+		tmp00 = array[point++ * 1]; tmp01 = array[point++ * 1]; tmp00 = tmp00 * 1 + tmp01 * 256;
+	Wpn.value = tmp00;										/* ¤Hª«ªZ¾¹ */
+	Arm.value =  Math.floor(Wpn.value / Men.value * 100);	/* ªZ¸Ë¤ñ¨Ò */
+	Trn.value = array[point++ * 1];							/* ¤Hª«°V½m */
+	U02.value = array[point++ * 1];							/* ¥¼ª¾¢¯¢± */
+	U03.value = array[point++ * 1];							/* ¥¼ª¾¢¯¢² */
+	Bdy.value = array[point++ * 1];							/* ¥X¥Í¦~¥÷ */
+	Age.value = G_Y.value - Bdy.value + 1 * 1;
+		tmp00 = array[point++ * 1]; tmp01 = array[point++ * 1]; tmp00 = tmp00 * 1 + tmp01 * 256;
+	Pic.value = tmp00;										/* ¤Hª«ÀY¹³ */
+	Nam.value = "";
+	Nam.value+= array[point++ * 1] + ",";					/* ¤Hª«©m¦W */
+	Nam.value+= array[point++ * 1] + ",";					/* ¤Hª«©m¦W */
+	Nam.value+= array[point++ * 1] + ",";					/* ¤Hª«©m¦W */
+	Nam.value+= array[point++ * 1] + ",";					/* ¤Hª«©m¦W */
+	Nam.value+= array[point++ * 1] + ",";					/* ¤Hª«©m¦W */
+	Nam.value+= array[point++ * 1];							/* ¤Hª«©m¦W */
+		point = 34 + 43 * oid.value;
+	}
+	var hD	=	"0123456789abcdef";
 	function	dec2hex(d){
 		var	h  = hD.substr(d&15,1);
 		while(	d> 15){
@@ -85,7 +213,8 @@
 	}
 	var		uint8View;
 	function	Convert1(){
-		var	hexText = "", separator1 = "", separator2 = "";
+		var hexText = "";
+		var	separator1 = "", separator2 = "";
 	//	var	newline = document.frmConvert.chbNewline.checked;
 	//	if(	document.frmConvert.chbSeparator1.checked){
 			separator1 = "0x";
@@ -96,14 +225,18 @@
 				hexText += separator1 + (charVal<16?"0":"") + dec2hex(charVal);
 			if(	i < uint8View.length - 1)
 				hexText += separator2;
-		//	if (newline) if ((i%16) == 15) hexText += "\n";
+		//	if (newline)
+			if ((i%16) == 15) hexText += "\n";
 		}
-		hex.value = hexText;
-		dec.value = hexText.split(",").map(x => Number(x));
-		yer.value = dec.value.split(",")[12];
-		mon.value = dec.value.split(",")[14] * 1 + 1;
+		hex.value = hexText;							/* ¸ê®Æ */
+			array = hexText.split(",");					/* ¸ê®Æ */
+		dec.value = array.map(x => Number(x));			/* ¸ê®Æ */
+		G_Y.value = array[12] * 1 + 256 * array[13];	/* ¦~¥÷ */
+		G_M.value = array[14] * 1 +   1 * 1;			/* ¤ë¥÷ */
+		oid.value = 0;
+		oid_onchange();
 	}
-	function	copyOutputToClipboard(id){
+	function	copy(id){
 		var	currentFocus		= document.activeElement;
 		var	target				= document.getElementById(id);
 		var	origSelectionStart	= target.selectionStart;
@@ -124,7 +257,7 @@
 			reader.readAsArrayBuffer(file);
 	}
 	var		openFile = function(event){ readFileAsArray(event.target.files[0]); };
-	function	drop_handler(ev){
+	function	drop_____handler(ev){
 			ev.preventDefault();
 		var	dt = ev.dataTransfer;
 		if(	dt.items){
@@ -140,8 +273,8 @@
 			}
 		}
 	}
-	function	 dragover_handler(ev){ ev.preventDefault(); }
-	function	  dragend_handler(ev){
+	function	dragover_handler(ev){ ev.preventDefault(); }
+	function	dragend__handler(ev){
 		var	dt = ev.dataTransfer;
 		if(	dt.items)
 		for(var	i = 0; i < dt.items.length; i++)
@@ -159,8 +292,8 @@
 		return	input;
 	}
 	function	Convert(){
-		var	dec	= clean_hex(document.frmConvert.hex.value, true);
-	//	var	dec	= clean_hex(document.frmConvert.hex.value, document.frmConvert.chbSeparator2.checked);
+		var	dec	= clean_hex(hex.value, true);
+	//	var	dec	= clean_hex(hex.value, document.frmConvert.chbSeparator2.checked);
 		document.frmConvert.dec.value = dec;
 		if(	dec.length % 2) {
 			alert(	"Error: cleaned hex string length is odd.");
