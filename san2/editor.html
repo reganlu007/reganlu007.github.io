@@ -1,3 +1,4 @@
+
 <!--
 
 		啊...
@@ -155,11 +156,11 @@
 	座標０１	<input	type=number		id=AxisX	min=0	max=255		step=1	value=""	onchange=""								readonly>
 	城市兵力	<input	type=number		id=Men2												onchange=""								readonly>
 	城市糧食	<input	type=number		id=Food		min=0	max=65535	step=1	value=""	onchange=""								readonly>
-	城市價值	<input	type=number		id=Land		min=0	max=255		step=1	value=""	onchange=""								readonly>	</p><p>
+	土地價值	<input	type=number		id=Land		min=0	max=255		step=1	value=""	onchange=""								readonly>	</p><p>
 	座標０２	<input	type=number		id=AxisY	min=0	max=255		step=1	value=""	onchange=""								readonly>
 	在職人物	<input	type=number		id=Gen1		min=0	max=255		step=1	value=""	onchange=""								readonly>
 	金米匯率	<input	type=number		id=Rate		min=0	max=255		step=1	value=""	onchange=""								readonly>
-	城市治水	<input	type=number		id=Flood	min=0	max=255		step=1	value=""	onchange=""								readonly>	</p><p>
+	治水程度	<input	type=number		id=Flood	min=0	max=255		step=1	value=""	onchange=""								readonly>	</p><p>
 	所屬州名	<input	type=number		id=State	min=0	max=255		step=1	value=""	onchange=""								readonly>
 	在野人物	<input	type=number		id=Gen2		min=0	max=255		step=1	value=""	onchange=""								readonly>
 	良馬庫存	<input	type=number		id=Horses	min=0	max=255		step=1	value=""	onchange=""								readonly>
@@ -247,23 +248,23 @@ Trust.	value = array[ruler++ * 1];
 		ruler++;
 		ruler++;
 	c30_checked = Number(array[ruler++ * 1]).toString(2).padStart(8, 0);
-	B01.checked = Number(c30_checked[8 - 1]) * true;			/* 同盟０１ */
-	B02.checked = Number(c30_checked[8 - 2]) * true;			/* 同盟０２ */
-	B03.checked = Number(c30_checked[8 - 3]) * true;			/* 同盟０３ */
-	B04.checked = Number(c30_checked[8 - 4]) * true;			/* 同盟０４ */
-	B05.checked = Number(c30_checked[8 - 5]) * true;			/* 同盟０５ */
-	B06.checked = Number(c30_checked[8 - 6]) * true;			/* 同盟０６ */
-	B07.checked = Number(c30_checked[8 - 7]) * true;			/* 同盟０７ */
-	B08.checked = Number(c30_checked[8 - 8]) * true;			/* 同盟０８ */
+	A01.checked = Number(c30_checked[8 - 1]) * true;			/* 同盟０１ */
+	A02.checked = Number(c30_checked[8 - 2]) * true;			/* 同盟０２ */
+	A03.checked = Number(c30_checked[8 - 3]) * true;			/* 同盟０３ */
+	A04.checked = Number(c30_checked[8 - 4]) * true;			/* 同盟０４ */
+	A05.checked = Number(c30_checked[8 - 5]) * true;			/* 同盟０５ */
+	A06.checked = Number(c30_checked[8 - 6]) * true;			/* 同盟０６ */
+	A07.checked = Number(c30_checked[8 - 7]) * true;			/* 同盟０７ */
+	A08.checked = Number(c30_checked[8 - 8]) * true;			/* 同盟０８ */
 	c30_checked = Number(array[ruler++ * 1]).toString(2).padStart(8, 0);
-	B09.checked = Number(c30_checked[8 - 1]) * true;			/* 同盟０９ */
-	B10.checked = Number(c30_checked[8 - 2]) * true;			/* 同盟１０ */
-	B11.checked = Number(c30_checked[8 - 3]) * true;			/* 同盟１１ */
-	B12.checked = Number(c30_checked[8 - 4]) * true;			/* 同盟１２ */
-	B13.checked = Number(c30_checked[8 - 5]) * true;			/* 同盟１３ */
-	B14.checked = Number(c30_checked[8 - 6]) * true;			/* 同盟１４ */
-	B15.checked = Number(c30_checked[8 - 7]) * true;			/* 同盟１５ */
-	B16.checked = Number(c30_checked[8 - 8]) * true;			/* 同盟１６ */
+	A09.checked = Number(c30_checked[8 - 1]) * true;			/* 同盟０９ */
+	A10.checked = Number(c30_checked[8 - 2]) * true;			/* 同盟１０ */
+	A11.checked = Number(c30_checked[8 - 3]) * true;			/* 同盟１１ */
+	A12.checked = Number(c30_checked[8 - 4]) * true;			/* 同盟１２ */
+	A13.checked = Number(c30_checked[8 - 5]) * true;			/* 同盟１３ */
+	A14.checked = Number(c30_checked[8 - 6]) * true;			/* 同盟１４ */
+	A15.checked = Number(c30_checked[8 - 7]) * true;			/* 同盟１５ */
+	A16.checked = Number(c30_checked[8 - 8]) * true;			/* 同盟１６ */
 		ruler++;
 		ruler++;
 	D01.value = array[ruler++ * 1];								/* 敵對０１ */
@@ -331,12 +332,12 @@ Rate.	value = array[place++ * 1];
 	var tmp10 = 0, tmp11 = 0, c10_checked;
 		array = dec.value.split(",");
 		point = 34 + 43 * ID1.value;
-	Sta.value = array[point++ * 1];
-	Bad.value =            (Sta.value % 16);					/* 00 人物凶兆 */
-	Sta.value =  Math.floor(Sta.value / 16);					/* 00 人物狀態 */
-	Sbt.value = array[point++ * 1];
-	Bty.value =            (Sbt.value % 16);					/* 01 人物內應 */
-	Sbt.value =  Math.floor(Sbt.value / 16);					/* 01 人物留守 */
+	Bad.value = array[point++ * 1];
+	Sta.value =            (Bad.value % 16);					/* 00 人物凶兆 */
+	Bad.value =  Math.floor(Bad.value / 16);					/* 00 人物狀態 */
+	Bty.value = array[point++ * 1];
+	Sbt.value =            (Bty.value % 16);					/* 01 人物內應 */
+	Bty.value =  Math.floor(Bty.value / 16);					/* 01 人物留守 */
 	Int.value = array[point++ * 1];								/* 02 人物智力 */
 	War.value = array[point++ * 1];								/* 03 人物武力 */
 	Chr.value = array[point++ * 1];								/* 04 人物魅力 */
