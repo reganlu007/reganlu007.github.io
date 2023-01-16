@@ -76,14 +76,11 @@
 	<p> 選擇 or 拖曳存檔，進行檢視 or 修改，最後下載輸出，覆蓋舊有檔案，即可完成修改。 </p>
 	<p> 部分功能上未完成實做，僅能檢視，敬請見諒。 </p>
 	<form	name=frmConvert action="">
-	<p>
-	<input	type=file	id=fileinput	style="padding-right: 184px"	onchange="openFile(event)"/>
-	</p><p>
-	<textarea			name=hex	id=hex	rows=10	cols=80		style="resize:none; overflow-x:hidden;"></textarea>
-	</p><p>
-	<input	type=button onclick="copy('hex')" value="Copy Hex">
-	<input	type=text	name=dec	id=dec						value="">
-	<input	type=button onclick="copy('dec')" value="Copy Dec">
+	<p>			<input	type=file		id=fileinput	style="padding-right: 184px"		onchange="openFile(event)"						>
+	</p><p>		<textarea	rows=10		id=hex		name=hex			cols=80	style="resize:none; overflow-x:hidden;"						></textarea>
+	</p><p>		<input	type=button 				onclick="copy('hex')" 		value="Copy Hex"											>
+				<input	type=text		id=dec		name=dec					value=""													>
+				<input	type=button					onclick="copy('dec')"		value="Copy Dec"											>
 	</p><h2>系統資訊</h2><p>
 	勢力順序	<input	type=number		id=Now		min=0	max=15		step=1	value=""	onchange="b01_onchange(this.id, 13146, 0, 1)"	>	</p><p>
 	遊戲年份	<input	type=number		id=G_Y		min=0	max=65535	step=1	value=""	onchange="b01_onchange(this.id, 12   , 0, 2)"	>
@@ -95,14 +92,15 @@
 	開啟音效	<input	type=checkbox	id=CB3												onchange="SysCheck(13180)"						>
 	開啟觀戰	<input	type=checkbox	id=CB0												onchange="SysCheck(13180)"						>	</p><p>
 	</p><h2>人物資訊</h2><p>
-	人物編號	<input	type=number		id=ID1		min=0	max=65535	step=1	value=""	onchange="id1_onchange()"						>	</p><p>
-	所屬勢力	<input	type=number		id=Rnk		min=0	max=255		step=1	value=""	onchange="b01_onchange(this.id,- 8   , 0, 1)"	>
+	人物編號	<input	type=number		id=ID1		min=0	max=65535	step=1	value=""	onchange="id1_onchange(); ID3.value = Rn1.value; id3_onchange();">	</p><p>
+	所屬勢力	<input	type=number		id=Rn1		min=0	max=255		step=1	value=""	onchange="b01_onchange(this.id,- 8   , 0, 1)"	>
 	頭像０１	<input	type=number		id=CG1		min=0	max=255		step=1	value=""	onchange="b01_onchange(this.id,-25   , 0, 1)"	>
-	頭像０２	<input	type=number		id=CG2		min=0	max=255		step=1	value=""	onchange="b01_onchange(this.id,-26   , 0, 1)"	>	</p><p>
-	人物凶兆	<input	type=number		id=Bad		min=0	max=15		step=1	value=""	onchange=""								readonly>
-	人物狀態	<input	type=number		id=Sta		min=0	max=15		step=1	value=""	onchange=""								readonly>
-	人物內應	<input	type=number		id=Bty		min=0	max=15		step=1	value=""	onchange=""								readonly>
-	人物留守	<input	type=number		id=Sbt		min=0	max=15		step=1	value=""	onchange=""								readonly>	</p><p>
+	頭像０２	<input	type=number		id=CG2		min=0	max=255		step=1	value=""	onchange="b01_onchange(this.id,-26   , 0, 1)"	>
+	留守月份	<input	type=number		id=Sbt		min=0	max=15		step=1	value=""	onchange=""								readonly>	</p><p>
+	埋伏狀態	<input	type=checkbox	id=Ir1												onchange=""								readonly>
+	埋伏來源	<input	type=number		id=Amb		min=0	max=255		step=1	value=""	onchange="b01_onchange(this.id,-11   , 0, 1)"	>
+	內應狀態	<input	type=checkbox	id=Ir2												onchange=""								readonly>
+	內應月份	<input	type=number		id=Bty		min=0	max=15		step=1	value=""	onchange=""								readonly>	</p><p>
 	姓名０１	<input	type=number		id=Nm0		min=0	max=255		step=1	value=""	onchange="b01_onchange(this.id,-27   , 0, 1)"	>
 	姓名０２	<input	type=number		id=Nm1		min=0	max=255		step=1	value=""	onchange="b01_onchange(this.id,-28   , 0, 1)"	>
 	姓名０３	<input	type=number		id=Nm2		min=0	max=255		step=1	value=""	onchange="b01_onchange(this.id,-29   , 0, 1)"	>
@@ -120,7 +118,7 @@
 	人物忠誠	<input	type=number		id=Loy		min=0	max=255		step=1	value=""	onchange="b01_onchange(this.id,- 9   , 0, 1)"	>
 	人物相性	<input	type=number		id=Com		min=0	max=255		step=1	value=""	onchange="b01_onchange(this.id,-13   , 0, 1)"	>	</p><p>
 	人物訓練	<input	type=number		id=Trn		min=0	max=255		step=1	value=""	onchange="b01_onchange(this.id,-21   , 0, 1)"	>
-	人物埋伏	<input	type=number		id=Amb		min=0	max=255		step=1	value=""	onchange="b01_onchange(this.id,-11   , 0, 1)"	>
+	死亡宣告	<input	type=checkbox	id=Bad												onchange=""								readonly>
 	人物智力	<input	type=number		id=Int		min=0	max=255		step=1	value=""	onchange="b01_onchange(this.id,- 2   , 0, 1)"	>
 	人物義理	<input	type=number		id=Dty		min=0	max=255		step=1	value=""	onchange="b01_onchange(this.id,- 5   , 0, 1)"	>	</p><p>
 	人物兵力	<input	type=number		id=Men		min=0	max=65535	step=1	value=""	onchange="b01_onchange(this.id, 16   , 0, 2)"	>
@@ -148,7 +146,7 @@
 	血緣１５	<input	type=checkbox	id=B15												onchange=""								readonly>
 	血緣１６	<input	type=checkbox	id=B16												onchange=""								readonly>	</p><p>
 	</p><h2>城市資訊</h2><p>
-	城市編號	<input	type=number		id=ID2		min=0	max=40		step=1	value=""	onchange="id2_onchange()"						>	</p><p>
+	城市編號	<input	type=number		id=ID2		min=1	max=41		step=1	value=""	onchange="id2_onchange(); ID3.value = Rn2.value; id3_onchange();">	</p><p>
 	所屬勢力	<input	type=number		id=Rn2		min=0	max=255		step=1	value=""	onchange=""								readonly>
 	城市人口	<input	type=number		id=Pop		min=0	max=65535	step=1	value=""	onchange=""								readonly>
 	城市黃金	<input	type=number		id=Gold		min=0	max=65535	step=1	value=""	onchange=""								readonly>
@@ -160,7 +158,7 @@
 	座標０２	<input	type=number		id=AxisY	min=0	max=255		step=1	value=""	onchange=""								readonly>
 	在職人物	<input	type=number		id=Gen1		min=0	max=255		step=1	value=""	onchange=""								readonly>
 	金米匯率	<input	type=number		id=Rate		min=0	max=255		step=1	value=""	onchange=""								readonly>
-	治水程度	<input	type=number		id=Flood	min=0	max=255		step=1	value=""	onchange=""								readonly>	</p><p>
+	城市治水	<input	type=number		id=Flood	min=0	max=255		step=1	value=""	onchange=""								readonly>	</p><p>
 	所屬州名	<input	type=number		id=State	min=0	max=255		step=1	value=""	onchange=""								readonly>
 	在野人物	<input	type=number		id=Gen2		min=0	max=255		step=1	value=""	onchange=""								readonly>
 	良馬庫存	<input	type=number		id=Horses	min=0	max=255		step=1	value=""	onchange=""								readonly>
@@ -168,45 +166,45 @@
 	可以徵稅	<input	type=checkbox	id=Tax																						readonly>
 	可以徵兵	<input	type=checkbox	id=Hir																						readonly>
 	</p><h2>勢力資訊</h2><p>
-	勢力編號	<input	type=number		id=ID3		min=0	max=15		step=1	value=""	onchange="id3_onchange()"						>	</p><p>
+	勢力編號	<input	type=number		id=ID3		min=0	max=15		step=1	value=""	onchange="id3_onchange(); ID1.value = ID3.value; id1_onchange();">	</p><p>
 	勢力信用	<input	type=number		id=Trust	min=0	max=255		step=1	value=""	onchange=""								readonly>
-	勢力姻親	<input	type=number		id=Marry	min=0	max=255		step=1	value=""	onchange=""								readonly>
+	勢力姻親	<input	type=number		id=Marry	min=0	max=255		step=1	value=""	onchange=""								readonly>	</p><p>
 	勢力協防	<input	type=number		id=Def00	min=0	max=255		step=1	value=""	onchange=""								readonly>
-	共同勢力	<input	type=number		id=Atk00	min=0	max=255		step=1	value=""	onchange=""								readonly>	</p><p>
+	共同勢力	<input	type=number		id=Atk00	min=0	max=255		step=1	value=""	onchange=""								readonly>
 	目標都市	<input	type=number		id=Atk01	min=0	max=255		step=1	value=""	onchange=""								readonly>
 	目標勢力	<input	type=number		id=Atk02	min=0	max=255		step=1	value=""	onchange=""								readonly>	</p><p>
-	敵對０１	<input	type=number		id=D01		min=0	max=255		step=1	value=""	onchange=""								readonly>
-	敵對０２	<input	type=number		id=D02		min=0	max=255		step=1	value=""	onchange=""								readonly>
-	敵對０３	<input	type=number		id=D03		min=0	max=255		step=1	value=""	onchange=""								readonly>
-	敵對０４	<input	type=number		id=D04		min=0	max=255		step=1	value=""	onchange=""								readonly>	</p><p>
-	敵對０５	<input	type=number		id=D05		min=0	max=255		step=1	value=""	onchange=""								readonly>
-	敵對０６	<input	type=number		id=D06		min=0	max=255		step=1	value=""	onchange=""								readonly>
-	敵對０７	<input	type=number		id=D07		min=0	max=255		step=1	value=""	onchange=""								readonly>
-	敵對０８	<input	type=number		id=D08		min=0	max=255		step=1	value=""	onchange=""								readonly>	</p><p>
-	敵對０９	<input	type=number		id=D09		min=0	max=255		step=1	value=""	onchange=""								readonly>
-	敵對１０	<input	type=number		id=D10		min=0	max=255		step=1	value=""	onchange=""								readonly>
-	敵對１１	<input	type=number		id=D11		min=0	max=255		step=1	value=""	onchange=""								readonly>
-	敵對１２	<input	type=number		id=D12		min=0	max=255		step=1	value=""	onchange=""								readonly>	</p><p>
-	敵對１３	<input	type=number		id=D13		min=0	max=255		step=1	value=""	onchange=""								readonly>
-	敵對１４	<input	type=number		id=D14		min=0	max=255		step=1	value=""	onchange=""								readonly>
-	敵對１５	<input	type=number		id=D15		min=0	max=255		step=1	value=""	onchange=""								readonly>
-	敵對１６	<input	type=number		id=D16		min=0	max=255		step=1	value=""	onchange=""								readonly>	</p><p>
 	同盟０１	<input	type=checkbox	id=A01												onchange=""								readonly>
+	敵對０１	<input	type=number		id=D01		min=0	max=255		step=1	value=""	onchange=""								readonly>
 	同盟０２	<input	type=checkbox	id=A02												onchange=""								readonly>
+	敵對０２	<input	type=number		id=D02		min=0	max=255		step=1	value=""	onchange=""								readonly>	</p><p>
 	同盟０３	<input	type=checkbox	id=A03												onchange=""								readonly>
-	同盟０４	<input	type=checkbox	id=A04												onchange=""								readonly>	</p><p>
+	敵對０３	<input	type=number		id=D03		min=0	max=255		step=1	value=""	onchange=""								readonly>
+	同盟０４	<input	type=checkbox	id=A04												onchange=""								readonly>
+	敵對０４	<input	type=number		id=D04		min=0	max=255		step=1	value=""	onchange=""								readonly>	</p><p>
 	同盟０５	<input	type=checkbox	id=A05												onchange=""								readonly>
+	敵對０５	<input	type=number		id=D05		min=0	max=255		step=1	value=""	onchange=""								readonly>
 	同盟０６	<input	type=checkbox	id=A06												onchange=""								readonly>
+	敵對０６	<input	type=number		id=D06		min=0	max=255		step=1	value=""	onchange=""								readonly>	</p><p>
 	同盟０７	<input	type=checkbox	id=A07												onchange=""								readonly>
-	同盟０８	<input	type=checkbox	id=A08												onchange=""								readonly>	</p><p>
+	敵對０７	<input	type=number		id=D07		min=0	max=255		step=1	value=""	onchange=""								readonly>
+	同盟０８	<input	type=checkbox	id=A08												onchange=""								readonly>
+	敵對０８	<input	type=number		id=D08		min=0	max=255		step=1	value=""	onchange=""								readonly>	</p><p>
 	同盟０９	<input	type=checkbox	id=A09												onchange=""								readonly>
+	敵對０９	<input	type=number		id=D09		min=0	max=255		step=1	value=""	onchange=""								readonly>
 	同盟１０	<input	type=checkbox	id=A10												onchange=""								readonly>
+	敵對１０	<input	type=number		id=D10		min=0	max=255		step=1	value=""	onchange=""								readonly>	</p><p>
 	同盟１１	<input	type=checkbox	id=A11												onchange=""								readonly>
-	同盟１２	<input	type=checkbox	id=A12												onchange=""								readonly>	</p><p>
+	敵對１１	<input	type=number		id=D11		min=0	max=255		step=1	value=""	onchange=""								readonly>
+	同盟１２	<input	type=checkbox	id=A12												onchange=""								readonly>
+	敵對１２	<input	type=number		id=D12		min=0	max=255		step=1	value=""	onchange=""								readonly>	</p><p>
 	同盟１３	<input	type=checkbox	id=A13												onchange=""								readonly>
+	敵對１３	<input	type=number		id=D13		min=0	max=255		step=1	value=""	onchange=""								readonly>
 	同盟１４	<input	type=checkbox	id=A14												onchange=""								readonly>
+	敵對１４	<input	type=number		id=D14		min=0	max=255		step=1	value=""	onchange=""								readonly>	</p><p>
 	同盟１５	<input	type=checkbox	id=A15												onchange=""								readonly>
+	敵對１５	<input	type=number		id=D15		min=0	max=255		step=1	value=""	onchange=""								readonly>
 	同盟１６	<input	type=checkbox	id=A16												onchange=""								readonly>
+	敵對１６	<input	type=number		id=D16		min=0	max=255		step=1	value=""	onchange=""								readonly>	</p><p>
 	</p><h2>檔案下載</h2><p>
 	檔案名稱	<input	type=text	name=file_name	value="download.txt"																	>
 	</p>		<input	type=button	name=btnConvert	value="檔案下載"						onclick="Convert()"								>
@@ -228,7 +226,7 @@
 	function	b01_onchange(id, n1, n2 , n3){
 		n1	      = n1 < 0 ? point - n1 : n1;
 	var num       = $(id).value - n2;
-	var val       = [(num % 256), Math.floor(num / 256)];
+	var val       = [(num % Math.pow(16,2)), Math.floor(num / Math.pow(16,2))];
 		array     = dec.value.split(",");
 		[...Array(n3).keys()].forEach(i => array[n1 + i] =  ''  + val[i].toString(10).padStart(0, 0));
 		dec.value = array;
@@ -242,7 +240,7 @@
 	function	id3_onchange(){
 	var tmp30 = 0, tmp31 = 0, c30_checked;;
 		array = dec.value.split(",");
-		ruler = 11010 + 41 * ID3.value;
+		ruler = parseInt(0x2b02,10) + 41 * ID3.value;							/* 勢力陣列 */
 Trust.	value = array[ruler++ * 1];
 		ruler++;
 		ruler++;
@@ -288,115 +286,110 @@ Atk01.	value = array[ruler++ * 1];								/* 目標都市 */
 Atk02.	value = array[ruler++ * 1];								/* 目標勢力 */
 Marry.	value = array[ruler++ * 1];								/* 勢力姻親 */
 Def00.	value = array[ruler++ * 1];								/* 勢力協防 */
-		ruler = 11010 + 41 * ID3.value;
+		ruler = parseInt(0x2b02,10) + 41 * ID3.value;
 	}
 	function	id2_onchange(){
-	var tmp20 = 0, tmp21 = 0;
+	var tmp20 = 0, tmp21 = 0, tmp22 = 0, tmp23 = 0;
 		array = dec.value.split(",");
-		place = 11662 + 1 * ID2.value;
-Rn2.	value = array[place++ * 1];
-		place++;
-		place++;
-		place++;
-		place++;
-		place++;
+		place = parseInt(0x2d94,10) + 35 *(ID2.value - 1);		/* 城市陣列 */
 		tmp20 = array[place++ * 1];
 		tmp21 = array[place++ * 1];
-		tmp20 = tmp20 * 1 + tmp21 * 256;
-Gold.	value = tmp20;
+		tmp20 = tmp20 * Math.pow(16,0) + tmp21 * Math.pow(16,2);
+Gold.	value = tmp20;											/* 城市黃金 */
 		tmp20 = array[place++ * 1];
 		tmp21 = array[place++ * 1];
-		tmp20 = tmp20 * 1 + tmp21 * 256;
-Food.	value = tmp20;
-		place++;
-		place++;
+		tmp22 = array[place++ * 1];
+		tmp23 = array[place++ * 1];
+		tmp20 = tmp20 * Math.pow(16,0) + tmp21 * Math.pow(16,2) + tmp22 * Math.pow(16,4) + tmp23 * Math.pow(16,6);
+Food.	value = tmp20;											/* 城市糧食 */
 		tmp20 = array[place++ * 1];
 		tmp21 = array[place++ * 1];
-		tmp20 = tmp20 * 1 + tmp21 * 256;
-	Pop.value = tmp20 * 100;
+		tmp20 = tmp20 * Math.pow(16,0) + tmp21 * Math.pow(16,2);
+	Pop.value = tmp20 * 100;									/* 城市人口 */
+Rn2.	value = array[place++ * 1];								/* 所屬勢力 */
 		place++;
 		place++;
+Rate.	value = array[place++ * 1];								/* 金米匯率 */
 		place++;
 		place++;
-		place++;
-		place++;
-Land.	value = array[place++ * 1];
-Loy2.	value = array[place++ * 1];
-Flood.	value = array[place++ * 1];
-Horses.	value = array[place++ * 1];
-Forts.	value = array[place++ * 1];
-Rate.	value = array[place++ * 1];
-		place = 0 + 1 * ID2.value;
+Land.	value = array[place++ * 1];								/* 土地價值 */
+Loy2.	value = array[place++ * 1];								/* 城市治安 */
+Flood.	value = array[place++ * 1];								/* 城市治水 */
+Horses.	value = array[place++ * 1];								/* 良馬庫存 */
+Forts.	value = array[place++ * 1];								/* 城塞數量 */
+		place = parseInt(0x2d94,10) + 35 *(ID2.value - 1);
 	}
 	function	id1_onchange(){
-	var tmp10 = 0, tmp11 = 0, c10_checked;
-		array = dec.value.split(",");
-		point = 34 + 43 * ID1.value;
-	Bad.value = array[point++ * 1];
-	Sta.value =            (Bad.value % 16);					/* 00 人物凶兆 */
-	Bad.value =  Math.floor(Bad.value / 16);					/* 00 人物狀態 */
-	Bty.value = array[point++ * 1];
-	Sbt.value =            (Bty.value % 16);					/* 01 人物內應 */
-	Bty.value =  Math.floor(Bty.value / 16);					/* 01 人物留守 */
-	Int.value = array[point++ * 1];								/* 02 人物智力 */
-	War.value = array[point++ * 1];								/* 03 人物武力 */
-	Chr.value = array[point++ * 1];								/* 04 人物魅力 */
-	Dty.value = array[point++ * 1];								/* 05 人物義理 */
-	mor.value = array[point++ * 1];								/* 06 人物人德 */
-	Abt.value = array[point++ * 1];								/* 07 人物野望 */
-	Rnk.value = array[point++ * 1];								/* 08 人物主管 */
-	Loy.value = array[point++ * 1];								/* 09 人物忠誠 */
-	Ser.value = array[point++ * 1];								/* 10 人物仕官 */
-	Amb.value = array[point++ * 1];								/* 11 人物埋伏 */
+	var tmp10	= 0, tmp11 = 0, c10_checked;
+		array	= dec.value.split(",");
+		point	= parseInt(0x0021,10) + 43 * ID1.value;							/*    人物陣列 */
+	c10_checked = Number(array[point++ * 1]).toString(2).padStart(8, 0);
+	Bad.value	= Number(c10_checked[8 - 8]) * true;			/* 00 死亡宣告 */
+	c10_checked = Number(array[point++ * 1]).toString(2).padStart(8, 0);
+	Ir1.value	= Number(c10_checked[8 - 7]) * true;			/* 00 埋伏狀態 */
+	Ir2.value	= Number(c10_checked[8 - 8]) * true;			/* 00 內應狀態 */
+	Bty.value	= array[point++ * 1];
+	Sbt.value	=            (Bty.value % 16);					/* 01 內應月份 */
+	Bty.value	=  Math.floor(Bty.value / 16);					/* 01 留守月份 */
+	Int.value	= array[point++ * 1];							/* 02 人物智力 */
+	War.value	= array[point++ * 1];							/* 03 人物武力 */
+	Chr.value	= array[point++ * 1];							/* 04 人物魅力 */
+	Dty.value	= array[point++ * 1];							/* 05 人物義理 */
+	mor.value	= array[point++ * 1];							/* 06 人物人德 */
+	Abt.value	= array[point++ * 1];							/* 07 人物野望 */
+	Rn1.value	= array[point++ * 1];							/* 08 所屬勢力 */
+	Loy.value	= array[point++ * 1];							/* 09 人物忠誠 */
+	Ser.value	= array[point++ * 1];							/* 10 人物仕官 */
+	Amb.value	= array[point++ * 1];							/* 11 埋伏來源 */
 		point++  // U01.value = array[point++ * 1];				/* 12 未知０１ */
-	Com.value = array[point++ * 1];								/* 13 人物相性 */
-	c10_checked = Number(array[point++ * 1]).toString(2).padStart(8, 0);
-	B01.checked = Number(c10_checked[8 - 1]) * true;			/* 14 血緣０１ */
-	B02.checked = Number(c10_checked[8 - 2]) * true;			/* 14 血緣０２ */
-	B03.checked = Number(c10_checked[8 - 3]) * true;			/* 14 血緣０３ */
-	B04.checked = Number(c10_checked[8 - 4]) * true;			/* 14 血緣０４ */
-	B05.checked = Number(c10_checked[8 - 5]) * true;			/* 14 血緣０５ */
-	B06.checked = Number(c10_checked[8 - 6]) * true;			/* 14 血緣０６ */
-	B07.checked = Number(c10_checked[8 - 7]) * true;			/* 14 血緣０７ */
-	B08.checked = Number(c10_checked[8 - 8]) * true;			/* 14 血緣０８ */
-	c10_checked = Number(array[point++ * 1]).toString(2).padStart(8, 0);
-	B09.checked = Number(c10_checked[8 - 1]) * true;			/* 15 血緣０９ */
-	B10.checked = Number(c10_checked[8 - 2]) * true;			/* 15 血緣１０ */
-	B11.checked = Number(c10_checked[8 - 3]) * true;			/* 15 血緣１１ */
-	B12.checked = Number(c10_checked[8 - 4]) * true;			/* 15 血緣１２ */
-	B13.checked = Number(c10_checked[8 - 5]) * true;			/* 15 血緣１３ */
-	B14.checked = Number(c10_checked[8 - 6]) * true;			/* 15 血緣１４ */
-	B15.checked = Number(c10_checked[8 - 7]) * true;			/* 15 血緣１５ */
-	B16.checked = Number(c10_checked[8 - 8]) * true;			/* 15 血緣１６ */
-		tmp10 = array[point++ * 1];
-		tmp11 = array[point++ * 1];
-		tmp10 = tmp10 * 1 + tmp11 * 256;
-	Men.value = tmp10;											/* 16 人物兵力 */
-		tmp10 = array[point++ * 1];
-		tmp11 = array[point++ * 1];
-		tmp10 = tmp10 * 1 + tmp11 * 256;
-	Wpn.value = tmp10;											/* 18 人物武器 */
-	Arm.value =  Math.floor(Wpn.value / Men.value * 100);		/* 20 武裝比例 */
-	Trn.value = array[point++ * 1];								/* 21 人物訓練 */
+	Com.value	= array[point++ * 1];							/* 13 人物相性 */
+	c10_checked	= Number(array[point++ * 1]).toString(2).padStart(8, 0);
+	B01.checked	= Number(c10_checked[8 - 1]) * true;			/* 14 血緣０１ */
+	B02.checked	= Number(c10_checked[8 - 2]) * true;			/* 14 血緣０２ */
+	B03.checked	= Number(c10_checked[8 - 3]) * true;			/* 14 血緣０３ */
+	B04.checked	= Number(c10_checked[8 - 4]) * true;			/* 14 血緣０４ */
+	B05.checked	= Number(c10_checked[8 - 5]) * true;			/* 14 血緣０５ */
+	B06.checked	= Number(c10_checked[8 - 6]) * true;			/* 14 血緣０６ */
+	B07.checked	= Number(c10_checked[8 - 7]) * true;			/* 14 血緣０７ */
+	B08.checked	= Number(c10_checked[8 - 8]) * true;			/* 14 血緣０８ */
+	c10_checked	= Number(array[point++ * 1]).toString(2).padStart(8, 0);
+	B09.checked	= Number(c10_checked[8 - 1]) * true;			/* 15 血緣０９ */
+	B10.checked	= Number(c10_checked[8 - 2]) * true;			/* 15 血緣１０ */
+	B11.checked	= Number(c10_checked[8 - 3]) * true;			/* 15 血緣１１ */
+	B12.checked	= Number(c10_checked[8 - 4]) * true;			/* 15 血緣１２ */
+	B13.checked	= Number(c10_checked[8 - 5]) * true;			/* 15 血緣１３ */
+	B14.checked	= Number(c10_checked[8 - 6]) * true;			/* 15 血緣１４ */
+	B15.checked	= Number(c10_checked[8 - 7]) * true;			/* 15 血緣１５ */
+	B16.checked	= Number(c10_checked[8 - 8]) * true;			/* 15 血緣１６ */
+		tmp10	= array[point++ * 1];
+		tmp11	= array[point++ * 1];
+		tmp10	= tmp10 * 1 + tmp11 * 256;
+	Men.value	= tmp10;										/* 16 人物兵力 */
+		tmp10	= array[point++ * 1];
+		tmp11	= array[point++ * 1];
+		tmp10	= tmp10 * 1 + tmp11 * 256;
+	Wpn.value	= tmp10;										/* 18 人物武器 */
+	Arm.value	=  Math.floor(Wpn.value / Men.value * 100);		/* 20 武裝比例 */
+	Trn.value	= array[point++ * 1];							/* 21 人物訓練 */
 	point++  // U02.value = array[point++ * 1];					/* 22 未知０２ */
 	point++  // U03.value = array[point++ * 1];					/* 23 未知０３ */
-	Bdy.value = array[point++ * 1];								/* 24 出生年份 */
-	Age.value =   G_Y.value - Bdy.value + 1 * 1;				/*    人物年齡 */
-	CG1.value = array[point++ * 1];								/* 25 頭像０１ */
-	CG2.value = array[point++ * 1];								/* 26 頭像０２ */
-	Nm0.value = array[point++ * 1];								/* 27 姓名０１ */
-	Nm1.value = array[point++ * 1];								/* 28 姓名０２ */
-	Nm2.value = array[point++ * 1];								/* 29 姓名０３ */
-	Nm3.value = array[point++ * 1];								/* 30 姓名０４ */
-	Nm4.value = array[point++ * 1];								/* 31 姓名０５ */
-	Nm5.value = array[point++ * 1];								/* 32 姓名０６ */
-	Nm6.value = array[point++ * 1];								/* 33 姓名０７ */
-	Nm7.value = array[point++ * 1];								/* 34 姓名０８ */
-	Nm8.value = array[point++ * 1];								/* 35 姓名０９ */
-	Nm9.value = array[point++ * 1];								/* 36 姓名００ */
-	Nma.value = array[point++ * 1];								/* 37 姓名１１ */
-	Nmb.value = array[point++ * 1];								/* 38 姓名１２ */
-		point = 34 + 43 * ID1.value;
+	Bdy.value	= array[point++ * 1];							/* 24 出生年份 */
+	Age.value	=   G_Y.value - Bdy.value + 1 * 1;				/*    人物年齡 */
+	CG1.value	= array[point++ * 1];							/* 25 頭像０１ */
+	CG2.value	= array[point++ * 1];							/* 26 頭像０２ */
+	Nm0.value	= array[point++ * 1];							/* 27 姓名０１ */
+	Nm1.value	= array[point++ * 1];							/* 28 姓名０２ */
+	Nm2.value	= array[point++ * 1];							/* 29 姓名０３ */
+	Nm3.value	= array[point++ * 1];							/* 30 姓名０４ */
+	Nm4.value	= array[point++ * 1];							/* 31 姓名０５ */
+	Nm5.value	= array[point++ * 1];							/* 32 姓名０６ */
+	Nm6.value	= array[point++ * 1];							/* 33 姓名０７ */
+	Nm7.value	= array[point++ * 1];							/* 34 姓名０８ */
+	Nm8.value	= array[point++ * 1];							/* 35 姓名０９ */
+	Nm9.value	= array[point++ * 1];							/* 36 姓名００ */
+	Nma.value	= array[point++ * 1];							/* 37 姓名１１ */
+	Nmb.value	= array[point++ * 1];							/* 38 姓名１２ */
+		point	= parseInt(0x0021,10) + 43 * ID1.value;
 	}
 	function	dec2hex(d){
 		var	h  = hD.substr(d&15,1);
@@ -486,7 +479,7 @@ Rate.	value = array[place++ * 1];
 		MSG.value	= array[13181];						/* 訊息速度 */
 		PSG.value	= array[13182];						/* 使者速度 */
 		ID1.value	= 0;	id1_onchange();
-		ID2.value	= 0;	id2_onchange();
+		ID2.value	= 1;	id2_onchange();
 		ID3.value	= 0;	id3_onchange();
 	}
 	function	clean_hex(input, remove_0x){
