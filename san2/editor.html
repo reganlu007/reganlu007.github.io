@@ -65,7 +65,7 @@
 
 -->
 <meta	charset="utf-8">
-<style>	input { width: 100px; margin: 0; padding: 0; text-align: center; } .b0 { width: 50px; height: 50px; } input[readonly] { background-color: #ffc; } </style>
+<style>	input, select { width: 100px; margin: 0; padding: 0; text-align: center; } .b0 { width: 50px; height: 50px; } input[readonly] { background-color: #ffc; } </style>
 <center	id="drop_zone"
 		ondrop    ="drop_____handler(event)"
 		ondragover="dragover_handler(event)"
@@ -75,17 +75,17 @@
 	<p> 選擇 or 拖曳存檔，進行檢視 or 修改，最後下載輸出，覆蓋舊有檔案，即可完成修改。 </p>
 	<p> 部分功能上未完成實做，僅能檢視，敬請見諒。 </p>
 	<form	name=frmConvert action="">
-	<p>			<input	type=file		id=fileinput	style="padding-right: 184px"		onchange="openFile(event)"								>
-	</p><p>		<textarea	rows=10		id=hex		name=hex			cols=80	style="resize:none; overflow-x:hidden;"								></textarea>
-	</p><p>		<input	type=button 				onclick="copy('hex')" 		value="Copy Hex"													>
-				<input	type=text		id=dec		name=dec					value=""															>
-				<input	type=button					onclick="copy('dec')"		value="Copy Dec"													>
+	<p>			<input	type=file		id=f_i		style="padding-right: 184px"			onchange="openFile(event)"		hidden					>
+	</p><p>		<textarea	rows=10		id=hex		name=hex			cols=80	style="resize:none; overflow-x:hidden;"		hidden					></textarea>
+	</p><p>		<input	type=button 				onclick="copy('hex')" 		value="Copy Hex"							hidden					>
+				<input	type=text		id=dec		name=dec					value=""									hidden					>
+				<input	type=button					onclick="copy('dec')"		value="Copy Dec"							hidden					>
 	</p><h2>系統資訊</h2><p>
 	勢力順序	<input	type=number		id=Now		min=0	max=15		step=1	value=""	onchange="b01_onchange(this.id, 13146, 0, 1)"	readonly>	</p><p>
 	遊戲年份	<input	type=number		id=G_Y		min=0	max=65535	step=1	value=""	onchange="b01_onchange(this.id, 12   , 0, 2)"			>
 	遊戲月份	<input	type=number		id=G_M		min=1	max=12		step=1	value=""	onchange="b01_onchange(this.id, 14   , 1, 1)"			>
 	訊息速度	<input	type=number		id=MSG		min=1	max=10		step=1	value=""	onchange="b01_onchange(this.id, 13181, 0, 1)"			>
-	使者速度	<input	type=number		id=PSG		min=0	max=6		step=2	value=""	onchange="b01_onchange(this.id, 13182, 0, 1)"			>	</p><p>
+	使者顯示	<select	id=PSG		onchange="b01_onchange(this.id, 13182, 0, 1)"><option value=0>隱藏</option><option value=2>高速</option><option value=4>中速</option><option value=6>低速</option></select></p><p>
 	開啟圖示	<input	type=checkbox	id=CB1												onchange="SysCheck(13180)"								>
 	開啟音樂	<input	type=checkbox	id=CB2												onchange="SysCheck(13180)"								>
 	開啟音效	<input	type=checkbox	id=CB3												onchange="SysCheck(13180)"								>
@@ -181,45 +181,45 @@
 	可以徵兵	<input	type=checkbox	id=Hir																						readonly>
 	</p><h2>勢力資訊</h2><p>
 	勢力編號	<input	type=number		id=ID3		min=0	max=15		step=1	value=""	onchange="id3_onchange(this.value); ID1.value = ID3.value; id1_onchange(ID1.value);">
-	勢力顏色	<input	type=number		id=CL3	min=0	max=15		step=1	value=""											readonly>	</p><p>
+	勢力顏色	<input	type=number		id=CL3		min=0	max=15		step=1	value=""	onchange=""								readonly>
 	勢力信用	<input	type=number		id=Trust	min=0	max=255		step=1	value=""	onchange=""								readonly>
 	勢力姻親	<input	type=number		id=Marry	min=0	max=255		step=1	value=""	onchange=""								readonly>	</p><p>
 	勢力協防	<input	type=number		id=Def00	min=0	max=255		step=1	value=""	onchange=""								readonly>
 	共同勢力	<input	type=number		id=Atk00	min=0	max=255		step=1	value=""	onchange=""								readonly>
 	目標都市	<input	type=number		id=Atk01	min=0	max=255		step=1	value=""	onchange=""								readonly>
 	目標勢力	<input	type=number		id=Atk02	min=0	max=255		step=1	value=""	onchange=""								readonly>	</p><p>
-	同盟０１	<input	type=checkbox	id=A01												onchange=""								readonly>
-	敵對０１	<input	type=number		id=D01		min=0	max=255		step=1	value=""	onchange=""								readonly>
-	同盟０２	<input	type=checkbox	id=A02												onchange=""								readonly>
-	敵對０２	<input	type=number		id=D02		min=0	max=255		step=1	value=""	onchange=""								readonly>	</p><p>
-	同盟０３	<input	type=checkbox	id=A03												onchange=""								readonly>
-	敵對０３	<input	type=number		id=D03		min=0	max=255		step=1	value=""	onchange=""								readonly>
-	同盟０４	<input	type=checkbox	id=A04												onchange=""								readonly>
-	敵對０４	<input	type=number		id=D04		min=0	max=255		step=1	value=""	onchange=""								readonly>	</p><p>
-	同盟０５	<input	type=checkbox	id=A05												onchange=""								readonly>
-	敵對０５	<input	type=number		id=D05		min=0	max=255		step=1	value=""	onchange=""								readonly>
-	同盟０６	<input	type=checkbox	id=A06												onchange=""								readonly>
-	敵對０６	<input	type=number		id=D06		min=0	max=255		step=1	value=""	onchange=""								readonly>	</p><p>
-	同盟０７	<input	type=checkbox	id=A07												onchange=""								readonly>
-	敵對０７	<input	type=number		id=D07		min=0	max=255		step=1	value=""	onchange=""								readonly>
-	同盟０８	<input	type=checkbox	id=A08												onchange=""								readonly>
-	敵對０８	<input	type=number		id=D08		min=0	max=255		step=1	value=""	onchange=""								readonly>	</p><p>
-	同盟０９	<input	type=checkbox	id=A09												onchange=""								readonly>
-	敵對０９	<input	type=number		id=D09		min=0	max=255		step=1	value=""	onchange=""								readonly>
-	同盟１０	<input	type=checkbox	id=A10												onchange=""								readonly>
-	敵對１０	<input	type=number		id=D10		min=0	max=255		step=1	value=""	onchange=""								readonly>	</p><p>
-	同盟１１	<input	type=checkbox	id=A11												onchange=""								readonly>
-	敵對１１	<input	type=number		id=D11		min=0	max=255		step=1	value=""	onchange=""								readonly>
-	同盟１２	<input	type=checkbox	id=A12												onchange=""								readonly>
-	敵對１２	<input	type=number		id=D12		min=0	max=255		step=1	value=""	onchange=""								readonly>	</p><p>
-	同盟１３	<input	type=checkbox	id=A13												onchange=""								readonly>
-	敵對１３	<input	type=number		id=D13		min=0	max=255		step=1	value=""	onchange=""								readonly>
-	同盟１４	<input	type=checkbox	id=A14												onchange=""								readonly>
-	敵對１４	<input	type=number		id=D14		min=0	max=255		step=1	value=""	onchange=""								readonly>	</p><p>
-	同盟１５	<input	type=checkbox	id=A15												onchange=""								readonly>
-	敵對１５	<input	type=number		id=D15		min=0	max=255		step=1	value=""	onchange=""								readonly>
-	同盟１６	<input	type=checkbox	id=A16												onchange=""								readonly>
-	敵對１６	<input	type=number		id=D16		min=0	max=255		step=1	value=""	onchange=""								readonly>	</p><p>
+	同盟０１	<input	type=checkbox	id=A0101											onchange=""								readonly>
+	敵對０１	<input	type=number		id=D0101	min=0	max=255		step=1	value=""	onchange=""								readonly>
+	同盟０２	<input	type=checkbox	id=A0102											onchange=""								readonly>
+	敵對０２	<input	type=number		id=D0102	min=0	max=255		step=1	value=""	onchange=""								readonly>	</p><p>
+	同盟０３	<input	type=checkbox	id=A0103											onchange=""								readonly>
+	敵對０３	<input	type=number		id=D0103	min=0	max=255		step=1	value=""	onchange=""								readonly>
+	同盟０４	<input	type=checkbox	id=A0104											onchange=""								readonly>
+	敵對０４	<input	type=number		id=D0104	min=0	max=255		step=1	value=""	onchange=""								readonly>	</p><p>
+	同盟０５	<input	type=checkbox	id=A0105											onchange=""								readonly>
+	敵對０５	<input	type=number		id=D0105	min=0	max=255		step=1	value=""	onchange=""								readonly>
+	同盟０６	<input	type=checkbox	id=A0106											onchange=""								readonly>
+	敵對０６	<input	type=number		id=D0106	min=0	max=255		step=1	value=""	onchange=""								readonly>	</p><p>
+	同盟０７	<input	type=checkbox	id=A0107											onchange=""								readonly>
+	敵對０７	<input	type=number		id=D0107	min=0	max=255		step=1	value=""	onchange=""								readonly>
+	同盟０８	<input	type=checkbox	id=A0108											onchange=""								readonly>
+	敵對０８	<input	type=number		id=D0108	min=0	max=255		step=1	value=""	onchange=""								readonly>	</p><p>
+	同盟０９	<input	type=checkbox	id=A0109											onchange=""								readonly>
+	敵對０９	<input	type=number		id=D0109	min=0	max=255		step=1	value=""	onchange=""								readonly>
+	同盟１０	<input	type=checkbox	id=A0110											onchange=""								readonly>
+	敵對１０	<input	type=number		id=D0110	min=0	max=255		step=1	value=""	onchange=""								readonly>	</p><p>
+	同盟１１	<input	type=checkbox	id=A0111											onchange=""								readonly>
+	敵對１１	<input	type=number		id=D0111	min=0	max=255		step=1	value=""	onchange=""								readonly>
+	同盟１２	<input	type=checkbox	id=A0112											onchange=""								readonly>
+	敵對１２	<input	type=number		id=D0112	min=0	max=255		step=1	value=""	onchange=""								readonly>	</p><p>
+	同盟１３	<input	type=checkbox	id=A0113											onchange=""								readonly>
+	敵對１３	<input	type=number		id=D0113	min=0	max=255		step=1	value=""	onchange=""								readonly>
+	同盟１４	<input	type=checkbox	id=A0114											onchange=""								readonly>
+	敵對１４	<input	type=number		id=D0114	min=0	max=255		step=1	value=""	onchange=""								readonly>	</p><p>
+	同盟１５	<input	type=checkbox	id=A0115											onchange=""								readonly>
+	敵對１５	<input	type=number		id=D0115	min=0	max=255		step=1	value=""	onchange=""								readonly>
+	同盟１６	<input	type=checkbox	id=A0116											onchange=""								readonly>
+	敵對１６	<input	type=number		id=D0116	min=0	max=255		step=1	value=""	onchange=""								readonly>	</p><p>
 	</p>
 	</p><h2>人物資訊</h2><p>
 	人物編號	<input	type=number		id=ID1		min=0	max=65535	step=1	value=""	onchange="id1_onchange(this.value); ID3.value = Rn1.value; id3_onchange(ID3.value);">	</p><p>
@@ -286,7 +286,7 @@
 </center>
 <script type="text/javascript">
 	var bgclr = ['AAA','FFA','FA5','55F','FAF','AAF','5FA','5FF','AFF','5AF','F5A','A5F','FAA','AA5','5AA','FA0'];
-	var __clr = ['000','000','FFF','FFF','000','000','000','000','000','FFF','FFF','FFF','000','FFF','FFF','000'];
+	var __clr = ['FFF','000','FFF','FFF','000','000','000','000','000','FFF','FFF','FFF','000','FFF','FFF','000'];
 	var array;
 	var point;
 	var place;
@@ -297,11 +297,6 @@
 	function	$(x) { return document.getElementById(x); }
 	function	get_color(x) { return dec.value.split(",")[16 + x * 1]; }
 	function	map_onchange(x){
-		for(i = 101; i <= 141; i++) {
-			var mname = 'map' +i; id2_onchange(i - 100);
-			$(	mname).style['background-color'] = Rn2.value == '255' ? 'FFF' : bgclr[get_color(Rn2.value)];
-			$(	mname).style[           'color'] = Rn2.value == '255' ? '000' : __clr[get_color(Rn2.value)];
-		}
 		ID2.value = x        ; id2_onchange(ID2.value);
 		ID3.value = Rn2.value; id3_onchange(ID3.value);
 	}
@@ -315,16 +310,22 @@
 		array     = hex.value.split(",");
 		[...Array(n3).keys()].forEach(i => array[n1 + i] = '0x' + val[i].toString(16).padStart(2, 0));
 		hex.value = array;
-		Arm.value =  Math.floor(Wpn.value / Men.value * 100);
+		Arm.value = Men.value == '0' ? 100 : Math.floor(Wpn.value / Men.value * 100);
 		Age.value =   G_Y.value - Bdy.value + 1 * 1;
 		Age.value =   Age.value < 0 ? 65535 + 1 * Age.value : Age.value;
 	}
 	function	id3_onchange(x){
 	CL3.value = get_color(x);
-	CL3.style['background-color'] = Rn2.value == '255' ? 'FFF' : bgclr[CL3.value];
-	CL3.style[           'color'] = Rn2.value == '255' ? '000' : __clr[CL3.value];
-	ID3.style['background-color'] = Rn2.value == '255' ? 'FFF' : bgclr[CL3.value];
-	ID3.style[           'color'] = Rn2.value == '255' ? '000' : __clr[CL3.value];
+	CL3.style["background-color"] = Rn2.value == "255" ? "FFF" : bgclr[CL3.value];
+	CL3.style[           "color"] = Rn2.value == "255" ? "000" : __clr[CL3.value];
+	ID1.style["background-color"] = CL3.style["background-color"];
+	ID1.style[           "color"] = CL3.style[           "color"];
+	ID3.style["background-color"] = CL3.style["background-color"];
+	ID3.style[           "color"] = CL3.style[           "color"];
+	Rn1.style["background-color"] = CL3.style["background-color"];
+	Rn1.style[           "color"] = CL3.style[           "color"];
+Trust.	style["background-color"] = CL3.style["background-color"];
+Trust.	style[           "color"] = CL3.style[           "color"];
 	var tmp30 = 0, tmp31 = 0, c30_checked;
 		array = dec.value.split(",");
 		ruler = parseInt(0x2b02,10) + 41 * x;					/* 勢力陣列 */
@@ -333,41 +334,41 @@ Trust.	value = array[ruler++ * 1];
 		ruler++;
 		ruler++;
 	c30_checked = Number(array[ruler++ * 1]).toString(2).padStart(8, 0);
-	A01.checked = Number(c30_checked[8 - 1]) * true;			/* 同盟０１ */
-	A02.checked = Number(c30_checked[8 - 2]) * true;			/* 同盟０２ */
-	A03.checked = Number(c30_checked[8 - 3]) * true;			/* 同盟０３ */
-	A04.checked = Number(c30_checked[8 - 4]) * true;			/* 同盟０４ */
-	A05.checked = Number(c30_checked[8 - 5]) * true;			/* 同盟０５ */
-	A06.checked = Number(c30_checked[8 - 6]) * true;			/* 同盟０６ */
-	A07.checked = Number(c30_checked[8 - 7]) * true;			/* 同盟０７ */
-	A08.checked = Number(c30_checked[8 - 8]) * true;			/* 同盟０８ */
+A0101.	checked = Number(c30_checked[8 - 1]) * true;			/* 同盟０１ */
+A0102.	checked = Number(c30_checked[8 - 2]) * true;			/* 同盟０２ */
+A0103.	checked = Number(c30_checked[8 - 3]) * true;			/* 同盟０３ */
+A0104.	checked = Number(c30_checked[8 - 4]) * true;			/* 同盟０４ */
+A0105.	checked = Number(c30_checked[8 - 5]) * true;			/* 同盟０５ */
+A0106.	checked = Number(c30_checked[8 - 6]) * true;			/* 同盟０６ */
+A0107.	checked = Number(c30_checked[8 - 7]) * true;			/* 同盟０７ */
+A0108.	checked = Number(c30_checked[8 - 8]) * true;			/* 同盟０８ */
 	c30_checked = Number(array[ruler++ * 1]).toString(2).padStart(8, 0);
-	A09.checked = Number(c30_checked[8 - 1]) * true;			/* 同盟０９ */
-	A10.checked = Number(c30_checked[8 - 2]) * true;			/* 同盟１０ */
-	A11.checked = Number(c30_checked[8 - 3]) * true;			/* 同盟１１ */
-	A12.checked = Number(c30_checked[8 - 4]) * true;			/* 同盟１２ */
-	A13.checked = Number(c30_checked[8 - 5]) * true;			/* 同盟１３ */
-	A14.checked = Number(c30_checked[8 - 6]) * true;			/* 同盟１４ */
-	A15.checked = Number(c30_checked[8 - 7]) * true;			/* 同盟１５ */
-	A16.checked = Number(c30_checked[8 - 8]) * true;			/* 同盟１６ */
+A0109.	checked = Number(c30_checked[8 - 1]) * true;			/* 同盟０９ */
+A0110.	checked = Number(c30_checked[8 - 2]) * true;			/* 同盟１０ */
+A0111.	checked = Number(c30_checked[8 - 3]) * true;			/* 同盟１１ */
+A0112.	checked = Number(c30_checked[8 - 4]) * true;			/* 同盟１２ */
+A0113.	checked = Number(c30_checked[8 - 5]) * true;			/* 同盟１３ */
+A0114.	checked = Number(c30_checked[8 - 6]) * true;			/* 同盟１４ */
+A0115.	checked = Number(c30_checked[8 - 7]) * true;			/* 同盟１５ */
+A0116.	checked = Number(c30_checked[8 - 8]) * true;			/* 同盟１６ */
 		ruler++;
 		ruler++;
-	D01.value = array[ruler++ * 1];								/* 敵對０１ */
-	D02.value = array[ruler++ * 1];								/* 敵對０２ */
-	D03.value = array[ruler++ * 1];								/* 敵對０３ */
-	D04.value = array[ruler++ * 1];								/* 敵對０４ */
-	D05.value = array[ruler++ * 1];								/* 敵對０５ */
-	D06.value = array[ruler++ * 1];								/* 敵對０６ */
-	D07.value = array[ruler++ * 1];								/* 敵對０７ */
-	D08.value = array[ruler++ * 1];								/* 敵對０８ */
-	D09.value = array[ruler++ * 1];								/* 敵對０９ */
-	D10.value = array[ruler++ * 1];								/* 敵對１０ */
-	D11.value = array[ruler++ * 1];								/* 敵對１１ */
-	D12.value = array[ruler++ * 1];								/* 敵對１２ */
-	D13.value = array[ruler++ * 1];								/* 敵對１３ */
-	D14.value = array[ruler++ * 1];								/* 敵對１４ */
-	D15.value = array[ruler++ * 1];								/* 敵對１５ */
-	D16.value = array[ruler++ * 1];								/* 敵對１６ */
+D0101.	value = array[ruler++ * 1];								/* 敵對０１ */
+D0102.	value = array[ruler++ * 1];								/* 敵對０２ */
+D0103.	value = array[ruler++ * 1];								/* 敵對０３ */
+D0104.	value = array[ruler++ * 1];								/* 敵對０４ */
+D0105.	value = array[ruler++ * 1];								/* 敵對０５ */
+D0106.	value = array[ruler++ * 1];								/* 敵對０６ */
+D0107.	value = array[ruler++ * 1];								/* 敵對０７ */
+D0108.	value = array[ruler++ * 1];								/* 敵對０８ */
+D0109.	value = array[ruler++ * 1];								/* 敵對０９ */
+D0110.	value = array[ruler++ * 1];								/* 敵對１０ */
+D0111.	value = array[ruler++ * 1];								/* 敵對１１ */
+D0112.	value = array[ruler++ * 1];								/* 敵對１２ */
+D0113.	value = array[ruler++ * 1];								/* 敵對１３ */
+D0114.	value = array[ruler++ * 1];								/* 敵對１４ */
+D0115.	value = array[ruler++ * 1];								/* 敵對１５ */
+D0116.	value = array[ruler++ * 1];								/* 敵對１６ */
 Atk00.	value = array[ruler++ * 1];								/* 勢力共同 */
 Atk01.	value = array[ruler++ * 1];								/* 目標都市 */
 Atk02.	value = array[ruler++ * 1];								/* 目標勢力 */
@@ -456,8 +457,8 @@ Forts.	value	= array[place++ * 1];							/* 城塞數量 */
 		tmp10	= array[point++ * 1];
 		tmp11	= array[point++ * 1];
 		tmp10	= tmp10 * 1 + tmp11 * 256;
-	Wpn.value	= tmp10;										/* 18 人物武器 */
-	Arm.value	=  Math.floor(Wpn.value / Men.value * 100);		/* 20 武裝比例 */
+	Wpn.value	= tmp10;															/* 18 人物武器 */
+	Arm.value	= Men.value == '0' ? 100 : Math.floor(Wpn.value / Men.value * 100);	/* 20 武裝比例 */
 	Trn.value	= array[point++ * 1];							/* 21 人物訓練 */
 	point++  // U02.value = array[point++ * 1];					/* 22 未知０２ */
 	point++  // U03.value = array[point++ * 1];					/* 23 未知０３ */
@@ -479,14 +480,7 @@ Forts.	value	= array[place++ * 1];							/* 城塞數量 */
 	Nmb.value	= array[point++ * 1];							/* 38 姓名１２ */
 		point	= parseInt(0x0021,10) + 43 * x;
 	}
-	function	dec2hex(d){
-		var	h  = hD.substr(d&15,1);
-		while(	d> 15){
-			d>>=4;
-			h  = hD.substr(d&15,1)+h;
-		}
-		return	h;
-	}
+	function	dec2hex(d){ var	h = hD.substr(d & 15, 1); while(d > 15) { d >>= 4; h = hD.substr(d & 15, 1) + h; } return h; }
 	function	SysCheck(n){
 		array = dec.value.split(","); array[n] = (CB0.checked * 8 + CB1.checked * 4 + CB2.checked * 2 + CB3.checked * 1).toString(10).padStart(0,0); dec.value = array;
 		array = hex.value.split(","); array[n] = (CB0.checked * 8 + CB1.checked * 4 + CB2.checked * 2 + CB3.checked * 1).toString(16).padStart(2,0); hex.value = array;
@@ -566,6 +560,16 @@ Forts.	value	= array[place++ * 1];							/* 城塞數量 */
 		CB3.checked = Number(checked[3]) * true;		/* 開啟音效 */
 		MSG.value	= array[13181];						/* 訊息速度 */
 		PSG.value	= array[13182];						/* 使者速度 */
+		for(i = 101; i <= 141; i++) {
+		var	mname = 'map' + i; id2_onchange(i - 100);
+		$(	mname).style["background-color"] = Rn2.value == "255" ? 'FFF' : bgclr[get_color(Rn2.value)];
+		$(	mname).style[           "color"] = Rn2.value == "255" ? '000' : __clr[get_color(Rn2.value)];
+		}
+		for(i = 101; i <= 116; i++){
+			var j  = i - 101;
+			$('A0' + i).style["background-color"] = bgclr[get_color(j)]; $('A0' + i).style["color"] = __clr[get_color(j)];
+			$('D0' + i).style["background-color"] = bgclr[get_color(j)]; $('D0' + i).style["color"] = __clr[get_color(j)];
+		}
 		map_onchange( 0);
 		ID1.value	= 0; id1_onchange(0);
 		ID2.value	= 1; id2_onchange(1);
