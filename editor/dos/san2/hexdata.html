@@ -16,7 +16,8 @@
 		a.download	=	document._map.file_name.value;
 						document.body.appendChild(a);
 		a.click();		document.body.removeChild(a);
-}	function	$(x)			{ return document.getElementById(x);
+}	function	hexOnClicked(n)	{ //	var v = selSwitch.value * q - q + Number(pad_zero(n.id.replace(/hexmap/g, ""), 3)); m[v] = (++m[v] % 6); $(n.id).src = "hexmap" + m[v] + ".jpg";
+}	function	$(n)			{ return document.getElementById(n);
 }	function	pad_zero(a , b)	{ return String(a).padStart(b, 0).slice(-b);
 }	function	readerAsArrayFile(file){file_name.value = file.name; var reader = new FileReader(); reader.onload = function(){ m = new Uint8Array(reader.result); reader_hexmap(0); button01.focus(); selSwitch.value = 1; }; reader.readAsArrayBuffer(file);
 }	function	openFile(event)	{ readerAsArrayFile(event.target.files[0]);
@@ -45,14 +46,17 @@
 }	document.write("</select></p>");
 }	function	render_hexmap(n){	var	x = 13;					for(var j = 0;	j < x; j += 1){
 	document.write(j % 2 > 0  ? "<div class=map></div>" : "");	for(var i = 1;	i < q; i += x){ var v = pad_zero(i - 1 + j + n, 3);
-	document.write("<div class=box><img class=map id=" + hex + v + " src='hexmap0.jpg' onclick=alert(this.id)>");
+	document.write("<div class=box><img class=map id=" + hex + v + " src='hexmap0.jpg' onclick=hexOnClicked(this)>");
 //	document.write("<div class=ccc id=source" + v + ">" + v + "</div></div>" );
 	document.write("<div class=ccc id=source" + v + "></div></div>" );
 }	document.write(j + 1 < x  ? "</td> <td>" : "");
-}}
+}}	function	render__intro(n){
+	for (var i = 0; i < n.length; i++)
+	document.write("<img class=map src=hexmap" + i + ".jpg>" + n[i] + "<br>");
+}
 </script>
 <script	type="text/javascript">
-renderHandler (['ondrop','ondragover','ondragend']);
+	renderHandler (['ondrop','ondragover','ondragend']);
 	renderTitleH1 ("<title>KOEI 三國志 II 地圖檢視器</title>");
 	document.write(" <form	name=_map>");
 	document.write(" <table	cellspacing=0 cellpadding=0><tr><td>");
@@ -64,9 +68,12 @@ renderHandler (['ondrop','ondragover','ondragend']);
 	render_button ([        2,  6,  9, 17, 28, 22, 38      ]);
 	render_button ([      1,  0,  8, 16, 18, 27, 37,  0    ]);
 	render_button ([            0,  0, 24, 25, 26          ]);
-	render_select (['襄平','北平','薊城','晉陽','上黨','南皮','鄴城','北海','陳留','洛陽','弘農','長安','天水','武威','酒泉','下邳','許昌','壽春','南陽','襄陽','長沙','桂陽','零陵','建業','會稽','建安','鄱陽','柴桑','漢中','武都','永安','江州','成都','朱提','永昌','建寧','南海','蒼梧','合浦','郁林','交趾']);
 	document.write("</td> <td>");
+	render_select (['襄平','北平','薊城','晉陽','上黨','南皮','鄴城','北海','陳留','洛陽','弘農','長安','天水','武威','酒泉','下邳','許昌','壽春','南陽','襄陽','長沙','桂陽','零陵','建業','會稽','建安','鄱陽','柴桑','漢中','武都','永安','江州','成都','朱提','永昌','建寧','南海','蒼梧','合浦','郁林','交趾']);
+	document.write("</td> <td></td> <td>");
 	render_hexmap (0);
+	document.write("</td> <td></td> <td>");
+	render__intro (["平地","森林","丘陵","高山","江河","要塞","主城"]);
 	document.write("</td></tr></table><p></p>");
 	document.write(" <input	type=file	id=fileinput style='width:70' onchange=openFile(event)>");
 	document.write(" <input	type=text	id=file_name value='hexdata.dat'>");
