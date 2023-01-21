@@ -34,14 +34,14 @@
 	w("<center id='drop_____zone' ");				for(var i = 0; i < n.length; i++)
 	w(n[i] + "='handler" + i + "(event)' ");
 	w(">");
-}
-</script>
-<script	type="text/javascript">
+}	function	renderDownload(){
+	w(" <input	type=file	id=fileinput style='width:70' onchange=openFile(event)>");
+	w(" <input	type=text	id=file_name value='scenario.dat'>");
+	w(" <input	type=button	id=fdownload value='檔案下載' onclick=download()><p></p>");
+	w("  Copyright &copy; ReganLu. " + new Date().getFullYear() + ", All Rights Reserved. </center>");
+}	</script><script type="text/javascript">
 	renderHandler (['ondrop','ondragover','ondragend']);
 	renderTitleH1 ("<title>KOEI 三國志 II 頭像檢視器</title>");
 	w(" <form	name=_map>");
-	w(" <input	type=file	id=fileinput style='width:70' onchange=openFile(event)>");
-	w(" <input	type=text	id=file_name value='kaodata.dat'>");
-	w(" <input	type=button	id=fdownload value='檔案下載' onclick=download()><p></p>");
-	w(" Copyright &copy; ReganLu. " + new Date().getFullYear() + ", All Rights Reserved. </center>");
+	renderDownload();
 </script>
