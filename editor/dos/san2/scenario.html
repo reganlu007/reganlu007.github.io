@@ -15,22 +15,22 @@ var	palette = ['000','F55','55F','F5F','5F5','FF5','5FF','FFF'],
 	function	download(){
 	var	a     		=	window.document.createElement("a");
 		a.href		=	window.URL.createObjectURL(new Blob([new Uint8Array(scenario_dat)], { type: "application/octet-stream" }));
-		a.download	=	document._map.file_name.value;
-		       			document.body.appendChild(a);
-		a.click();		document.body.removeChild(a);
-}	function	w(n)            {        document.write(n);
-}	function	$(n)            { return document.getElementById(n);
+		a.download	=	window.document._map.file_name.value;
+		       			window.document.body.appendChild(a);
+		a.click();		window.document.body.removeChild(a);
+}	function	w(n)            {        window.document.write(n);
+}	function	$(n)            { return window.document.getElementById(n);
 }	function	pad_zero(a , b)	{ return String(a).padStart(b, 0).slice(-b);
 }	function	readerAsArrayFile(file){file_name.value = file.name; var reader = new FileReader(); reader.onload = function(){ scenario_dat = new Uint8Array(reader.result); }; reader.readAsArrayBuffer(file);
 }	function	openFile(event)	{ readerAsArrayFile(event.target.files[0]);
 }	function	handler0(event)	{
 				handler1(event);	var n = event.dataTransfer;
-	if(	n.items){for(var i = 0;	i < n.items.length;	i++){if(n.items[i].kind == "file")	{readerAsArrayFile(	n.items[i].getAsFile());break;	}}}
-	else		{for(var i = 0;	i < n.files.length;	i++){if(true)						{readerAsArrayFile(	n.files[i]);			break;	}}}
+	if(	n.items){for(var i = 0;	i < n.items.length;	i++){if(n.items[i].kind == "file") {	readerAsArrayFile(	n.items[i].getAsFile()); break; }}}
+	else		{for(var i = 0;	i < n.files.length;	i++){if(true                     ) {	readerAsArrayFile(	n.files[i]            ); break; }}}
 }	function	handler1(event)	{ event.preventDefault();
 }	function	handler2(event)	{	var	n = event.dataTransfer;
-	if(	n.items){for(var i = 0;	i < n.items.length;	i++){if(true)						{					n.items.remove(i);				}}}
-	else		{for(var i = 0;	i < 1;				i++){if(true)						{					n.clearData();					}}}
+	if(	n.items){for(var i = 0;	i < n.items.length;	i++){if(true                     ) {						n.items.remove(i);				}}}
+	else		{for(var i = 0;	i < 1             ;	i++){if(true                     ) {						n.clearData();					}}}
 }	function	renderTitleH1(n){	w("<title>" + n + "</title><h1>"  + n + "</h1>");
 }	function	renderChinaMap(){	w("<table cellspacing=0 cellpadding=0><tr>");
 	renderButtons([                 15, 14                ]);
