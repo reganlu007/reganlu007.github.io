@@ -1,10 +1,8 @@
 <meta charset=utf-8>
-<style>
-input {
+<style>	input { text-align: center;
 //	-webkit-appearance: none; /* Safari 和 Chrome，常用於 iOS 下移除內建樣式 */
 //	   -moz-appearance: none; /* FireFox */
 //	        appearance: none;
-			text-align: center;
 } td { width: 32px; } .map { width: 32px; height: 32px; border: 0; margin: 0; padding: 0; } </style>
 <script	type="text/javascript">
 var	palettes = ['000','F55','55F','F5F','5F5','FF5','5FF','FFF'],
@@ -57,19 +55,26 @@ var	palettes = ['000','F55','55F','F5F','5F5','FF5','5FF','FFF'],
 	for(var i = 0; i < 6; i++)  {
 	v+= "<option value=";
 	v+= i + 0;
-	v+= "> 劇本 ";
-	v+= i + 1;
-	v+= " - ";
-	var	tmp1  = scenario_shift   * i +   2;
-	var	years = scenario_dat[tmp1++] +   0;
-		years+= scenario_dat[tmp1++] * 256;
-	var	month = scenario_dat[tmp1++] +   0;
-		month+= scenario_dat[tmp1++] *   0;
-	v+= years + 1;
-	v+= " 年 - ";
+	v+= ">";
+//	v+= " 劇本 ";
+//	v+= i + 1;
+//	v+= " - ";
+//	var	tmp1  = scenario_shift   * i +   2;
+//	var	years = scenario_dat[tmp1++] +   0;
+//		years+= scenario_dat[tmp1++] * 256;
+//	var	month = scenario_dat[tmp1++] +   0;
+//		month+= scenario_dat[tmp1++] *   0;
+//	v+= years + 1;
+//	v+= " 年 - ";
 //	v+=(month % 12 + 1) % 12 + 1;
 //	v+= " 月 - ";
-	v+= ["董卓的橫暴", "曹操的雄飛", "劉備的雌伏", "諸葛亮登場", "關羽的奮戰", "三國的鼎立"][i];
+	v+= [
+	"劇本１－１８９年－董卓的橫暴",
+	"劇本２－１９４年－曹操的雄飛",
+	"劇本３－２０１年－劉備的雌伏",
+	"劇本４－２０８年－諸葛亮登場",
+	"劇本５－２１５年－關羽的奮戰",
+	"劇本６－２２０年－三國的鼎立"][i];
 //	v+= " - 開局時間：";
 //	v+= years + 0;
 //	v+= " 年 ";
@@ -311,4 +316,3 @@ v = 0;z = "key_" + t;
 	renderRulersID();
 	w("  Copyright &copy; ReganLu. " + new Date().getFullYear() + ", All Rights Reserved. </center>");
 </script>
-
