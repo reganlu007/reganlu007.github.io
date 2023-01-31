@@ -310,6 +310,28 @@ w(	v);
 	renderProvince();
 	renderRulersID();
 	renderMyFooter();
+//	諸侯
+var Ruler01 = [ ...Array(officers_max).keys() ].map(x =>
+scenario_dat[   32 + x * officers_shift + scenario_shift * scenario.value] * Math.pow(16,0));
+//	士兵
+var All_Men = [ ...Array(officers_max).keys() ].map(x =>
+scenario_dat[   40 + x * officers_shift + scenario_shift * scenario.value] * Math.pow(16,0) +
+scenario_dat[   41 + x * officers_shift + scenario_shift * scenario.value] * Math.pow(16,2));
+//	黃金
+var AllGold = [ ...Array(rulersID_shift).keys() ].map(x =>
+scenario_dat[11658 + x * province_shift + scenario_shift * scenario.value] * Math.pow(16,0) +
+scenario_dat[11659 + x * province_shift + scenario_shift * scenario.value] * Math.pow(16,2));
+//	糧食
+var AllRice = [ ...Array(rulersID_shift).keys() ].map(x =>
+scenario_dat[11660 + x * province_shift + scenario_shift * scenario.value] * Math.pow(16,0) +
+scenario_dat[11661 + x * province_shift + scenario_shift * scenario.value] * Math.pow(16,2) +
+scenario_dat[11662 + x * province_shift + scenario_shift * scenario.value] * Math.pow(16,4) +
+scenario_dat[11663 + x * province_shift + scenario_shift * scenario.value] * Math.pow(16,6));
+//	諸侯
+var Ruler02 = [ ...Array(rulersID_shift).keys() ].map(x =>
+scenario_dat[11666 + x * province_shift + scenario_shift * scenario.value] * Math.pow(16,0));
+//	合集
+var AllData = [[Ruler01, All_Men], [Ruler02, AllGold, AllRice]];
 	v  = "<table><tr>";
 	v += "<th>諸侯編號</th>";
 	v += "<th>勢力黃金</th>";
@@ -331,7 +353,7 @@ w(	v);
 	v += "</tr><tr><td>１４</td><td>0</td><td>0</td><td>0</td>";
 	v += "</tr><tr><td>１５</td><td>0</td><td>0</td><td>0</td>";
 	v += "</tr><tr><td>１６</td><td>0</td><td>0</td><td>0</td>";
+	v += "</tr><tr><td>在野</td><td>0</td><td>0</td><td>0</td>";
 	v += "</tr></table>";
 	rulersInfo.innerHTML = v; v = "";
 </script>
-
