@@ -1,14 +1,9 @@
-
 <meta charset=utf-8>
-<style>
-.map { width:32px; height:32px; } td { width:32px; } select { min-width:80px; } #selSwitch { height:400px; } #mapSwitch { height:20px; }
-.box { position: relative; text-align: center;	color: white; }
-.ccc { position: absolute; top: 50%; left: 50%;	transform: translate(-50%, -50%); }
-</style>
+<style> input{ border-color: #000; border-style: solid; border-width: 1; } td { width:32px; } .map { width:32px; height:32px; } </style>
 <script	type="text/javascript">
 var	palette = ['000','F55','55F','F5F','5F5','FF5','5FF','FFF'],
-	bgColor = ['000','FFA','FA5','55F','FAF','AAF','5FA','5FF','AFF','5AF','F5A','A5F','FAA','AA5','5AA','FA0','FFF'],
-	myColor = ['FFF','000','FFF','FFF','000','000','000','000','000','FFF','FFF','FFF','000','FFF','FFF','000','000'],
+	bgColor = ['000','FFA','FA5','55F','FAF','55A','5FA','5FF','AFF','5AF','F5A','A5F','FAA','AA5','5AA','FA0','FFF'],
+	myColor = ['FFF','000','FFF','FFF','000','FFF','000','000','000','FFF','FFF','FFF','000','FFF','FFF','000','000'],
 	ProvData = ["襄平","北平","薊城","晉陽","上黨","南皮","鄴城","北海","陳留","洛陽","弘農","長安","天水","武威","酒泉","下邳","許昌","壽春","南陽","襄陽","長沙","桂陽","零陵","建業","會稽","建安","鄱陽","柴桑","漢中","武都","永安","江州","成都","朱提","永昌","建寧","南海","蒼梧","合浦","郁林","交趾"],	
 	Officers_const =    22, Officers_shift =    43,
 	Province_const = 11650, Province_shift =    35,
