@@ -1,5 +1,11 @@
 <meta charset=utf-8>
-<style> input{ border-color: #000; border-style: solid; border-width: 1; } td { width:32px; } .map { width:32px; height:32px; } </style>
+<style>
+input {
+//	-webkit-appearance: none; /* Safari 和 Chrome，常用於 iOS 下移除內建樣式 */
+//	   -moz-appearance: none; /* FireFox */
+//	        appearance: none;
+			text-align: center;
+} td { width: 32px; } .map { width: 32px; height: 32px; border: 0; margin: 0; padding: 0; } </style>
 <script	type="text/javascript">
 var	palettes = ['000','F55','55F','F5F','5F5','FF5','5FF','FFF'],
 	bg_Color = ['000','FFA','A50','55F','FAF','55A','5FA','5FF','AFF','5AF','F5A','A5F','FAA','AA5','5AA','FA0','FFF'],
@@ -43,58 +49,59 @@ var	palettes = ['000','F55','55F','F5F','5F5','FF5','5FF','FFF'],
 	w(n[i] == 0 ? "<div class=map></div>" : "<input type=button class=map id=Click_"+v+" value="+v+" onclick='province.value=\"" + pad_zero(n[i]-1, 2) + "\";renderProvince();'>");
 }	w("</td>");
 }	function	renderHandler(n){ var t = "<center id='drop_____zone' "; for(var i = 0; i < n.length; i++) t += n[i] + "='handler" + i + "(event)' "; w(t + "><form   name=_map>");
-}	function	renderSelector(){ var t = "";
+}	function	renderSelector(){ var v = "";
 	renderChinaMap();
 	renderDownload();
-	t+= "<hr><select id=scenario onchange='renderOfficers();renderProvince();renderRulersID();'>";
+	v+= "<hr><select id=scenario onchange='renderOfficers();renderProvince();'>";
 	for(var i = 0; i < 6; i++)  {
-	t+= "<option value=";
-	t+= i + 0;
-	t+= "> 劇本 ";
-	t+= i + 1;
-	t+= " - ";
+	v+= "<option value=";
+	v+= i + 0;
+	v+= "> 劇本 ";
+	v+= i + 1;
+	v+= " - ";
 	var	tmp1  = scenario_shift   * i +   2;
 	var	years = scenario_dat[tmp1++] +   0;
 		years+= scenario_dat[tmp1++] * 256;
 	var	month = scenario_dat[tmp1++] +   0;
 		month+= scenario_dat[tmp1++] *   0;
-	t+= years + 1;
-	t+= " 年 - ";
-//	t+=(month % 12 + 1) % 12 + 1;
-//	t+= " 月 - ";
-	t+= ["董卓的橫暴", "曹操的雄飛", "劉備的雌伏", "諸葛亮登場", "關羽的奮戰", "三國的鼎立"][i];
-//	t+= " - 開局時間：";
-//	t+= years + 0;
-//	t+= " 年 ";
-//	t+=(month % 12 + 1);
-//	t+= " 月 ";
-	t+= "</option>";
-}	t+=	"</select>";
-	t+=	"<table><tr>";
-	t+= "<th>人物<br>";
-	t+= "<select id=officers onchange=renderOfficers()>"; for(var i = 1; i <= officers_max; i++){
-	t+= "<option id=Offic_";
-	t+= pad_zero(i, 3) + " value=" + pad_zero(i - 1, 3) + ">人物 ";
-	t+= pad_zero(i, 3) + "</option>";
-}	t+= "</select></th>";
-	t+= "<th>勢力<br>";
-	t+= "<select id=rulersID onchange=renderRulersID()>"; for(var i = 1; i <  bg_Color.length; i++){
-	t+= "<option id=Ruler_";
-	t+= pad_zero(i, 2) + " value=" + pad_zero(i - 1, 2) + ">君主 ";
-	t+= pad_zero(i, 2) + "</option>";
-}	t+= "</select></th>";
-	t+= "<th>城市<br>";
-	t+= "<select id=province onchange=renderProvince()>"; for(var i = 1; i <= ProvData.length; i++){
-	t+= "<option id=Provi_";
-	t+= pad_zero(i, 2) + " value=" + pad_zero(i - 1, 2) + ">" + ProvData[i - 1] + " ";
-	t+= pad_zero(i, 2) + "</option>";
-}	t+= "</select></th></tr><tr>";
-	t+= "<td valign=top id=o></td>";
-	t+= "<td valign=top id=r></td>";
-	t+= "<td valign=top id=p></td>";
-	t+= "</td></tr></table>";
-w(	t);
-}	function	renderTmp(t,i,p){	var max = i + p; var table = "<table>"; for(var td of scenario_dat.slice(i, max)){ table += "<tr><td>" + (i++) + "</td><td>" + td + "</td></tr>"; } table += "</table>"; $(t).innerHTML = table;
+	v+= years + 1;
+	v+= " 年 - ";
+//	v+=(month % 12 + 1) % 12 + 1;
+//	v+= " 月 - ";
+	v+= ["董卓的橫暴", "曹操的雄飛", "劉備的雌伏", "諸葛亮登場", "關羽的奮戰", "三國的鼎立"][i];
+//	v+= " - 開局時間：";
+//	v+= years + 0;
+//	v+= " 年 ";
+//	v+=(month % 12 + 1);
+//	v+= " 月 ";
+	v+= "</option>";
+}	v+=	"</select>";
+	v+=	"<table><tr>";
+	v+= "<th>人物<br>";
+	v+= "<select id=officers onchange=renderOfficers()>"; for(var i = 1; i <= officers_max   ; i++){
+	v+= "<option id=Offic_";
+	v+= pad_zero(i, 3) + " value=" + pad_zero(i - 1, 3) + ">人物 ";
+	v+= pad_zero(i, 3) + "</option>";
+}	v+= "</select></th>";
+	v+= "<th>勢力<br>";
+	v+= "<select id=rulersID onchange=renderRulersID()>"; for(var i = 1; i <  bg_Color.length; i++){
+	v+= "<option id=Ruler_";
+	v+= pad_zero(i, 2) + " value=" + pad_zero(i - 1, 2) + ">勢力 ";
+	v+= pad_zero(i, 2) + "</option>";
+}	v+= "</select></th>";
+	v+= "<th>城市<br>";
+	v+= "<select id=province onchange=renderProvince()>"; for(var i = 1; i <= ProvData.length; i++){
+	v+= "<option id=Provi_";
+	v+= pad_zero(i, 2) + " value=" + pad_zero(i - 1, 2) + ">" + ProvData[i - 1] + " ";
+	v+= pad_zero(i, 2) + "</option>";
+}	v+= "</select></th></tr><tr>";
+	v+= "<td valign=top id=o></td>";
+	v+= "<td valign=top id=r></td>";
+	v+= "<td valign=top id=p></td>";
+	v+= "</td></tr></table>";
+w(	v);
+}	function	renderTmp(t,i,p){	var max = i + p; var table = "<table>";
+	for(var td of scenario_dat.slice(i, max)){ table += "<tr><td>" + (i++) + "</td><td>" + td + "</td></tr>"; } table += "</table>"; $(t).innerHTML = table;
 	if(	t === "o"){
 	var z,v,o;
 	for(z = 1; z <= officers_max; z++){
@@ -129,10 +136,8 @@ w(	t);
 		c.style.backgroundColor = bg_Color[bg_Color.length - 1];
 		c.style.          color = txtColor[txtColor.length - 1];
 		v = renderColor(scenario_dat[scenario_shift * scenario.value + province_const + province_shift * /* province.value */ z - 19] % 34);
-		p.style.backgroundColor = bg_Color[v];
-		p.style.          color = txtColor[v];
-		c.style.backgroundColor = bg_Color[v];
-		c.style.          color = txtColor[v];
+		p.style.backgroundColor = bg_Color[v];    c.style.backgroundColor = bg_Color[v];
+		p.style.          color = txtColor[v];    c.style.          color = txtColor[v];
 	}	p = province;         z = p.options[p.selectedIndex];
 		p.style.backgroundColor = z.style.backgroundColor;
 		p.style.          color = z.style.          color;
@@ -140,10 +145,11 @@ w(	t);
 }	function	renderRulersID(){	renderTmp("r", rulersID_const + rulersID_shift * rulersID.value + scenario_shift * scenario.value, rulersID_shift);
 }	function	renderProvince(){	renderTmp("p", province_const + province_shift * province.value + scenario_shift * scenario.value, province_shift);
 }	function	renderColor(num){	var v = scenario_shift * scenario.value; return  scenario_dat.slice(v + 6, v + 22)[num];
-}	function	renderDownload(){
-	w(" <input	type=file	id=fileinput style='width:70' onchange=openFile(event)>");
-	w(" <input	type=text	id=file_name value='scenario.dat'>");
-	w(" <input	type=button	id=fdownload value='檔案下載' onclick=download()><p></p>");
+}	function	renderDownload(){	var v = "";
+	v += " <input	type=file	id=fileinput style='width:70' onchange=openFile(event)>";
+	v += " <input	type=text	id=file_name value='scenario.dat'>";
+	v += " <input	type=button	id=fdownload value='檔案下載' onclick=download()><p></p>";
+	w(v);
 }//	renderHTML
 	renderHandler (['ondrop','ondragover','ondragend']);
 	renderTitleH1 ("KOEI 三國志 II 劇本檢視器");
