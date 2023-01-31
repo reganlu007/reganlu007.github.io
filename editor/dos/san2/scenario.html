@@ -46,13 +46,13 @@ var	palettes = ['000','F55','55F','F5F','5F5','FF5','5FF','FFF'],
 	w("</tr></table>");
 }	function	renderButtons(n){
 	w( "<td>"); for(var i = 0; i < n.length; i++){ var v = pad_zero(n[i], 2);
-	w(n[i] == 0 ? "<div class=map></div>" : "<input type=button class=map id=Click_"+v+" value="+v+" onclick='province.value=\"" + pad_zero(n[i]-1, 2) + "\";renderProvince();'>");
+	w(n[i] == 0 ? "<div class=map></div>" : "<input type=button class=map id=Click_"+v+" value="+v+" onclick='province.value=\"" + pad_zero(n[i]-1, 2) + "\";renderProvince();Ruler_Province();'>");
 }	w("</td>");
 }	function	renderHandler(n){ var t = "<center id='drop_____zone' "; for(var i = 0; i < n.length; i++) t += n[i] + "='handler" + i + "(event)' "; w(t + "><form   name=_map>");
 }	function	renderSelector(){ var v = "";
 	renderChinaMap();
 	renderDownload();
-	v+= "<hr><select id=scenario onchange='renderOfficers();renderProvince();'>";
+	v+= "<hr><select id=scenario onchange='renderOfficers();renderProvince();renderRulersID();'>";
 	for(var i = 0; i < 6; i++)  {
 	v+= "<option value=";
 	v+= i + 0;
@@ -78,32 +78,36 @@ var	palettes = ['000','F55','55F','F5F','5F5','FF5','5FF','FFF'],
 }	v+=	"</select>";
 	v+=	"<table><tr>";
 	v+= "<th>人物<br>";
-	v+= "<select id=officers onchange=renderOfficers()>"; for(var i = 1; i <= officers_max   ; i++){
+	v+= "<select id=officers onchange='renderOfficers();'>"; for(var i = 1; i <= officers_max   ; i++){
 	v+= "<option id=Offic_";
 	v+= pad_zero(i, 3) + " value=" + pad_zero(i - 1, 3) + ">人物 ";
 	v+= pad_zero(i, 3) + "</option>";
-}	v+= "</select></th>";
+}	v+= "</select>";
+	v+= "</th>";
 	v+= "<th>勢力<br>";
-	v+= "<select id=rulersID onchange=renderRulersID()>"; for(var i = 1; i <  bg_Color.length; i++){
+	v+= "<select id=rulersID onchange='renderRulersID();'>"; for(var i = 1; i <= bg_Color.length; i++){
 	v+= "<option id=Ruler_";
 	v+= pad_zero(i, 2) + " value=" + pad_zero(i - 1, 2) + ">勢力 ";
 	v+= pad_zero(i, 2) + "</option>";
-}	v+= "</select></th>";
+}	v+= "</select>";
+	v+= "</th>";
 	v+= "<th>城市<br>";
-	v+= "<select id=province onchange=renderProvince()>"; for(var i = 1; i <= ProvData.length; i++){
+	v+= "<select id=province onchange='renderProvince();Ruler_Province();'>"; for(var i = 1; i <= ProvData.length; i++){
 	v+= "<option id=Provi_";
 	v+= pad_zero(i, 2) + " value=" + pad_zero(i - 1, 2) + ">" + ProvData[i - 1] + " ";
 	v+= pad_zero(i, 2) + "</option>";
-}	v+= "</select></th></tr><tr>";
+}	v+= "</select>";
+	v+= "</th>";
+	v+= "</tr><tr>";
 	v+= "<td valign=top id=o></td>";
 	v+= "<td valign=top id=r></td>";
 	v+= "<td valign=top id=p></td>";
 	v+= "</td></tr></table>";
 w(	v);
-}	function	renderTmp(t,i,p){	var max = i + p; var table = "<table>";
-	for(var td of scenario_dat.slice(i, max)){ table += "<tr><td>" + (i++) + "</td><td>" + td + "</td></tr>"; } table += "</table>"; $(t).innerHTML = table;
+}	function	renderTmp(t,i,p){ var z = 0, table = "<table>";
+	for(z = i; z <= i + p; z++){ table += "<tr><td id=index" + t + (i + p - z) + ">" + z + "</td><td id=index_" + z + ">" + scenario_dat[z] + "</td></tr>"; } table += "</table>"; $(t).innerHTML = table;
 	if(	t === "o"){
-	var z,v,o;
+	var v,o;
 	for(z = 1; z <= officers_max; z++){
 		o = $("Offic_" + pad_zero(z, 3));
 		o.style.backgroundColor = bg_Color[bg_Color.length - 1];
@@ -115,8 +119,8 @@ w(	v);
 		o.style.backgroundColor = z.style.backgroundColor;
 		o.style.          color = z.style.          color;
 }	if(	t === "r"){
-	var z,v,r; 
-	for(z = 1; z <        bg_Color.length; z++){
+	var v,r; 
+	for(z = 1; z <=                        bg_Color.length; z++){
 		r = $("Ruler_" + pad_zero(z, 2));
 		r.style.backgroundColor = bg_Color[bg_Color.length - 1];
 		r.style.          color = txtColor[txtColor.length - 1];
@@ -127,7 +131,7 @@ w(	v);
 		r.style.backgroundColor = z.style.backgroundColor;
 		r.style.          color = z.style.          color;
 }	if(	t === "p"){
-	var z,v,p,c;
+	var v,p,c;
 	for(z = 1; z <= ProvData.length; z++){
 		p = $("Provi_" + pad_zero(z, 2));
 		c = $("Click_" + pad_zero(z, 2));
@@ -141,10 +145,37 @@ w(	v);
 	}	p = province;         z = p.options[p.selectedIndex];
 		p.style.backgroundColor = z.style.backgroundColor;
 		p.style.          color = z.style.          color;
-}}	function	renderOfficers(){	renderTmp("o", officers_const + officers_shift * officers.value + scenario_shift * scenario.value, officers_shift);
+}//	renderLabel
+	Ruler_17.innerHTML = "無所屬";
+	indexo39.innerHTML = "智力";
+	indexo38.innerHTML = "武力";
+	indexo37.innerHTML = "魅力";
+	indexo36.innerHTML = "義理";
+	indexo35.innerHTML = "仁德";
+	indexo34.innerHTML = "野望";
+	indexo33.innerHTML = "所屬";
+	indexo32.innerHTML = "忠誠";
+	indexo28.innerHTML = "相性";
+	indexo27.innerHTML = "血緣";
+	indexo18.innerHTML = "生年";
+	indexo17.innerHTML = "頭像";
+	indexo16.innerHTML = "頭像";
+	indexo15.innerHTML = "姓名";
+	indexo14.innerHTML = "姓名";
+	indexo13.innerHTML = "姓名";
+	indexo12.innerHTML = "姓名";
+	indexo11.innerHTML = "姓名";
+	indexo10.innerHTML = "姓名";
+}	function	renderOfficers(){	renderTmp("o", officers_const + officers_shift * officers.value + scenario_shift * scenario.value, officers_shift);
 }	function	renderRulersID(){	renderTmp("r", rulersID_const + rulersID_shift * rulersID.value + scenario_shift * scenario.value, rulersID_shift);
 }	function	renderProvince(){	renderTmp("p", province_const + province_shift * province.value + scenario_shift * scenario.value, province_shift);
-}	function	renderColor(num){	var v = scenario_shift * scenario.value; return  scenario_dat.slice(v + 6, v + 22)[num];
+}	function	Ruler_Province(){
+//	var v = scenario_dat[province_const + province_shift * province.value + scenario_shift * scenario.value + 16];
+//	rulersID.value = pad_zero(v == 255 ? 16 : v, 2);
+//	rulersID.style.backgroundColor = bg_Color[renderColor(rulersID.value)];
+//	rulersID.style.          color = txtColor[renderColor(rulersID.value)];
+//	renderRulersID();
+}	function	renderColor(num){	var v = scenario_shift * scenario.value; return (scenario_dat.slice(v + 6, v + 22) + ",16").split(",")[num];
 }	function	renderDownload(){	var v = "";
 	v += " <input	type=file	id=fileinput style='width:70' onchange=openFile(event)>";
 	v += " <input	type=text	id=file_name value='scenario.dat'>";
