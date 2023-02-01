@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <meta charset=utf-8>
 <script>
@@ -10,18 +9,18 @@ var scenario_nam	= ['董卓的橫暴','曹操的雄飛','劉備的雌伏','諸�
 var scenario_num	=     6;
 var scenario_mov	= scenario_dat.length / scenario_num;
 //	首項：智力
-var officers_arr	= [];
+var officers_arr	= [[],[],[]];
 var officers_1st	=    26;
 var officers_mov	=    43;
 var officers_max	=   255;
 //	首項：信任
-var rulers___arr	= [[],[]];
+var rulers___arr	= [[],[],[]];
 var rulers___1st	= 11000;
 var rulers___mov	=    41;	//	包含空白地
 var rulers___max	=    16;
 var province_dat	= ['襄平','北平','薊城','晉陽','上黨','南皮','鄴城','北海','陳留','洛陽','弘農','長安','天水','武威','酒泉','下邳','許昌','壽春','南陽','襄陽','長沙','桂陽','零陵','建業','會稽','建安','鄱陽','柴桑','漢中','武都','永安','江州','成都','朱提','永昌','建寧','南海','蒼梧','合浦','郁林','交趾'];
 //	首項：黃金
-var province_arr	= [];
+var province_arr	= [[],[],[]];
 var province_1st	= 11658;
 var province_mov	=    35;
 var province_max	=	province_dat.length;
@@ -33,12 +32,12 @@ s =	scenarioJson[s];s[lb[1]] = s[2] * Math.pow(16,0); s[lb[1]]+= s[3] * Math.pow
 lb[0] = '00_標題';	s[lb[0]] = s[lb[1]] + ' 年：' + scenario_nam[i];
 					s[lb[3]] = [];  for(var j =   0;j< rulers___max; j++){ t = ('00' + (j + 1)).slice(-3) + '勢力'; s[lb[3]][t] = {}; t = s[lb[3]][t]; k = rulers___1st + rulers___mov * j + scenario_mov * i;
 lb[0] = '00_信任';	t[lb[0]] = scenario_dat[k +   0] * Math.pow(16,0);
-lb[0] =    '敵對';					for(var h =   0;h< rulers___max; h++) t[('0' + (h + 1)).slice(-2) + '_' + lb[0]]= scenario_dat[h + k + 8] * Math.pow(16,0);
-lb[0] = 'a1_外交';	t[lb[0]] = scenario_dat[k +  24] * Math.pow(16,0);
-lb[0] = 'a2_外交';	t[lb[0]] = scenario_dat[k +  25] * Math.pow(16,0);
-lb[0] = 'a3_外交';	t[lb[0]] = scenario_dat[k +  26] * Math.pow(16,0);
-lb[0] = 'a4_外交';	t[lb[0]] = scenario_dat[k +  27] * Math.pow(16,0);
-lb[0] = 'a5_外交';	t[lb[0]] = scenario_dat[k +  28] * Math.pow(16,0);
+//	lb[0] =    '敵對';					for(var h =   0;h< rulers___max; h++) t[('0' + (h + 1)).slice(-2) + '_' + lb[0]]= scenario_dat[h + k + 8] * Math.pow(16,0);
+//	lb[0] = 'a1_外交';	t[lb[0]] = scenario_dat[k +  24] * Math.pow(16,0);
+//	lb[0] = 'a2_外交';	t[lb[0]] = scenario_dat[k +  25] * Math.pow(16,0);
+//	lb[0] = 'a3_外交';	t[lb[0]] = scenario_dat[k +  26] * Math.pow(16,0);
+//	lb[0] = 'a4_外交';	t[lb[0]] = scenario_dat[k +  27] * Math.pow(16,0);
+//	lb[0] = 'a5_外交';	t[lb[0]] = scenario_dat[k +  28] * Math.pow(16,0);
 lb[0] = 'b0_領地';	t[lb[0]] = 0;
 lb[0] = 'b1_部下';	t[lb[0]] = 0;
 lb[0] = 'b2_黃金';	t[lb[0]] = 0;
@@ -48,15 +47,16 @@ lb[0] = 'b4_兵力';	t[lb[0]] = 0;
 //	空白地資訊
 	scenarioJson[z][lb[3]]['256勢力'] = {};
 t =	scenarioJson[z][lb[3]]['256勢力'];
+lb[0] = '00_信任';	t[lb[0]] = 0;
 lb[0] = 'b0_領地';	t[lb[0]] = 0;
 lb[0] = 'b1_部下';	t[lb[0]] = 0;
 lb[0] = 'b2_黃金';	t[lb[0]] = 0;
 lb[0] = 'b3_糧食';	t[lb[0]] = 0;
 lb[0] = 'b4_兵力';	t[lb[0]] = 0;
 					s[lb[4]] = [];	for(var j =   0;j< province_max-0; j++){ t = ( '0' + (j + 1)).slice(-2) + '_' + province_dat[j]; s[lb[4]][t] = {}; t = s[lb[4]][t]; k = province_1st + province_mov * j + scenario_mov * i;
-lb[0] = '08_所屬';	t[lb[0]] = scenario_dat[k +   8] * Math.pow(16,0); province_arr.push(t[lb[0]]);
-lb[0] = '00_黃金';	t[lb[0]] = scenario_dat[k +   0] * Math.pow(16,0); t[lb[0]] += scenario_dat[k +  1] * Math.pow(16,2);
-lb[0] = '02_糧食';	t[lb[0]] = scenario_dat[k +   2] * Math.pow(16,0); t[lb[0]] += scenario_dat[k +  3] * Math.pow(16,2); t[lb[0]]+= scenario_dat[k +   4] * Math.pow(16,4); t[lb[0]] += scenario_dat[k +  5] * Math.pow(16,6);
+lb[0] = '08_所屬';	t[lb[0]] = scenario_dat[k +   8] * Math.pow(16,0); province_arr[0].push(t[lb[0]]);
+lb[0] = '00_黃金';	t[lb[0]] = scenario_dat[k +   0] * Math.pow(16,0); t[lb[0]] += scenario_dat[k +  1] * Math.pow(16,2); province_arr[1].push(t[lb[0]]);
+lb[0] = '02_糧食';	t[lb[0]] = scenario_dat[k +   2] * Math.pow(16,0); t[lb[0]] += scenario_dat[k +  3] * Math.pow(16,2); t[lb[0]]+= scenario_dat[k +   4] * Math.pow(16,4); t[lb[0]] += scenario_dat[k +  5] * Math.pow(16,6); province_arr[2].push(t[lb[0]]);
 lb[0] = '06_人口';	t[lb[0]] = scenario_dat[k +   6] * Math.pow(16,0); t[lb[0]] += scenario_dat[k +  7] * Math.pow(16,2); t[lb[0]] *= 100;
 lb[0] = '11_商人';	t[lb[0]] = scenario_dat[k +  11] * Math.pow(16,0);
 lb[0] = '14_地價';	t[lb[0]] = scenario_dat[k +  14] * Math.pow(16,0);
@@ -65,7 +65,7 @@ lb[0] = '16_治水';	t[lb[0]] = scenario_dat[k +  16] * Math.pow(16,0);
 lb[0] = '17_良馬';	t[lb[0]] = scenario_dat[k +  17] * Math.pow(16,0);
 lb[0] = '18_城塞';	t[lb[0]] = scenario_dat[k +  18] * Math.pow(16,0);
 }					s[lb[5]] = [];  for(var j =   0;j< officers_max-0; j++){ t = ('00' + (j + 1)).slice(-3) + '_人物'; s[lb[5]][t] = {}; t = s[lb[5]][t]; k = officers_1st + officers_mov * j + scenario_mov * i;
-lb[0] = '06_所屬';	t[lb[0]] = scenario_dat[k +   6] * Math.pow(16,0); officers_arr.push(t[lb[0]]);
+lb[0] = '06_所屬';	t[lb[0]] = scenario_dat[k +   6] * Math.pow(16,0); officers_arr[0].push(t[lb[0]]);
 lb[0] = '00_智力';	t[lb[0]] = scenario_dat[k +   0] * Math.pow(16,0);
 lb[0] = '01_武力';	t[lb[0]] = scenario_dat[k +   1] * Math.pow(16,0);
 lb[0] = '02_魅力';	t[lb[0]] = scenario_dat[k +   2] * Math.pow(16,0);
@@ -75,19 +75,31 @@ lb[0] = '05_野望';	t[lb[0]] = scenario_dat[k +   5] * Math.pow(16,0);
 lb[0] = '07_忠誠';	t[lb[0]] = scenario_dat[k +   7] * Math.pow(16,0);
 lb[0] = '10_相性';	t[lb[0]] = scenario_dat[k +  10] * Math.pow(16,0);
 lb[0] = '11_血緣';	t[lb[0]] = scenario_dat[k +  11] * Math.pow(16,0);
-lb[0] = '14_兵力';	t[lb[0]] = scenario_dat[k +  14] * Math.pow(16,0); t[lb[0]] += scenario_dat[k + 15] * Math.pow(16,2);
-lb[0] = '16_武器';	t[lb[0]] = scenario_dat[k +  16] * Math.pow(16,0); t[lb[0]] += scenario_dat[k + 17] * Math.pow(16,2);
+lb[0] = '14_兵力';	t[lb[0]] = scenario_dat[k +  14] * Math.pow(16,0); t[lb[0]] += scenario_dat[k + 15] * Math.pow(16,2); officers_arr[1].push(t[lb[0]]);
+lb[0] = '16_武器';	t[lb[0]] = scenario_dat[k +  16] * Math.pow(16,0); t[lb[0]] += scenario_dat[k + 17] * Math.pow(16,2); officers_arr[2].push(t[lb[0]]);
 lb[0] = '18_訓練';	t[lb[0]] = scenario_dat[k +  18] * Math.pow(16,0);
 }
 //	各勢力統計
-rulers___arr[0].push(groupBy(province_arr, province_max));
-rulers___arr[1].push(groupBy(officers_arr, officers_max));
+rulers___arr[0].push(group(province_arr[0], province_max));
+rulers___arr[1].push(group(officers_arr[0], officers_max));
+var zzz = "";
 for(j = 0; j < rulers___max; j++){
-scenarioJson['0' + i + '_劇本']['03_勢力'][('00' + (j + 1)).slice(-3) + '勢力']['b' + 0 + '_領地'] = rulers___arr[0][i][j] || 0;
-scenarioJson['0' + i + '_劇本']['03_勢力'][('00' + (j + 1)).slice(-3) + '勢力']['b' + 1 + '_部下'] = rulers___arr[1][i][j] || 0;
+	zzz = scenarioJson[z]['03_勢力'][('00' + (j + 1)).slice(-3) + '勢力'];
+	zzz['b0_領地'] = rulers___arr[0][i][j] || 0;
+	zzz['b1_部下'] = rulers___arr[1][i][j] || 0;
+}	zzz = scenarioJson[z]['03_勢力']['256勢力']; j = 255;
+	zzz['b0_領地'] = rulers___arr[0][i][j] || 0;
+	zzz['b1_部下'] = rulers___arr[1][i][j] || 0;
 }
-}
-function groupBy(x,y){return x.slice(y * i, y * i + y).reduce(function (a, c) { return a[c] ? ++a[c] : a[c] = 1, a }, {})}
+function group(x,y){return x.slice(y * i, y * i + y).reduce(function(a, c   ) { return a[c] ? ++a[c] : a[c] =   1  , a  }, {})}
+function sumIf(x,y){return         Object.entries(x .reduce((m, o, i) => (m[o] = m.hasOwnProperty(o) ? m[o] + y[i] : y[i], m ), {}));}
 //	開啟即載入
-console.log(scenarioJson);
+console.table(scenarioJson);
+console.table(scenarioJson['01_劇本']['03_勢力']);
 </script>
+<h1>The Console Object</h1>
+<h2>The table() Method</h2>
+<p>Tip: Sort the table by clicking the column names.</p>
+<p>Remember to open the console (Press F12).</p>
+<p></p>
+<p>Example: table(scenarioJson)</p>
