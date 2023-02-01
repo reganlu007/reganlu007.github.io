@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <meta charset=utf-8>
 <script>
@@ -82,8 +83,8 @@ lb[0] = '18_訓練';	t[lb[0]] = scenario_dat[k +  18] * Math.pow(16,0);
 rulers___arr[0].push(groupBy(province_arr, province_max));
 rulers___arr[1].push(groupBy(officers_arr, officers_max));
 for(j = 0; j < rulers___max; j++){
-scenarioJson['0' + i + '_劇本']['03_勢力'][('00' + (0 + 1)).slice(-3) + '勢力']['b' + 0 + '_領地'] = rulers___arr[0][i][j];
-scenarioJson['0' + i + '_劇本']['03_勢力'][('00' + (0 + 1)).slice(-3) + '勢力']['b' + 1 + '_部下'] = rulers___arr[1][i][j];
+scenarioJson['0' + i + '_劇本']['03_勢力'][('00' + (j + 1)).slice(-3) + '勢力']['b' + 0 + '_領地'] = rulers___arr[0][i][j] || 0;
+scenarioJson['0' + i + '_劇本']['03_勢力'][('00' + (j + 1)).slice(-3) + '勢力']['b' + 1 + '_部下'] = rulers___arr[1][i][j] || 0;
 }
 }
 function groupBy(x,y){return x.slice(y * i, y * i + y).reduce(function (a, c) { return a[c] ? ++a[c] : a[c] = 1, a }, {})}
