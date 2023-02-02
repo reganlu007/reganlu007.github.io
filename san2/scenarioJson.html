@@ -1,9 +1,26 @@
-<!DOCTYPE html>
-<meta charset=utf-8>
-<script src=scenarioJson.js></script>
-<h1>The Console Object</h1>
-<h2>The table() Method</h2>
-<p>Tip: Sort the table by clicking the column names.</p>
-<p>Remember to open the console (Press F12).</p>
-<p></p>
-<p>Example: table(scenarioJson)</p>
+<!DOCTYPE html><center><meta   charset=utf-8><style>
+input { min-width: 70px; text-align: center; }</style><title>
+KOEI 三國志 II 劇本檢視器</title><h1>
+KOEI 三國志 II 劇本檢視器</h1><p>請使用 Chrome & Edge 瀏覽器
+</p><p>按下「F12」開啟檢視畫面
+</p><p>並切換到「主控台」進行閱覽
+</p><p>劇本編號
+<input type=button value=全部劇本訊息 onclick="exec(para[0])"> <input type=number value=0 id=scenarioVal min=0 max=  5>
+<input type=button value=指定劇本訊息 onclick="exec(para[0] + '[scenarioVal.value]')">
+<hr><h2>指定劇本訊息</h2>
+</p><p>勢力編號
+<input type=button value=全部勢力訊息 onclick="exec(para[1])"> <input type=number value=0 id=rulerAllVal min=0 max= 16>
+<input type=button value=指定勢力訊息 onclick="exec(para[1] + '[rulerAllVal.value]')">
+</p><p>城市編號
+<input type=button value=全部城市訊息 onclick="exec(para[2])"> <input type=number value=0 id=provinceVal min=0 max= 40>
+<input type=button value=指定城市訊息 onclick="exec(para[2] + '[provinceVal.value]')">
+</p><p>人物編號
+<input type=button value=全部人物訊息 onclick="exec(para[3])"> <input type=number value=0 id=officersVal min=0 max=254>
+<input type=button value=指定人物訊息 onclick="exec(para[3] + '[officersVal.value]')">
+</p><p>
+<input type=button value=重新整理 onclick=location.reload()></p><p id=eula></p>
+<script src=scenarioJson.js></script><script>
+function	exec(para){ eval("console.clear();console." + (window.document.documentMode ? "log" : "table") + "(scenarioJson" + para + ")"); }
+var temp = "[scenarioVal.value]."; var para = [".劇本", temp + "勢力", temp + "城市",temp + "人物"];
+	eula.innerHTML = "Copyright &copy; ReganLu. " + new Date().getFullYear() + ", All Rights Reserved.";
+</script>
