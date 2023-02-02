@@ -12,27 +12,56 @@ var officers_arr	= [[],[],[]];
 var officers_1st	=    26;
 var officers_mov	=    43;
 var officers_max	=   255;
-var officers_nam	= {   0:'',
-	14750:'曹',
-		59048:'操',
-		33427:'丕',
-	43942:'劉',
-		27800:'表',
-		37022:'焉',
-		43935:'備',
-	44956:'袁',
-		54430:'紹',
-		19103:'術',
-	60060:'馬',
-		54701:'騰',
-	64402:'公',
-		12443:'孫',
-			48046:'瓚',
-			28317:'堅',
-			17057:'策',
-			33710:'權',
-	47523:'董',
-		46742:'卓',
+//	字典
+var officers_nam	= {
+	0:'',
+31379:'王',
+38811:'朗',
+
+25749:'呂',
+52115:'布',
+
+19603:'孔',
+44457:'融',
+
+42667:'韓',
+38828:'馥',
+
+39071:'陶',
+26027:'謙',
+
+14750:'曹',
+59048:'操',
+33427:'丕',
+
+43942:'劉',
+43935:'備',
+27800:'表',
+34983:'璋',
+37022:'焉',
+50638:'繇',
+
+44956:'袁',
+54430:'紹',
+19103:'術',
+
+45715:'司',
+60060:'馬',
+33198:'懿',
+54701:'騰',
+
+64402:'公',
+12443:'孫',
+48046:'瓚',
+17057:'策',
+28317:'堅',
+33710:'權',
+
+47523:'董',
+46742:'卓',
+
+62614:'孟',
+48298:'獲',
 };
 //	首項：信任
 var rulers___1st	= 11000;
@@ -55,15 +84,15 @@ var province_mov	=    35;
 var province_max	=	province_dat.length;
 	scenarioJson['劇本'] = [];
 //	全檔案資訊
-for(var i = 0;		i < scenario_num;i++){	var s = i ,  z = s,  k = 0, t = '', lb = ['','劇本','勢力','城市','人物'];
+for(var i = 0; i < scenario_num;i++){	var s = i ,  z = s,  k = 0, t = '', lb = ['','劇本','勢力','城市','人物'];
 	scenarioJson[s] =	scenario_dat.slice(scenario_mov * i, scenario_mov * i + scenario_mov);
 s =	scenarioJson[s] ;
-s['劇本'] = {};
-s['劇本']['名稱'] = scenario_nam[i]; k = s[2] * Math.pow(16,0); k += s[3] * Math.pow(16,2); k += 1;
-s['劇本']['年份'] = k;               k = s[4] * Math.pow(16,0); k +=   1; k %= 12         ; k += 1;
-s['劇本']['月份'] = k;
-s['劇本']['國數'] = s[5] * 1;  scenarioJson['劇本'].push(s['劇本']);
-s['勢力'] = [];  for(var j =   0;j< rulers___max; j++){ t=j; s['勢力'][t] = {}; t = s['勢力'][t]; k = rulers___1st + rulers___mov * j + scenario_mov * i;
+	s['劇本'] = {};
+	s['劇本']['名稱'] = scenario_nam[i]; k = s[2] * Math.pow(16,0); k += s[3] * Math.pow(16,2); k += 1;
+	s['劇本']['年份'] = k;               k = s[4] * Math.pow(16,0); k +=   1; k %= 12         ; k += 1;
+	s['劇本']['月份'] = k;
+	s['劇本']['勢力'] = s[5] * 1;  scenarioJson['劇本'].push(s['劇本']);
+	s['勢力'] = [];    for(var j = 0;j< rulers___max; j++){ t=j; s['勢力'][t] = {}; t = s['勢力'][t]; k = rulers___1st + rulers___mov * j + scenario_mov * i;
 	lb[0] = '信任度';	t[lb[0]] = scenario_dat[k +   0] * Math.pow(16,0);
 //	lb[0] = '敵對度';					for(var h =   0;h< rulers___max; h++){ t[('00' + (h + 1)).slice(-3) + lb[0]]= scenario_dat[h + k + 8] * Math.pow(16,0); }
 //	lb[0] = 'a1_外交';	t[lb[0]] = scenario_dat[k +  24] * Math.pow(16,0);
@@ -71,30 +100,7 @@ s['勢力'] = [];  for(var j =   0;j< rulers___max; j++){ t=j; s['勢力'][t] = 
 //	lb[0] = 'a3_外交';	t[lb[0]] = scenario_dat[k +  26] * Math.pow(16,0);
 //	lb[0] = 'a4_外交';	t[lb[0]] = scenario_dat[k +  27] * Math.pow(16,0);
 //	lb[0] = 'a5_外交';	t[lb[0]] = scenario_dat[k +  28] * Math.pow(16,0);
-	t['君主名'] = '';
-	t['軍師名'] = '';
-	t['領地數'] = 0;
-	t['部下數'] = 0;
-	t['總黃金'] = 0;
-	t['總糧食'] = 0;
-	t['總兵力'] = 0;
-	t['背景色'] = rulers___arr['背景色'][scenario_dat[6 + j + scenario_mov * i]];
-	t['文字色'] = rulers___arr['文字色'][scenario_dat[6 + j + scenario_mov * i]];
-}//	空白地資訊
-		scenarioJson[ z ]['勢力'][256 + '勢力'] = {};
-	t =	scenarioJson[ z ]['勢力'][256 + '勢力'];
-	  lb[0]  = '信任度';
-	t[lb[0]] = 0;
-	t['君主名'] = '空白';
-	t['軍師名'] = '空白';
-	t['領地數'] = 0;
-	t['部下數'] = 0;
-	t['總黃金'] = 0;
-	t['總糧食'] = 0;
-	t['總兵力'] = 0;
-	t['背景色'] = 'FFF';
-	t['文字色'] = '000';
-				s['城市'] = [];	for(var j =   0;j< province_max; j++){ t = j; s['城市'][j] = {}; t = s['城市'][t]; k = province_1st + province_mov * j + scenario_mov * i;
+}	s['城市'] = [];    for(var j = 0;j< province_max; j++){ t = j; s['城市'][j] = {}; t = s['城市'][t]; k = province_1st + province_mov * j + scenario_mov * i;
 lb[0] = '名稱';	t[lb[0]] = province_dat[j];
 lb[0] = '勢力';	t[lb[0]] = scenario_dat[k +   8] * Math.pow(16,0); province_arr[0].push(t[lb[0]]);
 lb[0] = '太守';	t[lb[0]] = '';
@@ -107,7 +113,7 @@ lb[0] = '民忠';	t[lb[0]] = scenario_dat[k +  15] * Math.pow(16,0);
 lb[0] = '治水';	t[lb[0]] = scenario_dat[k +  16] * Math.pow(16,0);
 lb[0] = '良馬';	t[lb[0]] = scenario_dat[k +  17] * Math.pow(16,0);
 lb[0] = '城塞';	t[lb[0]] = scenario_dat[k +  18] * Math.pow(16,0);
-}				s['人物'] = [];  for(var j =   0;j< officers_max; j++){ t = j; s['人物'][j] = {}; t = s['人物'][t]; k = officers_1st + officers_mov * j + scenario_mov * i;
+}	s['人物'] = [];    for(var j = 0;j< officers_max; j++){ t = j; s['人物'][j] = {}; t = s['人物'][t]; k = officers_1st + officers_mov * j + scenario_mov * i;
 lb[0] = '頭像';	t[lb[0]] = scenario_dat[k +  22] * Math.pow(16,0); t[lb[0]] += scenario_dat[k + 23] * Math.pow(16,2);
 lb[0] = '名１';	t[lb[0]] = scenario_dat[k +  24] * Math.pow(16,0); t[lb[0]] += scenario_dat[k + 25] * Math.pow(16,2);
 lb[0] = '名２';	t[lb[0]] = scenario_dat[k +  26] * Math.pow(16,0); t[lb[0]] += scenario_dat[k + 27] * Math.pow(16,2);
@@ -127,26 +133,36 @@ lb[0] = '兵力';	t[lb[0]] = scenario_dat[k +  14] * Math.pow(16,0); t[lb[0]] +=
 lb[0] = '武器';	t[lb[0]] = scenario_dat[k +  16] * Math.pow(16,0); t[lb[0]] += scenario_dat[k + 17] * Math.pow(16,2); officers_arr[2].push(t[lb[0]]);
 lb[0] = '訓練';	t[lb[0]] = scenario_dat[k +  18] * Math.pow(16,0);
 lb[0] = '生年';	t[lb[0]] = scenario_dat[k +  21] * Math.pow(16,0);
-}//	各勢力統計
-				rulers___arr['領地數'].push(scenarioGroup([province_arr[0]                 ], province_max));
-				rulers___arr['部下數'].push(scenarioGroup([officers_arr[0]                 ], officers_max));
-				rulers___arr['總黃金'].push(scenarioSumIf([province_arr[0], province_arr[1]], province_max));
-				rulers___arr['總糧食'].push(scenarioSumIf([province_arr[0], province_arr[2]], province_max));
-				rulers___arr['總兵力'].push(scenarioSumIf([officers_arr[0], officers_arr[1]], officers_max));
+}//	統計
+	rulers___arr['領地數'].push(scenarioGroup([province_arr[0]                 ], province_max));
+	rulers___arr['部下數'].push(scenarioGroup([officers_arr[0]                 ], officers_max));
+	rulers___arr['總黃金'].push(scenarioSumIf([province_arr[0], province_arr[1]], province_max));
+	rulers___arr['總糧食'].push(scenarioSumIf([province_arr[0], province_arr[2]], province_max));
+	rulers___arr['總兵力'].push(scenarioSumIf([officers_arr[0], officers_arr[1]], officers_max));
+//	正規
 	t = "";	for(j = 0; j < rulers___max; j++){
-	t = scenarioJson[z]['勢力'][j];
-	t['領地數']=rulers___arr['領地數'][i][j] || 0;
-	t['部下數']=rulers___arr['部下數'][i][j] || 0;
-	t['總黃金']=rulers___arr['總黃金'][i][j] || 0;
-	t['總糧食']=rulers___arr['總糧食'][i][j] || 0;
-	t['總兵力']=rulers___arr['總兵力'][i][j] || 0;
-}// 空白地資料
-	t = scenarioJson[z]['勢力'][256 + '勢力']; j = 255;
-	t['領地數']=rulers___arr['領地數'][i][j] || 0;
-	t['部下數']=rulers___arr['部下數'][i][j] || 0;
-	t['總黃金']=rulers___arr['總黃金'][i][j] || 0;
-	t['總糧食']=rulers___arr['總糧食'][i][j] || 0;
-	t['總兵力']=rulers___arr['總兵力'][i][j] || 0;
+	t =	scenarioJson[z]['勢力'][j];
+	t['君主名'] = rulers___arr['領地數'][i][j] || 0 > 0 ? scenarioJson[z]['人物'][j]['名稱'] : '';
+	t['軍師名'] = '';
+	t['領地數'] = rulers___arr['領地數'][i][j] || 0;
+	t['部下數'] = rulers___arr['部下數'][i][j] || 0;
+	t['總黃金'] = rulers___arr['總黃金'][i][j] || 0;
+	t['總糧食'] = rulers___arr['總糧食'][i][j] || 0;
+	t['總兵力'] = rulers___arr['總兵力'][i][j] || 0;
+	t['背景色'] = rulers___arr['背景色'][scenario_dat[6 + j + scenario_mov * i]];
+	t['文字色'] = rulers___arr['文字色'][scenario_dat[6 + j + scenario_mov * i]];
+}		scenarioJson[z]['勢力'][16] = {
+		'信任度': 255,
+		'君主名': '<空白>',
+		'軍師名': '',
+		'背景色': 'FFF',
+		'文字色': '000',
+		'領地數': rulers___arr['領地數'][i][255] || 0,
+		'部下數': rulers___arr['部下數'][i][255] || 0,
+		'總黃金': rulers___arr['總黃金'][i][255] || 0,
+		'總糧食': rulers___arr['總糧食'][i][255] || 0,
+		'總兵力': rulers___arr['總兵力'][i][255] || 0,
+	};
 }//	render
 //	console.log  (scenarioJson);	//	IE Works
 //	console.table(scenarioJson);	//	Chrome, Edge Only
