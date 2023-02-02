@@ -1,21 +1,36 @@
 <!DOCTYPE html><center><meta   charset=utf-8>
 <script src=scenarioJson.js></script>
 <style>input { min-width: 80px; text-align: center; }</style>
-<title>KOEI 三國志 II 劇本檢視器</title>
-   <h1>KOEI 三國志 II 劇本檢視器</h1>
+<title>KOEI 三國志 II 劇本修改器</title>
+   <h1>KOEI 三國志 II 劇本修改器</h1>
 <p>請使用 Chrome & Edge 瀏覽器</p><p>按下「F12」開啟檢視畫面</p><p>並切換到「主控台」進行閱覽</p><p>
-<input type=button onclick ="console_clear(); tData(para[0])" value=全部劇本訊息> 劇本編號
-<input type=number onchange="console_clear(); tData(para[0]+'[scenarioVal.value]')" value=0 min=0 max=  5 id=scenarioVal pattern=[0-9]*></p><p>
-<input type=button onclick ="console_clear(); tData(para[1])" value=全部勢力訊息> 勢力編號
-<input type=number onchange="console_clear(); tData(para[1]+'[rulerAllVal.value]')" value=0 min=0 max= 16 id=rulerAllVal pattern=[0-9]*></p><p>
-<input type=button onclick ="console_clear(); tData(para[2])" value=全部城市訊息> 城市編號
-<input type=number onchange="console_clear(); tData(para[2]+'[provinceVal.value]')" value=0 min=0 max= 40 id=provinceVal pattern=[0-9]*></p><p>
-<input type=button onclick ="console_clear(); tData(para[3])" value=全部人物訊息> 人物編號
-<input type=number onchange="console_clear(); tData(para[3]+'[officersVal.value]')" value=0 min=0 max=254 id=officersVal pattern=[0-9]*></p><p>
-<input type=button onclick =location.reload() value=網頁重新整理> 面板刷新 <input type=checkbox	id=refresh checked></p><p id=eula></p>
+<input type=button onclick =scenario_val_onclick()  value=劇本訊息> 劇本編號 <input type=number onchange=scenario_val_onchange() value=0 min=0 max=    6 id=scenario_val pattern=[0-9]*></p><p>
+<input type=button onclick =rulerAll_val_onclick()  value=勢力訊息> 勢力編號 <input type=number onchange=rulerAll_val_onchange() value=0 min=0 max=   15 id=rulerAll_val pattern=[0-9]*></p><p>
+<input type=button onclick =province_val_onclick()  value=城市訊息> 城市編號 <input type=number onchange=province_val_onchange() value=0 min=0 max=   41 id=province_val pattern=[0-9]*></p><p>
+<input type=button onclick =officers_val_onclick()  value=人物訊息> 人物編號 <input type=number onchange=officers_val_onchange() value=0 min=0 max=  255 id=officers_val pattern=[0-9]*></p><p>
+<input type=button onclick =location.reload()       value=重新整理> 面板刷新 <input type=checkbox id =refresh checked></p><p>
+<input type=number onchange=scenario_idx_onchange() value=0 min=0 max=79386 id=scenario_idx pattern=[0-9]*> 修改數值
+<input type=number onchange=scenario_fix_onchange() value=0 min=0 max=  256 id=scenario_fix pattern=[0-9]*></p><p>
+<input type=button  onclick=download()              value=檔案下載></p><p id=eula></p>
 <script>
-function	console_clear(){if(refresh.checked)console.clear();}
-function	tData(x){eval("console." + (window.document.documentMode ? "log" : "table") + "(scenarioJson" + x + ")"); }
-var temp = "[scenarioVal.value]."; var para = [".劇本", temp + "勢力", temp + "城市", temp + "人物"];
+function scenario_val_onclick (){scenario_val.value%=scenario_val.max;console_clear();tData(para[0]);}
+function rulerAll_val_onclick (){rulerAll_val.value%=rulerAll_val.max;console_clear();tData(para[1]);}
+function province_val_onclick (){province_val.value%=province_val.max;console_clear();tData(para[2]);}
+function officers_val_onclick (){officers_val.value%=officers_val.max;console_clear();tData(para[3]);}
+function scenario_val_onchange(){scenario_val.value%=scenario_val.max;console_clear();tData(para[0]+'[scenario_val.value]');tData(para[1]);}
+function rulerAll_val_onchange(){rulerAll_val.value%=rulerAll_val.max;console_clear();tData(para[1]+'[rulerAll_val.value]');officers_val.value=rulerAll_val.value;tData(para[3]+'[officers_val.value]');}
+function province_val_onchange(){province_val.value%=province_val.max;console_clear();tData(para[2]+'[province_val.value]');}
+function officers_val_onchange(){officers_val.value%=officers_val.max;console_clear();tData(para[3]+'[officers_val.value]');}
+function scenario_idx_onchange(){scenario_idx.value%=scenario_idx.max;console.log('scenario_dat['+scenario_idx.value+'] = '+(scenario_fix.             value =scenario_dat[scenario_idx.value]));}
+function scenario_fix_onchange(){scenario_fix.value%=scenario_fix.max;console.log('scenario_dat['+scenario_idx.value+'] = '+(scenario_dat[scenario_idx.value]=scenario_fix.             value ));}
+function console_clear(){if(refresh.checked)console.clear();}
+function tData(x){eval("console." + (window.document.documentMode ? "log" : "table") + "(scenarioJson" + x + ")"); }
+function download(){
+var a = window.document.createElement("a");
+	a.href = window.URL.createObjectURL(new Blob([scenario_dat], { type: "application/octet-stream" }));
+	a.download = "scenario.dat";	window.document.body.appendChild(a);
+	a.click();						window.document.body.removeChild(a);}
+var temp = "[scenario_val.value]."; var para = [".劇本", temp + "勢力", temp + "城市", temp + "人物"];
 	eula.innerHTML = "Copyright &copy; ReganLu. " + new Date().getFullYear() + ", All Rights Reserved.";
+	console.table(scenarioJson);
 </script>
