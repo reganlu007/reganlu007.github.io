@@ -101,14 +101,16 @@ rulers___arr[4].push(sumIf([officers_arr[0], officers_arr[1]], officers_max));
 	t[rulers___tag[3]] = rulers___arr[3][i][j] || 0;
 	t[rulers___tag[4]] = rulers___arr[4][i][j] || 0;
 }	function group(x,y){
-	x[0] = x[0].slice(y * i, y * i + y);
-	return x[0].reduce(function(a, c) { return a[c] ? ++a[c] : a[c] = 1 , a }, {})
-}	function sumIf(x,y){
-	x[0] = x[0].slice(y * i, y * i + y);
-	x[1] = x[1].slice(y * i, y * i + y);
-	var	w = Object.entries(x[0].reduce((m, o, p) => (m[o] = m.hasOwnProperty(o) ? m[o] + x[1][p] : x[1][p], m ), {})).map(([k, v]) => '"' + k + '":' + v).join(',');
-		w = JSON.parse('{' + w + '}');
+	x[0]= x[0].slice(y * i, y * i + y);
+var w	= x[0].reduce(function(m, o, p) { return(m[o] = m.hasOwnProperty(o) ? m[o] +   1     :   1   ,  m )}, {});
+	return w;
+}	function sumIf(x,y){ try{
+	x[0]= x[0].slice(y * i, y * i + y);
+	x[1]= x[1].slice(y * i, y * i + y);
+var w	= x[0].reduce(function(m, o, p) { return(m[o] = m.hasOwnProperty(o) ? m[o] + x[1][p] : x[1][p], m )}, {});
 	return	w;
+}	catch(	e){
+	return	group(x,y);}
 }//	開啟即載入
 console.table(scenarioJson);
 console.table(scenarioJson["03_劇本"]["04_勢力"]);
