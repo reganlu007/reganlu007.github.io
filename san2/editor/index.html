@@ -1,0 +1,78 @@
+<!DOCTYPE html> <meta charset=utf-8>
+<script src=     "end.exe.js"></script>
+<script src=  "ending.dat.js"></script>
+<script src=   "fmdrv.com.js"></script>
+<script src= "grpdata.dat.js"></script>
+<script src= "hexdata.dat.js"></script>
+<script src= "kaodata.dat.js"></script>
+<script src=  "kaoibm.dat.js"></script>
+<script src=    "main.exe.js"></script>
+<script src= "montage.dat.js"></script>
+<script src=     "msg.16p.js"></script>
+<script src=    "name.16p.js"></script>
+<script src=    "open.exe.js"></script>
+<script src= "opening.dat.js"></script>
+<script src="packdata.dat.js"></script>
+<script src=    "pass.ori.js"></script>
+<script src=    "play.bat.js"></script>
+<script src=    "rtk2.com.js"></script>
+<script src=    "rtk2.exe.js"></script>
+<script src="scenario.dat.js"></script>
+<script src=   "taiki.dat.js"></script>
+<style>input { min-width: 99px; text-align: center; } .text-right { text-align: right; }</style>
+<title>KOEI 三國志 II 劇本修改器</title><center>
+   <h1>KOEI 三國志 II 劇本修改器</h1>
+<p>請使用 Chrome & Edge 瀏覽器</p><p>按下「F12」開啟檢視畫面</p><p>並切換到「主控台」進行閱覽</p><p>
+<input type=button onclick =scenario_val_onclick()  value=劇本訊息> 劇本編號 <input type=number onchange=scenario_val_onchange() value=0 min=0 max=    6 id=scenario_val pattern=[0-9]*></p><p>
+<input type=button onclick =rulerAll_val_onclick()  value=勢力訊息> 勢力編號 <input type=number onchange=rulerAll_val_onchange() value=0 min=0 max=   15 id=rulerAll_val pattern=[0-9]*></p><p>
+<input type=button onclick =province_val_onclick()  value=城市訊息> 城市編號 <input type=number onchange=province_val_onchange() value=0 min=0 max=   41 id=province_val pattern=[0-9]*></p><p>
+<input type=button onclick =officers_val_onclick()  value=人物訊息> 人物編號 <input type=number onchange=officers_val_onchange() value=0 min=0 max=  255 id=officers_val pattern=[0-9]*></p><p>
+<input type=button onclick =location.reload()       value=重新整理> 面板刷新 <input type=checkbox id =refresh checked></p><p>
+index <input type=number onchange=scenario_idx_onchange() value=0 min=0 max=79386 id=scenario_idx pattern=[0-9]*></p><p>
+value <input type=number onchange=scenario_fix_onchange() value=0 min=0 max=  256 id=scenario_fix pattern=[0-9]*></p><p>
+<input type=button onclick ="download(     end_exe,     'end.exe')" value="     end_exe" class=text-right>
+<input type=button onclick ="download(  ending_dat,  'ending.dat')" value="  ending_dat" class=text-right>
+<input type=button onclick ="download(   fmdrv_com,   'fmdrv.com')" value="   fmdrv_com" class=text-right>
+<input type=button onclick ="download( grpdata_dat, 'grpdata.dat')" value=" grpdata_dat" class=text-right>
+<input type=button onclick ="download( hexdata_dat, 'hexdata.dat')" value=" hexdata_dat" class=text-right></p><p>
+<input type=button onclick ="download( kaodata_dat, 'kaodata.dat')" value=" kaodata_dat" class=text-right>
+<input type=button onclick ="download(  kaoibm_dat,  'kaoibm.dat')" value="  kaoibm_dat" class=text-right>
+<input type=button onclick ="download(    main_exe,    'main.exe')" value="    main_exe" class=text-right>
+<input type=button onclick ="download( montage_dat, 'montage.dat')" value=" montage_dat" class=text-right>
+<input type=button onclick ="download(     msg_16p,     'msg.16p')" value="     msg_16p" class=text-right></p><p>
+<input type=button onclick ="download(    name_16p,    'name.16p')" value="    name_16p" class=text-right>
+<input type=button onclick ="download(    open_exe,    'open.exe')" value="    open_exe" class=text-right>
+<input type=button onclick ="download( opening_dat, 'opening.dat')" value=" opening_dat" class=text-right>
+<input type=button onclick ="download(packdata_dat,'packdata.dat')" value="packdata_dat" class=text-right>
+<input type=button onclick ="download(    pass_ori,    'pass.ori')" value="    pass_ori" class=text-right></p><p>
+<input type=button onclick ="download(    play_bat,    'play.bat')" value="    play_bat" class=text-right>
+<input type=button onclick ="download(    rtk2_com,    'rtk2.com')" value="    rtk2_com" class=text-right>
+<input type=button onclick ="download(    rtk2_exe,    'rtk2.exe')" value="    rtk2_exe" class=text-right>
+<input type=button onclick ="download(scenario_dat,'scenario.dat')" value="scenario_dat" class=text-right>
+<input type=button onclick ="download(   taiki_dat,   'taiki.dat')" value="   taiki_dat" class=text-right></p><p>
+</p><p id=eula></p>
+<script>
+var temp = '[scenario_val.value].'; var para = ['.劇本', temp + '勢力', temp + '城市', temp + '人物'],
+	type = 'application/octet-stream';
+function scenario_val_onclick (){scenario_val.value%=scenario_val.max;console_clear();tData(para[0]);}
+function rulerAll_val_onclick (){rulerAll_val.value%=rulerAll_val.max;console_clear();tData(para[1]);}
+function province_val_onclick (){province_val.value%=province_val.max;console_clear();tData(para[2]);}
+function officers_val_onclick (){officers_val.value%=officers_val.max;console_clear();tData(para[3]);}
+function scenario_val_onchange(){scenario_val.value%=scenario_val.max;console_clear();tData(para[0]+'[scenario_val.value]');tData(para[1]);}
+function rulerAll_val_onchange(){rulerAll_val.value%=rulerAll_val.max;console_clear();tData(para[1]+'[rulerAll_val.value]');officers_val.value=rulerAll_val.value;tData(para[3]+'[officers_val.value]');}
+function province_val_onchange(){province_val.value%=province_val.max;console_clear();tData(para[2]+'[province_val.value]');}
+function officers_val_onchange(){officers_val.value%=officers_val.max;console_clear();tData(para[3]+'[officers_val.value]');}
+function scenario_idx_onchange(){scenario_idx.value%=scenario_idx.max;console.log('scenario_dat['+scenario_idx.value+'] = '+(scenario_fix.             value =scenario_dat[scenario_idx.value]));}
+function scenario_fix_onchange(){scenario_fix.value%=scenario_fix.max;console.log('scenario_dat['+scenario_idx.value+'] = '+(scenario_dat[scenario_idx.value]=scenario_fix.             value ));}
+function console_clear(){if(refresh.checked)console.clear();}
+function tData(x){eval("console." + (window.document.documentMode ? "log" : "table") + "(scenarioJson" + x + ")"); }
+function download(blob, download){
+var a          = window.document.createElement("a");
+	a.href     = window.URL.createObjectURL(new Blob([blob],{type}));
+	a.download = download;
+	window.document.body.appendChild(a);
+	a.click();
+	window.document.body.removeChild(a);
+}	eula.innerHTML = "Copyright &copy; ReganLu. " + new Date().getFullYear() + ", All Rights Reserved.";
+	console.table(scenarioJson);
+</script>
