@@ -18,15 +18,15 @@ var officers_nam	= { "0": "", "12443": "孫", "12446": "旋", "12961": "程", "1
 var rulers___1st	= 11000;
 var rulers___mov	=    41;	//	包含空白地
 var rulers___max	=    16;
-var rulers___tag	= ['君主名','軍師名','領地數','部下數','總黃金','總糧食','總兵力','背景色','文字色'];
+var rulers___tag	= ['君主','軍師','首都','背景色','文字色','領地數','部下數','總黃金','總糧食','總兵力'];
 var rulers___arr	= {};
+	rulers___arr['背景色'] = ['000','FFA','A50','55F','FAF','55A','5FA','5FF','AFF','5AF','F5A','A5F','FAA','AA5','5AA','FA0','FFF'];
+	rulers___arr['文字色'] = ['FFF','000','FFF','FFF','000','FFF','000','000','000','FFF','FFF','FFF','000','FFF','FFF','000','000'];
 	rulers___arr['領地數'] = [];
 	rulers___arr['部下數'] = [];
 	rulers___arr['總黃金'] = [];
 	rulers___arr['總糧食'] = [];
 	rulers___arr['總兵力'] = [];
-	rulers___arr['背景色'] = ['000','FFA','A50','55F','FAF','55A','5FA','5FF','AFF','5AF','F5A','A5F','FAA','AA5','5AA','FA0','FFF'];
-	rulers___arr['文字色'] = ['FFF','000','FFF','FFF','000','FFF','000','000','000','FFF','FFF','FFF','000','FFF','FFF','000','000'];
 var province_dat	= ['襄平','北平','薊城','晉陽','上黨','南皮','鄴城','北海','陳留','洛陽','弘農','長安','天水','武威','酒泉','下邳','許昌','壽春','南陽','襄陽','長沙','桂陽','零陵','建業','會稽','建安','鄱陽','柴桑','漢中','武都','永安','江州','成都','朱提','永昌','建寧','南海','蒼梧','合浦','郁林','交趾'];
 //	首項：黃金
 var province_arr	= [[],[],[]];
@@ -108,7 +108,7 @@ lb[0] = '年齡';	t[lb[0]] = scenarioJson[z]['劇本']['年份'] - t['生年'];
 	t['總黃金'] = rulers___arr['總黃金'][i][j] || 0;
 	t['總糧食'] = rulers___arr['總糧食'][i][j] || 0;
 	t['總兵力'] = rulers___arr['總兵力'][i][j] || 0;
-}		scenarioJson[z]['勢力'][ 15]['君主名'] = '新武將';
+}		scenarioJson[z]['勢力'][ 15]['君主'] = '新武將';
 		scenarioJson[z]['勢力'][255] = {
 		'信任度': 255,
 		'君主': '<在野>',
@@ -123,10 +123,10 @@ lb[0] = '年齡';	t[lb[0]] = scenarioJson[z]['劇本']['年份'] - t['生年'];
 		'總兵力': rulers___arr['總兵力'][i][255] || 0,
 	};
 	for(var j = 0;j< province_max; j++){
-	scenarioJson[z]['城市'][j]['勢力'] = scenarioJson[z]['勢力'][scenarioJson[z]['城市'][j]['勢力']]['君主名'];
+	scenarioJson[z]['城市'][j]['勢力'] = scenarioJson[z]['勢力'][scenarioJson[z]['城市'][j]['勢力']]['君主'];
 	}
 	for(var j = 0;j< officers_max; j++){
-	scenarioJson[z]['人物'][j]['勢力'] = scenarioJson[z]['勢力'][scenarioJson[z]['人物'][j]['勢力']]['君主名'];
+	scenarioJson[z]['人物'][j]['勢力'] = scenarioJson[z]['勢力'][scenarioJson[z]['人物'][j]['勢力']]['君主'];
 	}
 }//	render
 //	console.log  (scenarioJson);	//	IE Works
