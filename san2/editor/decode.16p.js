@@ -25,6 +25,5 @@ tmp[3][n][r][c] = tmp[3][n][r][c] == 0 ? '' : '圖';
 });	// n
 tmp =  tmp[3];	//	去蕪存菁
 return tmp;
-};
-	get_name_16p = () => decode_16p(name_16p, name_16p_dic, 0); see_name_16p =(i) => console.table(get_name_16p()[i]);
+};	get_name_16p = () => decode_16p(name_16p, name_16p_dic, 0); see_name_16p =(i) => console.table(get_name_16p()[i]);
 	get__msg_16p = () => decode_16p( msg_16p,  msg_16p_dic, 1); see__msg_16p =(i) => console.table(get__msg_16p()[i]);
