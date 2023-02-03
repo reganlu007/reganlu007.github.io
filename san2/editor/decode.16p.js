@@ -12,10 +12,10 @@
 	tmp[3][n]       = {}; tmp.r.map(r => {
 	tmp[3][n][r]    = {}; tmp.c.map(c => {
 	tmp[3][n][r][c] = tmp[2][c + r * tmp.c.length + n * tmp.c.length * tmp.r.length];
-	tmp[3][n][r][c] = r === 0 && c < 16 ? tmp[3][n][r][c] == 0 ? 0 : 1 : tmp[3][n][r][c] == 0 ? '' : '圖';
+	tmp[3][n][r][c] =   !!mod && r === 0 && c < 16 ? tmp[3][n][r][c] == 0 ? 0 : 1 : tmp[3][n][r][c] == 0 ? '' : '圖';
 	});	// c
 	tmp[3][n].value = [dic[n] || null, ''];
-	tmp.c.map(c => { tmp[3][n].value[1] += tmp[3][n][0][c]; });
+	tmp.c.map(c => { tmp[3][n].value[1] += !!mod ? tmp[3][n][0][c] : ''; });
 	});	// r
 	});	// n
 	tmp =  tmp[3];	//	去蕪存菁
