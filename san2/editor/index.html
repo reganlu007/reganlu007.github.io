@@ -82,7 +82,7 @@ function console_clear(){if(refresh.checked)console.clear();}
 function tData(x){eval("console." + (window.document.documentMode ? "log" : "table") + "(scenarioJson" + x + ")"); }
 function download(blob, download){
 var a          = window.document.createElement("a");
-	a.href     = window.URL.createObjectURL(new Blob([blob],{type}));
+	a.href     = window.URL.createObjectURL(new Blob([typeof blob === "string" ? blob : new Uint8Array(blob)],{type}));
 	a.download = download;
 	window.document.body.appendChild(a);
 	a.click();
