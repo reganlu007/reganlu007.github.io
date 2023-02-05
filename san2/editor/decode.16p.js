@@ -5,7 +5,8 @@
 	mod = ['name_16p', 'msg_16p'].indexOf(mod);
 	tmp = {};
 	tmp[0]= arr;
-	tmp[1]= tmp[0].map(x => x.toString(2).padStart(8,0)).join('').replace(/,/g, '').split('');
+	tmp[1]= tmp[0].map(x => x.toString(2).padStart(8,0)).join('')
+	tmp[1]= tmp[1].replace(/,/g, '').split('');
 	tmp.r =	[...Array(14+mod).keys()];
 	tmp.c =	[...Array( 0+16 ).keys()];
 	tmp.n =	[...Array( tmp[1].length / tmp.r.length / tmp.c.length).keys()];
@@ -43,11 +44,7 @@
 	}); /* r */
 	tmp =	tmp[3];	//	去蕪存菁
 	return	tmp;
-};	get_kaodata	= () => dec_kaodata(kaodata_dat);
-	see_kaodata	=(i) => { log  = ''; k = get_kaodata().map(x => 'background:#' + x);
-	[...Array(64).keys()].map(x => log += '%c　');
-	[...Array(40).keys()].map(x => { x = 64 * x + i * 64 * 40;
-		eval(`console.log(log
+};	console_all	=(x) => eval(`console.log(log
 	,	k[ 0 + x],	k[ 1 + x],	k[ 2 + x],	k[ 3 + x],	k[ 4 + x],	k[ 5 + x],	k[ 6 + x],	k[ 7 + x]
 	,	k[ 8 + x],	k[ 9 + x],	k[10 + x],	k[11 + x],	k[12 + x],	k[13 + x],	k[14 + x],	k[15 + x]
 	,	k[16 + x],	k[17 + x],	k[18 + x],	k[19 + x],	k[20 + x],	k[21 + x],	k[22 + x],	k[23 + x]
@@ -57,5 +54,9 @@
 	,	k[48 + x],	k[49 + x],	k[50 + x],	k[51 + x],	k[52 + x],	k[53 + x],	k[54 + x],	k[55 + x]
 	,	k[56 + x],	k[57 + x],	k[58 + x],	k[59 + x],	k[60 + x],	k[61 + x],	k[62 + x],	k[63 + x]
 	);`);
+	get_kaodata	= () => dec_kaodata(kaodata_dat);
+	see_kaodata	=(i) => { log  = ''; k = get_kaodata().map(x => 'background:#' + x);
+	[...Array(64).keys()].map(x => log += '%c　　');
+	[...Array(40).keys()].map(x => { x = 64 * x + i * 64 * 40; console_all(x); console_all(x);
 	});
 };	man_kaodata =(i) => { if(!isNaN(i)) {i--; i %= 219; i += 219; i %= 219; see_kaodata(i);} }
