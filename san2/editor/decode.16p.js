@@ -1,5 +1,5 @@
 //	破解    msg_16p name_16p
-function	dec_16p(dic,arr,mod){
+	dec_16p = (dic,arr,mod) => {
 	mod = ['name_16p', 'msg_16p'].indexOf(mod);
 	tmp = {};
 	tmp[0]= arr;
@@ -16,11 +16,10 @@ for(var n = 0 ; n  < tmp[5]; n++){
 	return	tmp;
 };	get_name_16p = dec_16p(name_16p_dic,name_16p,'name_16p');
 	get__msg_16p = dec_16p( msg_16p_dic, msg_16p, 'msg_16p');
-//	man kaodata 破解
-	dec_kaodata	= (arr) => {
+//	man  kaodata 破解
+	dec__kaodata	= (arr) => {
 	tmp = {};
 	tmp[0]= arr;
-	tmp[0]= kaodata_dat;
 	tmp[1]=	tmp[0].map(x => x.toString(2).padStart(8,0)).join('');
 	tmp[2]= [];
 	tmp.r = 24;
@@ -34,4 +33,14 @@ for(var n = 0 ; n  < tmp[5]; n++){
 	}); /* r */
 	tmp          = tmp[3].join('');	//	去蕪存菁
 	return	tmp;
-};	get__kaodata = dec_kaodata(kaodata_dat);
+};	get__kaodata = dec__kaodata(kaodata_dat);
+	dec__hexdata = (arr) => {
+	tmp = {};
+	[...Array(41).keys()].map(x => {
+		tmp[x]={};
+		tmp[x].地形 = arr.slice(   0 + 156 * x,    0 + 156 * x + 156);
+		tmp[x].出陣 = arr.slice(6396 + 156 * x, 6396 + 156 * x + 156);
+	});
+	return	tmp;
+};
+	get__hexdata = dec__hexdata(hexdata_dat);
