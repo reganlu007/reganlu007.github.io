@@ -3,12 +3,12 @@
 <script src=    "open.exe.js"></script>
 <script src=     "end.exe.js"></script>
 <script src=    "rtk2.exe.js"></script>
+<script src=    "rtk2.dat.js"></script>
 <script src=    "rtk2.com.js"></script>
 <script src=   "fmdrv.com.js"></script>
 <script src=  "ending.dat.js"></script>
 <script src= "grpdata.dat.js"></script>
 <script src= "hexdata.dat.js"></script>
-<script src= "kaodata.dat.js"></script>
 <script src=  "kaoibm.dat.js"></script>
 <script src= "montage.dat.js"></script>
 <script src= "opening.dat.js"></script>
@@ -16,24 +16,48 @@
 <script src="scenario.dat.js"></script>
 <script src=   "taiki.dat.js"></script>
 <script src=  "decode.16p.js"></script>
-<script src=     "msg.16p.js"></script>
-<script src=  "dicmsg.16p.js"></script>
-<script src=    "name.16p.js"></script>
-<script src= "dicname.16p.js"></script>
 <script src=    "pass.ori.js"></script>
 <script src=    "play.bat.js"></script>
 <style>input { min-width: 99px; text-align: center; } .text-right { text-align: right; }</style>
 <title>KOEI 三國志 II 劇本修改器</title><center>
    <h1>KOEI 三國志 II 劇本修改器</h1>
 <p>請使用 Chrome & Edge 瀏覽器</p><p>按下「F12」開啟檢視畫面</p><p>並切換到「主控台」進行閱覽</p><p>
-<input type=button onclick =scenario_val_onclick()  value=劇本訊息> 劇本編號 <input type=number onchange=scenario_val_onchange() value=0 min=0 max=    6 id=scenario_val pattern=[0-9]*></p><p>
-<input type=button onclick =rulerAll_val_onclick()  value=勢力訊息> 勢力編號 <input type=number onchange=rulerAll_val_onchange() value=0 min=0 max=   15 id=rulerAll_val pattern=[0-9]*></p><p>
-<input type=button onclick =province_val_onclick()  value=城市訊息> 城市編號 <input type=number onchange=province_val_onchange() value=0 min=0 max=   41 id=province_val pattern=[0-9]*></p><p>
-<input type=button onclick =officers_val_onclick()  value=人物訊息> 人物編號 <input type=number onchange=officers_val_onchange() value=0 min=0 max=  150 id=officers_val pattern=[0-9]*></p><p>
-<input type=button onclick =location.reload()       value=重新整理> 面板刷新 <input type=checkbox id =refresh checked></p><p>
-index
+劇本編號 <input type=number id=scenario_val value=0 min=0 max=  6 onchange=scenario_val_onchange()  pattern=[0-9]*> <input type=button onclick =scenario_val_onclick() value=劇本訊息></p><p>
+勢力編號 <input type=number id=rulerAll_val value=0 min=0 max= 15 onchange=rulerAll_val_onchange()  pattern=[0-9]*> <input type=button onclick =rulerAll_val_onclick() value=勢力訊息></p><p>
+城市編號 <input type=number id=province_val value=0 min=0 max= 41 onchange=province_val_onchange()  pattern=[0-9]*> <input type=button onclick =province_val_onclick() value=城市訊息></p><p>
+人物編號 <input type=number id=officers_val value=0 min=0 max=150 onchange=officers_val_onchange()  pattern=[0-9]*> <input type=button onclick =officers_val_onclick() value=人物訊息></p><p>
+頭像檔案 <input type=number id=idx__kaodata value=0 min=0 max=438 onchange=idx__kaodata_onchange()> <canvas id=cvs__kaodata width=64 height=80></canvas> <span id=txt__kaodata></span></p><p>
+系統文字 <input type=number id=idx__msg_16p value=0 min=0 max=438 onchange=idx__msg_16p_onchange()> <canvas id=cvs__msg_16p width=16 height=14></canvas> <span id=txt__msg_16p></span></p><p>
+命名文字 <input type=number id=idx_name_16p value=0 min=0 max=438 onchange=idx_name_16p_onchange()> <canvas id=cvs_name_16p width=16 height=14></canvas> <span id=txt_name_16p></span></p><p>
+<script>
+function	onchange_16p(canvas, get, idx, palette){
+	var cvs = document.getElementById(canvas);
+	var c16 = cvs.id.includes('16p');
+	var ctx = cvs.getContext ( '2d');
+		idx.value	%= c16 ? idx.max: idx.max / 2;
+	var fst = cvs.width * cvs.height / 2 * idx.value;
+	var lst = cvs.width * cvs.height / 2 + fst;
+	var chr = c16 ? get[idx.value].value : get.slice(fst, lst);
+for(var   i = 0; i < chr.length; i++){
+		ctx.fillStyle = palette[chr[i]];
+		ctx.fillRect(i % cvs.width, Math.floor(i / cvs.width) * (1 + !c16), 1, (1 + !c16));
+}}			idx__msg_16p.max = Object.keys(get__msg_16p).length;
+			idx_name_16p.max = Object.keys(get_name_16p).length;
+			idx__msg_16p_palette = ['#fff','#000'];
+function	idx__msg_16p_onchange(){ onchange_16p('cvs__msg_16p', get__msg_16p, idx__msg_16p, idx__msg_16p_palette); txt__msg_16p.innerHTML =     msg_16p_dic[idx__msg_16p.value] || ''; }
+			idx__msg_16p_onchange();
+			idx_name_16p_palette = ['#fff','#000'];
+function	idx_name_16p_onchange(){ onchange_16p('cvs_name_16p', get_name_16p, idx_name_16p, idx_name_16p_palette); txt_name_16p.innerHTML =    name_16p_dic[idx_name_16p.value] || ''; }
+			idx_name_16p_onchange();
+			palette = ['#fff','#000'];
+			idx__kaodata_palette = ['#000','#5f5','#f55','#ff5','#55f','#5ff','#f5f','#fff'];
+function	idx__kaodata_onchange(){ onchange_16p('cvs__kaodata', get__kaodata, idx__kaodata, idx__kaodata_palette); txt__kaodata.innerHTML = kaodata_dat_dic[idx__kaodata.value] || ''; }
+			idx__kaodata_onchange();
+</script>
+面板刷新 <input type=checkbox id =refresh checked> <input type=button onclick =location.reload()       value=重新整理> </p><p>
+劇本 index
 <input type=number onchange=scenario_idx_onchange() value=0 min=0 max=79386 id=scenario_idx pattern=[0-9]*></p><p>
-value
+劇本 value
 <input type=number onchange=scenario_fix_onchange() value=0 min=0 max=  256 id=scenario_fix pattern=[0-9]*></p><p>
 </p><h2>下載專區</h2><div id=buttons style="width:500px"></div><p id=eula></p><p>Author: Regan Lu</p><p>Sponsor: Yuxio Tseng</p>
 <script>
