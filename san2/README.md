@@ -136,23 +136,25 @@ ff ff|全血緣|ff ff|同盟全國勢力
 06|  |36|41|39|38|37|  |
 
 ```
-Province
-Jan 189 AD (Spring)
-                                          01 | 09. Yong
-                                         /   | Ruler: Cao Cao
-   15                      04 -- 03 -- 02    | Trust: 50
-     \                    /  \  /  \  /      | Governor: Cao Cao
-      14                05 -- 07 -- 06       | Advisor: Chen Gong
-        \              /  \  /  \  /  \      |---------------------------------------
-         13 -- 12 -- 11 -- 10 -- 09 -- 08    | Pop   350000  Gold    1000  Loy    60
-        /  \  /  \  /  \  /  \  /  \  /      | Men    20000  Food   40000  Land   60
-      30 -- 29 -- 20 -- 19 -- 17 -- 16       | Generals   9  Rate      46  Flood  30
-     /  \  /  \  /  \  /  \  /  \  /  \      | FreeGens   0  Horses    20  Forts   2
-   33 -- 32 -- 31 -- 21 -- 28 -- 18 -- 24    |---------------------------------------
-  /  \  /  \  /  \  /  \  /  \  /  \  /      | Cao Cao, your orders for
-35 -- 34 -- 40 -- 23 -- 22 -- 27 -- 25       | Province 9 (0-19)?
-  \  /  \  /  \  /  \  /  \  /  \  /         |
-   36 -- 41 -- 39 -- 38 -- 37 -- 26          |
+Province                                                            
+Jan 189 AD (Spring)                                                 
+                         01 |                                       
+                     02     |                                       
+                 03         | 09. Yong                              
+             04      06     |    Ruler: Cao Cao                     
+                 07      08 |    Trust: 50                          
+             05     [09]    | Governor: Cao Cao                     
+ 15              10      16 |  Advisor: Chen Gong                   
+             11      17     | --------------------------------------
+ 14      12      19      24 | Pop   350000  Gold    1000  Loy    60 
+     13      20      28     | Men    20000  Food   40000  Land   60 
+         29      21      25 | Generals   9  Rate      46  Flood  30 
+     30      31      22     | FreeGens   0  Horses    20  Forts   2 
+         32      23      26 | --------------------------------------
+     33      40      38     | Cao Cao, your orders for              
+         34      39         | Province 9 (0-19)?                    
+     35      41             |                                       
+         36                 |                                       
 ```
 ```
 General
