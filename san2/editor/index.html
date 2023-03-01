@@ -35,28 +35,28 @@
 </table><h2>下載專區</h2><div id=buttons style="width:500px"></div><p id=eula></p><p>Author: Regan Lu</p><p>Sponsor: Yuxio Tseng</p>
 <script>
 function	onchange_16p(canvas, get, idx, palette){
-	var cvs = document.getElementById(canvas);
-	var c16 = cvs.id.includes('16p');
-	var ctx = cvs.getContext ( '2d');
-		idx.value	%= c16 ? idx.max: idx.max / 2;
-	var fst = cvs.width * cvs.height / 2 * idx.value;
-	var lst = cvs.width * cvs.height / 2 + fst;
-	var chr = c16 ? get[idx.value].value : get.slice(fst, lst);
-for(var   i = 0; i < chr.length; i++){
+	var	cvs=document.getElementById(canvas);
+	var	c16=cvs.id.includes('16p');
+	var	ctx=cvs.getContext ( '2d');
+		idx.value %= c16 ? idx.max: idx.max / 2;
+	var	fst=cvs.width * cvs.height / 2 * idx.value;
+	var	lst=cvs.width * cvs.height / 2 + fst;
+	var	chr=c16 ? get[idx.value].value : get.slice(fst, lst);
+for(	var	i  = 0; i < chr.length; i++){
 		ctx.fillStyle = palette[chr[i]];
 		ctx.fillRect(i % cvs.width, Math.floor(i / cvs.width) * (1 + !c16), 1, (1 + !c16));
-}}			idx__msg_16p.max = Object.keys(get__msg_16p).length;
-			idx_name_16p.max = Object.keys(get_name_16p).length;
-			palette = ['#fff','#000'];
-function		idx__msg_16p_onchange(){ onchange_16p('cvs__msg_16p', get__msg_16p, idx__msg_16p, palette); txt__msg_16p.innerHTML =     msg_16p_dic[idx__msg_16p.value] || ''; }
-			idx__msg_16p_onchange();
-function		idx_name_16p_onchange(){ onchange_16p('cvs_name_16p', get_name_16p, idx_name_16p, palette); txt_name_16p.innerHTML =    name_16p_dic[idx_name_16p.value] || ''; }
-			idx_name_16p_onchange();
-			palette = ['#000','#5f5','#f55','#ff5','#55f','#5ff','#f5f','#fff'];
-function		idx__kaodata_onchange(){ onchange_16p('cvs__kaodata', get__kaodata, idx__kaodata, palette); txt__kaodata.innerHTML = kaodata_dat_dic[idx__kaodata.value] || ''; }
-			idx__kaodata_onchange();
-function		idx__kao_ibm_onchange(){ onchange_16p('cvs__kao_ibm', get__kao_ibm, idx__kao_ibm, palette); txt__kao_ibm.innerHTML = kaodata_dat_dic[idx__kao_ibm.value] || ''; }
-			idx__kao_ibm_onchange();
+}}		idx__msg_16p.max = Object.keys(get__msg_16p).length;
+		idx_name_16p.max = Object.keys(get_name_16p).length;
+		palette = ['#fff','#000'];
+function	idx__msg_16p_onchange(){ onchange_16p('cvs__msg_16p', get__msg_16p, idx__msg_16p, palette); txt__msg_16p.innerHTML =     msg_16p_dic[idx__msg_16p.value] || ''; }
+		idx__msg_16p_onchange();
+function	idx_name_16p_onchange(){ onchange_16p('cvs_name_16p', get_name_16p, idx_name_16p, palette); txt_name_16p.innerHTML =    name_16p_dic[idx_name_16p.value] || ''; }
+		idx_name_16p_onchange();
+		palette = ['#000','#5f5','#f55','#ff5','#55f','#5ff','#f5f','#fff'];
+function	idx__kaodata_onchange(){ onchange_16p('cvs__kaodata', get__kaodata, idx__kaodata, palette); txt__kaodata.innerHTML = kaodata_dat_dic[idx__kaodata.value] || ''; }
+		idx__kaodata_onchange();
+function	idx__kao_ibm_onchange(){ onchange_16p('cvs__kao_ibm', get__kao_ibm, idx__kao_ibm, palette); txt__kao_ibm.innerHTML = kaodata_dat_dic[idx__kao_ibm.value] || ''; }
+		idx__kao_ibm_onchange();
 </script>
 <script>
 //<!--	批次生成按鈕
