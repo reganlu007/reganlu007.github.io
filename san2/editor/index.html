@@ -21,17 +21,17 @@
 <title>KOEI 三國志 II 劇本修改器</title><center>
    <h1>KOEI 三國志 II 劇本修改器</h1><table>
 <tr><td colspan=3>請使用 Chrome & Edge 瀏覽器<p></p>按下「F12」開啟檢視畫面<p></p>並切換到「主控台」進行閱覽<p></p></td></tr>
-<tr><td>劇本編號</td><td><input type=number id=scenario_val value=0 min=0 max=  6 onchange=scenario_val_onchange() pattern=[0-9]*></td><td><input type=button onclick =scenario_val_onclick() value=劇本訊息></td></tr>
-<tr><td>勢力編號</td><td><input type=number id=rulerAll_val value=0 min=0 max= 15 onchange=rulerAll_val_onchange() pattern=[0-9]*></td><td><input type=button onclick =rulerAll_val_onclick() value=勢力訊息></td></tr>
-<tr><td>城市編號</td><td><input type=number id=province_val value=0 min=0 max= 41 onchange=province_val_onchange() pattern=[0-9]*></td><td><input type=button onclick =province_val_onclick() value=城市訊息></td></tr>
-<tr><td>人物編號</td><td><input type=number id=officers_val value=0 min=0 max=150 onchange=officers_val_onchange() pattern=[0-9]*></td><td><input type=button onclick =officers_val_onclick() value=人物訊息></td></tr>
-<tr><td>人物頭像</td><td><input type=number id=idx__kaodata value=0 min=0 max=438 onchange=idx__kaodata_onchange() pattern=[0-9]*></td><td><canvas id=cvs__kaodata width=64 height=80></canvas> <span id=txt__kaodata></span></td></tr>
-<tr><td>水滸頭像</td><td><input type=number id=idx__kao_ibm value=0 min=0 max=438 onchange=idx__kao_ibm_onchange() pattern=[0-9]*></td><td><canvas id=cvs__kao_ibm width=64 height=80></canvas> <span id=txt__kao_ibm></span></td></tr>
-<tr><td>系統文字</td><td><input type=number id=idx__msg_16p value=0 min=0 max=438 onchange=idx__msg_16p_onchange() pattern=[0-9]*></td><td><canvas id=cvs__msg_16p width=16 height=14></canvas> <span id=txt__msg_16p></span></td></tr>
-<tr><td>命名文字</td><td><input type=number id=idx_name_16p value=0 min=0 max=438 onchange=idx_name_16p_onchange() pattern=[0-9]*></td><td><canvas id=cvs_name_16p width=16 height=14></canvas> <span id=txt_name_16p></span></td></tr>
-<tr><td>面板刷新</td><td><input type=checkbox id =refresh checked></td><td><input type=button onclick =location.reload()     value=重新整理></td></tr>
-<tr><td>劇本索引</td><td><input type=number onchange=scenario_idx_onchange() value=0 min=0 max=79386 id=scenario_idx pattern=[0-9]*></td></tr>
-<tr><td>劇本數值</td><td><input type=number onchange=scenario_fix_onchange() value=0 min=0 max=  256 id=scenario_fix pattern=[0-9]*></td></tr>
+<tr><td>劇本編號</td><td><input type=number   id=scenario_val value=0 min=0 max=    6 onchange=scenario_val_onchange() pattern=[0-9]*></td><td><input type=button onclick =scenario_val_onclick() value=劇本訊息></td></tr>
+<tr><td>勢力編號</td><td><input type=number   id=rulerAll_val value=0 min=0 max=   15 onchange=rulerAll_val_onchange() pattern=[0-9]*></td><td><input type=button onclick =rulerAll_val_onclick() value=勢力訊息></td></tr>
+<tr><td>城市編號</td><td><input type=number   id=province_val value=0 min=0 max=   41 onchange=province_val_onchange() pattern=[0-9]*></td><td><input type=button onclick =province_val_onclick() value=城市訊息></td></tr>
+<tr><td>人物編號</td><td><input type=number   id=officers_val value=0 min=0 max=  150 onchange=officers_val_onchange() pattern=[0-9]*></td><td><input type=button onclick =officers_val_onclick() value=人物訊息></td></tr>
+<tr><td>人物頭像</td><td><input type=number   id=idx__kaodata value=0 min=0 max=  438 onchange=idx__kaodata_onchange() pattern=[0-9]*></td><td><canvas id=cvs__kaodata width=64 height=80></canvas> <span id=txt__kaodata></span></td></tr>
+<tr><td>水滸頭像</td><td><input type=number   id=idx__kao_ibm value=0 min=0 max=  438 onchange=idx__kao_ibm_onchange() pattern=[0-9]*></td><td><canvas id=cvs__kao_ibm width=64 height=80></canvas> <span id=txt__kao_ibm></span></td></tr>
+<tr><td>系統文字</td><td><input type=number   id=idx__msg_16p value=0 min=0 max=  438 onchange=idx__msg_16p_onchange() pattern=[0-9]*></td><td><canvas id=cvs__msg_16p width=16 height=14></canvas> <span id=txt__msg_16p></span></td></tr>
+<tr><td>命名文字</td><td><input type=number   id=idx_name_16p value=0 min=0 max=  438 onchange=idx_name_16p_onchange() pattern=[0-9]*></td><td><canvas id=cvs_name_16p width=16 height=14></canvas> <span id=txt_name_16p></span></td></tr>
+<tr><td>面板刷新</td><td><input type=checkbox id=refresh checked></td><td><input type=button onclick=location.reload() value=重新整理></td></tr>
+<tr><td>劇本索引</td><td><input type=number   id=scenario_idx value=0 min=0 max=79386 onchange=scenario_idx_onchange() pattern=[0-9]*></td></tr>
+<tr><td>劇本數值</td><td><input type=number   id=scenario_fix value=0 min=0 max=  256 onchange=scenario_fix_onchange() pattern=[0-9]*></td></tr>
 </table><h2>下載專區</h2><div id=buttons style="width:500px"></div><p id=eula></p><p>Author: Regan Lu</p><p>Sponsor: Yuxio Tseng</p>
 <script>
 function	onchange_16p(canvas, get, idx, palette){
