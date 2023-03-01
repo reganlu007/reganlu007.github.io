@@ -23,7 +23,7 @@ for(var n = 0 ; n  < tmp[5]; n++){
 };	decode_kaodata=(x)=>__code_kaodata(x,8,3);
 	encode_kaodata=(x)=>__code_kaodata(x,3,8);
 	get__kaodata = decode_kaodata(kaodata_dat);
-	     kao_ibm = kaoibm_dat;
+	kao_ibm_dat  = kaoibm_dat;
 	get__kao_ibm = decode_kaodata(kao_ibm_dat);
 	dec__hexdata = (arr) => {
 	tmp = {};
