@@ -29,7 +29,7 @@ function rm(x){ count = 0; I = 13; J = I - 1;
 	for(	j=0;j<J;j++	){
 	index = c + i + I * j;
 	y.innerHTML += '<div class="x"><canvas id=map'+index+' width=32px height=32px></canvas><div class=c><b>' 
-	+ (mapdata[index+map_len] < 1 ? '': window.location.href.split('?')[1].toLowerCase()=='show=hide' ? '' : mapdata[index+map_len])
+	+ (mapdata[index+map_len] < 1 ? '': window.location.href.split('?')[1]=='show=hide' ? '' : mapdata[index+map_len])
 	+ '</b></div></div>'; }
 	}
 }
