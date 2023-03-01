@@ -88,27 +88,27 @@ var tmp = [
 //-->
 </script>
 <script>
-var temp = '[scenario_val.value].'; var para = ['.劇本', temp + '勢力', temp + '城市', temp + '人物'],
+var	temp = '[scenario_val.value].'; var para = ['.劇本', temp + '勢力', temp + '城市', temp + '人物'],
 	type = 'application/octet-stream';
-function scenario_val_onclick (){scenario_val.value%=scenario_val.max;console_clear();tData(para[0]);}
-function rulerAll_val_onclick (){rulerAll_val.value%=rulerAll_val.max;console_clear();tData(para[1]);}
-function province_val_onclick (){province_val.value%=province_val.max;console_clear();tData(para[2]);}
-function officers_val_onclick (){officers_val.value%=officers_val.max;console_clear();tData(para[3]);}
-function scenario_val_onchange(){scenario_val.value%=scenario_val.max;console_clear();tData(para[0]+'[scenario_val.value]');tData(para[1]);}
-function rulerAll_val_onchange(){rulerAll_val.value%=rulerAll_val.max;console_clear();tData(para[1]+'[rulerAll_val.value]');officers_val.value=rulerAll_val.value;tData(para[3]+'[officers_val.value]');}
-function province_val_onchange(){province_val.value%=province_val.max;console_clear();tData(para[2]+'[province_val.value]');}
-function officers_val_onchange(){officers_val.value%=officers_val.max;console_clear();tData(para[3]+'[officers_val.value]');}
-function scenario_idx_onchange(){scenario_idx.value%=scenario_idx.max;console.log('scenario_dat['+scenario_idx.value+'] = '+(scenario_fix.             value =scenario_dat[scenario_idx.value]));}
-function scenario_fix_onchange(){scenario_fix.value%=scenario_fix.max;console.log('scenario_dat['+scenario_idx.value+'] = '+(scenario_dat[scenario_idx.value]=scenario_fix.             value ));}
-function console_clear(){if(refresh.checked)console.clear();}
-function tData(x){eval("console." + (window.document.documentMode ? "log" : "table") + "(scenarioJson" + x + ")"); }
-function download(blob, download){
-var a          = window.document.createElement("a");
-	a.href     = window.URL.createObjectURL(new Blob([typeof blob === "string" ? blob : new Uint8Array(blob)],{type}));
-	a.download = download;
+function	scenario_val_onclick (){scenario_val.value%=scenario_val.max;console_clear();tData(para[0]);}
+function	rulerAll_val_onclick (){rulerAll_val.value%=rulerAll_val.max;console_clear();tData(para[1]);}
+function	province_val_onclick (){province_val.value%=province_val.max;console_clear();tData(para[2]);}
+function	officers_val_onclick (){officers_val.value%=officers_val.max;console_clear();tData(para[3]);}
+function	scenario_val_onchange(){scenario_val.value%=scenario_val.max;console_clear();tData(para[0]+'[scenario_val.value]');tData(para[1]);}
+function	rulerAll_val_onchange(){rulerAll_val.value%=rulerAll_val.max;console_clear();tData(para[1]+'[rulerAll_val.value]');officers_val.value=rulerAll_val.value;tData(para[3]+'[officers_val.value]');}
+function	province_val_onchange(){province_val.value%=province_val.max;console_clear();tData(para[2]+'[province_val.value]');}
+function	officers_val_onchange(){officers_val.value%=officers_val.max;console_clear();tData(para[3]+'[officers_val.value]');}
+function	scenario_idx_onchange(){scenario_idx.value%=scenario_idx.max;console.log('scenario_dat['+scenario_idx.value+'] = '+(scenario_fix.             value =scenario_dat[scenario_idx.value]));}
+function	scenario_fix_onchange(){scenario_fix.value%=scenario_fix.max;console.log('scenario_dat['+scenario_idx.value+'] = '+(scenario_dat[scenario_idx.value]=scenario_fix.             value ));}
+function	console_clear(){if(refresh.checked)console.clear();}
+function	tData(x){eval("console." + (window.document.documentMode ? "log" : "table") + "(scenarioJson" + x + ")"); }
+function	download(blob, download){
+var	a		= window.document.createElement("a");
+	a.href		= window.URL.createObjectURL(new Blob([typeof blob === "string" ? blob : new Uint8Array(blob)],{type}));
+	a.download	= download;
 	window.document.body.appendChild(a);
 	a.click();
 	window.document.body.removeChild(a);
-}	eula.innerHTML = "Copyright &copy; " + new Date().getFullYear() + ", All Rights Reserved.";
+}	eula.innerHTML	= "Copyright &copy; " + new Date().getFullYear() + ", All Rights Reserved.";
 	console.table(scenarioJson);
 </script>
