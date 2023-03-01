@@ -1,0 +1,32 @@
+<!DOCTYPE html> <meta charset=utf-8>
+ <style>
+body { margin: 0;  padding: 0; }
+  .x { height: 30px; width: 30px; display: flex; justify-content: center;/*水平置中*/ align-items: center; /*垂直置中*/ background-color: white; }
+</style>
+<script>
+function  $(x){    return document.getElementById(x); }
+function r0(x){ document.write('<table height='  +x * 360+'></table>'); }
+function r1(x){ document.write('</td><td>'); r0(x); }
+function rt(x){ document.write('<table id=table_'+x+' cellpadding=0 cellspacing=0><tr id='+x+'></tr></table>'); rm(x); $('table_'+x).style.marginTop='-30px'; }
+function rm(x){ count = 0; I = 13; J = I - 1;
+	for (i = 0; i < I; i++){
+	c =  (x.slice(1) - 1) * I * J;
+	z =   x + '_' + i;
+		$(x).innerHTML += '<td id=' + z + '></td>';
+	y =	$(z);
+	if  ( i%2 === 1  ){ y.innerHTML += '<div class="x"></div>'; }
+	for ( j=0;j<J;j++){ y.innerHTML += '<div class="x">' + (c + i + I * j) + '</div>'; }
+	}
+}
+</script>
+<center>
+<table id=table_00 cellpadding=0 cellspacing=0><tr><td><script>
+rt('a15');rt('a14');
+r1(  5  );rt('a13');rt('a30');rt('a33');rt('a35');
+r1(  5  );rt('a12');rt('a29');rt('a32');rt('a34');rt('a36');
+r1(  2  );rt('a04');rt('a05');rt('a11');rt('a20');rt('a31');rt('a40');rt('a41');
+r1(  1  );rt('a03');rt('a07');rt('a10');rt('a19');rt('a21');rt('a23');rt('a39');
+r1(  0  );rt('a02');rt('a06');rt('a09');rt('a17');rt('a28');rt('a22');rt('a38');
+r1(  0  );rt('a01');r0(  1  );rt('a08');rt('a16');rt('a18');rt('a27');rt('a37');r0(  1  );
+r1(  2  );rt('a24');rt('a25');rt('a26');</script></td>
+</tr></table>
