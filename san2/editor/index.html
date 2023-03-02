@@ -26,7 +26,8 @@
 <tr><td>城市編號</td><td><input type=number   id=province_val value=0 min=0 max=   41 onchange=province_val_onchange() pattern=[0-9]*></td><td><input type=button onclick =province_val_onclick() value=城市訊息></td></tr>
 <tr><td>人物編號</td><td><input type=number   id=officers_val value=0 min=0 max=  150 onchange=officers_val_onchange() pattern=[0-9]*></td><td><input type=button onclick =officers_val_onclick() value=人物訊息></td></tr>
 <tr><td>人物頭像</td><td><input type=number   id=idx__kaodata value=0 min=0 max=  438 onchange=idx__kaodata_onchange() pattern=[0-9]*></td><td><canvas id=cvs__kaodata width=64 height=80></canvas> <span id=txt__kaodata></span></td></tr>
-<tr><td>水滸頭像</td><td><input type=number   id=idx__kao_ibm value=0 min=0 max=  520 onchange=idx__kao_ibm_onchange() pattern=[0-9]*></td><td><canvas id=cvs__kao_ibm width=64 height=80></canvas> <span id=txt__kao_ibm></span></td></tr>
+<tr><td>水滸頭像</td><td><input type=number   id=idx__kao_ibm value=0 min=0 max=  520 onchange=idx__kao_ibm_onchange() pattern=[0-9]*></td><td><canvas id=cvs__kao_ibm width=64 height=80></canvas> </td></tr>
+<tr><td>其他頭像</td><td><input type=number   id=idxOtherData value=0 min=0 max=  520 onchange=idxOtherData_onchange() pattern=[0-9]*></td><td><canvas id=cvsOtherData width=64 height=80></canvas> </td></tr>
 <tr><td>系統文字</td><td><input type=number   id=idx__msg_16p value=0 min=0 max=  438 onchange=idx__msg_16p_onchange() pattern=[0-9]*></td><td><canvas id=cvs__msg_16p width=16 height=14></canvas> <span id=txt__msg_16p></span></td></tr>
 <tr><td>命名文字</td><td><input type=number   id=idx_name_16p value=0 min=0 max=  438 onchange=idx_name_16p_onchange() pattern=[0-9]*></td><td><canvas id=cvs_name_16p width=16 height=14></canvas> <span id=txt_name_16p></span></td></tr>
 <tr><td>面板刷新</td><td><input type=checkbox id=refresh checked></td><td><input type=button onclick=location.reload() value=重新整理></td></tr>
@@ -34,29 +35,30 @@
 <tr><td>劇本數值</td><td><input type=number   id=scenario_fix value=0 min=0 max=  256 onchange=scenario_fix_onchange() pattern=[0-9]*></td></tr>
 </table><h2>下載專區</h2><div id=buttons style="width:500px"></div><p id=eula></p><p>Author: Regan Lu</p><p>Sponsor: Yuxio Tzeng</p>
 <script>
-function	onchange_16p(canvas, get, idx, palette){
-	var	cvs=document.getElementById(canvas);
-	var	c16=cvs.id.includes('16p');
-	var	ctx=cvs.getContext ( '2d');
-		idx.value %= c16 ? idx.max: idx.max / 2;
-	var	fst=cvs.width * cvs.height / 2 * idx.value;
-	var	lst=cvs.width * cvs.height / 2 + fst;
-	var	chr=c16 ? get[idx.value].value : get.slice(fst, lst);
-for(	var	i  = 0; i < chr.length; i++){
-		ctx.fillStyle = palette[chr[i]];
-		ctx.fillRect(i % cvs.width, Math.floor(i / cvs.width) * (1 + !c16), 1, (1 + !c16));
-}}		idx__msg_16p.max = Object.keys(get__msg_16p).length;
+function	onchange_pic(canvas, get, idx, palette, extend, extend2){
+	cvs=document.getElementById(canvas);
+	c16=cvs.id.includes('16p');
+	ctx=cvs.getContext ( '2d');
+	idx.value  %= idx.max / extend2;
+	tmp=cvs.width * cvs.height / extend;
+	lst=fst=tmp * idx.value;
+	lst   +=tmp;
+	chr=c16?get[idx.value].value : get.slice(fst, lst);
+	Array.from(Array(chr.length).keys()).map(i => { ctx.fillStyle = palette[chr[i]]; ctx.fillRect(i % cvs.width, Math.floor(i / cvs.width) * extend, 1, extend);});
+}		idx__msg_16p.max = Object.keys(get__msg_16p).length;
 		idx_name_16p.max = Object.keys(get_name_16p).length;
-		palette = ['#fff','#000'];
-function	idx__msg_16p_onchange(){ onchange_16p('cvs__msg_16p', get__msg_16p, idx__msg_16p, palette); txt__msg_16p.innerHTML =     msg_16p_dic[idx__msg_16p.value] || ''; }
+		palette = [['#fff','#000'],['#000','#5f5','#f55','#ff5','#55f','#5ff','#f5f','#fff'],[]];
+function	idx__msg_16p_onchange(){ onchange_pic('cvs__msg_16p', get__msg_16p, idx__msg_16p, palette[0], 1, 1); txt__msg_16p.innerHTML =     msg_16p_dic[idx__msg_16p.value] || ''; }
 		idx__msg_16p_onchange();
-function	idx_name_16p_onchange(){ onchange_16p('cvs_name_16p', get_name_16p, idx_name_16p, palette); txt_name_16p.innerHTML =    name_16p_dic[idx_name_16p.value] || ''; }
+function	idx_name_16p_onchange(){ onchange_pic('cvs_name_16p', get_name_16p, idx_name_16p, palette[0], 1, 1); txt_name_16p.innerHTML =    name_16p_dic[idx_name_16p.value] || ''; }
 		idx_name_16p_onchange();
-		palette = ['#000','#5f5','#f55','#ff5','#55f','#5ff','#f5f','#fff'];
-function	idx__kaodata_onchange(){ onchange_16p('cvs__kaodata', get__kaodata, idx__kaodata, palette); txt__kaodata.innerHTML = kaodata_dat_dic[idx__kaodata.value] || ''; }
+function	idx__kaodata_onchange(){ onchange_pic('cvs__kaodata', get__kaodata, idx__kaodata, palette[1], 2, 2); txt__kaodata.innerHTML = kaodata_dat_dic[idx__kaodata.value] || ''; }
 		idx__kaodata_onchange();
-function	idx__kao_ibm_onchange(){ onchange_16p('cvs__kao_ibm', get__kao_ibm, idx__kao_ibm, palette); txt__kao_ibm.innerHTML = kao_ibm_dat_dic[idx__kao_ibm.value] || ''; }
+function	idx__kao_ibm_onchange(){ onchange_pic('cvs__kao_ibm', get__kao_ibm, idx__kao_ibm, palette[1], 2, 2); }
 		idx__kao_ibm_onchange();
+		getOtherData = [];
+function	idxOtherData_onchange(){ onchange_pic('cvsOtherData', getOtherData, idxOtherData, palette[2], 1, 1); }
+		idxOtherData_onchange();
 </script>
 <script>
 //<!--	批次生成按鈕
