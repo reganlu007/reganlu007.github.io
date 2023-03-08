@@ -14,6 +14,8 @@
 <script   src=montage.s3.js></script>
 <center>
 <p>
+<button onclick=to(+0)>第一張</button>
+<button onclick=go(-1)>上一張</button>
 <select    id=kao_set onchange=kao_set_onchange()>
 <option value=kaodata_s1 >三國志一</option>
 <option value=kaodata_s2 >三國志二</option>
@@ -25,24 +27,29 @@
 <option value=kaodatap_s5>三國志五</option>
 <option value=kaoex_s5   >三國志五：特殊臉譜</option>
 </select>
+<input        id=kao_idx type=number value=0 min=0 max=0 onchange=to(this.value);>
+<button  onclick=go(-1+2)>下一張</button>
+<button  onclick=to(-1+Math.round(kaodata.scrollHeight/kaodata.rows/16))>最末張</button>
 </p>
-<textarea  id=kaodata cols=64 rows=80></textarea>
-<script>	alert('請用 chrome / edge 縮放至 50% 進行閱覽');
-			kao_set.style.fontSize = 'xx-large';
-function	kao_set_onchange(){
-			alert('頭像讀取開始...');
-	switch(	kao_set.value){
-	case	'kaodata_s1'	:kaodata.value=decode(kaodata_s1	,2,48);break;
-	case	'kaodata_s2'	:kaodata.value=decode(kaodata_s2	,3,64);break;
-	case	'kaodata_s3'	:kaodata.value=decode(kaodata_s3	,3,64);break;
-	case	'kaodata_s4'	:kaodata.value=decode(kaodata_s4	,3,64);break;
-	case	'kaodata_s5'	:kaodata.value=decode(kaodata_s5	,3,64);break;
-	case	'kaodatap_s4'	:kaodata.value=decode(kaodatap_s4	,3,64);break;
-	case	'kaodata2_s4'	:kaodata.value=decode(kaodata2_s4	,3,64);break;
-	case	'kaodatap_s5'	:kaodata.value=decode(kaodatap_s5	,3,64);break;
-	case	'kaoex_s5'		:kaodata.value=decode(kaoex_s5		,3,64);break;
-	case	'montage_s2'	:kaodata.value=decode(montage_s2	,3,64);break;
-	case	'montage_s3'	:kaodata.value=decode(montage_s3	,3,64);break;
-	}		alert('頭像讀取完畢！');
-}			kao_set_onchange();
+<textarea     id=kaodata cols=64 rows=80></textarea>
+<script>alert ( '請用 chrome / edge 縮放至 50% 進行閱覽');
+//               kao_set.style.fontSize='xx-large';
+function         kao_set_onchange(){
+        alert ( '頭像讀取開始...' );
+	switch(  kao_set.value){
+	case    'kaodata_s1'     :kaodata.cols=48;kaodata.rows=40;kaodata.value=decode(kaodata_s1 ,2,kaodata.cols);kao_idx.max=kaodata.value.split('\n').length/kaodata.rows-1;break;
+	case    'kaodata_s2'     :kaodata.cols=64;kaodata.rows=40;kaodata.value=decode(kaodata_s2 ,3,kaodata.cols);kao_idx.max=kaodata.value.split('\n').length/kaodata.rows-1;break;
+	case    'kaodata_s3'     :kaodata.cols=64;kaodata.rows=80;kaodata.value=decode(kaodata_s3 ,3,kaodata.cols);kao_idx.max=kaodata.value.split('\n').length/kaodata.rows-1;break;
+	case    'kaodata_s4'     :kaodata.cols=64;kaodata.rows=80;kaodata.value=decode(kaodata_s4 ,3,kaodata.cols);kao_idx.max=kaodata.value.split('\n').length/kaodata.rows-1;break;
+	case    'kaodata_s5'     :kaodata.cols=64;kaodata.rows=80;kaodata.value=decode(kaodata_s5 ,3,kaodata.cols);kao_idx.max=kaodata.value.split('\n').length/kaodata.rows-1;break;
+	case    'kaodatap_s4'    :kaodata.cols=64;kaodata.rows=80;kaodata.value=decode(kaodatap_s4,3,kaodata.cols);kao_idx.max=kaodata.value.split('\n').length/kaodata.rows-1;break;
+	case    'kaodata2_s4'    :kaodata.cols=64;kaodata.rows=80;kaodata.value=decode(kaodata2_s4,3,kaodata.cols);kao_idx.max=kaodata.value.split('\n').length/kaodata.rows-1;break;
+	case    'kaodatap_s5'    :kaodata.cols=64;kaodata.rows=80;kaodata.value=decode(kaodatap_s5,3,kaodata.cols);kao_idx.max=kaodata.value.split('\n').length/kaodata.rows-1;break;
+	case    'kaoex_s5'       :kaodata.cols=64;kaodata.rows=80;kaodata.value=decode(kaoex_s5   ,3,kaodata.cols);kao_idx.max=kaodata.value.split('\n').length/kaodata.rows-1;break;
+	case    'montage_s2'     :kaodata.cols=64;kaodata.rows=40;kaodata.value=decode(montage_s2 ,3,kaodata.cols);kao_idx.max=kaodata.value.split('\n').length/kaodata.rows-1;break;
+	case    'montage_s3'     :kaodata.cols=64;kaodata.rows=80;kaodata.value=decode(montage_s3 ,3,kaodata.cols);kao_idx.max=kaodata.value.split('\n').length/kaodata.rows-1;break;
+}       alert ( '頭像讀取完畢！' );kaodata.scrollTop=0;kao_idx.value=0;}
+                 kao_set_onchange();
+function go(x){  kao_idx.value=1*x+kao_idx.value*1;kaodata.scrollTop+=x*kaodata.rows*16;}
+function to(x){  kao_idx.value=1*x                ;kaodata.scrollTop =x*kaodata.rows*16;}
 </script>
