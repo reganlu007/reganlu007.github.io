@@ -1,56 +1,48 @@
+<meta charset=utf-8>
 <title>三國志：歷代顏</title>
-<script src=decode.js></script>
-<script src=kaodata.s1.js></script>
-<script src=kaodata.s2.js></script>
-<script src=kaodata.s3.js></script>
-<script src=kaodata.s4.js></script>
-<script src=kaodata2.s4.js></script>
-<script src=kaodatap.s4.js></script>
-<script src=kaodatap.s5.js></script>
-<script src=kaoex.s5.js></script>
-<script src=montage.s2.js></script>
-<script src=montage.s3.js></script>
+<script   src=decode.js></script>
+<script   src=kaodata.s1.js></script>
+<script   src=kaodata.s2.js></script>
+<script   src=kaodata.s3.js></script>
+<script   src=kaodata.s4.js></script>
+<script   src=kaodata.s5.js></script>
+<script   src=kaodata2.s4.js></script>
+<script   src=kaodatap.s4.js></script>
+<script   src=kaodatap.s5.js></script>
+<script   src=kaoex.s5.js></script>
+<script   src=montage.s2.js></script>
+<script   src=montage.s3.js></script>
 <center>
-<table>
-<tr>
-<th>San1</th>
-<th>San2</th>
-<th>San3</th>
-<th>San4</th>
-<th>San5</th>
-</tr>
-<tr>
-<td valign=top><textarea id=ta_kaodata_s1  cols=48 rows=40></textarea></td>
-<td valign=top><textarea id=ta_kaodata_s2  cols=64 rows=40></textarea></td>
-<td valign=top><textarea id=ta_kaodata_s3  cols=64 rows=80></textarea></td>
-<td valign=top><textarea id=ta_kaodatap_s4 cols=64 rows=80></textarea></textarea></td>
-<td valign=top><textarea id=ta_kaodatap_s5 cols=64 rows=80></textarea></td>
-</tr>
-<tr>
-<th>San1</th>
-<th>San2</th>
-<th>San3</th>
-<th>San4</th>
-<th>San5</th>
-</tr>
-<tr>
-<td valign=top></td>
-<td valign=top><textarea id=ta_montage_s2  cols=64 rows=80></textarea></td>
-<td valign=top><textarea id=ta_montage_s3  cols=64 rows=80></textarea></td>
-<td valign=top><textarea id=ta_kaodata2_s4 cols=64 rows=80></textarea></td>
-<td valign=top><textarea id=ta_kaoex_s5    cols=64 rows=80></textarea></td>
-</tr>
-</table>
-<script>count = 1000;
-	try{setTimeout(ta_kaodata_s1 .value = decode(kaodata_s1 ,2,48),count);count+=1000;}catch{}
-	try{setTimeout(ta_kaodata_s2 .value = decode(kaodata_s2 ,3,64),count);count+=1000;}catch{}
-	try{setTimeout(ta_montage_s2 .value = decode(montage_s2 ,3,64),count);count+=1000;}catch{}
-	try{setTimeout(ta_kaodata_s3 .value = decode(kaodata_s3 ,3,64),count);count+=1000;}catch{}
-	try{setTimeout(ta_montage_s3 .value = decode(montage_s3 ,3,64),count);count+=1000;}catch{}
-//	try{setTimeout(ta_kaodata_s4 .value = decode(kaodata_s4 ,3,64),count);count+=1000;}catch{}
-	try{setTimeout(ta_kaodatap_s4.value = decode(kaodatap_s4,3,64),count);count+=1000;}catch{}
-	try{setTimeout(ta_kaodata2_s4.value = decode(kaodata2_s4,3,64),count);count+=1000;}catch{}
-//	try{setTimeout(ta_kaodata_s5 .value = decode(kaodata_s4 ,3,64),count);count+=1000;}catch{}
-	try{setTimeout(ta_kaodatap_s5.value = decode(kaodatap_s5,3,64),count);count+=1000;}catch{}
-	try{setTimeout(ta_kaoex_s5   .value = decode(kaoex_s5   ,3,64),count);count+=1000;}catch{}
+<p>
+<select    id=kao_set onchange=kao_set_onchange()>
+<option value=kaodata_s1 >三國志一</option>
+<option value=kaodata_s2 >三國志二</option>
+<option value=montage_s2 >三國志二：特殊臉譜</option>
+<option value=kaodata_s3 >三國志三</option>
+<option value=montage_s3 >三國志三：特殊臉譜</option>
+<option value=kaodatap_s4>三國志四</option>
+<option value=kaodata2_s4>三國志四：特殊臉譜</option>
+<option value=kaodatap_s5>三國志五</option>
+<option value=kaoex_s5   >三國志五：特殊臉譜</option>
+</select>
+</p>
+<textarea  id=kaodata cols=64 rows=80></textarea>
+<script>	alert('請用 chrome / edge 縮放至 50% 進行閱覽');
+			kao_set.style.fontSize = 'xx-large';
+function	kao_set_onchange(){
+			alert('頭像讀取開始...');
+	switch(	kao_set.value){
+	case	'kaodata_s1'	:kaodata.value=decode(kaodata_s1	,2,48);break;
+	case	'kaodata_s2'	:kaodata.value=decode(kaodata_s2	,3,64);break;
+	case	'kaodata_s3'	:kaodata.value=decode(kaodata_s3	,3,64);break;
+	case	'kaodata_s4'	:kaodata.value=decode(kaodata_s4	,3,64);break;
+	case	'kaodata_s5'	:kaodata.value=decode(kaodata_s5	,3,64);break;
+	case	'kaodatap_s4'	:kaodata.value=decode(kaodatap_s4	,3,64);break;
+	case	'kaodata2_s4'	:kaodata.value=decode(kaodata2_s4	,3,64);break;
+	case	'kaodatap_s5'	:kaodata.value=decode(kaodatap_s5	,3,64);break;
+	case	'kaoex_s5'		:kaodata.value=decode(kaoex_s5		,3,64);break;
+	case	'montage_s2'	:kaodata.value=decode(montage_s2	,3,64);break;
+	case	'montage_s3'	:kaodata.value=decode(montage_s3	,3,64);break;
+	}		alert('頭像讀取完畢！');
+}			kao_set_onchange();
 </script>
