@@ -1,28 +1,28 @@
 <meta charset=utf-8>
 <title>Koei 頭像檢視器</title>
 <table>
-	<tr><td  colspan=2> 頭像 <input id=upload onchange="file='';loading.innerHTML='資料讀取中...';upload(event)" type=file></td></tr>
-	<tr><td valign=top><p id=loading></p>
-	<br> 群組 <input id=group  onchange=upload(event) type=number  value=16 max=9999 min=1>
-	<br> 移除 <input id=skip01 onchange=upload(event) type=number  value=0  max=9999 min=-999>
-	<br> 擷取 <input id=skip02 onchange=upload(event) type=number  value=0  max=9999 min=-999>
-	<br> 寬度 <input id=width  onchange=upload(event) type=number  value=64 max=9999 min=1>
-	<br> 高度 <input id=height onchange=upload(event) type=number  value=80 max=9999 min=1>
-	<br> 延展 <input id=extend onchange=upload(event) type=number  value=1  max=9999 min=1>
-	<br> 色階 <input id=color0 onchange=upload(event) type=number  value=3  max=9999 min=1>
-	<br> 色１ <input id=color1 onchange=upload(event) type=color   value=#000000>
-	<br> 色２ <input id=color2 onchange=upload(event) type=color   value=#55FF55>
-	<br> 色３ <input id=color3 onchange=upload(event) type=color   value=#FF5555>
-	<br> 色４ <input id=color4 onchange=upload(event) type=color   value=#FFFF55>
-	<br> 色５ <input id=color5 onchange=upload(event) type=color   value=#5555FF>
-	<br> 色６ <input id=color6 onchange=upload(event) type=color   value=#55FFFF>
-	<br> 色７ <input id=color7 onchange=upload(event) type=color   value=#FF55FF>
-	<br> 色８ <input id=color8 onchange=upload(event) type=color   value=#FFFFFF>
-	<br></td><td valign=top rowspan=12><canvas id=canvas hidden></canvas><img id=img></td>
-	</tr>
+	<tr><td  colspan=2>
+	連結 <input id=_url onchange=upload(event)><br>
+	檔案 <input onchange=upload(event) type=file></td></tr><tr><td valign=top><p id=loading></p>
+	群組 <input onchange=update(event) type=number id=group  value=16 max=9999 min=1   ><br>
+	移除 <input onchange=update(event) type=number id=skip01 value=0  max=9999 min=-999><br>
+	擷取 <input onchange=update(event) type=number id=skip02 value=0  max=9999 min=-999><br>
+	寬度 <input onchange=update(event) type=number id=width  value=64 max=9999 min=1   ><br>
+	高度 <input onchange=update(event) type=number id=height value=80 max=9999 min=1   ><br>
+	延展 <input onchange=update(event) type=number id=extend value=1  max=9999 min=1   ><br>
+	色階 <input onchange=update(event) type=number id=color0 value=3  max=9999 min=1   ><br>
+	色１ <input onchange=update(event) type=color  id=color1><br>
+	色２ <input onchange=update(event) type=color  id=color2><br>
+	色３ <input onchange=update(event) type=color  id=color3><br>
+	色４ <input onchange=update(event) type=color  id=color4><br>
+	色５ <input onchange=update(event) type=color  id=color5><br>
+	色６ <input onchange=update(event) type=color  id=color6><br>
+	色７ <input onchange=update(event) type=color  id=color7><br>
+	色８ <input onchange=update(event) type=color  id=color8><br>
+	</td><td valign=top rowspan=12><canvas id=canvas hidden></canvas><img id=img></td></tr>
 </table>
 <script>
-file='';
+file ='';
 query={};
 location.href.split('?')[1]?.split('&').forEach((v, i) => { [key, value] = v.split(/=(.*)/g); query[key.toLowerCase()] = value; });
 $    =(x)=>document.getElementById(x);
@@ -32,7 +32,7 @@ reset('width' ,64);
 reset('height',80);
 reset('extend', 1);
 reset('skip01', 0);
-reset('skip02', 0);
+reset('skip02', 1);
 reset('color0', 3);
 reset('color1','#000000');
 reset('color2','#55FF55');
@@ -44,15 +44,28 @@ reset('color7','#FF55FF');
 reset('color8','#FFFFFF');
 hex2dec=(x)=>    x.slice(1).replace(/.{2}/g,'$&,').split(',').slice(0,3).map(x=>parseInt(x,16));
 dec2hex=(x)=>'#'+x.map(x=>x.toString(16)).join('');
-upload=(event)=>{
-	if(!file) file = event.target.files[0];
-	if(	event.target && !!file){
+upload=(event)=>{  file = ''; loading.innerHTML = '資料讀取中...'; update(event); }
+update=(event)=>{
+		loading.innerHTML = '取得資料中...';
+		file = !!_url.value ? _url.value : file;
+	if(  !file) {file = event.target.files[0] || ''; }
+	if((!!file && event.target)) {
+		loading.innerHTML = '連結解析中...';
+		if(!!_url.value)	{
+			type =     (file.split(',')[0]).match(/:(.*?);/) || '';
+			type =    !!type? type[1] : type;
+			bstr = atob(file.split(',')[1] || file);
+			   n = bstr.length;
+			file = new Uint8Array(n);
+			while (n--)file[n] = bstr.charCodeAt(n);
+			file = new File([file],'',{type});
+		}
 		loading.innerHTML = '資料解析中...';
-		reader = new FileReader();
+		reader = new FileReader ();
 		reader.readAsArrayBuffer(file);
 		reader.onload = (event) => {
 			loading.innerHTML = '確認畫布的大小...';
-			kaodata      = width.value * height.value*3/8/extend.value;
+			kaodata      =            width.value * height.value*3/8/extend.value;
 			canvas.width = Math.ceil( width.value * group .value);
 			result=event.target.result;
 			result=result.slice(1+kaodata * skip01.value-1);
