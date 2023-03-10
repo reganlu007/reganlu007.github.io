@@ -19,6 +19,7 @@
 	色６ <input onchange=update(event) type=color  id=color6><br>
 	色７ <input onchange=update(event) type=color  id=color7><br>
 	色８ <input onchange=update(event) type=color  id=color8><br>
+	<br>Made by<br>Yuxio Tseng<br>and<br>Regan Lu
 	</td><td valign=top rowspan=12><canvas id=canvas hidden></canvas><img id=img></td></tr>
 </table>
 <script>
@@ -65,11 +66,11 @@ update=(event)=>{
 		reader.readAsArrayBuffer(file);
 		reader.onload = (event) => {
 			loading.innerHTML = '確認畫布的大小...';
-			kaodata      =            width.value * height.value*3/8/extend.value;
-			canvas.width = Math.ceil( width.value * group .value);
+			kaodata     =             width.value * height.value*color0.value/extend.value/8;
+			canvas.width=  Math.ceil( width.value * group .value);
 			result=event.target.result;
-			result=result.slice(1+kaodata * skip01.value-1);
-			result=result.slice(0,kaodata * skip02.value-1);
+			result=result.slice(1+kaodata*skip01.value-1);
+			result=result.slice(0,kaodata*skip02.value-1);
 			canvas_height = Math.ceil(result.byteLength / kaodata);
 			canvas.height = Math.ceil(canvas_height / group.value)*(height.value);
 			loading.innerHTML = '頭像上色中...';
@@ -97,7 +98,7 @@ dataToImage=(data)=>{
 		palette.push(hex2dec(color6.value));
 		palette.push(hex2dec(color7.value));
 		palette.push(hex2dec(color8.value));
-		c = palette[p_index[i]];
+	c = palette[p_index[i]];
 		idx = 4 * ((extend.value * y - 1) * width.value + x);
 		for(let j in [0,0]){
 			idx+= 4 * width .value;
@@ -110,8 +111,8 @@ dataToImage=(data)=>{
 	return	imageData;
 };
 getColorIndex=(data)=>{ let z = []; grouper(data,color0.value*1).forEach(x=>{
-	Array(             8).fill(0).map((_,x)=>x).map(i=>{n =0;
-	Array(color0.value*1).fill(0).map((_,x)=>x).map(j=>{n|=(((x[j]>>(8-1-i))&1)<<(color0.value*1-1-j));
+	Array(             8).fill(0).map((_,y)=>y).map(i=>{n =0;
+	Array(color0.value*1).fill(0).map((_,z)=>z).map(j=>{n|=(((x[j]>>(8-1-i))&1)<<(color0.value*1-1-j));
 	}); z.push(n);
 	});
 	}); return z;
