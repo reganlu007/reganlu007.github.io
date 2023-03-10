@@ -1,55 +1,120 @@
 <meta charset=utf-8>
-<title>三國志：歷代顏</title>
-<script   src=decode.js></script>
-<script   src=kaodata.s1.js></script>
-<script   src=kaodata.s2.js></script>
-<script   src=kaodata.s3.js></script>
-<script   src=kaodata.s4.js></script>
-<script   src=kaodata.s5.js></script>
-<script   src=kaodata2.s4.js></script>
-<script   src=kaodatap.s4.js></script>
-<script   src=kaodatap.s5.js></script>
-<script   src=kaoex.s5.js></script>
-<script   src=montage.s2.js></script>
-<script   src=montage.s3.js></script>
-<center>
-<p>
-<button onclick=to(+0)>第一張</button>
-<button onclick=go(-1)>上一張</button>
-<select    id=kao_set onchange=kao_set_onchange()>
-<option value=kaodata_s1 >三國志一</option>
-<option value=kaodata_s2 >三國志二</option>
-<option value=montage_s2 >三國志二：特殊臉譜</option>
-<option value=kaodata_s3 >三國志三</option>
-<option value=montage_s3 >三國志三：特殊臉譜</option>
-<option value=kaodatap_s4>三國志四</option>
-<option value=kaodata2_s4>三國志四：特殊臉譜</option>
-<option value=kaodatap_s5>三國志五</option>
-<option value=kaoex_s5   >三國志五：特殊臉譜</option>
-</select>
-<input        id=kao_idx type=number value=0 min=0 max=0 onchange=to(this.value);>
-<button  onclick=go(-1+2)>下一張</button>
-<button  onclick=to(-1+Math.round(kaodata.scrollHeight/kaodata.rows/16))>最末張</button>
-</p>
-<textarea     id=kaodata cols=64 rows=80></textarea>
-<script>alert ( '請用 chrome / edge 縮放至 50% 進行閱覽');
-//               kao_set.style.fontSize='xx-large';
-function         kao_set_onchange(){
-        alert ( '頭像讀取開始...' );
-	switch(  kao_set.value){
-	case    'kaodata_s1'     :kaodata.cols=48;kaodata.rows=40;kaodata.value=decode(kaodata_s1 ,2,kaodata.cols);kao_idx.max=kaodata.value.split('\n').length/kaodata.rows-1;break;
-	case    'kaodata_s2'     :kaodata.cols=64;kaodata.rows=40;kaodata.value=decode(kaodata_s2 ,3,kaodata.cols);kao_idx.max=kaodata.value.split('\n').length/kaodata.rows-1;break;
-	case    'kaodata_s3'     :kaodata.cols=64;kaodata.rows=80;kaodata.value=decode(kaodata_s3 ,3,kaodata.cols);kao_idx.max=kaodata.value.split('\n').length/kaodata.rows-1;break;
-	case    'kaodata_s4'     :kaodata.cols=64;kaodata.rows=80;kaodata.value=decode(kaodata_s4 ,3,kaodata.cols);kao_idx.max=kaodata.value.split('\n').length/kaodata.rows-1;break;
-	case    'kaodata_s5'     :kaodata.cols=64;kaodata.rows=80;kaodata.value=decode(kaodata_s5 ,3,kaodata.cols);kao_idx.max=kaodata.value.split('\n').length/kaodata.rows-1;break;
-	case    'kaodatap_s4'    :kaodata.cols=64;kaodata.rows=80;kaodata.value=decode(kaodatap_s4,3,kaodata.cols);kao_idx.max=kaodata.value.split('\n').length/kaodata.rows-1;break;
-	case    'kaodata2_s4'    :kaodata.cols=64;kaodata.rows=80;kaodata.value=decode(kaodata2_s4,3,kaodata.cols);kao_idx.max=kaodata.value.split('\n').length/kaodata.rows-1;break;
-	case    'kaodatap_s5'    :kaodata.cols=64;kaodata.rows=80;kaodata.value=decode(kaodatap_s5,3,kaodata.cols);kao_idx.max=kaodata.value.split('\n').length/kaodata.rows-1;break;
-	case    'kaoex_s5'       :kaodata.cols=64;kaodata.rows=80;kaodata.value=decode(kaoex_s5   ,3,kaodata.cols);kao_idx.max=kaodata.value.split('\n').length/kaodata.rows-1;break;
-	case    'montage_s2'     :kaodata.cols=64;kaodata.rows=40;kaodata.value=decode(montage_s2 ,3,kaodata.cols);kao_idx.max=kaodata.value.split('\n').length/kaodata.rows-1;break;
-	case    'montage_s3'     :kaodata.cols=64;kaodata.rows=80;kaodata.value=decode(montage_s3 ,3,kaodata.cols);kao_idx.max=kaodata.value.split('\n').length/kaodata.rows-1;break;
-}       alert ( '頭像讀取完畢！' );kaodata.scrollTop=0;kao_idx.value=0;}
-                 kao_set_onchange();
-function go(x){  kao_idx.value=1*x+kao_idx.value*1;kaodata.scrollTop+=x*kaodata.rows*16;}
-function to(x){  kao_idx.value=1*x                ;kaodata.scrollTop =x*kaodata.rows*16;}
+<title>Koei 頭像檢視器</title>
+<table>
+	<tr><td  colspan=2> 頭像 <input id=upload onchange="file='';loading.innerHTML='資料讀取中...';upload(event)" type=file></td></tr>
+	<tr><td valign=top><p id=loading></p>
+	<br> 群組 <input id=group  onchange=upload(event) type=number  value=16 max=9999 min=1>
+	<br> 移除 <input id=skip01 onchange=upload(event) type=number  value=0  max=9999 min=-999>
+	<br> 擷取 <input id=skip02 onchange=upload(event) type=number  value=0  max=9999 min=-999>
+	<br> 寬度 <input id=width  onchange=upload(event) type=number  value=64 max=9999 min=1>
+	<br> 高度 <input id=height onchange=upload(event) type=number  value=80 max=9999 min=1>
+	<br> 延展 <input id=extend onchange=upload(event) type=number  value=1  max=9999 min=1>
+	<br> 色階 <input id=color0 onchange=upload(event) type=number  value=3  max=9999 min=1>
+	<br> 色１ <input id=color1 onchange=upload(event) type=color   value=#000000>
+	<br> 色２ <input id=color2 onchange=upload(event) type=color   value=#55FF55>
+	<br> 色３ <input id=color3 onchange=upload(event) type=color   value=#FF5555>
+	<br> 色４ <input id=color4 onchange=upload(event) type=color   value=#FFFF55>
+	<br> 色５ <input id=color5 onchange=upload(event) type=color   value=#5555FF>
+	<br> 色６ <input id=color6 onchange=upload(event) type=color   value=#55FFFF>
+	<br> 色７ <input id=color7 onchange=upload(event) type=color   value=#FF55FF>
+	<br> 色８ <input id=color8 onchange=upload(event) type=color   value=#FFFFFF>
+	<br></td><td valign=top rowspan=12><canvas id=canvas hidden></canvas><img id=img></td>
+	</tr>
+</table>
+<script>
+file='';
+query={};
+location.href.split('?')[1]?.split('&').forEach((v, i) => { [key, value] = v.split(/=(.*)/g); query[key.toLowerCase()] = value; });
+$    =(x)=>document.getElementById(x);
+reset=(x,y)=>{ try {$(x).value=!!query[x]?query[x]:y;} catch {$(x).value=y;} }
+reset('group' ,16);
+reset('width' ,64);
+reset('height',80);
+reset('extend', 1);
+reset('skip01', 0);
+reset('skip02', 0);
+reset('color0', 3);
+reset('color1','#000000');
+reset('color2','#55FF55');
+reset('color3','#FF5555');
+reset('color4','#FFFF55');
+reset('color5','#5555FF');
+reset('color6','#55FFFF');
+reset('color7','#FF55FF');
+reset('color8','#FFFFFF');
+hex2dec=(x)=>    x.slice(1).replace(/.{2}/g,'$&,').split(',').slice(0,3).map(x=>parseInt(x,16));
+dec2hex=(x)=>'#'+x.map(x=>x.toString(16)).join('');
+upload=(event)=>{
+	if(!file) file = event.target.files[0];
+	if(	event.target && !!file){
+		loading.innerHTML = '資料解析中...';
+		reader = new FileReader();
+		reader.readAsArrayBuffer(file);
+		reader.onload = (event) => {
+			loading.innerHTML = '確認畫布的大小...';
+			kaodata      = width.value * height.value*3/8/extend.value;
+			canvas.width = Math.ceil( width.value * group .value);
+			result=event.target.result;
+			result=result.slice(1+kaodata * skip01.value-1);
+			result=result.slice(0,kaodata * skip02.value-1);
+			canvas_height = Math.ceil(result.byteLength / kaodata);
+			canvas.height = Math.ceil(canvas_height / group.value)*(height.value);
+			loading.innerHTML = '頭像上色中...';
+			ctx = canvas.getContext("2d");
+			for(let i = 0; i < canvas_height; i++)ctx.putImageData(dataToImage(new Uint8Array(result).slice(kaodata * i, kaodata * i + kaodata)),
+				Math.floor(i % group .value) * width .value,
+				Math.floor(i / group .value) * height.value);
+			loading .innerHTML = '';
+			img.src = canvas.toDataURL();
+		};
+	}
+};
+dataToImage=(data)=>{
+	imageData = new ImageData(width.value, height.value);
+	p_index = getColorIndex(data);
+	for(let i = 0; i < p_index.length; i++) {
+		x = i % width .value;
+		y = Math.floor(i / width .value);
+		palette = [];
+		palette.push(hex2dec(color1.value));
+		palette.push(hex2dec(color2.value));
+		palette.push(hex2dec(color3.value));
+		palette.push(hex2dec(color4.value));
+		palette.push(hex2dec(color5.value));
+		palette.push(hex2dec(color6.value));
+		palette.push(hex2dec(color7.value));
+		palette.push(hex2dec(color8.value));
+		c = palette[p_index[i]];
+		idx = 4 * ((extend.value * y - 1) * width.value + x);
+		for(let j in [0,0]){
+			idx+= 4 * width .value;
+			imageData.data[idx + 0] = c[0]; // red
+			imageData.data[idx + 1] = c[1]; // green
+			imageData.data[idx + 2] = c[2]; // blue
+			imageData.data[idx + 3] =  255; // alpha
+		}
+	}
+	return	imageData;
+};
+getColorIndex=(data)=>{ let z = []; grouper(data,color0.value*1).forEach(x=>{
+	Array(             8).fill(0).map((_,x)=>x).map(i=>{n =0;
+	Array(color0.value*1).fill(0).map((_,x)=>x).map(j=>{n|=(((x[j]>>(8-1-i))&1)<<(color0.value*1-1-j));
+	}); z.push(n);
+	});
+	}); return z;
+};
+grouper=(arr, size, fillValue = null)=>{
+	groups = [];
+	for(let i = 0; i < arr.length; i += size)
+		groups.push(arr.slice(i, i + size));
+	if (fillValue !== null && groups.length * size < arr.length)
+		groups.push([...arr.slice(groups.length * size), ...[size - (arr.length % size)].fill(fillValue)]);
+	return groups;
+};
+openTab=()=>{
+	x = window.open();
+	x.document.open();
+	x.document.write("<body style='margin:0'><iframe src='" + canvas.toDataURL() + "' width=100% height=100% frameborder=0></iframe>");
+	x.document.close();
+}
 </script>
