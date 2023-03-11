@@ -1,25 +1,27 @@
 <meta charset=utf-8>
 <title>Koei 頭像檢視器</title>
 <table>
-	<tr><td  colspan=2>
-	連結 <input id=_url onchange=upload(event)><br>
-	檔案 <input onchange=upload(event) type=file></td></tr><tr><td valign=top><p id=loading></p>
-	群組 <input onchange=update(event) type=number id=group  value=16 max=9999 min=1   ><br>
-	移除 <input onchange=update(event) type=number id=skip01 value=0  max=9999 min=-999><br>
-	擷取 <input onchange=update(event) type=number id=skip02 value=0  max=9999 min=-999><br>
-	寬度 <input onchange=update(event) type=number id=width  value=64 max=9999 min=1   ><br>
-	高度 <input onchange=update(event) type=number id=height value=80 max=9999 min=1   ><br>
-	延展 <input onchange=update(event) type=number id=extend value=1  max=9999 min=1   ><br>
-	色階 <input onchange=update(event) type=number id=color0 value=3  max=9999 min=1   ><br>
-	色１ <input onchange=update(event) type=color  id=color1><br>
-	色２ <input onchange=update(event) type=color  id=color2><br>
-	色３ <input onchange=update(event) type=color  id=color3><br>
-	色４ <input onchange=update(event) type=color  id=color4><br>
-	色５ <input onchange=update(event) type=color  id=color5><br>
-	色６ <input onchange=update(event) type=color  id=color6><br>
-	色７ <input onchange=update(event) type=color  id=color7><br>
-	色８ <input onchange=update(event) type=color  id=color8><br>
-	<br>Made by<br>Yuxio Tseng<br>and<br>Regan Lu
+	<tr><td  colspan=2><p id=loading></p>
+	<br>連結 <input onchange=upload(event) id=_url   placeholder="輸入 base64 連結...">
+	<br>檔案 <input onchange=upload(event)           type=file  ></td></tr><tr><td valign=top>
+	<hr>群組 <input onchange=update(event) id=group  type=number value=16 max=9999 min=1   >
+	<br>移除 <input onchange=update(event) id=skip01 type=number value=0  max=9999 min=-999>
+	<br>擷取 <input onchange=update(event) id=skip02 type=number value=0  max=9999 min=-999>
+	<br>寬度 <input onchange=update(event) id=width  type=number value=64 max=9999 min=1   >
+	<br>高度 <input onchange=update(event) id=height type=number value=80 max=9999 min=1   >
+	<br>延展 <input onchange=update(event) id=extend type=number value=1  max=9999 min=1   >
+	<br>色階 <input onchange=update(event) id=color0 type=number value=3  max=9999 min=1   >
+	<br>色１ <input onchange=update(event) id=color1 type=color >
+	<br>色２ <input onchange=update(event) id=color2 type=color >
+	<br>色３ <input onchange=update(event) id=color3 type=color >
+	<br>色４ <input onchange=update(event) id=color4 type=color >
+	<br>色５ <input onchange=update(event) id=color5 type=color >
+	<br>色６ <input onchange=update(event) id=color6 type=color >
+	<br>色７ <input onchange=update(event) id=color7 type=color >
+	<br>色８ <input onchange=update(event) id=color8 type=color >
+	<hr>系統 <input onclick =set16p(event,15) id=p_0 type=button value=msg_16p>
+	<br>字典 <input onclick =set16p(event,14) id=p_1 type=button value=name16p>
+	<hr>Made by<br>Yuxio Tzeng<br>and<br>Regan Lu
 	</td><td valign=top rowspan=12><canvas id=canvas hidden></canvas><img id=img></td></tr>
 </table>
 <script>
@@ -27,7 +29,7 @@ file ='';
 query={};
 location.href.split('?')[1]?.split('&').forEach((v, i) => { [key, value] = v.split(/=(.*)/g); query[key.toLowerCase()] = value; });
 $    =(x)=>document.getElementById(x);
-reset=(x,y)=>{ try {$(x).value=!!query[x]?query[x]:y;} catch {$(x).value=y;} }
+reset=(x,y)=>{ try {$(x).value=!!query[x]?query[x]:y;} catch {$(x).value=y;} };
 reset('group' ,16);
 reset('width' ,64);
 reset('height',80);
@@ -43,10 +45,11 @@ reset('color5','#5555FF');
 reset('color6','#55FFFF');
 reset('color7','#FF55FF');
 reset('color8','#FFFFFF');
+set16p =(event,x)=>{group.value=100;width.value=16;height.value=x;extend.value=1;color0.value=1;color1.value='#FFFFFF';color2.value='#000000';update(event);}
 hex2dec=(x)=>    x.slice(1).replace(/.{2}/g,'$&,').split(',').slice(0,3).map(x=>parseInt(x,16));
 dec2hex=(x)=>'#'+x.map(x=>x.toString(16)).join('');
-upload=(event)=>{  file = ''; loading.innerHTML = '資料讀取中...'; update(event); }
-update=(event)=>{
+upload =(event)=>{  file = ''; loading.innerHTML = '資料讀取中...'; update(event); }
+update =(event)=>{
 		loading.innerHTML = '取得資料中...';
 		file = !!_url.value ? _url.value : file;
 	if(  !file) {file = event.target.files[0] || ''; }
@@ -71,13 +74,15 @@ update=(event)=>{
 			result=event.target.result;
 			result=result.slice(1+kaodata*skip01.value-1);
 			result=result.slice(0,kaodata*skip02.value-1);
-			canvas_height = Math.ceil(result.byteLength / kaodata);
+			canvas_height = result.byteLength / kaodata;
 			canvas.height = Math.ceil(canvas_height / group.value)*(height.value);
 			loading.innerHTML = '頭像上色中...';
 			ctx = canvas.getContext("2d");
-			for(let i = 0; i < canvas_height; i++)ctx.putImageData(dataToImage(new Uint8Array(result).slice(kaodata * i, kaodata * i + kaodata)),
-				Math.floor(i % group .value) * width .value,
-				Math.floor(i / group .value) * height.value);
+			for(let i = 0; i < canvas_height; i++)
+				ctx.putImageData(
+					dataToImage(new Uint8Array(result).slice(kaodata * i, kaodata * i + kaodata)),
+					Math.floor(i % group.value) * width .value,
+					Math.floor(i / group.value) * height.value);
 			loading .innerHTML = '';
 			img.src = canvas.toDataURL();
 		};
@@ -125,10 +130,4 @@ grouper=(arr, size, fillValue = null)=>{
 		groups.push([...arr.slice(groups.length * size), ...[size - (arr.length % size)].fill(fillValue)]);
 	return groups;
 };
-openTab=()=>{
-	x = window.open();
-	x.document.open();
-	x.document.write("<body style='margin:0'><iframe src='" + canvas.toDataURL() + "' width=100% height=100% frameborder=0></iframe>");
-	x.document.close();
-}
 </script>
