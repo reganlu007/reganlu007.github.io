@@ -19,33 +19,54 @@
 	<br>色６ <input onchange=update(event) id=color6 type=color >
 	<br>色７ <input onchange=update(event) id=color7 type=color >
 	<br>色８ <input onchange=update(event) id=color8 type=color >
-	<hr>系統 <input onclick =set16p(event,15) id=p_0 type=button value=msg_16p>
-	<br>字典 <input onclick =set16p(event,14) id=p_1 type=button value=name16p>
+	<hr>系統 <input onclick =set16p(15)    id=msg    type=button value=msg_16p>
+	<br>字典 <input onclick =set16p(14)    id=name   type=button value=name16p>
+	<br>頭像 <input onclick =setkao(16,80) id=kao    type=button value=kaodata>
+	<br>拼貼 <input onclick =setkao(4,528) id=mon    type=button value=montage>
 	<hr>Made by<br>Yuxio Tzeng<br>and<br>Regan Lu
 	</td><td valign=top rowspan=12><canvas id=canvas hidden></canvas><img id=img></td></tr>
 </table>
 <script>
+query={};location.href.split('?')[1]?.split('&').forEach((v, i) => { [key, value] = v.split(/=(.*)/g); query[key.toLowerCase()] = value; });
 file ='';
-query={};
-location.href.split('?')[1]?.split('&').forEach((v, i) => { [key, value] = v.split(/=(.*)/g); query[key.toLowerCase()] = value; });
 $    =(x)=>document.getElementById(x);
-reset=(x,y)=>{ try {$(x).value=!!query[x]?query[x]:y;} catch {$(x).value=y;} };
-reset('group' ,16);
-reset('width' ,64);
-reset('height',80);
-reset('extend', 1);
-reset('skip01', 0);
-reset('skip02', 1);
-reset('color0', 3);
-reset('color1','#000000');
-reset('color2','#55FF55');
-reset('color3','#FF5555');
-reset('color4','#FFFF55');
-reset('color5','#5555FF');
-reset('color6','#55FFFF');
-reset('color7','#FF55FF');
-reset('color8','#FFFFFF');
-set16p =(event,x)=>{group.value=100;width.value=16;height.value=x;extend.value=1;color0.value=1;color1.value='#FFFFFF';color2.value='#000000';update(event);}
+reset0=(x,y)=>{ try {$(x).value=!!query[x]?query[x]:y;} catch {$(x).value=y;} };
+reset1=(g,h)=>{
+reset0('group' ,16);
+reset0('width' ,64);
+reset0('height',80);
+reset0('extend', 1);
+reset0('skip01', 0);
+reset0('skip02', 1);
+reset0('color0', 3);
+reset0('color1','#000000');
+reset0('color2','#55FF55');
+reset0('color3','#FF5555');
+reset0('color4','#FFFF55');
+reset0('color5','#5555FF');
+reset0('color6','#55FFFF');
+reset0('color7','#FF55FF');
+reset0('color8','#FFFFFF');
+}
+reset1();
+set16p =(x)=>{
+	group .value=100;
+	width .value=16 ;
+	height.value=x  ;
+	extend.value=1  ;
+	color0.value=1  ;
+	color1.value='#FFFFFF';
+	color2.value='#000000';
+}
+setkao =(g,x)=>{
+	group .value=g  ;
+	width .value=64 ;
+	height.value=x  ;
+	extend.value=1  ;
+	color0.value=3  ;
+	color1.value='#000000';
+	color2.value='#55FF55';
+}
 hex2dec=(x)=>    x.slice(1).replace(/.{2}/g,'$&,').split(',').slice(0,3).map(x=>parseInt(x,16));
 dec2hex=(x)=>'#'+x.map(x=>x.toString(16)).join('');
 upload =(event)=>{  file = ''; loading.innerHTML = '資料讀取中...'; update(event); }
