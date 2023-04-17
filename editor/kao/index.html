@@ -67,7 +67,7 @@ setkao =(g,x)=>{
 	color1.value='#000000';
 	color2.value='#55FF55';
 }
-hex2dec=(x)=>    x.slice(1).replace(/.{2}/g,'$&,').split(',').slice(0,3).map(x=>parseInt(x,16));
+hex2dec=(x)=>    x.slice(1).match(/.{2}/g).slice(0,3).map(x=>parseInt(x,16));
 dec2hex=(x)=>'#'+x.map(x=>x.toString(16)).join('');
 upload =(event)=>{  file = ''; loading.innerHTML = '資料讀取中...'; update(event); }
 update =(event)=>{
