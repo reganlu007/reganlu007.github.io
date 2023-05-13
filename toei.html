@@ -9,13 +9,12 @@ for(	stationId = 2200; stationId < 2300; stationId++) {
 		+"</a><br>");
 }
 var	anchor = document.querySelectorAll('a');
-var	i = 0;
+var	i = 40, j = 50; // anchor.length
 
 function	f() {
-	console.log(i);
-	anchor[i++].click();
-	if (i < anchor.length) {
-	setTimeout(f, 1000);
+	anchor[i].click();
+	if (i < j) {
+	setTimeout(f, 3000);
 	}
 }
 f();
