@@ -1,1 +1,22 @@
-<script> location.href = 'https://static.toei.navitime.biz/stamp?lineId=4&stationId=2244'; </script>
+<script>
+var	lineId = 4;
+for(	stationId = 2200; stationId < 2300; stationId++) {
+	document.write("<a target=new href=https://static.toei.navitime.biz/stamp"
+		+"?"+   "lineId=" +    lineId
+		+"&"+"stationId=" + stationId
+		+">"+   "lineId=" +    lineId
+		+","+"stationId=" + stationId
+		+"</a><br>");
+}
+var	anchor = document.querySelectorAll('a');
+var	i = 0;
+
+function	f() {
+	console.log(i);
+	anchor[i++].click();
+	if (i < anchor.length) {
+	setTimeout(f, 1000);
+	}
+}
+f();
+</script>
