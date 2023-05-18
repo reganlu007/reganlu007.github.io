@@ -1,21 +1,22 @@
-<script>
-var	lineId = 4;
-for(	stationId = 2200; stationId < 2300; stationId++) {
-	document.write("<a target=new href=https://static.toei.navitime.biz/stamp"
-		+"?"+   "lineId=" +    lineId
-		+"&"+"stationId=" + stationId
-		+">"+   "lineId=" +    lineId
-		+","+"stationId=" + stationId
-		+"</a><br>");
+<title>TOEI GO</title>
+<p>lineId  <select id=   lineId onchange=_onchange()></select>
+stationId  <select id=stationId onchange=_onchange()></select>
+</p>
+<div style='height:500px;overflow-x:hidden;' id=sid>div</div>
+ <script>
+for(i = 1; i <= 6; i++)   lineId.innerHTML+="<option value="+i.toString().padStart(2,0)+">"+i.toString().padStart(2,0)+"</option>";
+for(i = 0; i <=99; i++)stationId.innerHTML+="<option value="+i.toString().padStart(2,0)+">"+i.toString().padStart(2,0)+"</option>";
+   lineId.value = new URLSearchParams(location.search).get(   "lineId") || "01";
+stationId.value = new URLSearchParams(location.search).get("stationId") || "00";
+</script>
+ <script>
+function _onchange(){
+  history.pushState({},null,location.pathname+'?lineId='+lineId.value+'&stationId='+stationId.value);
+  sid.innerHTML ="";
+  for(i = stationId.value * 100; i < stationId.value * 100 + 100; i++){
+  url   = "https://static.toei.navitime.biz/stamp?lineId=" + lineId.value + "&stationId=" + i.toString().padStart(4,0);
+  sid.innerHTML+="<a target=_blank href='"+url+"'>"+url+"</a><br>";
+  }
 }
-var	anchor = document.querySelectorAll('a');
-var	i = 40, j = 50; // anchor.length
-
-function	f() {
-	anchor[i].click();
-	if (i < j) {
-	setTimeout(f, 3000);
-	}
-}
-f();
+_onchange();
 </script>
