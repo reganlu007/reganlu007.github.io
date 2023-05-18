@@ -4,12 +4,9 @@ stationId  <select id=stationId onchange=_onchange()></select>
 </p>
 <div style='height:500px;overflow-x:hidden;' id=sid>div</div>
  <script>
-for(i = 1; i <= 6; i++)   lineId.innerHTML+="<option value="+i.toString().padStart(2,0)+">"+i.toString().padStart(2,0)+"</option>";
-for(i = 0; i <=99; i++)stationId.innerHTML+="<option value="+i.toString().padStart(2,0)+">"+i.toString().padStart(2,0)+"</option>";
-   lineId.value = new URLSearchParams(location.search).get(   "lineId") || "01";
-stationId.value = new URLSearchParams(location.search).get("stationId") || "00";
-</script>
- <script>
+for(i=1; i<= 6; i++)    lineId.innerHTML+="<option value="+i+">"+i                         +"</option>";    lineId.value = new URLSearchParams(location.search).get(   "lineId")||1;
+for(i=0; i<=99; i++) stationId.innerHTML+="<option value="+i+">"+i.toString().padStart(2,0)+"</option>"; stationId.value = new URLSearchParams(location.search).get("stationId")||0;
+
 function _onchange(){
   history.pushState({},null,location.pathname + '?lineId=' + lineId.value + '&stationId=' + stationId.value);
   sid.innerHTML ="";
