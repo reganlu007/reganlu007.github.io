@@ -11,7 +11,7 @@ stationId.value = new URLSearchParams(location.search).get("stationId") || "00";
 </script>
  <script>
 function _onchange(){
-  history.pushState({},null,location.pathname+'?lineId='+lineId.value+'&stationId='+stationId.value);
+  history.pushState({},null,location.pathname + '?lineId=' + lineId.value + '&stationId=' + stationId.value);
   sid.innerHTML ="";
   for(i = stationId.value * 100; i < stationId.value * 100 + 100; i++){
   url   = "https://static.toei.navitime.biz/stamp?lineId=" + lineId.value + "&stationId=" + i.toString().padStart(4,0);
