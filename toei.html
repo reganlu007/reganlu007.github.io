@@ -1,17 +1,29 @@
 <title>TOEI GO</title>
-<p style="background-color:white;position:sticky;top:0;left:0;">
-line <select id=line onchange=line_onchange()></select>
-show <select id=show onchange=show_onchange()></select> items per
-page <select id=page onchange=page_onchange()></select>
+<div style="background-color:white;position:sticky;top:0;left:0;">
+<p>line
+<select id=line                onchange=line_onchange()></select>
+<input  id=_val    value=10000 readonly hidden>
+</p><p>
+<input type=button value="|<"  onclick =go(-0)>
+<input type=button value="<<"  onclick =to(-1)> show
+<select               id=show  onchange=show_onchange()></select> items per page
+<select               id=page  onchange=page_onchange()></select>
+<input type=button value=">>"  onclick =to(+1)>
+<input type=button value=">|"  onclick =go(-1+_val.value/show.value)>
 </p>
+</div>
 <div id=sid>div</div>
 <script>
-  for(i=0; i<   6;i++){j= 1            +i ;line.innerHTML+="<option value="+j+">"+j+"</option>";}
-  for(i=0; i<   4;i++){j=[10,20,50,100][i];show.innerHTML+="<option value="+j+">"+j+"</option>";}
-  
-  line.value     = new URLSearchParams(location.search).get("line")||   1;
-  show.value     = new URLSearchParams(location.search).get("show")|| 100;
+  for(i=0;i<6;i++){j=          1  + i ;line.innerHTML+="<option value="+j+">"+j+"</option>";}
+  for(i=0;i<4;i++){j=[10,20,50,100][i];show.innerHTML+="<option value="+j+">"+j+"</option>";}
+  url = new URLSearchParams(location.search);
+  line.value = url.get("line")||  1;
+  show.value = url.get("show")||100;
 
+function go(x){page.value=x;page_onchange();}
+function to(x){page.value=(page.value*1+show.value*1+x*1)%show.value;page_onchange();}
+function line_onchange(){both_onchange();}
+function page_onchange(){both_onchange();}
 function both_onchange(){
   sid .innerHTML = "";
   for(i = page.value * show.value; i < page.value * show.value + show.value * 1; i++){
@@ -21,19 +33,15 @@ function both_onchange(){
   sid.innerHTML+="<a target=_blank href='"+url+"'>"+url+"</a><br>";
   }
 }
-function line_onchange(){both_onchange();}
-function page_onchange(){both_onchange();}
 function show_onchange(){
-  per =10000/show.value;
   page.innerHTML = "";
-  for(i=0; i<per ;i++){j= 1            +i ;page.innerHTML+="<option value="+i+">"+j+"</option>";}
-  page.value     = new URLSearchParams(location.search).get("page")||   0;
-  history.pushState({},null,location.pathname + "?1=1"
+  for (i=0; i<_val.value/show.value;i++){j=1+i;page.innerHTML+="<option value="+i+">"+j+"</option>";}
+  page.value = new URLSearchParams(location.search).get("page")||0;
+   history.pushState({},null,
+  location.pathname + "?1=1"
   + "&line=" + line.value
   + "&show=" + show.value
-  + "&page=" + page.value
-  );
+  + "&page=" + page.value);
   both_onchange();
-}
-show_onchange();
+} show_onchange();
 </script>
