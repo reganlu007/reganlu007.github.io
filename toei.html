@@ -1,19 +1,39 @@
 <title>TOEI GO</title>
-<p>lineId  <select id=   lineId onchange=_onchange()></select>
-stationId  <select id=stationId onchange=_onchange()></select>
+<p style="background-color:white;position:sticky;top:0;left:0;">
+line <select id=line onchange=line_onchange()></select>
+show <select id=show onchange=show_onchange()></select> items per
+page <select id=page onchange=page_onchange()></select>
 </p>
-<div style='height:500px;overflow-x:hidden;' id=sid>div</div>
- <script>
-for(i=1; i<= 6; i++)    lineId.innerHTML+="<option value="+i+">"+i                         +"</option>";    lineId.value = new URLSearchParams(location.search).get(   "lineId")||1;
-for(i=0; i<=99; i++) stationId.innerHTML+="<option value="+i+">"+i.toString().padStart(2,0)+"</option>"; stationId.value = new URLSearchParams(location.search).get("stationId")||0;
+<div id=sid>div</div>
+<script>
+  for(i=0; i<   6;i++){j= 1            +i ;line.innerHTML+="<option value="+j+">"+j+"</option>";}
+  for(i=0; i<   4;i++){j=[10,20,50,100][i];show.innerHTML+="<option value="+j+">"+j+"</option>";}
+  
+  line.value     = new URLSearchParams(location.search).get("line")||   1;
+  show.value     = new URLSearchParams(location.search).get("show")|| 100;
 
-function _onchange(){
-  history.pushState({},null,location.pathname + '?lineId=' + lineId.value + '&stationId=' + stationId.value);
-  sid.innerHTML ="";
-  for(i = stationId.value * 100; i < stationId.value * 100 + 100; i++){
-  url   = "https://static.toei.navitime.biz/stamp?lineId=" + lineId.value + "&stationId=" + i.toString().padStart(4,0);
+function both_onchange(){
+  sid .innerHTML = "";
+  for(i = page.value * show.value; i < page.value * show.value + show.value * 1; i++){
+  url   = "https://static.toei.navitime.biz/stamp?1=1"
+  + "&" +    "lineId=" + line.value
+  + "&" + "stationId=" + i.toString().padStart(4,0);
   sid.innerHTML+="<a target=_blank href='"+url+"'>"+url+"</a><br>";
   }
 }
-_onchange();
+function line_onchange(){both_onchange();}
+function page_onchange(){both_onchange();}
+function show_onchange(){
+  per =10000/show.value;
+  page.innerHTML = "";
+  for(i=0; i<per ;i++){j= 1            +i ;page.innerHTML+="<option value="+i+">"+j+"</option>";}
+  page.value     = new URLSearchParams(location.search).get("page")||   0;
+  history.pushState({},null,location.pathname + "?1=1"
+  + "&line=" + line.value
+  + "&show=" + show.value
+  + "&page=" + page.value
+  );
+  both_onchange();
+}
+show_onchange();
 </script>
