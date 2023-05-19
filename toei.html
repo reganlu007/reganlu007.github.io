@@ -29,8 +29,8 @@ function both_onchange()
   sid.innerHTML = "";
   for(i = page.value * show.value; i < page.value * show.value + show.value * 1; i++)
   {
-  url   = "https://static.toei.navitime.biz/stamp?1=1"
-  + "&" +    "lineId=" + line.value
+  url   = "https://static.toei.navitime.biz/stamp"
+  + "?" +    "lineId=" + line.value
   + "&" + "stationId=" + i.toString().padStart(4,0);
   sid.innerHTML+= "<a target=_blank href='" + url + "'>" + url + "</a><br>";
   }
