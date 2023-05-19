@@ -22,7 +22,7 @@
   show.value =   url.get("show")||100;
 
 function page_go(x){page.value=x;page_onchange();}
-function page_to(x){page.value= (page.value*1+show.value*1+x*1)%show.value;page_onchange();}
+function page_to(x){page.value= (page.value*1+show.value*1+x*1)%(_val.value/show.value);page_onchange();}
 function line_onchange(){both_onchange();}
 function page_onchange(){both_onchange();}
 function both_onchange()
