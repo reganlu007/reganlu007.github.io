@@ -1,4 +1,4 @@
-   # DOS
+# DOS
 #### [光榮三國志０２＿＿中＿＿＿ＤＯＳ](https://mega.nz/folder/Ku5w3ZBT#PUB200k-9c1GmBFBusethw)
 #### [光榮三國志０３＿＿中＿＿＿ＤＯＳ](https://mega.nz/folder/e3hGFJTB#cYDmhxnz519AjxLt2rUiMA)
 #### [光榮三國志０４＿＿中＿＿＿ＤＯＳ](https://mega.nz/folder/L6hEBTRS#QqrVCgME1AeHMYUZcIu1tQ)
@@ -8,7 +8,7 @@
 #### [信長之野望０４＿＿中＿＿＿ＤＯＳ](https://mega.nz/folder/Es82nQaL#LmGQ7fgu2e7MlVQ6oaXw3A)
 #### [信長之野望０５＿＿中＿＿＿ＤＯＳ](https://mega.nz/folder/Ng82wYgY#YpoRMpdL835zfytKHlY2cA)
 
-   # SFC
+# SFC
 #### [光榮三國志英傑傳＿中＿日＿ＳＦＣ](https://mega.nz/folder/Mlh2WLrZ#wgPIA9hG4vFvVPZz77dgZA)
 #### [光榮三國志０１＿＿＿英日＿＿ＦＣ](https://mega.nz/folder/Cih0jJQK#XNzY3c1x7BWfcW7pPku3dQ)
 #### [光榮三國志０２＿＿＿英日＿ＳＦＣ](https://mega.nz/folder/ajhWlDZK#mhGHcnvzDpglqgNUDXd3iA)
@@ -17,7 +17,7 @@
 #### [信長之野望０２＿＿＿英日＿＿ＦＣ](https://mega.nz/folder/N50QSYTD#zvbqcl63fH5CxVJzGNg6jQ)
 #### [信長之野望０３＿＿＿英日＿ＳＦＣ](https://mega.nz/folder/Yo0UVA4Y#BpCBwZWK5quYdA0Vh55q2A)
 
-   # PC
+# PC
 #### [光榮三國志英傑傳＿中＿日＿ＰＣ＿](https://mega.nz/folder/c8hWwJIB#wbUQ4YtiKPnM8SZlAXwyMQ)
 #### [光榮三國志孔明傳＿中＿日＿ＰＣ＿](https://mega.nz/folder/FtgCzDRY#Dimuh62iITC2YsZ_Y8mmyw)
 #### [光榮三國志曹操傳＿中＿日＿ＰＣ＿](https://mega.nz/folder/clgGkZ5Z#Df-2FyTQITedGtqrdG4nsQ)
@@ -40,13 +40,13 @@
 #### [信長之野望１３＿＿＿英日＿ＰＣ＿](https://mega.nz/folder/gdER2QKR#49z4qwfiRy4MusOmioZy5w)
 #### [織田信長傳＿＿＿＿中＿日＿ＰＣ＿](https://mega.nz/folder/FpwmjDzL#f-ZcPvCJZvz8PqmbgiKarA)
 
-   # PC 萌
+# PC 萌
 #### [光榮三國志１０＿＿中＿＿＿ＰＣ萌](https://mega.nz/folder/Kd8mBTgD#9FrBFXjUa9EJAPx3AKqy5w)
 #### [光榮三國志１１＿＿中＿＿＿ＰＣ萌](https://mega.nz/folder/TNlySRpa#BzZ7gnv-hA00WPWbA8kdmA)
 #### [光榮三國志１２＿＿中＿＿＿ＰＣ萌](https://mega.nz/folder/XXxy2LbC#BS_tVURDBeq8jrbqT9r26g)
 #### [光榮三國志１３＿韓中英日＿ＰＣ萌](https://mega.nz/folder/2D5WGbBa#e2S3qdomytTceFxPVfF41g)
 
-   # PS
+# PS
 #### [光榮三國志英傑傳＿＿＿日＿ＰＳ＿](https://mega.nz/folder/9tpiiJjI#wLHqjy5clUFTzhl31V5ypw)
 #### [光榮三國志孔明傳＿中＿日＿ＰＳ＿](https://mega.nz/folder/hhxw0ZKa#THEdQv_wE2ZITfrO8AcWJQ)
 #### [光榮三國志０４＿＿中英＿＿ＰＳ＿](https://mega.nz/folder/Prwi2ZBZ#78dpbnPuRIgSoJ3klztsaA)
@@ -57,7 +57,7 @@
 #### [信長之野望０１＿＿＿＿日＿ＰＳ＿](https://mega.nz/folder/4x8EBSQR#GMCLt_0S2rT7RQ7ziKI-hw)
 #### [信長之野望０４＿＿＿＿日＿ＰＳ＿](https://mega.nz/folder/NpkyyYqB#JZSbpgjBZTz0JVrNhpKdLA)
 
-#    PS2
+# PS2
 #### [光榮三國志０７＿＿中英日＿ＰＳ２](https://mega.nz/folder/y2xCXRDD#Vl2y0J59BsciebzbZrf8Xw)
 #### [光榮三國志０８＿＿＿英日＿ＰＳ２](https://mega.nz/folder/uQkykZbZ#Yl3cvR5vN9uODW-M5rw9JA)
 #### [光榮三國志０９＿＿＿英日＿ＰＳ２](https://mega.nz/folder/iAlmCBgJ#t0Is4mWVCcOrmCspreHKwA)
@@ -68,7 +68,7 @@
 #### [信長之野望１０＿＿＿英日＿ＰＳ２](https://mega.nz/folder/R9sCnaxZ#ndFoOCwjJNOteieeP4g_NA)
 #### [信長之野望１１＿＿＿英日＿ＰＳ２](https://mega.nz/folder/o98yiKiR#AXyWW5Ordf2JGIkxMdg4OQ)
 
-   # PSP
+# PSP
 #### [光榮三國志０５＿＿中＿日＿ＰＳＰ](https://mega.nz/folder/anwCCRgJ#rTkL97MONC8QFfkV5cjy2w)
 #### [光榮三國志０６＿＿中＿日＿ＰＳＰ](https://mega.nz/folder/H6wCARIR#cOgmayvlPIS8kp7F9Fn5-A)
 #### [光榮三國志０７＿＿中＿日＿ＰＳＰ](https://mega.nz/folder/Sz5mjJIT#HCxK1hVcVCu1zQjNEu7qXQ)
@@ -78,10 +78,10 @@
 #### [信長之野望０６＿＿＿＿日＿ＰＳＰ](https://mega.nz/folder/4klESCqD#Mu31OeTxEMJlZtkpzjCiEQ)
 #### [信長之野望０７＿＿＿＿日＿ＰＳＰ](https://mega.nz/folder/gw0UDaLA#x3Ret10RXio9mrv988So_A)
 
-   # SS
+# SS
 #### [光榮三國志英傑傳＿中＿日＿ＳＳ＿](https://mega.nz/folder/Vsoi0DQa#QPZHtZawVvW6r3LrzYEx7Q)
 #### [信長之野望０２＿＿＿＿日＿ＳＳ＿](https://mega.nz/folder/1lsWDITJ#sVU7DWJzlhY7xrJugxf4nQ)
 #### [光榮三國志０４＿＿中＿日＿ＳＳ＿](https://mega.nz/folder/SzoylDIR#76h0QoeQEUwgwMlhgGodYg)
 
-   # MD
+# MD
 #### [光榮三國志０５＿＿中＿＿＿ＭＤ＿](https://mega.nz/folder/2mwgWJwZ#hJk85NamX07zDqA2CAbVEQ)
