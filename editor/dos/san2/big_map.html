@@ -30,7 +30,7 @@ function rm(x){ count = 0; I = 13; J = I - 1;
 }	for(	j=0;j<J;j++	){	index	= c + i + j * I;
 							y.innerHTML+= '<div class=x>'
 							+ '<canvas id=map' + index + ' width=32px height=32px></canvas>'
-							+ (mapdata[index+map_len] > 0 ? window.location.href.split('?')[1]=='show=true' ? '<b>' + mapdata[index+map_len] + '</b>' : '' : '')
+							+ (mapdata[index+map_len] > 0 ? window.location.href.split('?')[1].includes('show=true') ? '<b>' + mapdata[index+map_len] + '</b>' : '' : '')
 							+ '</div>';
 		}
 	}
