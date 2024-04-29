@@ -3,7 +3,7 @@
 <h1>鎚圈遊戲 紀錄查詢</h1>
 <h2>開局編號
 <br>
-<br><input id=game_id     type=number oninput=game_id_oninput()>
+<br><input id=game_id     type=number oninput=game_id_oninput() min=2>
 <br>
 <br><a     id=game_detail target=_blank>遊戲過程</a>
 <br>
@@ -11,9 +11,9 @@
 <p></p>
 <script>
 function game_id_oninput(){
+     if(!game_id.value   ){
          game_id.value=new URL(location.href).searchParams.get('game_id')||'2';
-    if(!!game_id.value){
-         game_detail.href='https://www.tdtn.tw/game_detail?game_id='+game_id.value;
+       } game_detail.href='https://www.tdtn.tw/game_detail?game_id='+game_id.value;
          game_reward.href='https://www.tdtn.tw/rewards' +'?game_id='+game_id.value;
-    }}   game_id_oninput();
+       } game_id_oninput();
 </script>
