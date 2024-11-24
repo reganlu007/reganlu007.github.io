@@ -1,0 +1,65 @@
+<script>
+let collector=[];
+let dt=[];
+let temp={};
+let ws;
+function reconnect(){ws=new WebSocket("wss://ws.ec2-chartgame.ascarbek.com/");alert("Connect to chartgame Successful!");}
+         reconnect();
+let symbols=["a","aa","aap","aapl","aaxj","abc","abi","abk","abs","abt","abx","acas","acn","acs","acwi","adbe","adct","adi","adm","adp","ads","adsk","aee","aep","aes","aet","afl","agg","agn","agq","aig","aiv","aiz","akam","aks","all","altr","alxn","amat","amcc","amd","ame","amg","amgn","amp","amr","amt","amzn","an","andw","anf","anr","antm","aon","apa","apc","apcc","apd","aph","apol","arg","ash","asn","ati","atvi","avb","avp","avy","aw","axp","aye","azo","ba","bac","bal","bax","bbby","bbt","bby","bc","bcr","bdk","bdx","beam","ben","bf.b","bgg","bhi","big","biib","bik","biv","bjs","bk","bkf","bll","bls","bmc","bmet","bms","bmy","bnd","bni","bol","brcm","brk.a","brk.b","brl","bsc","bsv","bsx","btu","bvsn","bwa","bwx","bxp","cag","cah","cam","car","cat","cbe","cbg","cbh","cbs","cbss","cce","cci","cck","ccl","ceg","celg","ceph","cern","cf","cfn","chd","chir","chk","chrw","ci","cien","cin","cinf","cl","clf","clx","cma","cmcsk","cme","cmg","cmi","cms","cmx","cnc","cnp","cnx","cof","cog","coh","col","coms","cop","cost","cov","cpb","cpwr","cr","crm","csc","csco","csj","csx","ctas","ctb","ctl","ctsh","ctxs","cvc","cvg","cvh","cvs","cvx","cxo","d","dag","dal","dba","dbc","dbe","dbo","dcn","dd","ddm","ddr","de","dem","df","dfs","dgp","dgs","dgx","dhi","dhr","dia","dig","dis","dj","djp","dltr","dlx","dnb","dnr","do","dog","dov","dow","dph","dps","dri","drv","dte","dto","dtv","dug","duk","dv","dva","dvn","dvy","dxd","dyn","dzz","ea","ebay","ech","ecl","ed","edc","eeb","eem","eev","efa","efx","eix","ek","el","emb","emc","emn","endp","eny","eog","eop","ep","epi","epp","epu","eqix","eqr","eqt","erx","ery","es","esrx","ess","etfc","etn","ets","eum","ew","ewa","ewc","ewd","ewg","ewh","ewj","ewl","ewm","ewp","ews","ewt","ewu","eww","ewy","ewz","exc","expd","expe","exr","eza","f","fast","faz","fcx","fdn","fdo","fdx","ffiv","fhn","fii","fis","fisv","fitb","fl","fle","flir","flr","fls","fmc","fnm","fosl","fox","foxa","fre","frt","frx","fslr","fti","ftr","fwlt","fxc","fxd","fxe","fxf","fxi","fxo","fxp","fxz","gap","gas","gcc","gd","gdt","gdx","ge","genz","ggp","ghc","gild","gis","gld","gll","gltr","glw","gm","gmcr","gme","gnw","googl","gp","gpc","gps","gr","gra","grmn","gs","gsg","gsp","gt","gtw","gww","hal","hao","har","has","hban","hcbk","hcn","hcp","hcr","hd","hes","het","hig","hls","hma","hnz","hog","hon","hot","hp","hpc","hpq","hrb","hrl","hrs","hsbc","hsh","hsic","hsp","hst","hsy","hum","hyg","iac","iau","ibb","ibm","ice","icf","idx","ief","ieo","iev","iez","iff","ige","igt","ijh","ijj","ijk","ijr","ijs","ijt","ikn","ilf","ilmn","inp","intc","intu","ip","ipg","ir","irm","isrg","itb","itt","itw","ivv","ivw","ivz","iwb","iwd","iwf","iwm","iwn","iwo","iwp","iwr","iws","iwv","ixc","iye","iyf","iyj","iym","iyr","iyt","iyz","java","jbht","jbl","jci","jcp","jec","jh","jjc","jjg","jnj","jnk","jnpr","jns","jny","joy","jpm","k","kate","kbe","kbh","key","kg","kie","kim","klac","kmb","kmx","ko","kol","kr","krb","kre","kri","kse","kss","ksu","l","lb","ldg","ldos","leg","leh","len","lh","lll","lltc","lly","lm","lnc","lo","low","lpx","lqd","lrcx","lu","luk","luv","lvlt","lxk","lyb","m","ma","mac","mar","mas","mat","mbi","mcd","mchp","mck","mco","mdlz","mdp","mdr","mdt","mdy","medi","mee","mel","mer","merqe","met","mfe","mhk","mhs","mi","midu","mjn","mkc","mlm","mmc","mmm","mnst","mo","molx","mon","moo","mos","mrk","mro","ms","msft","msi","mtb","mtg","mtw","mu","mub","mur","mvv","mwv","mww","mxim","myl","mz","mzz","nav","nbl","nbr","nc","ncc","ncr","ne","nee","nem","nfb","nflx","nfx","ni","nke","nlr","noc","nov","novl","nrg","nsc","nt","ntap","ntrs","nue","nvda","nwl","nxtl","nyt","nyx","o","odp","oef","oi","oil","oke","omc","omx","orcl","orly","oxy","pall","palm","pas","payx","pbct","pbg","pbi","pbw","pby","pcar","pcg","pch","pcl","pcln","pcp","pcy","pd","pdco","pdg","peg","pep","petm","pfe","pff","pfg","pg","pgf","pgl","pgr","pgx","ph","phm","pho","pie","pin","pki","pld","pll","pm","pmcs","pnc","pnw","pom","ppg","ppl","pplt","prgo","pru","psa","psft","psp","psq","ptc","ptv","pvh","pvn","pwer","pwr","px","pxd","qcom","qid","qld","qlgc","qqq","qtec","r","rad","rai","rbk","rcl","rd","rdc","regn","rf","rhi","rht","rig","rji","rl","rml","roh","rok","rop","rost","rrc","rrd","rsg","rsh","rsp","rtn","rwm","rwr","rwx","rx","s","saf","san","sape","sbl","sbux","scg","schw","sci","sco","scz","sdy","se","sebl","see","sfa","sgp","sh","shld","shm","shw","shy","sial","sig","sii","sjm","skf","slb","slg","slm","slr","slv","smn","sna","sndk","sni","snv","so","spg","spls","spxc","spxl","spxu","spy","sqqq","srcl","sre","sso","ssp","sti","stj","str","stt","stz","sune","svu","swk","swks","swn","swy","syk","symc","syy","tap","tbt","tdc","te","tecl","tecs","teg","tek","tel","ter","tex","tgna","tgt","thc","tie","tif","tin","tip","tjx","tkr","tlab","tlt","tmf","tmk","tmo","tmus","tna","tnb","toy","trb","trv","tsco","tsg","tsn","tso","tss","tt","tup","tur","twc","twm","twx","txt","txu","tyc","tza","ua","ual","ucl","uga","ugl","uhs","uis","un","ung","unh","unm","unp","upro","ups","ure","uri","usb","usd","usl","uso","utx","uup","uvn","uwm","uyg","uym","v","var","vb","vbk","vbr","vc","vde","vea","vfc","vfh","vgk","vgt","viab","viav","vig","vis","vlo","vmc","vnm","vno","vnq","vo","vot","vrsk","vrsn","vrtx","vti","vtr","vtss","vtv","vug","vv","vwo","vxx","vxz","vym","vz","wat","wba","wdc","wec","wfc","wfm","wft","whr","win","wm","wmb","wmt","wor","wsh","wwy","wy","wye","wyn","x","xel","xes","xhb","xl","xlb","xle","xlf","xli","xlk","xlnx","xlu","xlv","xly","xme","xom","xop","xray","xrt","xto","ycs","yhoo","yum","zbh","zion","zsl"];
+function newGame(symbol,gameType,startDate,ranked){
+	ws.onopen=()=>{ws.send(JSON.stringify({type:12,body:{jwt:jwt_Id.value,gameClass:"eqy",gameType:gameType,ranked:ranked,startDate:startDate,endDate:false,symbol:symbol}}));};
+	ws.onmessage=(x)=>{console.log('Received:',x.data);dt=x;alert("New Game Done!");};
+	ws.onopen();
+}
+function resetUserData(){
+	if(	confirm("Reset User Data?")){
+		ws.onopen=()=>{ws.send(JSON.stringify({type:26,body:{jwt:jwt_Id.value}}));};
+		ws.onmessage=(x)=>{console.log('Received:',x.data);alert("Reset User Data Done!");};
+		ws.onopen();
+	}
+}
+function collectGame(){
+	ws.onopen=()=>{ws.send(JSON.stringify({type:12,body:{jwt:jwt_Id.value,gameClass:"eqy",gameType:'Swing',ranked:true,startDate:'20080101',endDate:false,symbol:false}}));};
+	ws.onmessage=(x)=>{endGame();};
+	ws.onopen();
+}
+function endGame(){
+	ws.onopen=()=>{ws.send(JSON.stringify({type:24,body:{jwt:jwt_Id.value}}));};
+	ws.onmessage=(x)=>{/*console.log('Received:',x.data);*/searchGame(JSON.parse(x.data).body.data.gameId);};
+	ws.onopen();
+}
+function searchGame(gameId){
+	ws.onopen=()=>{ws.send(JSON.stringify({type:17,body:{jwt:jwt_Id.value,gameId:gameId}}));};
+	ws.onmessage=(x)=>{
+		/*console.log('Received:',x.data);*/
+		dt=JSON.parse(x.data).body.data;
+		collector=collector.concat({dateRangeStart:dt.dateRangeStart,symbol:dt.symbol,stockData:dt.stockData});
+		/*alert("Search Game "+gameId.value+" Done!");*/
+		console.log(collector);
+	};
+	ws.onopen();
+}
+</script>
+<p>user jwt : <select id=jwt_Id>
+<option value="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE5MzMwNSwiaWF0IjoxNzMyMzY4MDM3LCJleHAiOjE3MzI0NTQ0Mzd9.0XVB-Tuot60F79gcmmoCESIHngSpda0pw45Ywl0lJ1s">TEST_RLU</option>
+<option value="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE5MzQ1OCwiaWF0IjoxNzMyMzQ2NzQ1LCJleHAiOjE3MzI0MzMxNDV9.5PbnLTwAvJc9fWfvZ7L-pVxfucjj9HsmBlnyxDIr_HQ">TEST3RLU</option>
+</select>
+<input  id=reconnect     value=   "Reconnect" type=button onclick=    "reconnect()"></p>
+<p>game id  : <input id=gameId type=number value=13329065 /></p>
+
+    <input  id=searchGame    value= "Search Game"  type=button onclick=   "searchGame(gameId.value*1)">
+<hr><input  id=newGame       value=    "New Swing" type=button onclick=      "newGame(stockId.value,'Swing','20070123',false)">
+    <input  id=newGame       value=    "New Day "  type=button onclick=      "newGame(stockId.value,'Day'  ,'20050804',false)">
+    <select id=stockId></select>
+    <input  id=endGame       value=    "End Game"  type=button onclick=      "endGame()">
+<hr><input  id=collectGame   value="Collect Swing" type=button onclick=  "collectGame()">
+<hr><input  id=resetUserData value=    "Reset"     type=button onclick="resetUserData()">
+<script>
+
+for(var i=0;i<symbols.length;i++){
+	var option=document.createElement("option");
+		option.text =symbols[i];
+		option.value=symbols[i];
+		stockId.add(option);
+}
+</script>
