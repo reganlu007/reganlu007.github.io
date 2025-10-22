@@ -29,8 +29,8 @@ function rm(x){ count = 0; I = 13; J = I - 1;
 								+ '</div>';
 }	for(	j=0;j<J;j++	){	index	= c + i + j * I;
 							y.innerHTML+= '<div class=x>'
-							+ '<canvas id=map' + index + ' width=32px height=32px></canvas>'
-							+ (mapdata[index+map_len] > 0 ? window.location.href.split('?')[1].includes('show=true') ? '<b>' + mapdata[index+map_len] + '</b>' : '' : '')
+							+ '<canvas id=map' + index + '  width=32px height=32px></canvas>'
+							+ (mapdata[index+map_len] > 0 ? window.location.href.split('?').length>1 ? window.location.href.split('?')[1].includes('show=true') ? '<b>' + mapdata[index+map_len] + '</b>' : '' : '' : '')
 							+ '</div>';
 		}
 	}
@@ -80,3 +80,4 @@ Array.from(Array(41).keys()).map(x => {   y = 12 * 13; /* alert(x); */ setTimeou
 Array.from(Array( y).keys()).map(z => z + y * x).map(i => onchange_pic('map'+i,dk(mapdata.slice(map_len*2)),{max:7,value:mapdata[i],},palette,2)), x * 2000);
 });
 </script></td></tr></table>
+
